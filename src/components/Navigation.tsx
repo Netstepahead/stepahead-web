@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Globe } from 'lucide-react';
-import logoImage from '@/assets/stepahead-logo.jpg';
+import logoImage from '@/assets/logo.png';
 
 const Navigation = () => {
   const { t, language, setLanguage, isRTL } = useLanguage();
