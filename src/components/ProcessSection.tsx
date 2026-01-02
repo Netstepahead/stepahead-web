@@ -37,14 +37,14 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section id="process" className="py-24 md:py-32 bg-secondary">
+    <section id="process" className="py-24 md:py-32 bg-muted">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-primary font-semibold mb-3 text-sm tracking-wider uppercase">
             {t('process.title')}
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
             {t('process.subtitle')}
           </h2>
         </div>
