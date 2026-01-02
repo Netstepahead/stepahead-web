@@ -1,6 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Linkedin, Twitter, Mail } from 'lucide-react';
-import logoImage from '@/assets/stepahead-logo.jpg';
+import logoImage from '@/assets/logo.png';
 
 const Footer = () => {
   const { t } = useLanguage();
