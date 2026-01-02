@@ -45,7 +45,7 @@ const MythSection = () => {
                 </div>
 
                 {/* Network Reality */}
-                <div className="relative p-6 bg-secondary rounded-2xl shadow-card border border-primary/20">
+                <div className="relative p-6 bg-secondary rounded-2xl shadow-card border border-primary/30">
                   <div className="absolute top-3 right-3 text-xs font-medium text-primary-foreground bg-primary px-2 py-1 rounded">
                     Reality
                   </div>
