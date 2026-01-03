@@ -19,8 +19,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.getStarted': 'Get Started',
 
     // Hero
-    'hero.title': 'Consulting as a Subscription',
-    'hero.subtitle': 'Pause or cancel anytime.',
+    'hero.title': 'Network Leadership',
+    'hero.subtitle': 'Unlocking the full potential of the Skills-Based Organization',
     'hero.cta': 'See Plans',
     'hero.cta2': 'Book a Call',
     'hero.trustedBy': 'Trusted by',
@@ -76,8 +76,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.getStarted': 'התחל עכשיו',
 
     // Hero
-    'hero.title': 'ייעוץ כמנוי',
-    'hero.subtitle': 'השהה או בטל בכל עת.',
+    'hero.title': 'מנהיגות רשתית',
+    'hero.subtitle': 'מימוש מלוא הפוטנציאל של ארגון מבוסס כישורים',
     'hero.cta': 'צפה בתוכניות',
     'hero.cta2': 'קבע שיחה',
     'hero.trustedBy': 'סומכים עלינו',
