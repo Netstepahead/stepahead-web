@@ -9,23 +9,13 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center bg-background overflow-hidden">
-      {/* Background with network image */}
-      <div className="absolute inset-0">
+      {/* Network graphic from presentation */}
+      <div className="absolute inset-0 flex items-center justify-end pointer-events-none">
         <img
           src={heroImage}
           alt="Network visualization"
-          className="w-full h-full object-cover opacity-30"
+          className="h-[80%] w-auto max-w-[60%] object-contain opacity-90 ltr:mr-12 rtl:ml-12 rtl:scale-x-[-1]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
-      </div>
-
-      {/* Animated Network Nodes */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-primary rounded-full animate-pulse-glow opacity-70" />
-        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-teal rounded-full animate-pulse-glow opacity-60" style={{ animationDelay: '0.5s' }} />
-        <div className="absolute bottom-1/3 left-1/3 w-4 h-4 bg-primary rounded-full animate-pulse-glow opacity-50" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-2/3 right-1/4 w-2 h-2 bg-gold rounded-full animate-pulse-glow opacity-60" style={{ animationDelay: '1.5s' }} />
       </div>
 
       {/* Content */}
