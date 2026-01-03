@@ -19,11 +19,11 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.getStarted': 'Get Started',
 
     // Hero
-    'hero.title': 'Network Leadership',
-    'hero.subtitle': 'Unlocking the Full Potential of the Skills-Based Organization',
-    'hero.description': 'Transform how your organization identifies, develops, and leverages talent through the power of network intelligence and AI-driven insights.',
-    'hero.cta': 'Discover Your Network',
-    'hero.cta2': 'Learn More',
+    'hero.title': 'Consulting as a Subscription',
+    'hero.subtitle': 'Pause or cancel anytime.',
+    'hero.cta': 'See Plans',
+    'hero.cta2': 'Book a Call',
+    'hero.trustedBy': 'Trusted by',
 
     // Myth Section
     'myth.title': 'The Org Chart is a Myth',
@@ -76,11 +76,11 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.getStarted': 'התחל עכשיו',
 
     // Hero
-    'hero.title': 'מנהיגות רשתית',
-    'hero.subtitle': 'מיצוי מלוא הפוטנציאל של הארגון מבוסס הכישורים',
-    'hero.description': 'שנו את האופן בו הארגון שלכם מזהה, מפתח וממנף כישרונות באמצעות אינטליגנציה רשתית ותובנות מונעות AI.',
-    'hero.cta': 'גלה את הרשת שלך',
-    'hero.cta2': 'למד עוד',
+    'hero.title': 'ייעוץ כמנוי',
+    'hero.subtitle': 'השהה או בטל בכל עת.',
+    'hero.cta': 'צפה בתוכניות',
+    'hero.cta2': 'קבע שיחה',
+    'hero.trustedBy': 'סומכים עלינו',
 
     // Myth Section
     'myth.title': 'המבנה הארגוני הוא מיתוס',
