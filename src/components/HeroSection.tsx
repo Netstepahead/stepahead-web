@@ -1,52 +1,61 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, ArrowLeft, Play } from 'lucide-react';
-import heroImage from '@/assets/hero-network.png';
+import { Phone } from 'lucide-react';
 
 const HeroSection = () => {
-  const { t, isRTL } = useLanguage();
-  const Arrow = isRTL ? ArrowLeft : ArrowRight;
+  const { t } = useLanguage();
+
+  // Placeholder company logos - abstract shapes
+  const logos = [
+    { width: 120, height: 40 },
+    { width: 100, height: 35 },
+    { width: 130, height: 45 },
+    { width: 110, height: 38 },
+    { width: 95, height: 32 },
+  ];
 
   return (
-    <section className="relative min-h-screen flex items-center bg-background overflow-hidden">
-      {/* Network graphic from presentation */}
-      <div className="absolute inset-0 flex items-center justify-end pointer-events-none">
-        <img
-          src={heroImage}
-          alt="Network visualization"
-          className="h-[80%] w-auto max-w-[60%] object-contain opacity-90 ltr:mr-12 rtl:ml-12 rtl:scale-x-[-1]"
-        />
-      </div>
+    <section className="min-h-screen flex flex-col items-center justify-center bg-background px-4 py-20">
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto text-center">
+        {/* Main Heading */}
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 tracking-tight">
+          {t('hero.title')}
+        </h1>
 
-      {/* Content */}
-      <div className="container mx-auto px-4 py-32 md:py-40 relative z-10">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-secondary mb-6 animate-fade-in">
-            {t('hero.title')}
-          </h1>
-          <h2 className="text-xl md:text-2xl lg:text-3xl text-primary font-semibold mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            {t('hero.subtitle')}
-          </h2>
-          <p className="text-lg md:text-xl text-foreground/80 mb-10 leading-relaxed animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            {t('hero.description')}
-          </p>
-          <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <Button variant="hero" size="xl" className="group">
-              {t('hero.cta')}
-              <Arrow className="w-5 h-5 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
-            </Button>
-            <Button variant="outline" size="xl" className="group border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground">
-              <Play className="w-5 h-5" />
-              {t('hero.cta2')}
-            </Button>
-          </div>
+        {/* Subheading */}
+        <p className="text-xl md:text-2xl text-muted-foreground mb-10">
+          {t('hero.subtitle')}
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20">
+          <Button variant="default" size="xl">
+            {t('hero.cta')}
+          </Button>
+          <Button variant="outline" size="xl" className="gap-2">
+            <Phone className="w-5 h-5" />
+            {t('hero.cta2')}
+          </Button>
         </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-        <div className="w-6 h-10 border-2 border-secondary/30 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-primary rounded-full animate-bounce" />
+        {/* Trusted By Section */}
+        <div className="mt-16">
+          <p className="text-sm text-muted-foreground mb-8 uppercase tracking-wider">
+            {t('hero.trustedBy')}
+          </p>
+          
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-60">
+            {logos.map((logo, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center"
+                style={{ width: logo.width, height: logo.height }}
+              >
+                <div className="w-full h-8 bg-muted-foreground/20 rounded" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
