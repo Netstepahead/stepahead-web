@@ -11,7 +11,7 @@ const HeroSection = () => {
   return (
     // שינוי 1: הורדנו את ה-pt ל-0. הרווח מגיע מה-Layout הראשי.
     // הקטנו גם את ה-pb (Padding Bottom) כדי שהסקשן הבא יתקרב.
-    <section className="relative bg-[#FAF9F6] overflow-hidden flex flex-col justify-start pt-0 pb-12 lg:pb-0">
+    <section className="relative bg-[#FAF9F6] overflow-hidden flex flex-col justify-start pt-28 pb-12 lg:pb-0">
       
       {/* אלמנטים של רקע */}
       <div className="absolute inset-0 opacity-30 pointer-events-none">
