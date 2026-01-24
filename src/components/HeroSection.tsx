@@ -12,7 +12,7 @@ const HeroSection = () => {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-100/50 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-100/50 rounded-full blur-3xl" />
 
-      {/* התיקון הקריטי: pt-24 נותן אוויר מהתפריט */}
+      {/* שומרים על pt-24 כדי שהכותרת לא תיגע בתפריט */}
       <div className="container mx-auto px-4 relative z-10 pt-24 pb-12">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           
@@ -47,54 +47,57 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* צד ימין: שחזור מדויק של 5 התמונות המקוריות והרשת */}
+          {/* צד ימין: החמישייה המקורית */}
           <div className="lg:w-1/2 relative h-[600px] w-full animate-fade-in hidden md:block">
              <div className="relative w-full h-full">
                 
-                {/* קווי הרשת - מחברים בין האנשים */}
-                <svg className="absolute inset-0 w-full h-full z-0 opacity-30 pointer-events-none">
-                  {/* קווים כחולים וכתומים עדינים */}
-                  <line x1="25%" y1="20%" x2="75%" y2="15%" stroke="#E87722" strokeWidth="1" strokeDasharray="5,5" />
-                  <line x1="25%" y1="20%" x2="25%" y2="60%" stroke="#1B365D" strokeWidth="1" />
-                  <line x1="75%" y1="15%" x2="85%" y2="55%" stroke="#1B365D" strokeWidth="1" />
-                  <line x1="25%" y1="60%" x2="60%" y2="75%" stroke="#E87722" strokeWidth="1" />
-                  <line x1="85%" y1="55%" x2="60%" y2="75%" stroke="#1B365D" strokeWidth="1" />
-                  <line x1="25%" y1="20%" x2="85%" y2="55%" stroke="#1B365D" strokeWidth="0.5" opacity="0.5" />
+                {/* רשת קשרים עדינה (Constellation) */}
+                <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-40">
+                  <path d="M150,100 L450,80" stroke="#E87722" strokeWidth="1" strokeDasharray="4,4" /> {/* בלייזר -> לבן */}
+                  <path d="M150,100 L120,400" stroke="#1B365D" strokeWidth="1" /> {/* בלייזר -> גולגול */}
+                  <path d="M450,80 L480,350" stroke="#1B365D" strokeWidth="1" /> {/* לבן -> משקפיים */}
+                  <path d="M120,400 L300,500" stroke="#E87722" strokeWidth="1" /> {/* גולגול -> פסים */}
+                  <path d="M480,350 L300,500" stroke="#1B365D" strokeWidth="1" strokeDasharray="4,4" /> {/* משקפיים -> פסים */}
+                  <path d="M150,100 L300,500" stroke="#1B365D" strokeWidth="0.5" opacity="0.3" /> {/* אלכסון */}
                 </svg>
 
-                {/* 1. אישה בבלייזר (למעלה משמאל) */}
-                <div className="absolute top-[10%] left-[15%] bg-white p-2 rounded-3xl shadow-xl z-10 animate-fade-in hover:scale-105 transition-transform duration-500">
-                  <div className="w-24 h-24 bg-gray-100 rounded-2xl overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" alt="Executive" className="w-full h-full object-cover" />
+                {/* 1. למעלה משמאל: אישה בבלייזר אפור */}
+                <div className="absolute top-[5%] left-[10%] transition-transform hover:scale-110 duration-500">
+                  <div className="w-24 h-24 bg-white p-1.5 rounded-[2rem] shadow-xl rotate-[-3deg]">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" className="w-full h-full object-cover rounded-[1.5rem]" alt="Executive" />
+                  </div>
+                  <div className="w-3 h-3 bg-[#E87722] rounded-full absolute -bottom-1 -right-1 border-2 border-white"></div>
+                </div>
+
+                {/* 2. למעלה מימין: גבר בחולצה לבנה */}
+                <div className="absolute top-[8%] right-[15%] transition-transform hover:scale-110 duration-500 delay-100">
+                  <div className="w-28 h-28 bg-white p-1.5 rounded-[2rem] shadow-xl rotate-[2deg]">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" className="w-full h-full object-cover rounded-[1.5rem]" alt="Manager" />
+                  </div>
+                  <div className="w-3 h-3 bg-[#1B365D] rounded-full absolute -top-1 -left-1 border-2 border-white"></div>
+                </div>
+
+                {/* 3. אמצע-ימין: גבר עם משקפיים (תוקן!) */}
+                <div className="absolute top-[45%] right-[5%] transition-transform hover:scale-110 duration-500 delay-200">
+                  <div className="w-24 h-24 bg-white p-1.5 rounded-[2rem] shadow-xl rotate-[-2deg]">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" className="w-full h-full object-cover rounded-[1.5rem]" alt="Tech Lead" />
                   </div>
                 </div>
 
-                {/* 2. גבר בחולצה לבנה (למעלה מימין) */}
-                <div className="absolute top-[5%] right-[15%] bg-white p-2 rounded-3xl shadow-xl z-10 animate-fade-in delay-100 hover:scale-105 transition-transform duration-500">
-                  <div className="w-28 h-28 bg-gray-100 rounded-2xl overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Manager" className="w-full h-full object-cover" />
+                {/* 4. למטה משמאל: אישה עם גולגול בשיער */}
+                <div className="absolute bottom-[25%] left-[5%] transition-transform hover:scale-110 duration-500 delay-300">
+                  <div className="w-28 h-28 bg-white p-1.5 rounded-[2rem] shadow-xl rotate-[4deg]">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956" className="w-full h-full object-cover rounded-[1.5rem]" alt="Team Lead" />
                   </div>
+                   <div className="w-3 h-3 bg-[#E87722] rounded-full absolute top-1/2 -right-2 border-2 border-white"></div>
                 </div>
 
-                {/* 3. אישה עם "גולגול" בשיער (באמצע-למטה משמאל) */}
-                <div className="absolute top-[55%] left-[10%] bg-white p-2 rounded-3xl shadow-xl z-10 animate-fade-in delay-200 hover:scale-105 transition-transform duration-500">
-                  <div className="w-32 h-32 bg-gray-100 rounded-2xl overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956" alt="Team Lead" className="w-full h-full object-cover" />
+                {/* 5. למטה במרכז: אישה בחולצת פסים (הוזזה למעלה שלא תיחתך) */}
+                <div className="absolute bottom-[10%] left-[45%] transition-transform hover:scale-110 duration-500 delay-400">
+                  <div className="w-24 h-24 bg-white p-1.5 rounded-[2rem] shadow-xl rotate-[-3deg]">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" className="w-full h-full object-cover rounded-[1.5rem]" alt="Creative" />
                   </div>
-                </div>
-
-                {/* 4. אישה בחולצת פסים (למטה במרכז) */}
-                <div className="absolute bottom-[10%] left-[45%] transform -translate-x-1/2 bg-white p-2 rounded-3xl shadow-xl z-10 animate-fade-in delay-300 hover:scale-105 transition-transform duration-500">
-                  <div className="w-24 h-24 bg-gray-100 rounded-2xl overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Designer" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-
-                {/* 5. גבר עם משקפיים (באמצע מימין) */}
-                <div className="absolute top-[50%] right-[5%] bg-white p-2 rounded-3xl shadow-xl z-10 animate-fade-in delay-500 hover:scale-105 transition-transform duration-500">
-                   <div className="w-24 h-24 bg-gray-100 rounded-2xl overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7" alt="Developer" className="w-full h-full object-cover" />
-                  </div>
+                  <div className="w-3 h-3 bg-[#1B365D] rounded-full absolute -bottom-1 left-1/2 border-2 border-white"></div>
                 </div>
 
              </div>
