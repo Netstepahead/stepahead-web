@@ -231,4 +231,14 @@ const Platform = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             {isRTL ? 'מוכנים לראות איך זה עובד?' : 'Ready to see the platform in action?'}
           </h2>
-          <Button className="bg-white text-[#E87722] hover:bg-gray-1
+          <Button className="bg-white text-[#E87722] hover:bg-gray-100 text-lg px-8 py-6 rounded-lg shadow-lg">
+            {isRTL ? 'בקש דמו' : 'Book a Demo'} <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+        </div>
+      </section>
+
+    </div>
+  );
+};
+
+export default Platform;
