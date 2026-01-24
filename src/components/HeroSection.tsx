@@ -6,27 +6,27 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   return (
-    // הוספנו פה את style={{ paddingTop: '140px' }} כדי להכריח את הטקסט לרדת
-    <section 
-      style={{ paddingTop: '140px' }} 
-      className="relative bg-[#FAF9F6] overflow-hidden flex flex-col justify-start pb-12 lg:pb-0 min-h-[90vh]"
-    >
-      {/* Decorative Elements */}
+    // הסרנו מפה את ה-padding כדי שהרקע יתחיל מלמעלה
+    <section className="relative bg-[#FAF9F6] overflow-hidden flex flex-col justify-start min-h-screen">
+      
+      {/* אלמנטים דקורטיביים ברקע */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-100/50 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-100/50 rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-4 relative z-10 flex-grow flex flex-col justify-center">
+      {/* התיקון כאן: הוספנו pt-40 כדי לדחוף את התוכן למטה בכוח */}
+      <div className="container mx-auto px-4 relative z-10 flex-grow flex flex-col justify-center pt-40 pb-20">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           
-          {/* Text Content */}
+          {/* צד שמאל: טקסט */}
           <div className="lg:w-1/2 text-left space-y-6 animate-fade-up">
             <div className="flex items-center gap-2">
               <img src="/logo-stepahead.svg" alt="StepAhead" className="h-8 w-auto opacity-80" />
             </div>
             
+            {/* שינינו טיפה את הטקסט כדי לוודא עדכון */}
             <h1 className="text-5xl lg:text-7xl font-serif font-bold text-[#1B365D] leading-tight">
-              The Networked <br />
-              <span className="text-[#E87722]">Skills-Based Organization</span>
+              The Future <br />
+              <span className="text-[#E87722]">Networked Organization</span>
             </h1>
             
             <p className="text-xl text-gray-600 max-w-xl leading-relaxed">
@@ -53,14 +53,13 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Hero Image/Visuals */}
-          <div className="lg:w-1/2 relative h-[500px] w-full animate-fade-in">
-             {/* כאן נמצא הקוד של התמונות המרחפות, השארתי אותו אותו דבר */}
+          {/* צד ימין: תמונות */}
+          <div className="lg:w-1/2 relative h-[500px] w-full animate-fade-in hidden md:block">
              <div className="relative w-full h-full">
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] border border-blue-100 rounded-full opacity-30 animate-pulse" />
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] border border-orange-100 rounded-full opacity-30 delay-75" />
                 
-                {/* Images would go here - simplified for this fix */}
+                {/* Images */}
                 <div className="absolute top-10 right-10 bg-white p-2 rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-500">
                   <div className="w-32 h-32 bg-gray-200 rounded-xl overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="Profile" className="w-full h-full object-cover" />
