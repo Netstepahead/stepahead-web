@@ -1,139 +1,71 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button"
+import { NetworkGraph } from "@/components/NetworkGraph"
+import { PhotoCollage } from "@/components/PhotoCollage"
+import { ArrowRight, Sparkles } from "lucide-react"
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const HeroSection = () => {
-  const navigate = useNavigate();
+  const { language } = useLanguage();
+  const isRTL = language === 'he';
 
   return (
-    // שינוי ל-h-screen מבטיח שזה יתפוס בדיוק גובה מסך אחד ולא יימרח למטה
-    <section className="relative bg-[#FAF9F6] overflow-hidden flex flex-col justify-center h-screen max-h-[1080px]">
+    // שינוי 1: הורדנו את ה-pt ל-0. הרווח מגיע מה-Layout הראשי.
+    // הקטנו גם את ה-pb (Padding Bottom) כדי שהסקשן הבא יתקרב.
+    <section className="relative bg-[#FAF9F6] overflow-hidden flex flex-col justify-start pt-24 pb-12 lg:pb-0">
       
-      {/* רקע */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-100/50 rounded-full blur-3xl opacity-60" />
-      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-100/50 rounded-full blur-3xl opacity-60" />
+      {/* אלמנטים של רקע */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#1B365D]/5 via-transparent to-transparent" />
+        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[#E87722]/10 via-transparent to-transparent" />
+      </div>
 
-      {/* הקטנו את ה-pt ל-20 וצמצמנו את הגובה הכללי */}
-      <div className="container mx-auto px-4 relative z-10 pt-20">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+      <div className="container relative mx-auto px-4 lg:px-8">
+        
+        {/* שינוי 2: items-start במקום items-center כדי להצמיד את הטקסט למעלה */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-start">
           
-          {/* צד שמאל: טקסט - מהודק יותר */}
-          <div className="lg:w-1/2 text-left space-y-6 animate-fade-up">
+          {/* שינוי 3: הוספת lg:mt-8 כדי ליישר את הכותרת בול עם תחילת הגרף */}
+          <div className={`flex flex-col z-20 mt-6 lg:mt-8 ${isRTL ? 'lg:order-2 text-right items-end' : 'order-1 text-left items-start'}`}>
             
-            {/* הקטנתי את הטקסט מ-7xl ל-6xl כדי שיכנס במסך */}
-            <h1 className="text-4xl lg:text-6xl font-serif font-bold text-[#1B365D] leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-serif font-bold text-[#1B365D] leading-[1.1] tracking-tight mb-6">
               The Networked <br />
-              <span className="text-[#E87722]">Skills-Based Organization</span>
+              <span className="text-[#E87722]">
+                Skills-Based Organization
+              </span>
             </h1>
-            
-            <p className="text-lg lg:text-xl text-gray-600 max-w-xl leading-relaxed">
-              Orchestrate your network. Our AI platform cultivates diverse ties and collaboration skills, turning your org chart into a living network of shared value.
+
+            <p className={`text-xl text-gray-500 max-w-lg leading-relaxed mb-8 text-balance font-light ${isRTL ? 'text-right' : 'text-left'}`}>
+              {language === 'he' 
+                ? "הפכו את הארגון מרשימת תפקידים לרשת חיה של כישורים. הפלטפורמה שלנו עוזרת לכם לזהות מיומנויות נסתרות ולחבר בין האנשים הנכונים בזמן אמת."
+                : "Orchestrate your network. Our AI platform cultivates diverse ties and collaboration skills, turning your org chart into a living network of shared value."
+              }
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <Button 
-                onClick={() => navigate('/platform')}
-                className="bg-[#1B365D] hover:bg-[#2a4a7f] text-white px-8 py-6 text-lg shadow-lg group"
-              >
-                Activate Your Network 
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+
+            <div className={`flex flex-col sm:flex-row gap-4 w-full ${isRTL ? 'sm:justify-end' : 'sm:justify-start'}`}>
+              <Button className="bg-[#1B365D] hover:bg-[#2a4d80] text-white text-base px-8 h-12 rounded-lg shadow-lg hover:shadow-xl transition-all gap-2">
+                {isRTL ? 'התחילו עכשיו' : 'Activate Your Network'} 
+                <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180 mr-1' : 'ml-1'}`} />
               </Button>
               
-              <Button 
-                variant="outline" 
-                onClick={() => navigate('/platform#agent')}
-                className="px-8 py-6 text-lg border-[#1B365D] text-[#1B365D] hover:bg-blue-50"
-              >
-                <Sparkles className="mr-2 w-5 h-5" />
-                Meet the Collab Agent
+              <Button variant="outline" className="text-[#1B365D] border-[#1B365D]/20 hover:bg-[#1B365D]/5 text-base px-8 h-12 rounded-lg gap-2 bg-transparent">
+                <Sparkles className="w-4 h-4" /> 
+                {isRTL ? 'הכירו את הסוכן' : 'Meet the Collab Agent'}
               </Button>
             </div>
           </div>
 
-          {/* צד ימין: הרשת הדינאמית */}
-          <div className="lg:w-1/2 relative h-[500px] lg:h-[600px] w-full hidden md:block">
-             <div className="relative w-full h-full">
-                
-                {/* SVG אנימטיבי - מחזיר את תחושת ה"דינאמיות" */}
-                <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-                  <defs>
-                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#1B365D" stopOpacity="0.1" />
-                      <stop offset="50%" stopColor="#E87722" stopOpacity="0.5" />
-                      <stop offset="100%" stopColor="#1B365D" stopOpacity="0.1" />
-                    </linearGradient>
-                  </defs>
-
-                  {/* קווים פועמים שמחברים בין המיקומים של התמונות */}
-                  {/* חיבור 1: בלייזר (שמאל למעלה) -> גבר לבן (ימין למעלה) */}
-                  <line x1="18%" y1="12%" x2="82%" y2="15%" stroke="url(#lineGradient)" strokeWidth="1.5" className="animate-pulse" />
-                  
-                  {/* חיבור 2: גבר לבן -> גבר משקפיים (ימין אמצע) */}
-                  <line x1="82%" y1="15%" x2="88%" y2="48%" stroke="#1B365D" strokeWidth="1" strokeOpacity="0.3" />
-                  
-                  {/* חיבור 3: גבר משקפיים -> פסים (למטה אמצע) */}
-                  <line x1="88%" y1="48%" x2="48%" y2="78%" stroke="#E87722" strokeWidth="1.5" strokeDasharray="5,5" className="animate-pulse delay-75" />
-                  
-                  {/* חיבור 4: פסים -> גולגול (למטה שמאל) */}
-                  <line x1="48%" y1="78%" x2="12%" y2="60%" stroke="#1B365D" strokeWidth="1" strokeOpacity="0.4" />
-                  
-                  {/* חיבור 5: גולגול -> בלייזר (סגירת מעגל) */}
-                  <line x1="12%" y1="60%" x2="18%" y2="12%" stroke="url(#lineGradient)" strokeWidth="1" className="animate-pulse delay-150" />
-
-                  {/* חיבורי אלכסון למרכז */}
-                  <line x1="18%" y1="12%" x2="48%" y2="78%" stroke="#1B365D" strokeWidth="0.5" opacity="0.2" />
-                  <line x1="82%" y1="15%" x2="12%" y2="60%" stroke="#1B365D" strokeWidth="0.5" opacity="0.2" />
-                </svg>
-
-                {/* --- התמונות (Nodes) במיקומים המדויקים --- */}
-
-                {/* 1. בלייזר (למעלה משמאל) */}
-                <div className="absolute top-[5%] left-[10%] transition-all hover:scale-110 duration-500 hover:z-20">
-                  <div className="w-20 h-20 lg:w-24 lg:h-24 bg-white p-1 rounded-[1.5rem] shadow-lg rotate-[-3deg] animate-in fade-in zoom-in duration-700">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" className="w-full h-full object-cover rounded-[1.2rem]" alt="Executive" />
-                  </div>
-                  {/* נקודת חיבור (Node Dot) */}
-                  <div className="w-3 h-3 bg-[#E87722] rounded-full absolute top-1/2 -right-1.5 border-2 border-white shadow-sm animate-ping duration-[3s]" />
-                </div>
-
-                {/* 2. גבר לבן (למעלה מימין) */}
-                <div className="absolute top-[8%] right-[10%] transition-all hover:scale-110 duration-500 delay-100 hover:z-20">
-                  <div className="w-24 h-24 lg:w-28 lg:h-28 bg-white p-1 rounded-[1.5rem] shadow-lg rotate-[2deg] animate-in fade-in zoom-in duration-700 delay-100">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" className="w-full h-full object-cover rounded-[1.2rem]" alt="Manager" />
-                  </div>
-                  <div className="w-3 h-3 bg-[#1B365D] rounded-full absolute bottom-4 -left-1.5 border-2 border-white shadow-sm" />
-                </div>
-
-                {/* 3. גבר משקפיים (ימין אמצע) */}
-                <div className="absolute top-[40%] right-[5%] transition-all hover:scale-110 duration-500 delay-200 hover:z-20">
-                  <div className="w-20 h-20 lg:w-24 lg:h-24 bg-white p-1 rounded-[1.5rem] shadow-lg rotate-[-2deg] animate-in fade-in zoom-in duration-700 delay-200">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e" className="w-full h-full object-cover rounded-[1.2rem]" alt="Tech" />
-                  </div>
-                </div>
-
-                {/* 4. גולגול בשיער (למטה משמאל) */}
-                <div className="absolute bottom-[30%] left-[5%] transition-all hover:scale-110 duration-500 delay-300 hover:z-20">
-                  <div className="w-24 h-24 lg:w-28 lg:h-28 bg-white p-1 rounded-[1.5rem] shadow-lg rotate-[4deg] animate-in fade-in zoom-in duration-700 delay-300">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956" className="w-full h-full object-cover rounded-[1.2rem]" alt="Team Lead" />
-                  </div>
-                  <div className="w-3 h-3 bg-[#E87722] rounded-full absolute -top-1 right-8 border-2 border-white shadow-sm animate-pulse" />
-                </div>
-
-                {/* 5. חולצת פסים (למטה אמצע) */}
-                <div className="absolute bottom-[15%] left-[40%] transition-all hover:scale-110 duration-500 delay-400 hover:z-20">
-                  <div className="w-20 h-20 lg:w-24 lg:h-24 bg-white p-1 rounded-[1.5rem] shadow-lg rotate-[-3deg] animate-in fade-in zoom-in duration-700 delay-400">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" className="w-full h-full object-cover rounded-[1.2rem]" alt="Creative" />
-                  </div>
-                  <div className="w-3 h-3 bg-[#1B365D] rounded-full absolute top-1/2 -left-1.5 border-2 border-white shadow-sm" />
-                </div>
-
-             </div>
+          <div className={`relative h-[450px] lg:h-[600px] w-full ${isRTL ? 'lg:order-1' : 'order-2'}`}>
+            <NetworkGraph />
+            <PhotoCollage />
+            
+            <div className="absolute top-1/4 right-1/4 w-32 h-32 rounded-full bg-[#3B82F6]/5 blur-3xl animate-pulse" />
+            <div className="absolute bottom-1/3 left-1/3 w-40 h-40 rounded-full bg-[#E87722]/5 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
           </div>
 
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
 export default HeroSection;
