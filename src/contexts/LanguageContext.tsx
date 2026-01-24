@@ -21,8 +21,8 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.title': 'Network Leadership',
     'hero.subtitle': 'Unlocking the full potential of the Skills-Based Organization',
-    'hero.cta': 'See Plans',
-    'hero.cta2': 'Book a Call',
+    'hero.cta': 'Book a Consultation',
+    'hero.cta2': 'Our Process',
     'hero.trustedBy': 'Trusted by',
 
     // Myth Section
@@ -78,8 +78,8 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.title': 'מנהיגות רשתית',
     'hero.subtitle': 'מימוש מלוא הפוטנציאל של ארגון מבוסס כישורים',
-    'hero.cta': 'צפה בתוכניות',
-    'hero.cta2': 'קבע שיחה',
+    'hero.cta': 'קבע שיחת ייעוץ',
+    'hero.cta2': 'התהליך שלנו',
     'hero.trustedBy': 'סומכים עלינו',
 
     // Myth Section

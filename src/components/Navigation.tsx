@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Globe } from 'lucide-react';
-import logoImage from '@/assets/logo.png';
 
 const Navigation = () => {
   const { t, language, setLanguage, isRTL } = useLanguage();
@@ -20,15 +19,15 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FAF9F6]/80 backdrop-blur-lg border-b border-border/50">
+      <div className="container mx-auto px-4 md:px-6 py-3">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
             <img 
-              src={logoImage} 
+              src="/logo-stepahead.svg" 
               alt="StepAhead" 
-              className="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </a>
 
