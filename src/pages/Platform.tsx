@@ -121,7 +121,6 @@ const Platform = () => {
               </ul>
             </div>
             <div className="md:w-1/2 bg-gray-100 rounded-3xl p-8 aspect-video flex items-center justify-center relative overflow-hidden">
-               {/* Placeholder for ONA Image */}
                <Network className="w-32 h-32 text-gray-300 absolute opacity-20" />
                <div className="z-10 text-center">
                  <LineChart className="w-16 h-16 text-[#1B365D] mx-auto mb-4" />
@@ -219,7 +218,6 @@ const Platform = () => {
             }
           </p>
           <div className="flex justify-center gap-6 opacity-50 grayscale">
-             {/* כאן יבואו לוגואים של תקני אבטחה בעתיד: ISO, SOC2, GDPR */}
              <span className="font-bold text-gray-400">GDPR Compliant</span>
              <span className="font-bold text-gray-400">SOC2 Ready</span>
              <span className="font-bold text-gray-400">ISO 27001</span>
@@ -233,14 +231,4 @@ const Platform = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             {isRTL ? 'מוכנים לראות איך זה עובד?' : 'Ready to see the platform in action?'}
           </h2>
-          <Button className="bg-white text-[#E87722] hover:bg-gray-100 text-lg px-8 py-6 rounded-lg shadow-lg">
-            {isRTL ? 'בקש דמו' : 'Book a Demo'} <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-        </div>
-      </section>
-
-    </div>
-  );
-};
-
-export default Platform;
+          <Button className="bg-white text-[#E87722] hover:bg-gray-1
