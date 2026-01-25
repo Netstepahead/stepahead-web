@@ -8,7 +8,8 @@ import {
   Globe, 
   ArrowRight, 
   Heart,
-  Lightbulb
+  Lightbulb,
+  Linkedin // הוספנו את האייקון
 } from "lucide-react";
 
 const About = () => {
@@ -24,21 +25,24 @@ const About = () => {
   const team = [
     {
       name: "Sharon Rendlich",
-      role: "Co-Founder & COO",
-      bio: "Psychotherapist and Organizational Consultant. Partner at 'Gome-Gevim' coaching and mediation center.",
-      image: "/sharon.png" // וודא שהקובץ קיים ב-public
+      role: "Founder & COO", // שונה ל-Founder
+      bio: "Psychotherapist and Organizational Consultant. Owner of 'Gome-Gevim' coaching and mediation center.", // עודכן ל-Owner
+      image: "/sharon.png",
+      linkedin: "https://www.linkedin.com/in/sharon-rendlich-1752068/"
     },
     {
       name: "Prof. Yuval Kalish",
-      role: "Co-Founder & Academic Advisor",
+      role: "Academic Advisor", // הוסר Co-Founder
       bio: "Chair of Leadership, Networks and Organizations at WHU – Otto Beisheim School of Management, Düsseldorf, Germany.",
-      image: "/yuval.png" // וודא שהקובץ קיים ב-public
+      image: "/yuval.png",
+      linkedin: "https://www.linkedin.com/in/yuval-kalish/"
     },
     {
       name: "Nadav Agozi",
-      role: "Founder & CEO",
+      role: "CEO", // הוסר Founder
       bio: "Expert in skills development and assessment technologies. Specialist in Game Based Learning and Strategic Thinking lecturer.",
-      image: "/nadav.png" // וודא שהקובץ קיים ב-public
+      image: "/nadav.png",
+      linkedin: "https://www.linkedin.com/in/nadav-agozi/"
     }
   ];
 
@@ -147,8 +151,8 @@ const About = () => {
           
           <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             {team.map((member, i) => (
-              <div key={i} className="group">
-                <div className="relative overflow-hidden rounded-2xl mb-6 shadow-lg aspect-[4/5] bg-gray-100">
+              <div key={i} className="group flex flex-col items-center">
+                <div className="relative overflow-hidden rounded-2xl mb-6 shadow-lg aspect-[4/5] bg-gray-100 w-full">
                   <img 
                     src={member.image} 
                     alt={member.name} 
@@ -159,8 +163,20 @@ const About = () => {
                     <p className="text-white text-md font-medium leading-relaxed">{member.bio}</p>
                   </div>
                 </div>
+                
                 <h3 className="text-2xl font-bold text-[#1B365D]">{member.name}</h3>
-                <p className="text-[#E87722] font-medium mt-1">{member.role}</p>
+                <p className="text-[#E87722] font-medium mt-1 mb-3">{member.role}</p>
+                
+                {/* LinkedIn Button */}
+                <a 
+                  href={member.linkedin} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-2 bg-blue-50 rounded-full text-[#0077b5] hover:bg-[#0077b5] hover:text-white transition-colors"
+                  aria-label={`LinkedIn Profile of ${member.name}`}
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
               </div>
             ))}
           </div>
