@@ -11,21 +11,23 @@ const Navbar = () => {
   const location = useLocation();
 
   const isHomePage = location.pathname === "/";
-  // האם הרקע בהיר? (דף הבית או גלילה)
   const isLightBackground = isHomePage || isScrolled;
 
-  // --- התיקון כאן ---
-  // אם הרקע בהיר -> לוגו רגיל (SVG)
-  // אם הרקע כהה -> לוגו לבן (PNG)
   const logoSrc = isLightBackground 
     ? "/logo-stepahead.svg" 
     : "/logo-stepahead-white.png"; 
 
-  // צבעי טקסט
+  // --- התיקון כאן ---
+  // יצרנו משתנה לגודל הלוגו שמשתנה בהתאם לרקע
+  // אם רקע בהיר (לוגו צבעוני) -> גדול (h-12 עד h-16)
+  // אם רקע כהה (לוגו לבן) -> רגיל (h-8 עד h-10)
+  const logoSizeClass = isLightBackground
+    ? "h-12 md:h-16" 
+    : "h-8 md:h-10";
+
   const textColorClass = isLightBackground ? "text-[#1B365D]" : "text-white";
   const globeColorClass = isLightBackground ? "text-[#1B365D]" : "text-white hover:bg-white/10";
   
-  // צבע כפתור
   const buttonClass = isLightBackground 
     ? "bg-[#1B365D] hover:bg-[#2a4a7f] text-white" 
     : "bg-white text-[#1B365D] hover:bg-gray-100";
@@ -65,8 +67,8 @@ const Navbar = () => {
           <img 
             src={logoSrc} 
             alt="StepAhead" 
-            // הגדלים הגדולים: h-12 במובייל, h-16 בדסקטופ
-            className="h-12 md:h-16 w-auto transition-all duration-300 object-contain" 
+            // כאן אנחנו משתמשים במשתנה הדינאמי שיצרנו
+            className={`${logoSizeClass} w-auto transition-all duration-300 object-contain`} 
           />
         </Link>
 
