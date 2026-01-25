@@ -10,6 +10,9 @@ const Navbar = () => {
   const { language, setLanguage } = useLanguage();
   const location = useLocation();
 
+  // בדיקה: האם אנחנו בעמוד הבית?
+  const isHomePage = location.pathname === "/";
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -33,6 +36,17 @@ const Navbar = () => {
     { name: "About", path: "/about" },
   ];
 
+  // לוגיקה לצבע הטקסט:
+  // אם גללנו או שאנחנו בעמוד הבית (רקע בהיר) -> טקסט כחול
+  // אחרת (עמוד פנימי למעלה) -> טקסט לבן
+  const textColorClass = isScrolled || isHomePage ? "text-[#1B365D]" : "text-white";
+  const globeColorClass = isScrolled || isHomePage ? "text-[#1B365D]" : "text-white hover:bg-white/10";
+  
+  // לוגיקה לכפתור: בעמוד פנימי למעלה נרצה כפתור לבן שבולט על הרקע הכהה
+  const buttonClass = isScrolled || isHomePage 
+    ? "bg-[#1B365D] hover:bg-[#2a4a7f] text-white" 
+    : "bg-white text-[#1B365D] hover:bg-gray-100";
+
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -40,42 +54,52 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
+        {/* Logo */}
         <Link to="/" className="flex items-center gap-2 z-50">
           <img src="/logo-stepahead.svg" alt="StepAhead" className="h-8 w-auto" />
-          <span className={`text-xl font-serif font-bold ${isScrolled ? "text-[#1B365D]" : "text-[#1B365D]"}`}>
+          <span className={`text-xl font-serif font-bold transition-colors ${textColorClass}`}>
             StepAhead
           </span>
         </Link>
 
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
               className={`text-sm font-medium transition-colors hover:text-[#E87722] ${
-                location.pathname === link.path ? "text-[#E87722] font-bold" : "text-[#1B365D]"
+                location.pathname === link.path 
+                  ? "text-[#E87722] font-bold" // Active link is always Orange
+                  : textColorClass             // Inactive link adapts
               }`}
             >
               {link.name}
             </Link>
           ))}
           
-          <button onClick={toggleLanguage} className="p-2 rounded-full hover:bg-gray-100 transition-colors">
-            <Globe className="w-5 h-5 text-[#1B365D]" />
+          <button onClick={toggleLanguage} className={`p-2 rounded-full transition-colors ${globeColorClass}`}>
+            <Globe className="w-5 h-5" />
           </button>
 
-          <Button className="bg-[#1B365D] hover:bg-[#2a4a7f] text-white">
+          <Button className={buttonClass}>
             Get Started
           </Button>
         </div>
 
+        {/* Mobile Menu Button */}
         <button
           className="md:hidden z-50 p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X className="text-[#1B365D]" /> : <Menu className="text-[#1B365D]" />}
+          {isOpen ? (
+            <X className="text-[#1B365D]" /> 
+          ) : (
+            <Menu className={textColorClass} />
+          )}
         </button>
 
+        {/* Mobile Menu Overlay - תמיד רקע לבן */}
         {isOpen && (
           <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 md:hidden animate-in slide-in-from-top-10">
             {navLinks.map((link) => (
