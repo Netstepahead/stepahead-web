@@ -6,42 +6,29 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
 // --- Custom Network Graphics Components ---
-
 const RetentionGraphic = () => (
   <svg viewBox="0 0 200 140" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Edges */}
     <path d="M100 70 L70 50 M100 70 L70 90 M100 70 L130 50 M70 50 L70 90" stroke="#E2E8F0" strokeWidth="2" />
     <path d="M160 70 L130 50" stroke="#E2E8F0" strokeWidth="2" strokeDasharray="4 4" />
-    
-    {/* Connected Nodes */}
-    <circle cx="100" cy="70" r="8" fill="#E87722" className="animate-pulse" /> {/* Central Orange Node */}
+    <circle cx="100" cy="70" r="8" fill="#E87722" className="animate-pulse" />
     <circle cx="70" cy="50" r="6" fill="#CBD5E1" />
     <circle cx="70" cy="90" r="6" fill="#CBD5E1" />
     <circle cx="130" cy="50" r="6" fill="#CBD5E1" />
-    
-    {/* Isolated Node (Purple) */}
-    <circle cx="170" cy="70" r="8" fill="#8B5CF6" /> {/* Purple Isolated */}
-    
-    {/* Label (Optional visual hint) */}
+    <circle cx="170" cy="70" r="8" fill="#8B5CF6" />
     <text x="170" y="95" textAnchor="middle" fontSize="10" fill="#8B5CF6" className="font-sans font-bold">Risk</text>
   </svg>
 );
 
 const InnovationGraphic = () => (
   <svg viewBox="0 0 200 140" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Cluster A */}
     <path d="M40 50 L60 80 M40 50 L20 80 M20 80 L60 80" stroke="#E2E8F0" strokeWidth="2" />
     <circle cx="40" cy="50" r="6" fill="#CBD5E1" />
     <circle cx="20" cy="80" r="6" fill="#CBD5E1" />
     <circle cx="60" cy="80" r="6" fill="#CBD5E1" />
-
-    {/* Cluster B */}
     <path d="M160 50 L140 80 M160 50 L180 80 M180 80 L140 80" stroke="#E2E8F0" strokeWidth="2" />
     <circle cx="160" cy="50" r="6" fill="#CBD5E1" />
     <circle cx="140" cy="80" r="6" fill="#CBD5E1" />
     <circle cx="180" cy="80" r="6" fill="#CBD5E1" />
-
-    {/* The Bridge (Innovation) */}
     <path d="M60 80 L140 80" stroke="#E87722" strokeWidth="3" />
     <circle cx="100" cy="80" r="8" fill="white" stroke="#E87722" strokeWidth="3" />
   </svg>
@@ -49,24 +36,17 @@ const InnovationGraphic = () => (
 
 const LeadershipGraphic = () => (
   <svg viewBox="0 0 200 140" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Edges from Center */}
     <path d="M100 70 L60 40 M100 70 L140 40 M100 70 L60 100 M100 70 L140 100 M100 70 L50 70 M100 70 L150 70" stroke="#E2E8F0" strokeWidth="2" />
-    
-    {/* Peripheral Nodes */}
     <circle cx="60" cy="40" r="5" fill="#CBD5E1" />
     <circle cx="140" cy="40" r="5" fill="#CBD5E1" />
     <circle cx="60" cy="100" r="5" fill="#CBD5E1" />
     <circle cx="140" cy="100" r="5" fill="#CBD5E1" />
     <circle cx="50" cy="70" r="5" fill="#CBD5E1" />
     <circle cx="150" cy="70" r="5" fill="#CBD5E1" />
-
-    {/* Central Hub */}
     <circle cx="100" cy="70" r="12" fill="#1B365D" />
     <path d="M96 70 L100 74 L104 66" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
-
-// --- Main Page Component ---
 
 const Index = () => {
   const { language } = useLanguage();
@@ -76,6 +56,22 @@ const Index = () => {
   useEffect(() => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [isRTL]);
+
+  // רשימת הלקוחות המעודכנת לפי צילום המסך שלך
+  const clients = [
+    { name: "Clalit", logo: "clalit.png" },
+    { name: "Tambour", logo: "tambour.png" },
+    { name: "Ormat", logo: "ormat.png" },
+    { name: "Elbit Systems", logo: "elbit.png" },
+    { name: "Kornit Digital", logo: "kornit.png" },
+    { name: "The Joint", logo: "the-joint.svg" }, // תוקן ל-svg לפי התמונה
+    { name: "Bank Hapoalim", logo: "poalim.png" },
+    { name: "IDF", logo: "idf.jfif" }, // תוקן ל-jfif לפי התמונה
+    { name: "Applied Materials", logo: "applied-materials.png" },
+    { name: "Dexcel Pharma", logo: "dexcel.png" },
+    { name: "Lahav Executive Education", logo: "lahav.png" },
+    { name: "Lycored", logo: "lycored.png" },
+  ];
 
   const benefits = [
     {
@@ -110,17 +106,24 @@ const Index = () => {
       {/* 1. Hero Section */}
       <HeroSection />
       
-      {/* 2. Client Logos (Placeholder) */}
-      <div className="py-10 border-b border-gray-100 bg-gray-50/50">
+      {/* 2. Client Logos Section */}
+      <div className="py-12 border-b border-gray-100 bg-gray-50/50">
         <div className="container mx-auto px-4 text-center">
-            <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">
-                Trusted by Forward-Thinking Organizations
+            <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-10">
+                {isRTL ? 'ארגונים מובילים שסומכים עלינו' : 'Trusted by Forward-Thinking Organizations'}
             </p>
-            <div className="flex justify-center gap-8 opacity-40 grayscale">
-                <div className="h-8 w-24 bg-gray-300 rounded"></div>
-                <div className="h-8 w-24 bg-gray-300 rounded"></div>
-                <div className="h-8 w-24 bg-gray-300 rounded"></div>
-                <div className="h-8 w-24 bg-gray-300 rounded"></div>
+            
+            {/* Logo Grid */}
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 px-4 max-w-6xl mx-auto">
+                {clients.map((client, i) => (
+                  <div key={i} className="w-24 md:w-32 h-16 flex items-center justify-center group">
+                    <img 
+                      src={`/logos/${client.logo}`}
+                      alt={client.name}
+                      className="max-h-full max-w-full object-contain opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 filter"
+                    />
+                  </div>
+                ))}
             </div>
         </div>
       </div>
@@ -146,7 +149,6 @@ const Index = () => {
                 key={index} 
                 className={`group p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${item.bg}`}
               >
-                {/* Visual Container */}
                 <div className="h-40 mb-6 flex items-center justify-center">
                    <div className="w-full h-full bg-white rounded-2xl shadow-inner p-4 border border-gray-100/50">
                      <item.graphic />
