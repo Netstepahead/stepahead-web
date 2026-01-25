@@ -64,7 +64,7 @@ const Index = () => {
     { name: "Ormat", logo: "ormat.png" },
     { name: "Elbit Systems", logo: "elbit.png" },
     { name: "Kornit Digital", logo: "kornit.png" },
-    { name: "The Joint", logo: "the-joint.svg" }, // תוקן ל-svg לפי התמונה
+    { name: "The Joint", logo: "the-joint.png" }, // תוקן ל-svg לפי התמונה
     { name: "Bank Hapoalim", logo: "poalim.png" },
     { name: "IDF", logo: "idf.jfif" }, // תוקן ל-jfif לפי התמונה
     { name: "Applied Materials", logo: "applied-materials.png" },
