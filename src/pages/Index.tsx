@@ -57,16 +57,18 @@ const Index = () => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [isRTL]);
 
-  // רשימת הלקוחות המעודכנת לפי צילום המסך שלך
+  // עדכנתי את הרשימה - שים לב ללוגו של הג'וינט
   const clients = [
     { name: "Clalit", logo: "clalit.png" },
     { name: "Tambour", logo: "tambour.png" },
     { name: "Ormat", logo: "ormat.png" },
     { name: "Elbit Systems", logo: "elbit.png" },
     { name: "Kornit Digital", logo: "kornit.png" },
-    { name: "The Joint", logo: "the-joint.png" }, // תוקן ל-svg לפי התמונה
+    // --- התיקון כאן: הוספתי className: "invert" ---
+    // זה יהפוך את הלוגו הלבן לשחור
+    { name: "The Joint", logo: "the-joint.png", className: "invert" }, 
     { name: "Bank Hapoalim", logo: "poalim.png" },
-    { name: "IDF", logo: "idf.jfif" }, // תוקן ל-jfif לפי התמונה
+    { name: "IDF", logo: "idf.jfif" },
     { name: "Applied Materials", logo: "applied-materials.png" },
     { name: "Dexcel Pharma", logo: "dexcel.png" },
     { name: "Lahav Executive Education", logo: "lahav.png" },
@@ -120,7 +122,8 @@ const Index = () => {
                     <img 
                       src={`/logos/${client.logo}`}
                       alt={client.name}
-                      className="max-h-full max-w-full object-contain opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 filter"
+                      // --- התיקון כאן: הוספתי את ה-className הדינמי בסוף ---
+                      className={`max-h-full max-w-full object-contain opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 filter ${client.className || ''}`}
                     />
                   </div>
                 ))}
