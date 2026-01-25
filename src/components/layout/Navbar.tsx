@@ -7,7 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   const location = useLocation();
 
   useEffect(() => {
@@ -30,8 +30,8 @@ const Navbar = () => {
   const navLinks = [
     { name: "Platform", path: "/platform" },
     { name: "Solutions", path: "/solutions" },
-    { name: "Academy", path: "/academy" }, // <--- הלינק החדש
-    { name: "About", path: "/about" }, // (אם אין עמוד כזה עדיין, זה בסדר שישאר)
+    { name: "Academy", path: "/academy" },
+    { name: "About", path: "/about" },
   ];
 
   return (

@@ -5,12 +5,11 @@ import { Button } from "@/components/ui/button";
 import { 
   Bot, 
   Network, 
-  GraduationCap, 
+  ClipboardCheck, 
   CheckCircle2, 
   Lock, 
   ArrowRight, 
-  Share2,
-  LineChart
+  Gamepad2
 } from "lucide-react";
 
 const Platform = () => {
@@ -18,7 +17,6 @@ const Platform = () => {
   const { hash } = useLocation();
   const isRTL = language === 'he';
 
-  // גלילה אוטומטית אם הגענו מקישור חיצוני (למשל #agent)
   useEffect(() => {
     if (hash) {
       const element = document.getElementById(hash.replace('#', ''));
@@ -32,7 +30,6 @@ const Platform = () => {
     }
   }, [hash]);
 
-  // הופך כיוון לפי שפה
   useEffect(() => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [isRTL]);
@@ -40,25 +37,24 @@ const Platform = () => {
   return (
     <div className="w-full bg-white">
       
-      {/* 1. Hero Section - כותרת ראשית */}
+      {/* 1. Hero Section */}
       <section className="bg-[#1B365D] text-white pt-32 pb-20 relative overflow-hidden">
-        {/* אלמנטים ברקע */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
-            {isRTL ? 'מערכת ההפעלה של הרשת הארגונית' : 'The Operating System for Your Network'}
+            {isRTL ? 'הפלטפורמה ההיברידית לניהול הרשת' : 'The Hybrid Network Intelligence Platform'}
           </h1>
           <p className="text-xl md:text-2xl text-blue-100 font-light mb-8">
             {isRTL 
-              ? 'שילוב עוצמתי של ניתוח דאטה פסיבי (ONA), סוכן AI אקטיבי, והכשרת מנהלים.'
-              : 'A powerful fusion of Passive Data Analysis (ONA), Active AI Nudging, and Human Leadership Training.'
+              ? 'שילוב של דאטה פסיבי (ONA), שאלון מיומנויות אקטיבי (Skills), ואימון מבוסס משחק.'
+              : 'Orchestrate your network by combining Passive Data (ONA), Active Skills Assessment, and Gamified Simulations.'
             }
           </p>
         </div>
       </section>
 
-      {/* 2. The Trinity - סקירה מהירה */}
+      {/* 2. The Tech Trinity */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 -mt-32">
@@ -66,17 +62,17 @@ const Platform = () => {
               {
                 icon: Network,
                 title: "ONA Engine",
-                desc: isRTL ? "המפה: מזהה את הקשרים והסיילואים." : "The Map: Visualize hidden silos and talent."
+                desc: isRTL ? "דאטה פסיבי: מיפוי קשרים ומבנה." : "Passive Data: Mapping structure & flow."
+              },
+              {
+                icon: ClipboardCheck,
+                title: "Skills Assessment",
+                desc: isRTL ? "דאטה אקטיבי: אבחון מיומנויות רישות." : "Active Data: Diagnosing networking skills."
               },
               {
                 icon: Bot,
                 title: "Collab Agent",
-                desc: isRTL ? "הפעולה: דחיפות לחיבור בזמן אמת ב-Teams." : "The Action: Real-time nudges in MS Teams."
-              },
-              {
-                icon: GraduationCap,
-                title: "Leadership Lab",
-                desc: isRTL ? "האדם: מלמדים מנהלים לעבוד ברשת." : "The Human: Training managers to lead networks."
+                desc: isRTL ? "התערבות: דחיפות AI בזמן אמת." : "Intervention: Real-time AI nudges."
               }
             ].map((item, i) => (
               <div key={i} className="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-[#E87722]">
@@ -97,143 +93,144 @@ const Platform = () => {
           <div className="flex flex-col md:flex-row gap-16 items-center">
             <div className="md:w-1/2">
               <div className="inline-block px-3 py-1 bg-orange-100 text-[#E87722] rounded-full text-sm font-bold mb-4">
-                STEP 1: DIAGNOSE
+                LAYER 1: PASSIVE DATA
               </div>
               <h2 className="text-4xl font-serif font-bold text-[#1B365D] mb-6">
-                {isRTL ? 'רנטגן ארגוני (ONA)' : 'Organizational Network Analysis (ONA)'}
+                Organizational Network Analysis (ONA)
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                {isRTL 
-                  ? 'אנחנו לא מסתמכים על סקרים. המנוע שלנו מנתח דאטה פסיבי (מיילים, פגישות, סלאק) כדי לייצר מפה אמיתית של הארגון. גלה מי הם משפיעני המפתח, איפה יש צווארי בקבוק, ומי נמצא בסיכון עזיבה.'
-                  : 'Stop guessing based on org charts. Our passive data engine analyzes communication flows (Email, Calendar, Slack) to reveal how work actually gets done. Identify key influencers, bottlenecks, and burnout risks instantly.'
-                }
+                The X-Ray of your organization. We analyze communication metadata (Email, Slack, Calendar) to visualize how work actually gets done, identifying silos, bottlenecks, and hidden influencers without sending a single survey.
               </p>
               <ul className="space-y-4">
-                {[
-                  isRTL ? "זיהוי טאלנטים נסתרים" : "Identify Hidden Talent & Influencers",
-                  isRTL ? "איתור סיילואים וניתוקים" : "Detect Silos & Communication Breakdowns",
-                  isRTL ? "מדידת עומס ושחיקה (Burnout)" : "Measure Collaboration Overload"
-                ].map((li, i) => (
-                  <li key={i} className="flex items-center gap-3 text-[#1B365D] font-medium">
-                    <CheckCircle2 className="w-5 h-5 text-[#E87722]" /> {li}
-                  </li>
-                ))}
+                <li className="flex items-center gap-3 text-[#1B365D] font-medium"><CheckCircle2 className="w-5 h-5 text-[#E87722]" /> Real-time collaboration maps</li>
+                <li className="flex items-center gap-3 text-[#1B365D] font-medium"><CheckCircle2 className="w-5 h-5 text-[#E87722]" /> Identify burnout & isolation risks</li>
               </ul>
             </div>
-            <div className="md:w-1/2 bg-gray-100 rounded-3xl p-8 aspect-video flex items-center justify-center relative overflow-hidden">
-               <Network className="w-32 h-32 text-gray-300 absolute opacity-20" />
-               <div className="z-10 text-center">
-                 <LineChart className="w-16 h-16 text-[#1B365D] mx-auto mb-4" />
-                 <span className="text-gray-500 font-mono text-sm">Passive Data Visualization</span>
+            {/* Placeholder for ONA Visual */}
+            <div className="md:w-1/2 bg-gray-100 rounded-3xl p-8 aspect-video flex items-center justify-center relative border-2 border-dashed border-gray-300">
+               <div className="text-center">
+                 <Network className="w-16 h-16 text-gray-400 mx-auto mb-2" />
+                 <span className="text-gray-500 font-mono text-sm">[PLACEHOLDER: StepAhead ONA Dashboard]</span>
                </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. Deep Dive: AI Agent */}
-      <section id="agent" className="py-24 bg-blue-50/30">
+      {/* 4. Deep Dive: Skills Assessment */}
+      <section id="assessment" className="py-24 bg-blue-50/30">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row-reverse gap-16 items-center">
             <div className="md:w-1/2">
               <div className="inline-block px-3 py-1 bg-blue-100 text-[#1B365D] rounded-full text-sm font-bold mb-4">
-                STEP 2: ACT
+                LAYER 2: ACTIVE DATA
               </div>
               <h2 className="text-4xl font-serif font-bold text-[#1B365D] mb-6">
-                {isRTL ? 'סוכן ה-AI ב-Teams' : 'The AI Collab Agent'}
+                Network Skills Assessment
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                {isRTL 
-                  ? 'דאטה זה לא מספיק. הסוכן שלנו יושב בתוך Microsoft Teams ונותן "דחיפות" (Nudges) חכמות למנהלים בזמן אמת. הוא מציע למי להתחבר, מתי לפרגן, ואיך לשבור סיילואים.'
-                  : 'Insights without action are useless. Our Agent lives inside Microsoft Teams and provides real-time "Nudges". It helps managers prepare for meetings, suggests new connections, and prompts recognition across silos.'
-                }
+                Mapping the structure isn't enough; you need to understand the *capability*. Our proprietary assessment evaluates the "Network Mindset" of your employees. Do they know how to build trust? Can they bridge silos?
               </p>
               <ul className="space-y-4">
-                {[
-                  isRTL ? "אינטגרציה מלאה ל-Microsoft Teams" : "Native Microsoft Teams Integration",
-                  isRTL ? "הכנה חכמה לפגישות (Smart Prep)" : "Smart Meeting Prep & Context",
-                  isRTL ? "המלצות לחיבורים בין אנשים" : "Proactive Connection Suggestions"
-                ].map((li, i) => (
-                  <li key={i} className="flex items-center gap-3 text-[#1B365D] font-medium">
-                    <Bot className="w-5 h-5 text-[#E87722]" /> {li}
-                  </li>
-                ))}
+                <li className="flex items-center gap-3 text-[#1B365D] font-medium"><CheckCircle2 className="w-5 h-5 text-[#E87722]" /> Individual Network Profile</li>
+                <li className="flex items-center gap-3 text-[#1B365D] font-medium"><CheckCircle2 className="w-5 h-5 text-[#E87722]" /> Benchmarking against industry standards</li>
               </ul>
             </div>
-            <div className="md:w-1/2 bg-white border border-gray-200 rounded-3xl p-8 shadow-lg aspect-square md:aspect-video flex items-center justify-center">
+            {/* Placeholder for Assessment Visual */}
+            <div className="md:w-1/2 bg-white border-2 border-dashed border-gray-300 rounded-3xl p-8 shadow-sm aspect-video flex items-center justify-center">
                <div className="text-center">
-                 <div className="w-16 h-16 bg-[#5B5FC7] rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <Share2 className="w-8 h-8 text-white" />
-                 </div>
-                 <h4 className="font-bold text-gray-800">Teams Integration</h4>
-                 <p className="text-sm text-gray-500 mt-2">"Hey, you haven't spoken to Sarah in a while..."</p>
+                 <ClipboardCheck className="w-16 h-16 text-gray-400 mx-auto mb-2" />
+                 <span className="text-gray-500 font-mono text-sm">[PLACEHOLDER: Skills Assessment Report]</span>
                </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. Deep Dive: Academy */}
-      <section id="program" className="py-24">
+      {/* 5. Gamified Training (Accelium) */}
+      <section id="games" className="py-24">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-16 items-center">
-            <div className="md:w-1/2">
-              <div className="inline-block px-3 py-1 bg-orange-100 text-[#E87722] rounded-full text-sm font-bold mb-4">
-                STEP 3: EMPOWER
+          <div className="bg-[#1B365D] rounded-3xl p-8 md:p-16 text-white overflow-hidden relative">
+            {/* Background decorations */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#E87722] rounded-full blur-[100px] opacity-20"></div>
+            
+            <div className="flex flex-col md:flex-row gap-12 items-center relative z-10">
+              <div className="md:w-1/2">
+                <div className="flex items-center gap-2 mb-4 text-[#E87722]">
+                  <Gamepad2 className="w-6 h-6" />
+                  <span className="font-bold tracking-wider">POWERED BY ACCELIUM</span>
+                </div>
+                <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">
+                  Gamified Skill Building
+                </h2>
+                <p className="text-lg text-blue-100 mb-8 leading-relaxed">
+                  We don't just lecture; we simulate. Utilizing Accelium's world-class strategy games, we train employees to develop complex problem-solving and networking skills in a risk-free, engaging environment.
+                </p>
+                <Button className="bg-[#E87722] hover:bg-[#d66a1a] text-white border-none">
+                  Explore the Games
+                </Button>
               </div>
-              <h2 className="text-4xl font-serif font-bold text-[#1B365D] mb-6">
-                {isRTL ? 'הכשרת מנהיגות רשתית' : 'Leadership Academy'}
-              </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                {isRTL 
-                  ? 'טכנולוגיה לבד לא תשנה תרבות. תוכנית ההכשרה שלנו מלמדת מנהלים את 6 יכולות הליבה של מנהיגות ברשת: אמון, השפעה ללא סמכות, וגישור בין קבוצות.'
-                  : 'Tech alone won’t change culture. We train your managers in the 6 Core Capabilities of Network Leadership. Move from "Command & Control" to "Connect & Collaborate".'
-                }
-              </p>
-              <Button variant="outline" className="border-[#1B365D] text-[#1B365D] hover:bg-blue-50">
-                {isRTL ? 'הורד סילבוס' : 'Download Syllabus'}
-              </Button>
-            </div>
-            <div className="md:w-1/2 bg-[#1B365D] rounded-3xl p-8 aspect-video flex items-center justify-center text-white">
-               <div className="text-center">
-                 <GraduationCap className="w-20 h-20 text-[#E87722] mx-auto mb-4" />
-                 <h4 className="text-xl font-bold">Network Leader Certification</h4>
-               </div>
+              
+              {/* Placeholder for Game Visuals */}
+              <div className="md:w-1/2 w-full">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10 aspect-square flex items-center justify-center">
+                    <span className="text-sm font-mono text-blue-200">[Game Screen 1]</span>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10 aspect-square flex items-center justify-center mt-8">
+                    <span className="text-sm font-mono text-blue-200">[Game Screen 2]</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 6. Security Section */}
-      <section className="py-16 bg-gray-50 border-t border-gray-200">
+      {/* 6. AI Agent */}
+      <section id="agent" className="py-24 bg-gray-50 border-t border-gray-200">
+         <div className="container mx-auto px-4 text-center max-w-4xl">
+           <div className="inline-block px-3 py-1 bg-blue-100 text-[#1B365D] rounded-full text-sm font-bold mb-6">
+                LAYER 3: THE ACTION
+           </div>
+           <h2 className="text-4xl font-serif font-bold text-[#1B365D] mb-6">
+             Meet the Collab Agent
+           </h2>
+           <p className="text-xl text-gray-600 mb-10">
+             All these insights funnel into our AI Agent, which lives inside MS Teams. It takes the Data (ONA) and the Capability (Assessment) and prompts the right action at the right time.
+           </p>
+           <div className="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 inline-block w-full max-w-2xl">
+              <div className="flex items-start gap-4 text-left">
+                <div className="w-10 h-10 bg-[#5B5FC7] rounded-full flex items-center justify-center flex-shrink-0">
+                  <Bot className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-900 text-lg">StepAhead Agent</h4>
+                  <p className="text-gray-600 mt-2">
+                    "Hey David, based on your assessment, you're great at bonding but score low on bridging. I noticed you haven't spoken to the Marketing team this month. Here's a suggested topic to break the ice..."
+                  </p>
+                </div>
+              </div>
+           </div>
+         </div>
+      </section>
+
+      {/* 7. Security & CTA */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-6">
             <Lock className="w-12 h-12 text-gray-400" />
           </div>
           <h3 className="text-2xl font-bold text-[#1B365D] mb-4">Enterprise-Grade Security</h3>
           <p className="text-gray-500 max-w-2xl mx-auto mb-8">
-            {isRTL 
-              ? 'אנחנו לוקחים את הפרטיות ברצינות. המערכת עומדת בתקני GDPR, המידע אנונימי, ולעולם לא מציגים תוכן של הודעות – רק את המטא-דאטה של החיבורים.'
-              : 'We prioritize privacy. GDPR compliant, fully anonymized data processing, and we never analyze message content—only connection metadata.'
-            }
+            GDPR Compliant • ISO 27001 Ready • Anonymized Data Processing
           </p>
-          <div className="flex justify-center gap-6 opacity-50 grayscale">
-             <span className="font-bold text-gray-400">GDPR Compliant</span>
-             <span className="font-bold text-gray-400">SOC2 Ready</span>
-             <span className="font-bold text-gray-400">ISO 27001</span>
+          <div className="pt-8 border-t border-gray-100">
+            <h2 className="text-3xl font-bold mb-6 text-[#1B365D]">Ready to upgrade your network?</h2>
+            <Button className="bg-[#E87722] hover:bg-gray-700 text-white text-lg px-8 py-6 rounded-lg shadow-lg">
+              Book a Demo
+            </Button>
           </div>
-        </div>
-      </section>
-
-      {/* 7. CTA */}
-      <section className="py-20 bg-[#E87722] text-white text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            {isRTL ? 'מוכנים לראות איך זה עובד?' : 'Ready to see the platform in action?'}
-          </h2>
-          <Button className="bg-white text-[#E87722] hover:bg-gray-100 text-lg px-8 py-6 rounded-lg shadow-lg">
-            {isRTL ? 'בקש דמו' : 'Book a Demo'} <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
         </div>
       </section>
 
