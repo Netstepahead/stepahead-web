@@ -44,10 +44,7 @@ const Academy = () => {
 
   return (
     <div className="w-full bg-white">
-      
-      {/* 1. Hero Section - Focus on Leadership Development */}
       <section className="bg-[#1B365D] text-white pt-32 pb-20 relative overflow-hidden">
-        {/* Background Accents */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E87722] rounded-full blur-[120px] opacity-20" />
         
         <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
@@ -69,7 +66,6 @@ const Academy = () => {
         </div>
       </section>
 
-      {/* 2. The Methodology (Simulation as a Tool) */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-16 items-center">
@@ -100,7 +96,6 @@ const Academy = () => {
               </ul>
             </div>
             
-            {/* Visual showing the tool */}
             <div className="md:w-1/2 relative">
                <div className="absolute inset-0 bg-[#E87722] rounded-3xl transform rotate-2 opacity-10 blur-lg"></div>
                <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-xl relative z-10 aspect-video flex flex-col items-center justify-center text-center">
@@ -113,7 +108,6 @@ const Academy = () => {
         </div>
       </section>
 
-      {/* 3. Curriculum / Syllabus */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -137,7 +131,6 @@ const Academy = () => {
         </div>
       </section>
 
-      {/* 4. Bottom CTA */}
       <section className="py-20 bg-[#1B365D] text-white text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -153,7 +146,6 @@ const Academy = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };

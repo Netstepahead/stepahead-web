@@ -36,8 +36,6 @@ const Platform = () => {
 
   return (
     <div className="w-full bg-white">
-      
-      {/* 1. Hero Section */}
       <section className="bg-[#1B365D] text-white pt-32 pb-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-3xl" />
         
@@ -54,7 +52,6 @@ const Platform = () => {
         </div>
       </section>
 
-      {/* 2. The Tech Trinity */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 -mt-32">
@@ -87,7 +84,6 @@ const Platform = () => {
         </div>
       </section>
 
-      {/* 3. Deep Dive: ONA Engine */}
       <section id="ona" className="py-24 border-b border-gray-100">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-16 items-center">
@@ -106,7 +102,6 @@ const Platform = () => {
                 <li className="flex items-center gap-3 text-[#1B365D] font-medium"><CheckCircle2 className="w-5 h-5 text-[#E87722]" /> Identify burnout & isolation risks</li>
               </ul>
             </div>
-            {/* Placeholder for ONA Visual */}
             <div className="md:w-1/2 bg-gray-100 rounded-3xl p-8 aspect-video flex items-center justify-center relative border-2 border-dashed border-gray-300">
                <div className="text-center">
                  <Network className="w-16 h-16 text-gray-400 mx-auto mb-2" />
@@ -117,7 +112,6 @@ const Platform = () => {
         </div>
       </section>
 
-      {/* 4. Deep Dive: Skills Assessment */}
       <section id="assessment" className="py-24 bg-blue-50/30">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row-reverse gap-16 items-center">
@@ -136,7 +130,6 @@ const Platform = () => {
                 <li className="flex items-center gap-3 text-[#1B365D] font-medium"><CheckCircle2 className="w-5 h-5 text-[#E87722]" /> Benchmarking against industry standards</li>
               </ul>
             </div>
-            {/* Placeholder for Assessment Visual */}
             <div className="md:w-1/2 bg-white border-2 border-dashed border-gray-300 rounded-3xl p-8 shadow-sm aspect-video flex items-center justify-center">
                <div className="text-center">
                  <ClipboardCheck className="w-16 h-16 text-gray-400 mx-auto mb-2" />
@@ -147,11 +140,9 @@ const Platform = () => {
         </div>
       </section>
 
-      {/* 5. Gamified Training (Accelium) */}
       <section id="games" className="py-24">
         <div className="container mx-auto px-4">
           <div className="bg-[#1B365D] rounded-3xl p-8 md:p-16 text-white overflow-hidden relative">
-            {/* Background decorations */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#E87722] rounded-full blur-[100px] opacity-20"></div>
             
             <div className="flex flex-col md:flex-row gap-12 items-center relative z-10">
@@ -171,7 +162,6 @@ const Platform = () => {
                 </Button>
               </div>
               
-              {/* Placeholder for Game Visuals */}
               <div className="md:w-1/2 w-full">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10 aspect-square flex items-center justify-center">
@@ -187,7 +177,6 @@ const Platform = () => {
         </div>
       </section>
 
-      {/* 6. AI Agent */}
       <section id="agent" className="py-24 bg-gray-50 border-t border-gray-200">
          <div className="container mx-auto px-4 text-center max-w-4xl">
            <div className="inline-block px-3 py-1 bg-blue-100 text-[#1B365D] rounded-full text-sm font-bold mb-6">
@@ -215,7 +204,6 @@ const Platform = () => {
          </div>
       </section>
 
-      {/* 7. Security & CTA */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-6">
@@ -233,7 +221,6 @@ const Platform = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };

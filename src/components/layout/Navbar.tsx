@@ -18,7 +18,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // סוגר את התפריט במובייל כשעוברים עמוד
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
@@ -41,7 +40,6 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo */}
         <Link to="/" className="flex items-center gap-2 z-50">
           <img src="/logo-stepahead.svg" alt="StepAhead" className="h-8 w-auto" />
           <span className={`text-xl font-serif font-bold ${isScrolled ? "text-[#1B365D]" : "text-[#1B365D]"}`}>
@@ -49,7 +47,6 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
@@ -72,7 +69,6 @@ const Navbar = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden z-50 p-2"
           onClick={() => setIsOpen(!isOpen)}
@@ -80,7 +76,6 @@ const Navbar = () => {
           {isOpen ? <X className="text-[#1B365D]" /> : <Menu className="text-[#1B365D]" />}
         </button>
 
-        {/* Mobile Menu Overlay */}
         {isOpen && (
           <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 md:hidden animate-in slide-in-from-top-10">
             {navLinks.map((link) => (
