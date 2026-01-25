@@ -1,14 +1,72 @@
 import { useEffect } from "react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import HeroSection from "@/components/HeroSection";
-import { 
-  Zap, 
-  HeartHandshake, // אייקון חדש לשימור עובדים (חיבור/נאמנות)
-  Network,        // אייקון חדש למנהיגות (רשת)
-  ArrowRight 
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+
+// --- Custom Network Graphics Components ---
+
+const RetentionGraphic = () => (
+  <svg viewBox="0 0 200 140" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Edges */}
+    <path d="M100 70 L70 50 M100 70 L70 90 M100 70 L130 50 M70 50 L70 90" stroke="#E2E8F0" strokeWidth="2" />
+    <path d="M160 70 L130 50" stroke="#E2E8F0" strokeWidth="2" strokeDasharray="4 4" />
+    
+    {/* Connected Nodes */}
+    <circle cx="100" cy="70" r="8" fill="#E87722" className="animate-pulse" /> {/* Central Orange Node */}
+    <circle cx="70" cy="50" r="6" fill="#CBD5E1" />
+    <circle cx="70" cy="90" r="6" fill="#CBD5E1" />
+    <circle cx="130" cy="50" r="6" fill="#CBD5E1" />
+    
+    {/* Isolated Node (Purple) */}
+    <circle cx="170" cy="70" r="8" fill="#8B5CF6" /> {/* Purple Isolated */}
+    
+    {/* Label (Optional visual hint) */}
+    <text x="170" y="95" textAnchor="middle" fontSize="10" fill="#8B5CF6" className="font-sans font-bold">Risk</text>
+  </svg>
+);
+
+const InnovationGraphic = () => (
+  <svg viewBox="0 0 200 140" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Cluster A */}
+    <path d="M40 50 L60 80 M40 50 L20 80 M20 80 L60 80" stroke="#E2E8F0" strokeWidth="2" />
+    <circle cx="40" cy="50" r="6" fill="#CBD5E1" />
+    <circle cx="20" cy="80" r="6" fill="#CBD5E1" />
+    <circle cx="60" cy="80" r="6" fill="#CBD5E1" />
+
+    {/* Cluster B */}
+    <path d="M160 50 L140 80 M160 50 L180 80 M180 80 L140 80" stroke="#E2E8F0" strokeWidth="2" />
+    <circle cx="160" cy="50" r="6" fill="#CBD5E1" />
+    <circle cx="140" cy="80" r="6" fill="#CBD5E1" />
+    <circle cx="180" cy="80" r="6" fill="#CBD5E1" />
+
+    {/* The Bridge (Innovation) */}
+    <path d="M60 80 L140 80" stroke="#E87722" strokeWidth="3" />
+    <circle cx="100" cy="80" r="8" fill="white" stroke="#E87722" strokeWidth="3" />
+  </svg>
+);
+
+const LeadershipGraphic = () => (
+  <svg viewBox="0 0 200 140" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Edges from Center */}
+    <path d="M100 70 L60 40 M100 70 L140 40 M100 70 L60 100 M100 70 L140 100 M100 70 L50 70 M100 70 L150 70" stroke="#E2E8F0" strokeWidth="2" />
+    
+    {/* Peripheral Nodes */}
+    <circle cx="60" cy="40" r="5" fill="#CBD5E1" />
+    <circle cx="140" cy="40" r="5" fill="#CBD5E1" />
+    <circle cx="60" cy="100" r="5" fill="#CBD5E1" />
+    <circle cx="140" cy="100" r="5" fill="#CBD5E1" />
+    <circle cx="50" cy="70" r="5" fill="#CBD5E1" />
+    <circle cx="150" cy="70" r="5" fill="#CBD5E1" />
+
+    {/* Central Hub */}
+    <circle cx="100" cy="70" r="12" fill="#1B365D" />
+    <path d="M96 70 L100 74 L104 66" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+// --- Main Page Component ---
 
 const Index = () => {
   const { language } = useLanguage();
@@ -21,31 +79,28 @@ const Index = () => {
 
   const benefits = [
     {
-      icon: Zap,
-      title: isRTL ? "מהירות וחדשנות" : "Speed & Innovation",
+      graphic: InnovationGraphic,
+      title: isRTL ? "מהירות וחדשנות" : "Innovation & Silo Busting",
       desc: isRTL 
-        ? "רעיונות זורמים מהר יותר כשהם לא נתקעים בסיילואים אנכיים."
-        : "Ideas flow faster when they don't get stuck in vertical silos.",
-      color: "from-orange-50 to-amber-50",
-      iconColor: "text-orange-500"
+        ? "חדשנות קורית בחיבורים. אנחנו מזהים ומחברים בין סיילואים מנותקים."
+        : "Innovation happens at the intersection. We visualize structural holes and bridge disconnected silos to speed up ideation.",
+      bg: "bg-orange-50/50"
     },
     {
-      icon: HeartHandshake, // הוחלף מ-Shield למשהו יותר אנושי
-      title: isRTL ? "שימור טאלנטים" : "Talent Retention",
+      graphic: RetentionGraphic,
+      title: isRTL ? "שימור טאלנטים" : "Retention & Burnout",
       desc: isRTL 
-        ? "עובדים נשארים כשהם מרגישים מחוברים ומשמעותיים בתוך הרשת."
-        : "Employees stay longer when they feel connected and embedded in the network.",
-      color: "from-blue-50 to-indigo-50",
-      iconColor: "text-blue-600"
+        ? "זהה את העובדים המבודדים לפני שהם עוזבים. נתח את הרשת כדי לראות מי בסיכון."
+        : "Spot flight risks before they resign. Visualize isolated nodes (purple) vs. embedded employees to predict attrition.",
+      bg: "bg-purple-50/50"
     },
     {
-      icon: Network, // הוחלף מ-Users למשהו שיותר מתאים ל-Network Leadership
-      title: isRTL ? "מנהיגות מודרנית" : "Modern Leadership",
+      graphic: LeadershipGraphic,
+      title: isRTL ? "מנהיגות מודרנית" : "Network Leadership",
       desc: isRTL 
-        ? "מנהלים לומדים להשפיע דרך אמון וחיבורים, לא רק דרך סמכות."
-        : "Managers learn to influence through trust and connection, not just authority.",
-      color: "from-purple-50 to-pink-50",
-      iconColor: "text-purple-600"
+        ? "מנהלים לומדים להשפיע דרך אמון וחיבורים (Hubs), לא רק דרך סמכות."
+        : "Shift from hierarchy to hub. Identify and train your central connectors to influence change and drive strategy.",
+      bg: "bg-blue-50/50"
     }
   ];
 
@@ -55,13 +110,12 @@ const Index = () => {
       {/* 1. Hero Section */}
       <HeroSection />
       
-      {/* 2. Client Logos (Placeholder - נדלג כרגע לבקשתך) */}
+      {/* 2. Client Logos (Placeholder) */}
       <div className="py-10 border-b border-gray-100 bg-gray-50/50">
         <div className="container mx-auto px-4 text-center">
             <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">
                 Trusted by Forward-Thinking Organizations
             </p>
-            {/* כאן נכניס את הלוגוים אחר כך */}
             <div className="flex justify-center gap-8 opacity-40 grayscale">
                 <div className="h-8 w-24 bg-gray-300 rounded"></div>
                 <div className="h-8 w-24 bg-gray-300 rounded"></div>
@@ -71,11 +125,8 @@ const Index = () => {
         </div>
       </div>
 
-      {/* 3. Value Proposition (החלק ששיפצנו) */}
+      {/* 3. Value Proposition with Network Graphics */}
       <section className="py-24 bg-white relative overflow-hidden">
-        {/* קישוט רקע עדין */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-50/30 to-transparent pointer-events-none" />
-
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1B365D] mb-6 leading-tight">
@@ -83,8 +134,8 @@ const Index = () => {
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
               {isRTL 
-                ? 'עבור מעבר להיררכיה סטטית. אנחנו עוזרים לך לבנות ארגון זריז המונע על ידי מיומנויות וקשרים אנושיים אמיתיים.'
-                : 'Move beyond static hierarchies. We help you build an agile organization driven by skills and real human connections.'
+                ? 'עבור מעבר להיררכיה סטטית. אנו משתמשים בניתוח רשתות (ONA) כדי לחשוף את הדינמיקה האמיתית של הארגון.'
+                : 'Move beyond static hierarchies. We use Organizational Network Analysis (ONA) to reveal how work really gets done.'
               }
             </p>
           </div>
@@ -93,11 +144,13 @@ const Index = () => {
             {benefits.map((item, index) => (
               <div 
                 key={index} 
-                className="group p-8 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+                className={`group p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${item.bg}`}
               >
-                {/* מעגל צבעוני ברקע של האייקון */}
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <item.icon className={`w-8 h-8 ${item.iconColor}`} />
+                {/* Visual Container */}
+                <div className="h-40 mb-6 flex items-center justify-center">
+                   <div className="w-full h-full bg-white rounded-2xl shadow-inner p-4 border border-gray-100/50">
+                     <item.graphic />
+                   </div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-[#1B365D] mb-3">
@@ -106,20 +159,16 @@ const Index = () => {
                 <p className="text-gray-600 leading-relaxed">
                   {item.desc}
                 </p>
-
-                {/* פס צבעוני עדין למטה */}
-                <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-100 transition-opacity`} />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. Feature Teaser (Grid) - נשאיר כרגע כמו שהיה, נטפל בזה בהמשך אם צריך */}
+      {/* 4. Feature Teaser */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold text-[#1B365D] mb-12">How We Do It</h2>
-            {/* כאן יבוא הגריד של הפיצ'רים, כרגע זה פשוט הפניה לפלטפורמה */}
             <Button 
                 onClick={() => navigate('/platform')}
                 className="bg-[#1B365D] text-white px-8 py-6 text-lg"
