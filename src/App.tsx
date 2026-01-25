@@ -9,7 +9,8 @@ import Index from "./pages/Index";
 import Platform from "./pages/Platform";
 import Solutions from "./pages/Solutions";
 import Academy from "./pages/Academy";
-import NotFound from "./pages/NotFound"; // הנה הוא, חשוב להשאיר אותו
+import About from "./pages/About"; // <--- הוספנו את זה
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +27,7 @@ const App = () => (
             <Route path="/platform" element={<Platform />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/academy" element={<Academy />} />
-            {/* זה הטיפול בשגיאות 404 */}
+            <Route path="/about" element={<About />} /> {/* <--- הוספנו את זה */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
