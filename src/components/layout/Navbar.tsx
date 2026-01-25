@@ -10,17 +10,12 @@ const Navbar = () => {
   const { language, setLanguage } = useLanguage();
   const location = useLocation();
 
-  // האם אנחנו בעמוד הבית?
   const isHomePage = location.pathname === "/";
-
-  // לוגיקה חכמה:
-  // אם אנחנו בעמוד הבית או שגללנו למטה (רקע לבן) -> נשתמש בלוגו הרגיל ובטקסט כהה
-  // אחרת (עמוד פנימי למעלה, רקע כחול) -> נשתמש בלוגו הלבן ובטקסט לבן
   const isLightBackground = isHomePage || isScrolled;
 
   const logoSrc = isLightBackground 
     ? "/logo-stepahead.svg" 
-    : "/logo-stepahead-white.png"; // <--- וודא שהקובץ הזה קיים ב-public!
+    : "/logo-stepahead-white.svg";
 
   const textColorClass = isLightBackground ? "text-[#1B365D]" : "text-white";
   const globeColorClass = isLightBackground ? "text-[#1B365D]" : "text-white hover:bg-white/10";
@@ -61,11 +56,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 z-50">
-          {/* כאן הסרנו את הטקסט המיותר והחלפנו את ה-src דינאמית */}
           <img 
             src={logoSrc} 
             alt="StepAhead" 
-            className="h-8 w-auto transition-opacity duration-300" 
+            // כאן הגדלנו את הלוגו: h-10 במובייל, h-12 בדסקטופ
+            className="h-10 md:h-12 w-auto transition-all duration-300" 
           />
         </Link>
 

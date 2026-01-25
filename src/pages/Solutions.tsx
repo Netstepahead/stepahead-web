@@ -8,7 +8,6 @@ import {
   TrendingUp, 
   ArrowRight, 
   CheckCircle2,
-  Building2,
   RefreshCcw 
 } from "lucide-react";
 
@@ -80,9 +79,9 @@ const Solutions = () => {
   return (
     <div className="w-full bg-white">
       <section className="bg-[#1B365D] text-white pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
-            <Building2 className="w-[800px] h-[800px] absolute -top-40 -left-40 text-white" />
-        </div>
+        {/* כאן התיקון: הסרנו את הבניין והחלפנו ברקע נקי ועדין */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-400/10 rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
           <div className="inline-block px-4 py-1 bg-[#E87722] rounded-full text-sm font-bold mb-6 animate-fade-in">
