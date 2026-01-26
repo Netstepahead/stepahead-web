@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Twitter, Mail, MapPin, Globe } from "lucide-react";
+import { Linkedin, Mail, MapPin, Globe } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,21 +22,15 @@ const Footer = () => {
               Architects of the Networked Organization. We transform static hierarchies into adaptive, data-driven human networks.
             </p>
             <div className="flex gap-4">
+              {/* LinkedIn Only */}
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/company/stepaheadtech" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="bg-white/10 p-2 rounded-full hover:bg-[#E87722] transition-colors"
+                aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
-              </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="bg-white/10 p-2 rounded-full hover:bg-[#E87722] transition-colors"
-              >
-                <Twitter className="w-4 h-4" />
               </a>
             </div>
           </div>
