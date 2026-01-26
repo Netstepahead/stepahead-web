@@ -5,7 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Navbar from "./components/layout/Navbar";
-import Footer from "./components/layout/Footer"; // <--- ייבוא הפוטר
+import Footer from "./components/layout/Footer";
+import ScrollToTop from "./components/ScrollToTop"; // <--- ייבוא הרכיב החדש
 import Index from "./pages/Index";
 import Platform from "./pages/Platform";
 import Solutions from "./pages/Solutions";
@@ -22,9 +23,10 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <div className="flex flex-col min-h-screen"> {/* Wrapper למיקום נכון */}
+          <ScrollToTop /> {/* <--- כאן הקסם קורה: זה מאפס את הגלילה בכל מעבר דף */}
+          <div className="flex flex-col min-h-screen">
             <Navbar />
-            <main className="flex-grow"> {/* התוכן דוחף את הפוטר למטה */}
+            <main className="flex-grow">
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/platform" element={<Platform />} />
@@ -34,7 +36,7 @@ const App = () => (
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
-            <Footer /> {/* <--- הפוטר כאן */}
+            <Footer />
           </div>
         </BrowserRouter>
       </TooltipProvider>
