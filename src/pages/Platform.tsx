@@ -3,101 +3,30 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-// --- Custom UI Visualizations (Abstract Product Screenshots) ---
+// --- Custom UI Visualizations ---
 
-const OnaDashboard = () => (
-  <svg viewBox="0 0 400 300" className="w-full h-auto drop-shadow-xl rounded-lg" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Window Frame */}
-    <rect width="400" height="300" rx="8" fill="white" />
-    <rect width="400" height="40" rx="8" fill="#F1F5F9" />
-    <circle cx="20" cy="20" r="4" fill="#CBD5E1" />
-    <circle cx="35" cy="20" r="4" fill="#CBD5E1" />
-    <circle cx="50" cy="20" r="4" fill="#CBD5E1" />
-    
-    {/* Sidebar */}
-    <rect y="40" width="80" height="260" fill="#F8FAFC" />
-    <rect x="15" y="60" width="50" height="8" rx="4" fill="#E2E8F0" />
-    <rect x="15" y="80" width="40" height="8" rx="4" fill="#E2E8F0" />
-    <rect x="15" y="100" width="50" height="8" rx="4" fill="#E2E8F0" />
-
-    {/* Main Content - Network Map */}
-    <rect x="100" y="60" width="280" height="220" rx="4" fill="#F8FAFC" stroke="#E2E8F0" />
-    
-    {/* Nodes and Edges */}
-    <path d="M200 150 L150 120 M200 150 L250 120 M200 150 L150 200 M200 150 L250 200" stroke="#CBD5E1" strokeWidth="2" />
-    <circle cx="200" cy="150" r="15" fill="#1B365D" /> {/* Central Hub */}
-    <circle cx="150" cy="120" r="10" fill="#E87722" />
-    <circle cx="250" cy="120" r="10" fill="#E87722" />
-    <circle cx="150" cy="200" r="10" fill="#CBD5E1" />
-    <circle cx="250" cy="200" r="10" fill="#CBD5E1" />
-    
-    {/* Data Tooltip */}
-    <rect x="220" y="140" width="80" height="40" rx="4" fill="white" stroke="#E2E8F0" className="animate-bounce" />
-    <rect x="230" y="150" width="60" height="6" rx="3" fill="#1B365D" />
-    <rect x="230" y="162" width="40" height="6" rx="3" fill="#CBD5E1" />
-  </svg>
-);
-
+// נשמור את ה-SVG הזה עד שיהיה צילום מסך אמיתי לחלק של ה-Skills
 const SkillsRadar = () => (
-  <svg viewBox="0 0 400 300" className="w-full h-auto drop-shadow-xl rounded-lg" fill="none" xmlns="http://www.w3.org/2000/svg">
-     {/* Window Frame */}
+  <svg viewBox="0 0 400 300" className="w-full h-auto drop-shadow-xl rounded-lg bg-white" fill="none" xmlns="http://www.w3.org/2000/svg">
      <rect width="400" height="300" rx="8" fill="white" />
      <rect width="400" height="40" rx="8" fill="#F1F5F9" />
      <circle cx="20" cy="20" r="4" fill="#CBD5E1" />
      <circle cx="35" cy="20" r="4" fill="#CBD5E1" />
-
-     {/* Chart Title */}
      <rect x="140" y="60" width="120" height="10" rx="5" fill="#1B365D" />
-
-     {/* Radar Chart Background */}
      <path d="M200 100 L286 150 L286 250 L200 300 L114 250 L114 150 Z" transform="scale(0.6) translate(130, 20)" fill="#F1F5F9" stroke="#E2E8F0" />
-     
-     {/* Radar Chart Data Area */}
      <path d="M200 120 L270 160 L250 240 L200 280 L130 230 L140 160 Z" transform="scale(0.6) translate(130, 20)" fill="#E87722" fillOpacity="0.2" stroke="#E87722" strokeWidth="3" />
-     
-     {/* Points */}
      <circle cx="250" cy="92" r="4" fill="#1B365D" />
      <circle cx="292" cy="116" r="4" fill="#1B365D" />
      <circle cx="280" cy="164" r="4" fill="#1B365D" />
      <circle cx="250" cy="188" r="4" fill="#1B365D" />
      <circle cx="208" cy="158" r="4" fill="#1B365D" />
      <circle cx="214" cy="116" r="4" fill="#1B365D" />
-
-     {/* Legend */}
      <rect x="50" y="240" width="10" height="10" rx="2" fill="#E87722" />
      <text x="70" y="248" fontSize="10" fill="#64748B">Networking</text>
      <rect x="50" y="260" width="10" height="10" rx="2" fill="#1B365D" />
      <text x="70" y="268" fontSize="10" fill="#64748B">Leadership</text>
   </svg>
 );
-
-const ChatInterface = () => (
-  <svg viewBox="0 0 400 300" className="w-full h-auto drop-shadow-xl rounded-lg" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Window Frame */}
-    <rect width="400" height="300" rx="8" fill="white" />
-    <rect width="400" height="40" rx="8" fill="#1B365D" />
-    <text x="20" y="25" fill="white" fontSize="14" fontWeight="bold">StepAhead AI Agent</text>
-    
-    {/* Chat Bubble Left (AI) */}
-    <path d="M20 70 Q20 60 30 60 L200 60 Q210 60 210 70 L210 100 Q210 110 200 110 L30 110 Q20 110 20 100 Z" fill="#F1F5F9" />
-    <rect x="35" y="75" width="140" height="6" rx="3" fill="#94A3B8" />
-    <rect x="35" y="90" width="100" height="6" rx="3" fill="#94A3B8" />
-
-    {/* Chat Bubble Right (User) */}
-    <path d="M380 130 Q380 120 370 120 L250 120 Q240 120 240 130 L240 150 Q240 160 250 160 L370 160 Q380 160 380 150 Z" fill="#E87722" fillOpacity="0.1" />
-    <rect x="260" y="135" width="100" height="6" rx="3" fill="#E87722" fillOpacity="0.6" />
-
-    {/* Chat Bubble Left (AI Action) */}
-    <path d="M20 180 Q20 170 30 170 L240 170 Q250 170 250 180 L250 220 Q250 230 240 230 L30 230 Q20 230 20 220 Z" fill="#F0F9FF" stroke="#1B365D" strokeWidth="1" />
-    <circle cx="40" cy="200" r="10" fill="#1B365D" />
-    <rect x="60" y="190" width="160" height="6" rx="3" fill="#1B365D" />
-    <rect x="60" y="205" width="120" height="6" rx="3" fill="#94A3B8" />
-    
-    {/* Input Area */}
-    <rect x="20" y="250" width="360" height="30" rx="15" fill="#F8FAFC" stroke="#E2E8F0" />
-  </svg>
-);
-
 
 const Platform = () => {
   const { language } = useLanguage();
@@ -121,7 +50,9 @@ const Platform = () => {
         "Identify key influencers",
         "Detect silos and isolation"
       ],
-      visual: OnaDashboard
+      // שימוש בתמונה האמיתית
+      image: "/product-ona.png", 
+      component: null
     },
     {
       id: "skills",
@@ -135,7 +66,9 @@ const Platform = () => {
         "Bias-free skill evaluation",
         "Personalized feedback reports"
       ],
-      visual: SkillsRadar
+      // שימוש ברכיב ה-SVG
+      image: null,
+      component: SkillsRadar 
     },
     {
       id: "agent",
@@ -149,7 +82,9 @@ const Platform = () => {
         "Integration with Slack/Teams",
         "Actionable daily insights"
       ],
-      visual: ChatInterface
+      // שימוש בתמונה האמיתית
+      image: "/Collab.png",
+      component: null
     }
   ];
 
@@ -207,9 +142,21 @@ const Platform = () => {
               {/* Visual Side */}
               <div className="md:w-1/2 w-full">
                 <div className="relative group">
+                   {/* Background Glow */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-orange-100 rounded-2xl transform rotate-3 scale-105 opacity-50 transition-transform group-hover:rotate-2 duration-500" />
-                  <div className="relative bg-white p-2 rounded-xl shadow-lg border border-gray-100">
-                    <feature.visual />
+                  
+                  {/* Image or Component Container */}
+                  <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white">
+                    {feature.image ? (
+                        <img 
+                            src={feature.image} 
+                            alt={feature.title} 
+                            className="w-full h-auto object-cover"
+                        />
+                    ) : (
+                        // If no image, render the component (SVG)
+                        feature.component && <feature.component />
+                    )}
                   </div>
                 </div>
               </div>
