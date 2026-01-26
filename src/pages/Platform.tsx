@@ -25,23 +25,23 @@ const Platform = () => {
         "Identify key influencers",
         "Detect silos and isolation"
       ],
-      // נתיב מתוקן ללא סלאש בהתחלה
       image: "product-ona.png" 
     },
     {
       id: "skills",
-      title: isRTL ? "הערכת מיומנויות" : "Skills Assessment",
-      subtitle: isRTL ? "מדידה אקטיבית" : "Gamified Diagnostics",
+      // עדכון כותרת ותוכן - לא עוד משחקי, אלא פרופיל רשתי
+      title: isRTL ? "פרופיל רשתי" : "Network Profiling",
+      subtitle: isRTL ? "שאלון דיווח עצמי" : "Self-Report Assessment",
       desc: isRTL 
-        ? "דאטה אקטיבי: אבחון מיומנויות רישות (Networking) ומנהיגות באמצעות סימולציות משחקיות. גלה מי הם המנהיגים הטבעיים שלך."
-        : "Active Data: We diagnose networking and leadership skills through gamified simulations. Discover who your natural leaders are based on actual behavior, not just surveys.",
+        ? "דאטה אקטיבי: שאלון מחקרי שנועד למפות את סגנון הרישות (Network Persona) של כל עובד. גלה את החוזקות הטבעיות והאזורים לצמיחה אישית."
+        : "Active Data: A research-backed questionnaire designed to uncover each employee's unique Network Persona. Identify natural strengths and personalized growth areas.",
       bullets: [
-        "Gamified simulation scenarios",
-        "Bias-free skill evaluation",
-        "Personalized feedback reports"
+        "Discover your Network Persona", // גלה את הפרסונה שלך
+        "Research-backed methodology", // מתודולוגיה מבוססת מחקר
+        "Personalized growth insights" // תובנות אישיות לצמיחה
       ],
-      // התמונה החדשה ששלחת
-      image: "Network_Gardener.png"
+      // שימוש בשם הקובץ המקורי שהעלית
+      image: "nbs.png"
     },
     {
       id: "agent",
@@ -55,7 +55,6 @@ const Platform = () => {
         "Integration with Slack/Teams",
         "Actionable daily insights"
       ],
-      // נתיב מתוקן ללא סלאש בהתחלה (התיקון שלך)
       image: "Collab.png"
     }
   ];
