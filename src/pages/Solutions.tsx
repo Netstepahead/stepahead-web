@@ -12,9 +12,8 @@ import {
 } from "lucide-react";
 
 const Solutions = () => {
-  const { language } = useLanguage();
+  const { t, isRTL } = useLanguage();
   const navigate = useNavigate();
-  const isRTL = language === 'he';
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -25,54 +24,30 @@ const Solutions = () => {
     {
       id: "silos",
       icon: Users,
-      title: isRTL ? "שבירת סיילואים" : "Silo Busting & Collaboration",
-      description: isRTL 
-        ? "ארגונים מפסידים מיליונים על חוסר תקשורת. המערכת מזהה נתקים בזמן אמת ומציעה למנהלים למי להתחבר כדי להזרים את המידע מחדש."
-        : "Organizations lose millions on disconnected departments. We identify communication breaks in real-time and nudge leaders to bridge the gaps instantly.",
-      benefits: [
-        "Increase cross-functional innovation",
-        "Reduce duplication of work",
-        "Speed up decision making"
-      ]
+      title: t('solutions.siloBusting'),
+      description: t('solutions.siloDesc'),
+      benefits: [t('solutions.siloBenefit1'), t('solutions.siloBenefit2'), t('solutions.siloBenefit3')]
     },
     {
       id: "change",
       icon: RefreshCcw,
-      title: isRTL ? "ניהול שינוי (Change Management)" : "Change Management",
-      description: isRTL 
-        ? "בין אם זה מיזוג (M&A), צמיחה מהירה או ארגון מחדש - שינויים נכשלים בגלל אנשים. אנחנו ממפים את 'סוכני השינוי' שיעזרו להטמיע את המציאות החדשה."
-        : "Whether it's M&A, hyper-growth, or restructuring—change fails due to people dynamics. We map the network to identify key 'Change Agents' who can accelerate adoption and integration.",
-      benefits: [
-        "Accelerate M&A integration",
-        "Manage rapid growth pains",
-        "Identify cultural blockers"
-      ]
+      title: t('solutions.changeManagement'),
+      description: t('solutions.changeDesc'),
+      benefits: [t('solutions.changeBenefit1'), t('solutions.changeBenefit2'), t('solutions.changeBenefit3')]
     },
     {
       id: "retention",
       icon: ShieldAlert,
-      title: isRTL ? "שימור טאלנטים" : "Talent Retention & Burnout",
-      description: isRTL 
-        ? "אנשים עוזבים בוסים, או שהם שחוקים. המערכת מזהה עומס תקשורתי (Overload) ובידוד חברתי לפני שמכתב ההתפטרות מגיע."
-        : "Spot flight risks before they resign. Our AI analyzes communication patterns to detect burnout (over-collaboration) and isolation (disengagement) early.",
-      benefits: [
-        "Predict burnout risk",
-        "Identify isolated high-performers",
-        "Improve manager-employee connection"
-      ]
+      title: t('solutions.talentRetention'),
+      description: t('solutions.retentionDesc'),
+      benefits: [t('solutions.retentionBenefit1'), t('solutions.retentionBenefit2'), t('solutions.retentionBenefit3')]
     },
     {
       id: "leadership",
       icon: TrendingUp,
-      title: isRTL ? "פיתוח מנהיגות רשתית" : "Network Leadership Development",
-      description: isRTL 
-        ? "היררכיה זה פאסה. אנחנו מודדים ומלמדים מנהלים איך להפוך ל-'Hubs' של אמון והשפעה, בעזרת דאטה וסימולציות משחקיות."
-        : "Hierarchy is dead. We measure and train managers on how to become 'Hubs' of trust and influence, using data-driven insights and gamified simulations.",
-      benefits: [
-        "Move from command to connect",
-        "Visualize leadership impact",
-        "Data-driven coaching plans"
-      ]
+      title: t('solutions.leadershipDev'),
+      description: t('solutions.leadershipDesc'),
+      benefits: [t('solutions.leadershipBenefit1'), t('solutions.leadershipBenefit2'), t('solutions.leadershipBenefit3')]
     }
   ];
 
@@ -85,16 +60,13 @@ const Solutions = () => {
         
         <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
           <div className="inline-block px-4 py-1 bg-[#E87722] rounded-full text-sm font-bold mb-6 animate-fade-in">
-            SOLUTIONS FOR EVERY CHALLENGE
+            {t('solutions.badge')}
           </div>
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
-            {isRTL ? 'פתרונות לארגונים בצמיחה ושינוי' : 'Solving the Complexity of Modern Work'}
+            {t('solutions.title')}
           </h1>
           <p className="text-xl md:text-2xl text-blue-100 font-light mb-8 max-w-2xl mx-auto">
-            {isRTL 
-              ? 'אנחנו הופכים את האתגרים האנושיים המורכבים ביותר - סיילואים, שחיקה ושינויים ארגוניים - לתהליך מבוסס דאטה.'
-              : 'From breaking down silos to navigating complex organizational changes—we turn your biggest human challenges into manageable data insights.'
-            }
+            {t('solutions.subtitle')}
           </p>
         </div>
       </section>
@@ -123,7 +95,7 @@ const Solutions = () => {
                   variant="outline" 
                   className="w-full border-[#1B365D] text-[#1B365D] hover:bg-[#1B365D] hover:text-white transition-colors"
                 >
-                  See How It Works
+                  {t('solutions.seeHowItWorks')}
                 </Button>
               </div>
             ))}
@@ -134,10 +106,10 @@ const Solutions = () => {
       <section className="py-20 bg-white border-t border-gray-100">
         <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold text-[#1B365D] mb-6">
-                Don't let invisible problems slow you down
+                {t('solutions.dontSlowDown')}
             </h2>
             <Button className="bg-[#E87722] hover:bg-[#d66a1a] text-white px-8 py-6 text-lg rounded-lg shadow-lg">
-                Get a Strategy Session <ArrowRight className="ml-2 w-5 h-5" />
+                {t('solutions.getStrategy')} <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
         </div>
       </section>

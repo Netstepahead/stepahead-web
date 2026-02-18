@@ -5,8 +5,7 @@ import { ArrowRight, Sparkles } from "lucide-react"
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const HeroSection = () => {
-  const { language } = useLanguage();
-  const isRTL = language === 'he';
+  const { t, isRTL } = useLanguage();
 
   return (
     // שינוי 1: הורדנו את ה-pt ל-0. הרווח מגיע מה-Layout הראשי.
@@ -28,28 +27,22 @@ const HeroSection = () => {
           <div className={`flex flex-col z-20 mt-6 lg:mt-8 ${isRTL ? 'lg:order-2 text-right items-end' : 'order-1 text-left items-start'}`}>
             
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-serif font-bold text-[#1B365D] leading-[1.1] tracking-tight mb-6">
-              The Networked <br />
-              <span className="text-[#E87722]">
-                Skills-Based Organization
-              </span>
+              {t('hero.mainTitle')}
             </h1>
 
             <p className={`text-xl text-gray-500 max-w-lg leading-relaxed mb-8 text-balance font-light ${isRTL ? 'text-right' : 'text-left'}`}>
-              {language === 'he' 
-                ? "הפכו את הארגון מרשימת תפקידים לרשת חיה של כישורים. הפלטפורמה שלנו עוזרת לכם לזהות מיומנויות נסתרות ולחבר בין האנשים הנכונים בזמן אמת."
-                : "Orchestrate your network. Our AI platform cultivates diverse ties and collaboration skills, turning your org chart into a living network of shared value."
-              }
+              {t('hero.mainSubtitle')}
             </p>
 
             <div className={`flex flex-col sm:flex-row gap-4 w-full ${isRTL ? 'sm:justify-end' : 'sm:justify-start'}`}>
               <Button className="bg-[#1B365D] hover:bg-[#2a4d80] text-white text-base px-8 h-12 rounded-lg shadow-lg hover:shadow-xl transition-all gap-2">
-                {isRTL ? 'התחילו עכשיו' : 'Activate Your Network'} 
+                {t('hero.activateNetwork')} 
                 <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180 mr-1' : 'ml-1'}`} />
               </Button>
               
               <Button variant="outline" className="text-[#1B365D] border-[#1B365D]/20 hover:bg-[#1B365D]/5 text-base px-8 h-12 rounded-lg gap-2 bg-transparent">
                 <Sparkles className="w-4 h-4" /> 
-                {isRTL ? 'הכירו את הסוכן' : 'Meet the Collab Agent'}
+                {t('hero.meetAgent')}
               </Button>
             </div>
           </div>

@@ -4,8 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Sparkles, BarChart3, Users } from "lucide-react";
 
 const Platform = () => {
-  const { language } = useLanguage();
-  const isRTL = language === 'he';
+  const { t, isRTL } = useLanguage();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -24,15 +23,13 @@ const Platform = () => {
         <div className="container mx-auto px-4 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-8 text-sm font-medium text-blue-100">
             <Sparkles className="w-4 h-4 text-[#E87722]" />
-            {isRTL ? "מערכת ההפעלה לארגון המחובר" : "The OS for the Networked Organization"}
+            {t('platform.os')}
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight">
-            {isRTL ? "הפלטפורמה שלנו" : "The Platform"}
+            {t('platform.title')}
           </h1>
           <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-light">
-            {isRTL 
-              ? "שילוב עוצמתי של דאטה, פסיכולוגיה ובינה מלאכותית שהופך היררכיה סטטית לרשת אנושית חכמה."
-              : "A powerful fusion of data, psychology, and AI that transforms static hierarchies into intelligent human networks."}
+            {t('platform.subtitle')}
           </p>
         </div>
       </section>
@@ -66,23 +63,21 @@ const Platform = () => {
               </div>
               <div>
                 <h3 className="text-[#E87722] font-bold tracking-wider uppercase text-sm mb-2">
-                    {isRTL ? "מנוע ה-ONA" : "The ONA Engine"}
+                    {t('platform.onaEngine')}
                 </h3>
                 <h2 className="text-4xl font-serif font-bold text-[#1B365D] mb-4">
-                    {isRTL ? "לראות את הבלתי נראה" : "Visualize the Invisible"}
+                    {t('platform.visualizeInvisible')}
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                    {isRTL 
-                    ? "דאטה פסיבי: אנחנו ממפים את המבנה והזרימה האמיתיים של הארגון. המערכת מזהה צווארי בקבוק, עובדים מבודדים ומוקדי השפעה נסתרים שלא מופיעים בתרשים הארגוני."
-                    : "Passive Data: We map the actual structure and flow of your organization. Our engine identifies bottlenecks, isolated employees, and hidden influencers that traditional org charts miss."}
+                    {t('platform.onaDesc')}
                 </p>
               </div>
               
               <ul className="space-y-4">
                 {[
-                  isRTL ? "מיפוי זרימת תקשורת" : "Visualize communication flows",
-                  isRTL ? "זיהוי משפיענים מרכזיים" : "Identify key influencers",
-                  isRTL ? "איתור סיילואים וניתוקים" : "Detect silos and isolation"
+                  t('platform.onaFeature1'),
+                  t('platform.onaFeature2'),
+                  t('platform.onaFeature3')
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-[#1B365D] font-medium">
                     <div className="p-1 rounded-full bg-green-100 text-green-600">
@@ -127,23 +122,21 @@ const Platform = () => {
               </div>
               <div>
                 <h3 className="text-[#E87722] font-bold tracking-wider uppercase text-sm mb-2">
-                    {isRTL ? "פרופיל רשתי" : "Network Profiling"}
+                    {t('platform.networkProfiling')}
                 </h3>
                 <h2 className="text-4xl font-serif font-bold text-white mb-4">
-                    {isRTL ? "מעבר למשחוק: פרסונות אמיתיות" : "Deep Behavioral Insight"}
+                    {t('platform.deepInsight')}
                 </h2>
                 <p className="text-lg text-blue-100 leading-relaxed">
-                    {isRTL 
-                    ? "דאטה אקטיבי: שאלון מחקרי שנועד למפות את סגנון הרישות (Network Persona) של כל עובד. גלה את החוזקות הטבעיות והאזורים לצמיחה אישית."
-                    : "Active Data: A research-backed questionnaire designed to uncover each employee's unique Network Persona. Identify natural strengths and personalized growth areas."}
+                    {t('platform.profilingDesc')}
                 </p>
               </div>
 
               <ul className="space-y-4">
                 {[
-                  isRTL ? "גלה את הפרסונה הרשתית שלך" : "Discover your Network Persona",
-                  isRTL ? "מתודולוגיה מבוססת מחקר" : "Research-backed methodology",
-                  isRTL ? "תובנות אישיות לצמיחה" : "Personalized growth insights"
+                  t('platform.profilingFeature1'),
+                  t('platform.profilingFeature2'),
+                  t('platform.profilingFeature3')
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-white font-medium">
                     <div className="p-1 rounded-full bg-[#E87722] text-white">
@@ -182,23 +175,21 @@ const Platform = () => {
               </div>
               <div>
                 <h3 className="text-[#E87722] font-bold tracking-wider uppercase text-sm mb-2">
-                    {isRTL ? "סוכן ה-AI" : "The Collab Agent"}
+                    {t('platform.collabAgent')}
                 </h3>
                 <h2 className="text-4xl font-serif font-bold text-[#1B365D] mb-4">
-                    {isRTL ? "דחיפות בזמן אמת" : "Actionable Nudges"}
+                    {t('platform.actionableNudges')}
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                    {isRTL 
-                    ? "התערבות: בינה מלאכותית שנותנת 'דחיפות' (Nudges) בזמן אמת. הסוכן מציע לאנשים עם מי כדאי להם לדבר כדי לשפר את הרשת."
-                    : "Intervention: Our AI provides real-time 'nudges'. The agent suggests who employees should connect with to bridge gaps and improve overall network health."}
+                    {t('platform.agentDesc')}
                 </p>
               </div>
 
               <ul className="space-y-4">
                 {[
-                  isRTL ? "הצעות לחיבור מבוססות AI" : "AI-driven connection suggestions",
-                  isRTL ? "אינטגרציה חלקה ל-Teams/Slack" : "Integration with Slack/Teams",
-                  isRTL ? "תובנות יומיות לפעולה" : "Actionable daily insights"
+                  t('platform.agentFeature1'),
+                  t('platform.agentFeature2'),
+                  t('platform.agentFeature3')
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-[#1B365D] font-medium">
                     <div className="p-1 rounded-full bg-blue-100 text-[#1B365D]">
@@ -210,7 +201,7 @@ const Platform = () => {
               </ul>
               
               <Button className="bg-[#1B365D] text-white px-8 py-6 rounded-xl hover:bg-[#2a4a7f] shadow-lg hover:shadow-xl transition-all">
-                  {isRTL ? "ראה איך זה עובד" : "See How It Works"} <ArrowRight className="ml-2 w-5 h-5" />
+                  {t('platform.seeHowItWorks')} <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
 
@@ -222,17 +213,17 @@ const Platform = () => {
       <section className="py-20 bg-white border-t border-gray-100">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h2 className="text-4xl font-serif font-bold text-[#1B365D] mb-6">
-            {isRTL ? "מוכנים להפוך את הארגון לרשתי?" : "Ready to Transform Your Organization?"}
+            {t('platform.readyTransform')}
           </h2>
           <p className="text-xl text-gray-500 mb-10">
-             {isRTL ? "הצטרף לארגונים המובילים שכבר משתמשים ב-StepAhead" : "Join the forward-thinking companies already using StepAhead."}
+             {t('platform.joinCompanies')}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button className="bg-[#E87722] text-white px-10 py-7 text-lg rounded-full hover:bg-[#d66a1a] shadow-orange-200 shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
-              Book a Demo
+              {t('platform.bookDemo')}
             </Button>
             <Button variant="outline" className="px-10 py-7 text-lg rounded-full border-2 border-[#1B365D] text-[#1B365D] hover:bg-blue-50">
-              Contact Sales
+              {t('platform.contactSales')}
             </Button>
           </div>
         </div>

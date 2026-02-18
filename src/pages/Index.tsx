@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
 // --- Custom Network Graphics Components ---
-const RetentionGraphic = () => (
+const RetentionGraphic = ({ riskLabel = 'Risk' }: { riskLabel?: string }) => (
   <svg viewBox="0 0 200 140" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M100 70 L70 50 M100 70 L70 90 M100 70 L130 50 M70 50 L70 90" stroke="#E2E8F0" strokeWidth="2" />
     <path d="M160 70 L130 50" stroke="#E2E8F0" strokeWidth="2" strokeDasharray="4 4" />
@@ -15,7 +15,7 @@ const RetentionGraphic = () => (
     <circle cx="70" cy="90" r="6" fill="#CBD5E1" />
     <circle cx="130" cy="50" r="6" fill="#CBD5E1" />
     <circle cx="170" cy="70" r="8" fill="#8B5CF6" />
-    <text x="170" y="95" textAnchor="middle" fontSize="10" fill="#8B5CF6" className="font-sans font-bold">Risk</text>
+    <text x="170" y="95" textAnchor="middle" fontSize="10" fill="#8B5CF6" className="font-sans font-bold">{riskLabel}</text>
   </svg>
 );
 
@@ -49,15 +49,13 @@ const LeadershipGraphic = () => (
 );
 
 const Index = () => {
-  const { language } = useLanguage();
+  const { t, isRTL } = useLanguage();
   const navigate = useNavigate();
-  const isRTL = language === 'he';
 
   useEffect(() => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [isRTL]);
 
-  // עדכנתי את הרשימה - שים לב ללוגו של הג'וינט
   const clients = [
     { name: "Clalit", logo: "clalit.png" },
     { name: "Tambour", logo: "tambour.png" },
@@ -78,27 +76,24 @@ const Index = () => {
   const benefits = [
     {
       graphic: InnovationGraphic,
-      title: isRTL ? "מהירות וחדשנות" : "Innovation & Silo Busting",
-      desc: isRTL 
-        ? "חדשנות קורית בחיבורים. אנחנו מזהים ומחברים בין סיילואים מנותקים."
-        : "Innovation happens at the intersection. We visualize structural holes and bridge disconnected silos to speed up ideation.",
-      bg: "bg-orange-50/50"
+      title: t('index.innovation'),
+      desc: t('index.innovationDesc'),
+      bg: "bg-orange-50/50",
+      useRetentionGraphic: false
     },
     {
       graphic: RetentionGraphic,
-      title: isRTL ? "שימור טאלנטים" : "Retention & Burnout",
-      desc: isRTL 
-        ? "זהה את העובדים המבודדים לפני שהם עוזבים. נתח את הרשת כדי לראות מי בסיכון."
-        : "Spot flight risks before they resign. Visualize isolated nodes (purple) vs. embedded employees to predict attrition.",
-      bg: "bg-purple-50/50"
+      title: t('index.retention'),
+      desc: t('index.retentionDesc'),
+      bg: "bg-purple-50/50",
+      useRetentionGraphic: true
     },
     {
       graphic: LeadershipGraphic,
-      title: isRTL ? "מנהיגות מודרנית" : "Network Leadership",
-      desc: isRTL 
-        ? "מנהלים לומדים להשפיע דרך אמון וחיבורים (Hubs), לא רק דרך סמכות."
-        : "Shift from hierarchy to hub. Identify and train your central connectors to influence change and drive strategy.",
-      bg: "bg-blue-50/50"
+      title: t('index.leadership'),
+      desc: t('index.leadershipDesc'),
+      bg: "bg-blue-50/50",
+      useRetentionGraphic: false
     }
   ];
 
@@ -112,7 +107,7 @@ const Index = () => {
       <div className="py-12 border-b border-gray-100 bg-gray-50/50">
         <div className="container mx-auto px-4 text-center">
             <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-10">
-                {isRTL ? 'ארגונים מובילים שסומכים עלינו' : 'Trusted by Forward-Thinking Organizations'}
+                {t('hero.trustedBySubtitle')}
             </p>
             
             {/* Logo Grid */}
@@ -136,13 +131,10 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1B365D] mb-6 leading-tight">
-              {isRTL ? 'הפוך את התרשים הארגוני לרשת חיה' : 'Turn Your Org Chart Into a Living Network'}
+              {t('index.turnOrgChart')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              {isRTL 
-                ? 'עבור מעבר להיררכיה סטטית. אנו משתמשים בניתוח רשתות (ONA) כדי לחשוף את הדינמיקה האמיתית של הארגון.'
-                : 'Move beyond static hierarchies. We use Organizational Network Analysis (ONA) to reveal how work really gets done.'
-              }
+              {t('index.orgChartDesc')}
             </p>
           </div>
 
@@ -154,7 +146,7 @@ const Index = () => {
               >
                 <div className="h-40 mb-6 flex items-center justify-center">
                    <div className="w-full h-full bg-white rounded-2xl shadow-inner p-4 border border-gray-100/50">
-                     <item.graphic />
+                     {item.useRetentionGraphic ? <RetentionGraphic riskLabel={t('index.risk')} /> : <item.graphic />}
                    </div>
                 </div>
                 
@@ -173,12 +165,12 @@ const Index = () => {
       {/* 4. Feature Teaser */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold text-[#1B365D] mb-12">How We Do It</h2>
+            <h2 className="text-3xl font-bold text-[#1B365D] mb-12">{t('index.howWeDoIt')}</h2>
             <Button 
                 onClick={() => navigate('/platform')}
                 className="bg-[#1B365D] text-white px-8 py-6 text-lg"
             >
-                Explore The Platform <ArrowRight className="ml-2 w-5 h-5" />
+                {t('index.explorePlatform')} <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
         </div>
       </section>

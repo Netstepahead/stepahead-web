@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Mail, MapPin, Globe } from "lucide-react";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="bg-[#1B365D] text-white pt-16 pb-8 border-t border-white/10">
@@ -19,7 +21,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-blue-200 text-sm leading-relaxed">
-              Architects of the Networked Organization. We transform static hierarchies into adaptive, data-driven human networks.
+              {t('footer.tagline')}
             </p>
             <div className="flex gap-4">
               {/* LinkedIn Only */}
@@ -37,39 +39,39 @@ const Footer = () => {
 
           {/* Column 2: Platform */}
           <div>
-            <h4 className="font-bold text-lg mb-6 text-[#E87722]">Platform</h4>
+            <h4 className="font-bold text-lg mb-6 text-[#E87722]">{t('footer.platform')}</h4>
             <ul className="space-y-4 text-blue-200 text-sm">
               <li>
-                <Link to="/platform" className="hover:text-white transition-colors">ONA Technology</Link>
+                <Link to="/platform" className="hover:text-white transition-colors">{t('footer.onaTechnology')}</Link>
               </li>
               <li>
-                <Link to="/solutions" className="hover:text-white transition-colors">Solutions</Link>
+                <Link to="/solutions" className="hover:text-white transition-colors">{t('footer.solutions')}</Link>
               </li>
               <li>
-                <Link to="/solutions" className="hover:text-white transition-colors">Use Cases</Link>
+                <Link to="/solutions" className="hover:text-white transition-colors">{t('footer.useCases')}</Link>
               </li>
             </ul>
           </div>
 
           {/* Column 3: Company */}
           <div>
-            <h4 className="font-bold text-lg mb-6 text-[#E87722]">Company</h4>
+            <h4 className="font-bold text-lg mb-6 text-[#E87722]">{t('footer.company')}</h4>
             <ul className="space-y-4 text-blue-200 text-sm">
               <li>
-                <Link to="/about" className="hover:text-white transition-colors">About Us</Link>
+                <Link to="/about" className="hover:text-white transition-colors">{t('footer.aboutUs')}</Link>
               </li>
               <li>
-                <Link to="/academy" className="hover:text-white transition-colors">Academy</Link>
+                <Link to="/academy" className="hover:text-white transition-colors">{t('footer.academy')}</Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
+                <Link to="/contact" className="hover:text-white transition-colors">{t('footer.contact')}</Link>
               </li>
             </ul>
           </div>
 
           {/* Column 4: Contact */}
           <div>
-            <h4 className="font-bold text-lg mb-6 text-[#E87722]">Contact Us</h4>
+            <h4 className="font-bold text-lg mb-6 text-[#E87722]">{t('footer.contactUs')}</h4>
             <ul className="space-y-4 text-blue-200 text-sm">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#E87722] shrink-0" />
@@ -80,13 +82,13 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#E87722] shrink-0" />
                 <span>
-                  Tel Aviv, Israel
+                  {t('footer.location')}
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Globe className="w-5 h-5 text-[#E87722] shrink-0" />
                 <span>
-                  Global Operations
+                  {t('footer.globalOps')}
                 </span>
               </li>
             </ul>
@@ -95,10 +97,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-300">
-          <p>© {currentYear} StepAhead. All rights reserved.</p>
+          <p>© {currentYear} StepAhead. {t('footer.rights')}</p>
           <div className="flex gap-8">
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
+            <Link to="/privacy" className="hover:text-white transition-colors">{t('footer.privacy')}</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">{t('footer.terms')}</Link>
           </div>
         </div>
       </div>

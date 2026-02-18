@@ -7,7 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
   const isHomePage = location.pathname === "/";
@@ -49,10 +49,10 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: "Platform", path: "/platform" },
-    { name: "Solutions", path: "/solutions" },
-    { name: "Academy", path: "/academy" },
-    { name: "About", path: "/about" },
+    { name: t('nav.platform'), path: "/platform" },
+    { name: t('nav.solutions'), path: "/solutions" },
+    { name: t('nav.academy'), path: "/academy" },
+    { name: t('nav.about'), path: "/about" },
   ];
 
   return (
@@ -76,7 +76,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
-              key={link.name}
+              key={link.path}
               to={link.path}
               className={`text-sm font-medium transition-colors hover:text-[#E87722] ${
                 location.pathname === link.path 
@@ -93,7 +93,7 @@ const Navbar = () => {
           </button>
 
           <Button className={buttonClass}>
-            Get Started
+            {t('nav.getStarted')}
           </Button>
         </div>
 
@@ -114,7 +114,7 @@ const Navbar = () => {
           <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 md:hidden animate-in slide-in-from-top-10">
             {navLinks.map((link) => (
               <Link
-                key={link.name}
+                key={link.path}
                 to={link.path}
                 className="text-2xl font-serif font-bold text-[#1B365D]"
               >
@@ -122,7 +122,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Button className="bg-[#1B365D] text-white w-48 mt-4">
-              Get Started
+              {t('nav.getStarted')}
             </Button>
           </div>
         )}

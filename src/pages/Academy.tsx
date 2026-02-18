@@ -11,8 +11,7 @@ import {
 } from "lucide-react";
 
 const Academy = () => {
-  const { language } = useLanguage();
-  const isRTL = language === 'he';
+  const { t, isRTL } = useLanguage();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -20,26 +19,10 @@ const Academy = () => {
   }, [isRTL]);
 
   const modules = [
-    {
-      title: "Trust Building",
-      desc: "Creating psychological safety in hybrid teams.",
-      icon: Users
-    },
-    {
-      title: "Influence Without Authority",
-      desc: "Leading complex projects across silos.",
-      icon: Target
-    },
-    {
-      title: "Network Mindset",
-      desc: "Shifting from 'Command & Control' to 'Connect & Collaborate'.",
-      icon: BrainCircuit
-    },
-    {
-      title: "Strategic Connecting",
-      desc: "Identifying and leveraging key organizational bridges.",
-      icon: Lightbulb
-    }
+    { title: t('academy.trustBuilding'), desc: t('academy.trustDesc'), icon: Users },
+    { title: t('academy.influence'), desc: t('academy.influenceDesc'), icon: Target },
+    { title: t('academy.networkMindset'), desc: t('academy.mindsetDesc'), icon: BrainCircuit },
+    { title: t('academy.strategicConnecting'), desc: t('academy.connectingDesc'), icon: Lightbulb }
   ];
 
   return (
@@ -49,19 +32,16 @@ const Academy = () => {
         
         <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
           <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm font-bold mb-6 border border-white/20">
-            PRACTICAL LEADERSHIP WORKSHOPS
+            {t('academy.badge')}
           </div>
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
-            {isRTL ? 'האקדמיה למנהיגות רשתית' : 'Network Leadership Academy'}
+            {t('academy.title')}
           </h1>
           <p className="text-xl md:text-2xl text-blue-100 font-light mb-8 max-w-2xl mx-auto">
-            {isRTL 
-              ? 'סדנאות מעשיות לפיתוח מיומנויות הניהול החדשות. אנחנו עוזרים למנהלים לעבור מתפיסה היררכית לתפיסה רשתית, באמצעות תרגול, סימולציות וכלים פרקטיים.'
-              : 'Practical workshops for the new era of management. We help leaders shift from a hierarchical mindset to a networked one, using advanced simulations and practical tools.'
-            }
+            {t('academy.subtitle')}
           </p>
           <Button className="bg-[#E87722] hover:bg-[#d66a1a] text-white px-8 py-6 text-lg rounded-lg shadow-lg">
-            Download Syllabus <ArrowRight className="ml-2 w-5 h-5" />
+            {t('academy.downloadSyllabus')} <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>
       </section>
@@ -71,27 +51,27 @@ const Academy = () => {
           <div className="flex flex-col md:flex-row gap-16 items-center">
             <div className="md:w-1/2">
               <div className="inline-block px-3 py-1 bg-blue-100 text-[#1B365D] rounded-full text-sm font-bold mb-4">
-                THE METHODOLOGY
+                {t('academy.methodology')}
               </div>
               <h2 className="text-4xl font-serif font-bold text-[#1B365D] mb-6">
-                Theory Meets Practice
+                {t('academy.theoryMeetsPractice')}
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Network concepts can be abstract. To bridge the gap, we use <strong>advanced simulations</strong> (powered by Accelium) as a training aid.
+                {t('academy.methodologyDesc1')}
               </p>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Think of it as a "Flight Simulator" for management. The games aren't the goal—they are the means to practice complex dynamics like resource allocation, negotiation, and collaboration in a risk-free environment.
+                {t('academy.methodologyDesc2')}
               </p>
               
               <ul className="space-y-4 mt-6">
                 <li className="flex items-center gap-3 text-[#1B365D] font-medium">
-                  <div className="w-2 h-2 rounded-full bg-[#E87722]" /> Active experimentation
+                  <div className="w-2 h-2 rounded-full bg-[#E87722]" /> {t('academy.methodologyFeature1')}
                 </li>
                 <li className="flex items-center gap-3 text-[#1B365D] font-medium">
-                  <div className="w-2 h-2 rounded-full bg-[#E87722]" /> Immediate feedback loops
+                  <div className="w-2 h-2 rounded-full bg-[#E87722]" /> {t('academy.methodologyFeature2')}
                 </li>
                 <li className="flex items-center gap-3 text-[#1B365D] font-medium">
-                  <div className="w-2 h-2 rounded-full bg-[#E87722]" /> Real-world analogy analysis
+                  <div className="w-2 h-2 rounded-full bg-[#E87722]" /> {t('academy.methodologyFeature3')}
                 </li>
               </ul>
             </div>
@@ -100,8 +80,8 @@ const Academy = () => {
                <div className="absolute inset-0 bg-[#E87722] rounded-3xl transform rotate-2 opacity-10 blur-lg"></div>
                <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-xl relative z-10 aspect-video flex flex-col items-center justify-center text-center">
                  <Gamepad2 className="w-20 h-20 text-[#1B365D] mb-4 opacity-80" />
-                 <h3 className="text-2xl font-bold text-[#1B365D]">Strategic Simulations</h3>
-                 <p className="text-gray-500 mt-2">Interactive Training Aid</p>
+                 <h3 className="text-2xl font-bold text-[#1B365D]">{t('academy.strategicSimulations')}</h3>
+                 <p className="text-gray-500 mt-2">{t('academy.interactiveTraining')}</p>
                </div>
             </div>
           </div>
@@ -112,9 +92,9 @@ const Academy = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1B365D] mb-4">
-              Core Modules
+              {t('academy.coreModules')}
             </h2>
-            <p className="text-xl text-gray-600">Developing the 4 Pillars of Network Intelligence</p>
+            <p className="text-xl text-gray-600">{t('academy.developingPillars')}</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -134,14 +114,14 @@ const Academy = () => {
       <section className="py-20 bg-[#1B365D] text-white text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Upgrade Your Management DNA
+            {t('academy.upgradeDNA')}
           </h2>
           <p className="text-blue-200 mb-8 max-w-xl mx-auto">
-            Equip your leaders with the skills they need to navigate a networked world.
+            {t('academy.upgradeDesc')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-[#E87722] hover:bg-[#d66a1a] text-white px-8 py-6 text-lg rounded-lg">
-              Book a Workshop
+              {t('academy.bookWorkshop')}
             </Button>
           </div>
         </div>
