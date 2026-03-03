@@ -12,6 +12,7 @@ import Platform from "./pages/Platform";
 import Solutions from "./pages/Solutions";
 import Academy from "./pages/Academy";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
                 <Route path="/solutions" element={<Solutions />} />
                 <Route path="/academy" element={<Academy />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>

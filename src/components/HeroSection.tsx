@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { NetworkGraph } from "@/components/NetworkGraph"
 import { PhotoCollage } from "@/components/PhotoCollage"
-import { ArrowRight, Sparkles } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const HeroSection = () => {
@@ -35,14 +35,14 @@ const HeroSection = () => {
             </p>
 
             <div className={`flex flex-col sm:flex-row gap-4 w-full ${isRTL ? 'sm:justify-end' : 'sm:justify-start'}`}>
-              <Button className="bg-[#1B365D] hover:bg-[#2a4d80] text-white text-base px-8 h-12 rounded-lg shadow-lg hover:shadow-xl transition-all gap-2">
-                {t('hero.activateNetwork')} 
-                <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180 mr-1' : 'ml-1'}`} />
-              </Button>
-              
-              <Button variant="outline" className="text-[#1B365D] border-[#1B365D]/20 hover:bg-[#1B365D]/5 text-base px-8 h-12 rounded-lg gap-2 bg-transparent">
-                <Sparkles className="w-4 h-4" /> 
-                {t('hero.meetAgent')}
+              <Button
+                asChild
+                className="bg-[#1B365D] hover:bg-[#2a4d80] text-white text-base px-8 h-12 rounded-lg shadow-lg hover:shadow-xl transition-all gap-2"
+              >
+                <a href="#solutions">
+                  {t('hero.exploreSolutions')}
+                  <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180 mr-1' : 'ml-1'}`} />
+                </a>
               </Button>
             </div>
           </div>

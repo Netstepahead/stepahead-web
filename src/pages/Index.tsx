@@ -5,49 +5,6 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
-// --- Custom Network Graphics Components ---
-const RetentionGraphic = ({ riskLabel = 'Risk' }: { riskLabel?: string }) => (
-  <svg viewBox="0 0 200 140" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M100 70 L70 50 M100 70 L70 90 M100 70 L130 50 M70 50 L70 90" stroke="#E2E8F0" strokeWidth="2" />
-    <path d="M160 70 L130 50" stroke="#E2E8F0" strokeWidth="2" strokeDasharray="4 4" />
-    <circle cx="100" cy="70" r="8" fill="#E87722" className="animate-pulse" />
-    <circle cx="70" cy="50" r="6" fill="#CBD5E1" />
-    <circle cx="70" cy="90" r="6" fill="#CBD5E1" />
-    <circle cx="130" cy="50" r="6" fill="#CBD5E1" />
-    <circle cx="170" cy="70" r="8" fill="#8B5CF6" />
-    <text x="170" y="95" textAnchor="middle" fontSize="10" fill="#8B5CF6" className="font-sans font-bold">{riskLabel}</text>
-  </svg>
-);
-
-const InnovationGraphic = () => (
-  <svg viewBox="0 0 200 140" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M40 50 L60 80 M40 50 L20 80 M20 80 L60 80" stroke="#E2E8F0" strokeWidth="2" />
-    <circle cx="40" cy="50" r="6" fill="#CBD5E1" />
-    <circle cx="20" cy="80" r="6" fill="#CBD5E1" />
-    <circle cx="60" cy="80" r="6" fill="#CBD5E1" />
-    <path d="M160 50 L140 80 M160 50 L180 80 M180 80 L140 80" stroke="#E2E8F0" strokeWidth="2" />
-    <circle cx="160" cy="50" r="6" fill="#CBD5E1" />
-    <circle cx="140" cy="80" r="6" fill="#CBD5E1" />
-    <circle cx="180" cy="80" r="6" fill="#CBD5E1" />
-    <path d="M60 80 L140 80" stroke="#E87722" strokeWidth="3" />
-    <circle cx="100" cy="80" r="8" fill="white" stroke="#E87722" strokeWidth="3" />
-  </svg>
-);
-
-const LeadershipGraphic = () => (
-  <svg viewBox="0 0 200 140" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M100 70 L60 40 M100 70 L140 40 M100 70 L60 100 M100 70 L140 100 M100 70 L50 70 M100 70 L150 70" stroke="#E2E8F0" strokeWidth="2" />
-    <circle cx="60" cy="40" r="5" fill="#CBD5E1" />
-    <circle cx="140" cy="40" r="5" fill="#CBD5E1" />
-    <circle cx="60" cy="100" r="5" fill="#CBD5E1" />
-    <circle cx="140" cy="100" r="5" fill="#CBD5E1" />
-    <circle cx="50" cy="70" r="5" fill="#CBD5E1" />
-    <circle cx="150" cy="70" r="5" fill="#CBD5E1" />
-    <circle cx="100" cy="70" r="12" fill="#1B365D" />
-    <path d="M96 70 L100 74 L104 66" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
 const Index = () => {
   const { t, isRTL } = useLanguage();
   const navigate = useNavigate();
@@ -62,9 +19,7 @@ const Index = () => {
     { name: "Ormat", logo: "ormat.png" },
     { name: "Elbit Systems", logo: "elbit.png" },
     { name: "Kornit Digital", logo: "kornit.png" },
-    // --- התיקון כאן: הוספתי className: "invert" ---
-    // זה יהפוך את הלוגו הלבן לשחור
-    { name: "The Joint", logo: "the-joint.png", className: "invert" }, 
+    { name: "The Joint", logo: "the-joint.png", className: "invert" },
     { name: "Bank Hapoalim", logo: "poalim.png" },
     { name: "IDF", logo: "idf.jfif" },
     { name: "Applied Materials", logo: "applied-materials.png" },
@@ -73,108 +28,116 @@ const Index = () => {
     { name: "Lycored", logo: "lycored.png" },
   ];
 
-  const benefits = [
+  const pillars = [
     {
-      graphic: InnovationGraphic,
-      title: t('index.innovation'),
-      desc: t('index.innovationDesc'),
-      bg: "bg-orange-50/50",
-      useRetentionGraphic: false
+      titleKey: 'index.pillar1.title' as const,
+      textKey: 'index.pillar1.text' as const,
+      buttonKey: 'index.pillar1.button' as const,
+      path: '/solutions',
+      bg: 'bg-orange-50/50',
     },
     {
-      graphic: RetentionGraphic,
-      title: t('index.retention'),
-      desc: t('index.retentionDesc'),
-      bg: "bg-purple-50/50",
-      useRetentionGraphic: true
+      titleKey: 'index.pillar2.title' as const,
+      textKey: 'index.pillar2.text' as const,
+      buttonKey: 'index.pillar2.button' as const,
+      path: '/academy',
+      bg: 'bg-blue-50/50',
     },
     {
-      graphic: LeadershipGraphic,
-      title: t('index.leadership'),
-      desc: t('index.leadershipDesc'),
-      bg: "bg-blue-50/50",
-      useRetentionGraphic: false
-    }
+      titleKey: 'index.pillar3.title' as const,
+      textKey: 'index.pillar3.text' as const,
+      buttonKey: 'index.pillar3.button' as const,
+      path: '/platform',
+      bg: 'bg-purple-50/50',
+    },
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section (animation and layout unchanged; text updated in HeroSection) */}
       <HeroSection />
-      
-      {/* 2. Client Logos Section */}
-      <div className="py-12 border-b border-gray-100 bg-gray-50/50">
-        <div className="container mx-auto px-4 text-center">
-            <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-10">
-                {t('hero.trustedBySubtitle')}
-            </p>
-            
-            {/* Logo Grid */}
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 px-4 max-w-6xl mx-auto">
-                {clients.map((client, i) => (
-                  <div key={i} className="w-24 md:w-32 h-16 flex items-center justify-center group">
-                    <img 
-                      src={`/logos/${client.logo}`}
-                      alt={client.name}
-                      // --- התיקון כאן: הוספתי את ה-className הדינמי בסוף ---
-                      className={`max-h-full max-w-full object-contain opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 filter ${client.className || ''}`}
-                    />
-                  </div>
-                ))}
-            </div>
-        </div>
-      </div>
 
-      {/* 3. Value Proposition with Network Graphics */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      {/* 2. The 3 Pillars (Solutions) */}
+      <section id="solutions" className="py-24 bg-white relative overflow-hidden scroll-mt-24">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1B365D] mb-6 leading-tight">
-              {t('index.turnOrgChart')}
-            </h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              {t('index.orgChartDesc')}
-            </p>
-          </div>
-
           <div className="grid md:grid-cols-3 gap-8">
-            {benefits.map((item, index) => (
-              <div 
-                key={index} 
-                className={`group p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${item.bg}`}
+            {pillars.map((pillar, index) => (
+              <div
+                key={index}
+                className={`group p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${pillar.bg}`}
               >
-                <div className="h-40 mb-6 flex items-center justify-center">
-                   <div className="w-full h-full bg-white rounded-2xl shadow-inner p-4 border border-gray-100/50">
-                     {item.useRetentionGraphic ? <RetentionGraphic riskLabel={t('index.risk')} /> : <item.graphic />}
-                   </div>
-                </div>
-                
-                <h3 className="text-2xl font-bold text-[#1B365D] mb-3">
-                  {item.title}
+                <h3 className="text-2xl font-bold text-[#1B365D] mb-4">
+                  {t(pillar.titleKey)}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {item.desc}
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  {t(pillar.textKey)}
                 </p>
+                <Button
+                  onClick={() => navigate(pillar.path)}
+                  className="bg-[#1B365D] hover:bg-[#2a4a7f] text-white w-full sm:w-auto"
+                >
+                  {t(pillar.buttonKey)}
+                  <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180 mr-2' : 'ml-2'}`} />
+                </Button>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. Feature Teaser */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold text-[#1B365D] mb-12">{t('index.howWeDoIt')}</h2>
-            <Button 
-                onClick={() => navigate('/platform')}
-                className="bg-[#1B365D] text-white px-8 py-6 text-lg"
-            >
-                {t('index.explorePlatform')} <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+      {/* 3. Our Philosophy */}
+      <section className="py-24 bg-gray-50 relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1B365D] mb-6 leading-tight">
+              {t('index.philosophy.title')}
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              {t('index.philosophy.text')}
+            </p>
+          </div>
         </div>
       </section>
 
+      {/* 4. The Future (AI Collab Agent) */}
+      <section className="py-24 bg-[#1B365D] text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E87722] rounded-full blur-[150px] opacity-15" />
+        <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight">
+            {t('index.future.title')}
+          </h2>
+          <p className="text-xl text-blue-100 leading-relaxed mb-10">
+            {t('index.future.text')}
+          </p>
+          <Button
+            onClick={() => navigate('/contact')}
+            className="bg-[#E87722] hover:bg-[#d66a1a] text-white px-8 py-6 text-lg rounded-lg shadow-lg"
+          >
+            {t('index.future.cta')}
+            <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180 mr-2' : 'ml-2'}`} />
+          </Button>
+        </div>
+      </section>
+
+      {/* 5. Trust (existing client logos - unchanged) */}
+      <div className="py-12 border-b border-gray-100 bg-gray-50/50">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-10">
+            {t('hero.trustedBySubtitle')}
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 px-4 max-w-6xl mx-auto">
+            {clients.map((client, i) => (
+              <div key={i} className="w-24 md:w-32 h-16 flex items-center justify-center group">
+                <img
+                  src={`/logos/${client.logo}`}
+                  alt={client.name}
+                  className={`max-h-full max-w-full object-contain opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 filter ${client.className || ''}`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

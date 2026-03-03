@@ -12,26 +12,56 @@ interface LanguageContextType {
 const translations: Record<Language, Record<string, string>> = {
   en: {
     // Navigation
-    'nav.about': 'About',
+    'nav.home': 'Home',
+    'nav.about': 'About Us',
+    'nav.aboutUs': 'About Us',
     'nav.platform': 'Platform',
     'nav.solutions': 'Solutions',
+    'nav.solutionsDropdown': 'Solutions',
+    'nav.talentAcquisition': 'Talent Acquisition',
+    'nav.leadershipInnovation': 'Leadership & Innovation',
+    'nav.organizationalDynamics': 'Organizational Dynamics',
+    'nav.methodology': 'Methodology',
+    'nav.aiLabs': 'AI Labs (Beta)',
     'nav.academy': 'Academy',
     'nav.process': 'Our Process',
     'nav.skills': 'Network Skills',
     'nav.contact': 'Contact',
     'nav.getStarted': 'Get Started',
 
-    // Hero
+    // Hero (new value proposition)
     'hero.title': 'Network Leadership',
     'hero.subtitle': 'Unlocking the full potential of the Skills-Based Organization',
-    'hero.mainTitle': 'The Networked Skills-Based Organization',
-    'hero.mainSubtitle': 'Orchestrate your network. Our AI platform cultivates diverse ties and collaboration skills, turning your org chart into a living network of shared value.',
+    'hero.mainTitle': 'Build a Smarter, Connected Organization',
+    'hero.mainSubtitle': 'Stop guessing who your top performers are and how they collaborate. Use our data-driven tools to hire smarter, empower agile leaders, break down silos, and accelerate organizational innovation.',
+    'hero.exploreSolutions': 'Explore Our Solutions',
     'hero.cta': 'Book a Consultation',
     'hero.cta2': 'Our Process',
     'hero.activateNetwork': 'Activate Your Network',
     'hero.meetAgent': 'Meet the Collab Agent',
     'hero.trustedBy': 'Trusted by',
     'hero.trustedBySubtitle': 'Trusted by Forward-Thinking Organizations',
+
+    // Homepage - The 3 Pillars
+    'index.pillar1.title': 'Hire the Right Talent',
+    'index.pillar1.text': 'Game-based cognitive assessments to identify candidates with the highest potential to integrate and succeed.',
+    'index.pillar1.button': 'Discover Talent Tools',
+    'index.pillar2.title': 'Develop Networked Leaders',
+    'index.pillar2.text': 'Workshops and Network Behavior Skills (NBS) assessments that develop managers who connect people and drive innovation.',
+    'index.pillar2.button': 'Explore Leadership Programs',
+    'index.pillar3.title': 'Optimize Organizational Dynamics',
+    'index.pillar3.text': 'Organizational Network Analysis (ONA) to reveal your cultural DNA, identify bottlenecks, and break down silos.',
+    'index.pillar3.button': 'Discover ONA Platform',
+
+    // Homepage - Our Philosophy
+    'index.philosophy.title': 'The Science of Nodes and Edges',
+    'index.philosophy.text': 'A winning organization is built on two things: excellent individuals (the nodes) and how they connect (the edges). We are the only platform that provides tools to measure and optimize both simultaneously.',
+
+    // Homepage - The Future (AI Collab Agent)
+    'index.future.title': 'Meet the Future of Work: AI Collab Agent (Beta)',
+    'index.future.text': 'Our innovation lab is building the next generation of organizational intelligence. An AI agent that sits in your workflow, identifying collaboration opportunities and preventing silos in real-time.',
+    'index.future.cta': 'Join the Waitlist',
+    'index.future.ctaAlt': 'Become a Design Partner',
 
     // Myth Section
     'myth.title': 'The Org Chart is a Myth',
@@ -214,26 +244,56 @@ const translations: Record<Language, Record<string, string>> = {
   },
   he: {
     // Navigation
-    'nav.about': 'אודות',
+    'nav.home': 'בית',
+    'nav.about': 'אודותינו',
+    'nav.aboutUs': 'אודותינו',
     'nav.platform': 'פלטפורמה',
     'nav.solutions': 'פתרונות',
+    'nav.solutionsDropdown': 'פתרונות',
+    'nav.talentAcquisition': 'גיוס טאלנטים',
+    'nav.leadershipInnovation': 'מנהיגות וחדשנות',
+    'nav.organizationalDynamics': 'דינמיקה ארגונית',
+    'nav.methodology': 'מתודולוגיה',
+    'nav.aiLabs': 'AI Labs (בטא)',
     'nav.academy': 'אקדמיה',
     'nav.process': 'התהליך שלנו',
     'nav.skills': 'כישורי רשת',
     'nav.contact': 'צור קשר',
     'nav.getStarted': 'התחל עכשיו',
 
-    // Hero
+    // Hero (new value proposition)
     'hero.title': 'מנהיגות רשתית',
     'hero.subtitle': 'מימוש מלוא הפוטנציאל של ארגון מבוסס כישורים',
-    'hero.mainTitle': 'הארגון הרשתי מבוסס הכישורים',
-    'hero.mainSubtitle': 'הפכו את הארגון מרשימת תפקידים לרשת חיה של כישורים. הפלטפורמה שלנו עוזרת לכם לזהות מיומנויות נסתרות ולחבר בין האנשים הנכונים בזמן אמת.',
+    'hero.mainTitle': 'בנו ארגון חכם ומחובר',
+    'hero.mainSubtitle': 'הפסיקו לנחש מי המובילים בארגון ואיך הם משתפים פעולה. השתמשו בכלים מבוססי הנתונים שלנו כדי לגייס חכם יותר, לחזק מנהיגים אג\'יליים, לשבור סיילואים ולהאיץ חדשנות ארגונית.',
+    'hero.exploreSolutions': 'גלו את הפתרונות שלנו',
     'hero.cta': 'קבע שיחת ייעוץ',
     'hero.cta2': 'התהליך שלנו',
     'hero.activateNetwork': 'התחילו עכשיו',
     'hero.meetAgent': 'הכירו את הסוכן',
     'hero.trustedBy': 'סומכים עלינו',
     'hero.trustedBySubtitle': 'ארגונים מובילים שסומכים עלינו',
+
+    // Homepage - The 3 Pillars
+    'index.pillar1.title': 'גייסו את הטאלנט הנכון',
+    'index.pillar1.text': 'הערכות קוגניטיביות מבוססות משחק לזיהוי מועמדים עם הפוטנציאל הגבוה ביותר להשתלב ולהצליח.',
+    'index.pillar1.button': 'גלו כלי טאלנט',
+    'index.pillar2.title': 'פיתחו מנהיגים רשתיים',
+    'index.pillar2.text': 'סדנאות והערכות Network Behavior Skills (NBS) שמפתחות מנהלים שמחברים אנשים ומניעים חדשנות.',
+    'index.pillar2.button': 'גלו תוכניות מנהיגות',
+    'index.pillar3.title': 'מטבו דינמיקה ארגונית',
+    'index.pillar3.text': 'ניתוח רשתות ארגוניות (ONA) לחשיפת ה-DNA התרבותי שלכם, זיהוי צווארי בקבוק ושבירת סיילואים.',
+    'index.pillar3.button': 'גלו פלטפורמת ONA',
+
+    // Homepage - Our Philosophy
+    'index.philosophy.title': 'המדע של צמתים וקשרים',
+    'index.philosophy.text': 'ארגון מנצח נבנה על שני דברים: אנשים מעולים (הצמתים) ואיך הם מתחברים (הקשרים). אנחנו הפלטפורמה היחידה שמספקת כלים למדוד ולמטב את שניהם במקביל.',
+
+    // Homepage - The Future (AI Collab Agent)
+    'index.future.title': 'פגשו את עתיד העבודה: AI Collab Agent (בטא)',
+    'index.future.text': 'מעבדת החדשנות שלנו בונה את הדור הבא של האינטליגנציה הארגונית. סוכן AI שמיושם בתהליך העבודה שלכם, מזהה הזדמנויות שיתוף פעולה ומונע סיילואים בזמן אמת.',
+    'index.future.cta': 'הצטרפו לרשימת ההמתנה',
+    'index.future.ctaAlt': 'הפכו לשותף עיצוב',
 
     // Myth Section
     'myth.title': 'המבנה הארגוני הוא מיתוס',
