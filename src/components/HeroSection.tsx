@@ -22,10 +22,10 @@ const HeroSection = () => {
         
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-start">
           
-          {/* Text column: dir + items-start + text-start so H1, p, button share one flush edge (no pr/pl/mr/ml). */}
+          {/* Text column: dir + items-start + text-start so H1, p, button share one flush edge. ps-* adds breathing room from screen edge. */}
           <div
             dir={isRTL ? 'rtl' : 'ltr'}
-            className="flex flex-col items-start text-start z-20 mt-6 lg:mt-8 w-full order-1 rtl:-ms-4 rtl:lg:-ms-8"
+            className="flex flex-col items-start text-start z-20 mt-6 lg:mt-8 w-full order-1 ps-6 lg:ps-12 xl:ps-20"
           >
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-serif font-bold text-[#1B365D] leading-[1.1] tracking-tight mb-6 w-full text-start">
               {t('hero.mainTitle')}
