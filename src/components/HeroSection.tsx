@@ -23,18 +23,17 @@ const HeroSection = () => {
         {/* שינוי 2: items-start במקום items-center כדי להצמיד את הטקסט למעלה */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-start">
           
-          {/* RTL: text on right (order-1 in rtl grid), LTR: text on left (order-1) */}
-          <div className={`flex flex-col z-20 mt-6 lg:mt-8 ${isRTL ? 'lg:order-1 text-right items-end' : 'order-1 text-left items-start'}`}>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-serif font-bold text-[#1B365D] leading-[1.1] tracking-tight mb-6">
+          {/* RTL: text on right, all content right-aligned (Deloitte-style). LTR: text on left. */}
+          <div className={`flex flex-col z-20 mt-6 lg:mt-8 w-full ${isRTL ? 'lg:order-1 text-right items-end' : 'order-1 text-left items-start'}`}>
+            <h1 className={`text-4xl sm:text-5xl lg:text-[3.5rem] font-serif font-bold text-[#1B365D] leading-[1.1] tracking-tight mb-6 w-full ${isRTL ? 'text-right' : 'text-left'}`}>
               {t('hero.mainTitle')}
             </h1>
 
-            <p className={`text-xl text-gray-500 max-w-lg leading-relaxed mb-8 text-balance font-light ${isRTL ? 'text-right' : 'text-left'}`}>
+            <p className={`text-xl text-gray-500 max-w-lg leading-relaxed mb-8 text-balance font-light w-full ${isRTL ? 'text-right' : 'text-left'}`}>
               {t('hero.mainSubtitle')}
             </p>
 
-            <div className={`flex flex-col sm:flex-row gap-4 w-full ${isRTL ? 'sm:justify-end' : 'sm:justify-start'}`}>
+            <div className={`flex flex-col sm:flex-row gap-4 w-full ${isRTL ? 'sm:justify-end items-end' : 'sm:justify-start items-start'}`}>
               <Button
                 asChild
                 className="bg-[#1B365D] hover:bg-[#2a4d80] text-white text-base px-8 h-12 rounded-lg shadow-lg hover:shadow-xl transition-all gap-2"

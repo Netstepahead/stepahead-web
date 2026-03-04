@@ -13,7 +13,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage, t, isRTL } = useLanguage();
   const location = useLocation();
 
   const isHomePage = location.pathname === "/";
@@ -69,29 +69,31 @@ const Navbar = () => {
         isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-6"
       }`}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2 z-50">
-          <img
-            src={logoSrc}
-            alt="StepAhead"
-            className={`${logoSizeClass} w-auto transition-all duration-300 object-contain`}
-          />
-        </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6">
+      <div
+        className="container mx-auto px-4 flex justify-between items-center"
+        dir={isRTL ? 'rtl' : 'ltr'}
+        style={{ direction: isRTL ? 'rtl' : 'ltr' }}
+      >
+        {/* Group 1: Logo + Nav links (right in RTL, left in LTR) */}
+        <div className="hidden md:flex items-center gap-6 flex-1 min-w-0">
+          <Link to="/" className="flex items-center gap-2 z-50 shrink-0">
+            <img
+              src={logoSrc}
+              alt="StepAhead"
+              className={`${logoSizeClass} w-auto transition-all duration-300 object-contain`}
+            />
+          </Link>
           <Link
             to="/"
-            className={`text-sm font-medium transition-colors hover:text-[#E87722] ${
+            className={`text-sm font-medium transition-colors hover:text-[#E87722] shrink-0 ${
               location.pathname === "/" ? "text-[#E87722] font-bold" : textColorClass
             }`}
           >
             {t('nav.home')}
           </Link>
-
           <DropdownMenu>
             <DropdownMenuTrigger
-              className={`text-sm font-medium transition-colors hover:text-[#E87722] flex items-center gap-1 outline-none ${textColorClass}`}
+              className={`text-sm font-medium transition-colors hover:text-[#E87722] flex items-center gap-1 outline-none shrink-0 ${textColorClass}`}
             >
               {t('nav.solutionsDropdown')}
               <ChevronDown className="w-4 h-4" />
@@ -106,27 +108,37 @@ const Navbar = () => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-
           {mainNavLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-[#E87722] ${
+              className={`text-sm font-medium transition-colors hover:text-[#E87722] shrink-0 ${
                 location.pathname === link.path ? "text-[#E87722] font-bold" : textColorClass
               }`}
             >
               {t(link.nameKey)}
             </Link>
           ))}
+        </div>
 
+        {/* Group 2: Language selector + CTA (left in RTL, right in LTR) */}
+        <div className="hidden md:flex items-center gap-2 shrink-0">
           <button onClick={toggleLanguage} className={`p-2 rounded-full transition-colors ${globeColorClass}`}>
             <Globe className="w-5 h-5" />
           </button>
-
           <Button className={buttonClass}>
             {t('nav.getStarted')}
           </Button>
         </div>
+
+        {/* Mobile: Logo always visible */}
+        <Link to="/" className="flex md:hidden items-center gap-2 z-50">
+          <img
+            src={logoSrc}
+            alt="StepAhead"
+            className={`${logoSizeClass} w-auto transition-all duration-300 object-contain`}
+          />
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
