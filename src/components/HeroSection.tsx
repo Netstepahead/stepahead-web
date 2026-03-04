@@ -36,12 +36,17 @@ const HeroSection = () => {
               {t('hero.mainSubtitle')}
             </p>
 
-            <div className={`flex flex-col sm:flex-row gap-4 w-full ${isRTL ? 'sm:justify-end' : 'sm:justify-start'}`} style={{ alignItems: isRTL ? 'flex-end' : 'flex-start' }}>
+            {/* CTA row: force LTR so justify-end is always right; keeps button on same line as heading/text */}
+            <div
+              dir="ltr"
+              className={`flex flex-col sm:flex-row gap-4 w-full ${isRTL ? 'sm:justify-end' : 'sm:justify-start'}`}
+              style={{ alignItems: isRTL ? 'flex-end' : 'flex-start', width: '100%' }}
+            >
               <Button
                 asChild
-                className="bg-[#1B365D] hover:bg-[#2a4d80] text-white text-base px-8 h-12 rounded-lg shadow-lg hover:shadow-xl transition-all gap-2"
+                className="bg-[#1B365D] hover:bg-[#2a4d80] text-white text-base px-8 h-12 rounded-lg shadow-lg hover:shadow-xl transition-all gap-2 shrink-0"
               >
-                <a href="#solutions">
+                <a href="#solutions" className="inline-flex items-center">
                   {t('hero.exploreSolutions')}
                   <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180 mr-1' : 'ml-1'}`} />
                 </a>
