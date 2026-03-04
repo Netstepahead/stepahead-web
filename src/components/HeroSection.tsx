@@ -23,8 +23,8 @@ const HeroSection = () => {
         {/* שינוי 2: items-start במקום items-center כדי להצמיד את הטקסט למעלה */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-start">
           
-          {/* שינוי 3: הוספת lg:mt-8 כדי ליישר את הכותרת בול עם תחילת הגרף */}
-          <div className={`flex flex-col z-20 mt-6 lg:mt-8 ${isRTL ? 'lg:order-2 text-right items-end' : 'order-1 text-left items-start'}`}>
+          {/* RTL: text on right (order-1 in rtl grid), LTR: text on left (order-1) */}
+          <div className={`flex flex-col z-20 mt-6 lg:mt-8 ${isRTL ? 'lg:order-1 text-right items-end' : 'order-1 text-left items-start'}`}>
             
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-serif font-bold text-[#1B365D] leading-[1.1] tracking-tight mb-6">
               {t('hero.mainTitle')}
@@ -47,7 +47,8 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className={`relative h-[450px] lg:h-[600px] w-full ${isRTL ? 'lg:order-1' : 'order-2'}`}>
+          {/* RTL: map on left (order-2 in rtl grid), LTR: map on right (order-2) */}
+          <div className={`relative h-[450px] lg:h-[600px] w-full ${isRTL ? 'lg:order-2' : 'order-2'}`}>
             <NetworkGraph />
             <PhotoCollage />
             
