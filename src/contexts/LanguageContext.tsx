@@ -32,8 +32,8 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero (new value proposition)
     'hero.title': 'Network Leadership',
     'hero.subtitle': 'Unlocking the full potential of the Skills-Based Organization',
-    'hero.mainTitle': 'Build a Smarter, Connected Organization',
-    'hero.mainSubtitle': 'Stop guessing who your top performers are and how they collaborate. Use our data-driven tools to hire smarter, empower agile leaders, break down silos, and accelerate organizational innovation.',
+    'hero.mainTitle': 'Build a Connected, Future-Ready Organization',
+    'hero.mainSubtitle': 'A winning organization is built on its people and how they connect. Use our data-driven tools to hire smarter, empower agile leaders, break down silos, and accelerate organizational innovation.',
     'hero.exploreSolutions': 'Explore Our Solutions',
     'hero.cta': 'Book a Consultation',
     'hero.cta2': 'Our Process',
@@ -264,8 +264,8 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero (new value proposition)
     'hero.title': 'מנהיגות רשתית',
     'hero.subtitle': 'מימוש מלוא הפוטנציאל של ארגון מבוסס כישורים',
-    'hero.mainTitle': 'בנו ארגון חכם ומחובר',
-    'hero.mainSubtitle': 'הפסיקו לנחש מי המובילים בארגון ואיך הם משתפים פעולה. השתמשו בכלים מבוססי הנתונים שלנו כדי לגייס חכם יותר, לחזק מנהיגים אג\'יליים, לשבור סיילואים ולהאיץ חדשנות ארגונית.',
+    'hero.mainTitle': 'לבנות ארגון מחובר שמוכן לאתגרי המחר',
+    'hero.mainSubtitle': 'הדרך לארגון מנצח עוברת באנשים שלו ובאופן שבו הם מחוברים. השתמשו בכלים מבוססי הנתונים שלנו כדי לגייס חכם יותר, לחזק מנהיגים אג\'יליים, לשבור סיילואים ולהאיץ חדשנות ארגונית.',
     'hero.exploreSolutions': 'גלו את הפתרונות שלנו',
     'hero.cta': 'קבע שיחת ייעוץ',
     'hero.cta2': 'התהליך שלנו',
