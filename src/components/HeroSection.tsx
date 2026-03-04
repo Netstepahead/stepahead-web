@@ -18,37 +18,32 @@ const HeroSection = () => {
         <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[#E87722]/10 via-transparent to-transparent" />
       </div>
 
-      <div className="container relative mx-auto px-4 lg:px-8">
+      <div className="container relative mx-auto ps-4 pe-4 lg:ps-8 lg:pe-8">
         
-        {/* שינוי 2: items-start במקום items-center כדי להצמיד את הטקסט למעלה */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-start">
           
-          {/* RTL: text on right; heading, text, CTA flush to one straight vertical line (right edge). */}
+          {/* Text column: dir + items-start + text-start so H1, p, button share one flush edge (no pr/pl/mr/ml). */}
           <div
-            className={`flex flex-col z-20 mt-6 lg:mt-8 w-full ${isRTL ? 'lg:order-1 order-1 -mr-4 lg:-mr-8' : 'order-1'}`}
-            style={{ alignItems: isRTL ? 'flex-end' : 'flex-start', textAlign: isRTL ? 'right' : 'left' }}
+            dir={isRTL ? 'rtl' : 'ltr'}
+            className="flex flex-col items-start text-start z-20 mt-6 lg:mt-8 w-full order-1 rtl:-ms-4 rtl:lg:-ms-8"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-serif font-bold text-[#1B365D] leading-[1.1] tracking-tight mb-6 w-full">
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-serif font-bold text-[#1B365D] leading-[1.1] tracking-tight mb-6 w-full text-start">
               {t('hero.mainTitle')}
             </h1>
 
-            <p className={`text-xl text-gray-500 max-w-lg leading-relaxed mb-8 font-light w-full ${isRTL ? 'text-right' : 'text-left'}`}>
+            <p className="text-xl text-gray-500 max-w-lg leading-relaxed mb-8 font-light w-full text-start self-start">
               {t('hero.mainSubtitle')}
             </p>
 
-            {/* CTA row: force LTR so justify-end is always right; keeps button on same line as heading/text */}
-            <div
-              dir="ltr"
-              className={`flex flex-col sm:flex-row gap-4 w-full ${isRTL ? 'sm:justify-end' : 'sm:justify-start'}`}
-              style={{ alignItems: isRTL ? 'flex-end' : 'flex-start', width: '100%' }}
-            >
+            {/* CTA row: full width, no mr/ml; self-start keeps button on start edge. */}
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:justify-start self-start">
               <Button
                 asChild
-                className="bg-[#1B365D] hover:bg-[#2a4d80] text-white text-base px-8 h-12 rounded-lg shadow-lg hover:shadow-xl transition-all gap-2 shrink-0"
+                className="bg-[#1B365D] hover:bg-[#2a4d80] text-white text-base ps-8 pe-8 h-12 rounded-lg shadow-lg hover:shadow-xl transition-all gap-2 shrink-0"
               >
                 <a href="#solutions" className="inline-flex items-center">
                   {t('hero.exploreSolutions')}
-                  <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180 mr-1' : 'ml-1'}`} />
+                  <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''} ms-2 rtl:me-2 rtl:ms-0`} />
                 </a>
               </Button>
             </div>
