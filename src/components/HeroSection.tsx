@@ -23,9 +23,9 @@ const HeroSection = () => {
         {/* שינוי 2: items-start במקום items-center כדי להצמיד את הטקסט למעלה */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-start">
           
-          {/* RTL: text on right; heading, text, CTA all right-aligned. LTR: text on left. */}
+          {/* RTL: text on right; heading, text, CTA flush to one straight vertical line (right edge). */}
           <div
-            className={`flex flex-col z-20 mt-6 lg:mt-8 w-full ${isRTL ? 'lg:order-1 order-1' : 'order-1'}`}
+            className={`flex flex-col z-20 mt-6 lg:mt-8 w-full ${isRTL ? 'lg:order-1 order-1 -mr-4 lg:-mr-8' : 'order-1'}`}
             style={{ alignItems: isRTL ? 'flex-end' : 'flex-start', textAlign: isRTL ? 'right' : 'left' }}
           >
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-serif font-bold text-[#1B365D] leading-[1.1] tracking-tight mb-6 w-full">
