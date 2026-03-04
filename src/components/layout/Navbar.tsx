@@ -98,10 +98,10 @@ const Navbar = () => {
               {t('nav.solutionsDropdown')}
               <ChevronDown className="w-4 h-4" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="min-w-[220px]">
+            <DropdownMenuContent align="start" className="min-w-[220px] text-left rtl:text-right" dir={isRTL ? 'rtl' : 'ltr'}>
               {solutionsSubLinks.map((link) => (
                 <DropdownMenuItem key={link.path} asChild>
-                  <Link to={link.path} className="cursor-pointer">
+                  <Link to={link.path} className="cursor-pointer text-left rtl:text-right flex items-center justify-start">
                     {t(link.nameKey)}
                   </Link>
                 </DropdownMenuItem>
