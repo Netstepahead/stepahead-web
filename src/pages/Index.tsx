@@ -34,7 +34,7 @@ const Index = () => {
       textKey: 'index.pillar1.text' as const,
       buttonKey: 'index.pillar1.button' as const,
       path: '/academy',
-      image: '/workshop.jpg',
+      image: '/nadav-workshop.png',
     },
     {
       titleKey: 'index.pillar2.title' as const,
@@ -151,7 +151,7 @@ const Index = () => {
               </Button>
             </div>
             <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-              <img src="/collab-agent.png" alt="" className="rounded-2xl object-cover w-full" />
+              <img src="/collab-personal.png" alt="" className="rounded-2xl object-cover w-full" />
             </div>
           </div>
         </div>
