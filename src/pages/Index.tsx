@@ -34,7 +34,7 @@ const Index = () => {
       textKey: 'index.pillar1.text' as const,
       buttonKey: 'index.pillar1.button' as const,
       path: '/academy',
-      image: '/nadav-workshop.png',
+      image: '/leadership-roles.png',
     },
     {
       titleKey: 'index.pillar2.title' as const,
@@ -114,7 +114,7 @@ const Index = () => {
                 <img
                   src={pillar.image}
                   alt=""
-                  className={`rounded-2xl w-full ${index === 0 ? 'h-auto object-contain' : 'object-cover aspect-video'}`}
+                  className={`rounded-2xl w-full h-auto aspect-video ${index === 0 ? 'object-contain' : 'object-cover'}`}
                 />
               </div>
             );
