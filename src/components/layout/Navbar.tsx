@@ -83,14 +83,6 @@ const Navbar = () => {
               className={`${logoSizeClass} w-auto transition-all duration-300 object-contain`}
             />
           </Link>
-          <Link
-            to="/"
-            className={`text-sm font-medium transition-colors hover:text-[#E87722] shrink-0 ${
-              location.pathname === "/" ? "text-[#E87722] font-bold" : textColorClass
-            }`}
-          >
-            {t('nav.home')}
-          </Link>
           <DropdownMenu>
             <DropdownMenuTrigger
               className={`text-sm font-medium transition-colors hover:text-[#E87722] flex items-center gap-1 outline-none shrink-0 ${textColorClass}`}
@@ -98,9 +90,9 @@ const Navbar = () => {
               {t('nav.solutionsDropdown')}
               <ChevronDown className="w-4 h-4" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="min-w-[220px] text-left rtl:text-right" dir={isRTL ? 'rtl' : 'ltr'}>
+            <DropdownMenuContent align="start" sideOffset={12} className="min-w-[260px] whitespace-nowrap rounded-md shadow-lg p-2 border border-gray-100 bg-white text-left rtl:text-right" dir={isRTL ? 'rtl' : 'ltr'}>
               {solutionsSubLinks.map((link) => (
-                <DropdownMenuItem key={link.path} asChild>
+                <DropdownMenuItem key={link.path} asChild className="px-4 py-3 rounded-md text-[#1B365D] focus:bg-[#1B365D]/5 focus:text-[#1B365D] hover:bg-[#1B365D]/5 data-[highlighted]:bg-[#1B365D]/5">
                   <Link to={link.path} className="cursor-pointer text-left rtl:text-right flex items-center justify-start">
                     {t(link.nameKey)}
                   </Link>
@@ -156,9 +148,6 @@ const Navbar = () => {
       {/* Mobile Menu Overlay */}
       {isOpen && (
         <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-6 pt-20 pb-10 md:hidden animate-in slide-in-from-top-10">
-          <Link to="/" className="text-2xl font-serif font-bold text-[#1B365D]" onClick={() => setIsOpen(false)}>
-            {t('nav.home')}
-          </Link>
           <div className="flex flex-col items-center gap-2">
             <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">{t('nav.solutionsDropdown')}</span>
             {solutionsSubLinks.map((link) => (
