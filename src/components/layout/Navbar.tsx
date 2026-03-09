@@ -51,9 +51,9 @@ const Navbar = () => {
   };
 
   const solutionsSubLinks = [
-    { nameKey: 'nav.talentAcquisition' as const, path: "/solutions" },
-    { nameKey: 'nav.leadershipInnovation' as const, path: "/academy" },
-    { nameKey: 'nav.organizationalDynamics' as const, path: "/platform" },
+    { nameKey: 'nav.networkSkillsLeadership' as const, path: "/academy" },
+    { nameKey: 'nav.collaborationAnalytics' as const, path: "/platform" },
+    { nameKey: 'nav.talentSelection' as const, path: "/solutions" },
   ];
 
   const mainNavLinks = [

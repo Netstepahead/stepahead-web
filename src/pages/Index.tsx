@@ -33,22 +33,25 @@ const Index = () => {
       titleKey: 'index.pillar1.title' as const,
       textKey: 'index.pillar1.text' as const,
       buttonKey: 'index.pillar1.button' as const,
-      path: '/solutions',
-      bg: 'bg-orange-50/50',
+      path: '/academy',
+      accent: 'border-s-[#1B365D]',
+      hoverBg: 'hover:bg-[#1B365D]/5',
     },
     {
       titleKey: 'index.pillar2.title' as const,
       textKey: 'index.pillar2.text' as const,
       buttonKey: 'index.pillar2.button' as const,
-      path: '/academy',
-      bg: 'bg-blue-50/50',
+      path: '/platform',
+      accent: 'border-s-[#E87722]',
+      hoverBg: 'hover:bg-[#E87722]/5',
     },
     {
       titleKey: 'index.pillar3.title' as const,
       textKey: 'index.pillar3.text' as const,
       buttonKey: 'index.pillar3.button' as const,
-      path: '/platform',
-      bg: 'bg-purple-50/50',
+      path: '/solutions',
+      accent: 'border-s-[#1B365D]',
+      hoverBg: 'hover:bg-[#1B365D]/5',
     },
   ];
 
@@ -57,16 +60,16 @@ const Index = () => {
       {/* 1. Hero Section (animation and layout unchanged; text updated in HeroSection) */}
       <HeroSection />
 
-      {/* 2. The 3 Pillars (Solutions) */}
-      <section id="solutions" className="py-24 bg-white relative overflow-hidden scroll-mt-24">
+      {/* 2. The 3 Solutions - Premium Bento-style cards */}
+      <section id="solutions" className="py-24 bg-[#FAF9F6] relative overflow-hidden scroll-mt-24">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {pillars.map((pillar, index) => (
               <div
                 key={index}
-                className={`group p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${pillar.bg}`}
+                className={`group relative p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${pillar.hoverBg} border-s-4 ${pillar.accent}`}
               >
-                <h3 className="text-2xl font-bold text-[#1B365D] mb-4">
+                <h3 className="text-xl lg:text-2xl font-bold text-[#1B365D] mb-4">
                   {t(pillar.titleKey)}
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-6">
@@ -74,7 +77,7 @@ const Index = () => {
                 </p>
                 <Button
                   onClick={() => navigate(pillar.path)}
-                  className="bg-[#1B365D] hover:bg-[#2a4a7f] text-white w-full sm:w-auto"
+                  className="bg-[#1B365D] hover:bg-[#2a4a7f] text-white w-full sm:w-auto group-hover:shadow-lg transition-shadow"
                 >
                   {t(pillar.buttonKey)}
                   <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180 mr-2' : 'ml-2'}`} />
@@ -99,19 +102,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 4. The Future (AI Collab Agent) */}
+      {/* 4. AI Collab Agent - Navy background, white/orange accent */}
       <section className="py-24 bg-[#1B365D] text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E87722] rounded-full blur-[150px] opacity-15" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E87722] rounded-full blur-[180px] opacity-20" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#E87722] rounded-full blur-[100px] opacity-10" />
         <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight">
+          <span className="inline-block text-[#E87722] text-sm font-semibold uppercase tracking-widest mb-4">
+            {t('index.future.badge')}
+          </span>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">
             {t('index.future.title')}
           </h2>
-          <p className="text-xl text-blue-100 leading-relaxed mb-10">
+          <p className="text-xl text-blue-50/95 leading-relaxed mb-10">
             {t('index.future.text')}
           </p>
           <Button
             onClick={() => navigate('/contact')}
-            className="bg-[#E87722] hover:bg-[#d66a1a] text-white px-8 py-6 text-lg rounded-lg shadow-lg"
+            className="bg-[#E87722] hover:bg-[#f08530] text-white px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-[#E87722]/30 hover:shadow-xl transition-all"
           >
             {t('index.future.cta')}
             <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180 mr-2' : 'ml-2'}`} />
@@ -119,13 +126,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 5. Trust (existing client logos - unchanged) */}
-      <div className="py-12 border-b border-gray-100 bg-gray-50/50">
+      {/* 5. Trust (client logos - container modernized, logos unchanged) */}
+      <div className="py-16 bg-white border-t border-gray-100">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-10">
+          <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-12">
             {t('hero.trustedBySubtitle')}
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 px-4 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14 px-4 max-w-6xl mx-auto">
             {clients.map((client, i) => (
               <div key={i} className="w-24 md:w-32 h-16 flex items-center justify-center group">
                 <img

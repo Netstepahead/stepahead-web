@@ -21,6 +21,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.talentAcquisition': 'Talent Acquisition',
     'nav.leadershipInnovation': 'Leadership & Innovation',
     'nav.organizationalDynamics': 'Organizational Dynamics',
+    'nav.networkSkillsLeadership': 'Network Skills & Leadership',
+    'nav.collaborationAnalytics': 'Collaboration Analytics (ONA)',
+    'nav.talentSelection': 'Talent Selection & Assessment',
     'nav.methodology': 'Methodology',
     'nav.aiLabs': 'AI Labs (Beta)',
     'nav.academy': 'Academy',
@@ -44,24 +47,25 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.trustedBy': 'Trusted by',
     'hero.trustedBySubtitle': 'Trusted by Forward-Thinking Organizations',
 
-    // Homepage - The 3 Pillars
-    'index.pillar1.title': 'Hire the Right Talent',
-    'index.pillar1.text': 'Game-based cognitive assessments to identify candidates with the highest potential to integrate and succeed.',
-    'index.pillar1.button': 'Discover Talent Tools',
-    'index.pillar2.title': 'Develop Networked Leaders',
-    'index.pillar2.text': 'Workshops and Network Behavior Skills (NBS) assessments that develop managers who connect people and drive innovation.',
-    'index.pillar2.button': 'Explore Leadership Programs',
-    'index.pillar3.title': 'Optimize Organizational Dynamics',
-    'index.pillar3.text': 'Organizational Network Analysis (ONA) to reveal your cultural DNA, identify bottlenecks, and break down silos.',
-    'index.pillar3.button': 'Discover ONA Platform',
+    // Homepage - The 3 Solutions
+    'index.pillar1.title': 'Network Skills & Leadership',
+    'index.pillar1.text': 'Train managers on how to build relationships, connect the right people, and lead effectively across teams without relying on formal authority.',
+    'index.pillar1.button': 'Explore Leadership Programs',
+    'index.pillar2.title': 'Collaboration Analytics (ONA)',
+    'index.pillar2.text': 'Advanced network mapping tools that show you exactly how your teams actually work together to identify bottlenecks and reveal hidden talent.',
+    'index.pillar2.button': 'Discover ONA Platform',
+    'index.pillar3.title': 'Talent Selection & Assessment',
+    'index.pillar3.text': 'Data-driven, game-based cognitive assessments to evaluate and hire candidates who have the right skills to integrate into your network.',
+    'index.pillar3.button': 'Discover Talent Tools',
 
-    // Homepage - Our Philosophy
-    'index.philosophy.title': 'The Science of Nodes and Edges',
-    'index.philosophy.text': 'A winning organization is built on two things: excellent individuals (the nodes) and how they connect (the edges). We are the only platform that provides tools to measure and optimize both simultaneously.',
+    // Homepage - Our Methodology
+    'index.philosophy.title': 'Network Leadership & Collaboration',
+    'index.philosophy.text': 'A winning organization relies on how well its people connect. We provide the practical tools to assess individual potential, map how your teams interact, and optimize the networks they operate in.',
 
     // Homepage - The Future (AI Collab Agent)
-    'index.future.title': 'Meet the Future of Work: AI Collab Agent (Beta)',
-    'index.future.text': 'Our innovation lab is building the next generation of organizational intelligence. An AI agent that sits in your workflow, identifying collaboration opportunities and preventing silos in real-time.',
+    'index.future.title': 'Meet Your AI Collab Agent (Beta)',
+    'index.future.text': '"The right person is already in your contacts. Tell us what you\'re working on — and we\'ll find the exact people who can help you right now. Not the obvious ones. The ones you forgot you knew." Our AI agent sits directly in your workflow to help you leverage your existing network effectively and connect you with the right people at the right time.',
+    'index.future.badge': 'AI Labs',
     'index.future.cta': 'Join the Waitlist',
     'index.future.ctaAlt': 'Become a Design Partner',
 
@@ -255,6 +259,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.talentAcquisition': 'גיוס טאלנטים',
     'nav.leadershipInnovation': 'מנהיגות וחדשנות',
     'nav.organizationalDynamics': 'דינמיקה ארגונית',
+    'nav.networkSkillsLeadership': 'כישורי רשת ומנהיגות',
+    'nav.collaborationAnalytics': 'ניתוח שיתוף פעולה (ONA)',
+    'nav.talentSelection': 'מיון והערכת טאלנט',
     'nav.methodology': 'מתודולוגיה',
     'nav.aiLabs': 'AI Labs (בטא)',
     'nav.academy': 'אקדמיה',
@@ -278,24 +285,25 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.trustedBy': 'סומכים עלינו',
     'hero.trustedBySubtitle': 'ארגונים מובילים שסומכים עלינו',
 
-    // Homepage - The 3 Pillars
-    'index.pillar1.title': 'גייסו את הטאלנט הנכון',
-    'index.pillar1.text': 'הערכות קוגניטיביות מבוססות משחק לזיהוי מועמדים עם הפוטנציאל הגבוה ביותר להשתלב ולהצליח.',
-    'index.pillar1.button': 'גלו כלי טאלנט',
-    'index.pillar2.title': 'פיתחו מנהיגים רשתיים',
-    'index.pillar2.text': 'סדנאות והערכות Network Behavior Skills (NBS) שמפתחות מנהלים שמחברים אנשים ומניעים חדשנות.',
-    'index.pillar2.button': 'גלו תוכניות מנהיגות',
-    'index.pillar3.title': 'מטבו דינמיקה ארגונית',
-    'index.pillar3.text': 'ניתוח רשתות ארגוניות (ONA) לחשיפת ה-DNA התרבותי שלכם, זיהוי צווארי בקבוק ושבירת סיילואים.',
-    'index.pillar3.button': 'גלו פלטפורמת ONA',
+    // Homepage - The 3 Solutions
+    'index.pillar1.title': 'כישורי רשת ומנהיגות',
+    'index.pillar1.text': 'הכשרת מנהלים לבניית יחסים, חיבור האנשים הנכונים והובלה אפקטיבית בין צוותים ללא הסתמכות על סמכות פורמלית.',
+    'index.pillar1.button': 'גלו תוכניות מנהיגות',
+    'index.pillar2.title': 'ניתוח שיתוף פעולה (ONA)',
+    'index.pillar2.text': 'כלי מיפוי רשת מתקדמים שמראים בדיוק איך הצוותים שלכם עובדים יחד – לזיהוי צווארי בקבוק וטאלנטים נסתרים.',
+    'index.pillar2.button': 'גלו פלטפורמת ONA',
+    'index.pillar3.title': 'מיון והערכת טאלנט',
+    'index.pillar3.text': 'הערכות קוגניטיביות מבוססות משחק לזיהוי מועמדים עם הכישורים והפוטנציאל להשתלב ברשת הארגונית שלכם.',
+    'index.pillar3.button': 'גלו כלי טאלנט',
 
-    // Homepage - Our Philosophy
-    'index.philosophy.title': 'המדע של צמתים וקשרים',
-    'index.philosophy.text': 'ארגון מנצח נבנה על שני דברים: אנשים מעולים (הצמתים) ואיך הם מתחברים (הקשרים). אנחנו הפלטפורמה היחידה שמספקת כלים למדוד ולמטב את שניהם במקביל.',
+    // Homepage - Our Methodology
+    'index.philosophy.title': 'מנהיגות רשתית ושיתוף פעולה',
+    'index.philosophy.text': 'ארגון מנצח נשען על איכות החיבורים בין האנשים. אנחנו מספקים את הכלים המעשיים להערכת פוטנציאל אישי, מיפוי האינטראקציה בין הצוותים ואופטימיזציה של הרשתות שהם פועלים בהן.',
 
     // Homepage - The Future (AI Collab Agent)
-    'index.future.title': 'פגשו את עתיד העבודה: AI Collab Agent (בטא)',
-    'index.future.text': 'מעבדת החדשנות שלנו בונה את הדור הבא של האינטליגנציה הארגונית. סוכן AI שמיושם בתהליך העבודה שלכם, מזהה הזדמנויות שיתוף פעולה ומונע סיילואים בזמן אמת.',
+    'index.future.title': 'פגשו את סוכן ה-AI Collab שלכם (בטא)',
+    'index.future.text': '"האדם הנכון כבר נמצא בפנקס האנשים שלכם. ספרו לנו על מה אתם עובדים — ונמצא את האנשים המדויקים שיכולים לעזור לכם עכשיו. לא המובנים מאליהם. אלה ששכחתם שהכרתם." סוכן ה-AI שלנו יושב ישירות בתהליך העבודה שלכם, עוזר לכם למנף את הרשת הקיימת ומחבר אתכם לאנשים הנכונים בזמן הנכון.',
+    'index.future.badge': 'AI Labs',
     'index.future.cta': 'הצטרפו לרשימת ההמתנה',
     'index.future.ctaAlt': 'הפכו לשותף עיצוב',
 
