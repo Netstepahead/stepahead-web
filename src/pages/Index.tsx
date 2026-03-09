@@ -43,13 +43,6 @@ const Index = () => {
       path: '/platform',
       image: '/ona-dashboard.png',
     },
-    {
-      titleKey: 'index.pillar3.title' as const,
-      textKey: 'index.pillar3.text' as const,
-      buttonKey: 'index.pillar3.button' as const,
-      path: '/solutions',
-      image: '/assessment.jpg',
-    },
   ];
 
   return (
@@ -57,7 +50,27 @@ const Index = () => {
       {/* 1. Hero Section (animation and layout unchanged; text updated in HeroSection) */}
       <HeroSection />
 
-      {/* 2. The 3 Solutions - Z-Pattern layout (alternating text/image rows) */}
+      {/* 2. Trust (client logos - immediate social proof below Hero) */}
+      <div className="py-16 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-12">
+            {t('hero.trustedBySubtitle')}
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14 px-4 max-w-6xl mx-auto">
+            {clients.map((client, i) => (
+              <div key={i} className="w-24 md:w-32 h-16 flex items-center justify-center group">
+                <img
+                  src={`/logos/${client.logo}`}
+                  alt={client.name}
+                  className={`max-h-full max-w-full object-contain opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 filter ${client.className || ''}`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* 3. The 2 Solutions - Z-Pattern layout (alternating text/image rows) */}
       <section id="solutions" className="bg-[#FAF9F6] relative overflow-hidden scroll-mt-24" dir={isRTL ? 'rtl' : 'ltr'}>
         <div className="container mx-auto px-4 relative z-10">
           {pillars.map((pillar, index) => {
@@ -80,8 +93,8 @@ const Index = () => {
               </div>
             );
             const imageBlock = (
-              <div className="rounded-2xl overflow-hidden shadow-xl aspect-video">
-                <img src={pillar.image} alt="" className="w-full h-full object-cover" />
+              <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+                <img src={pillar.image} alt="" className="rounded-2xl object-cover w-full aspect-video" />
               </div>
             );
             return (
@@ -94,7 +107,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 3. Methodology - 2-column grid: text + network image */}
+      {/* 4. Methodology - 2-column grid: text + network image */}
       <section className="py-24 bg-white relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -106,7 +119,9 @@ const Index = () => {
                 {t('index.philosophy.text')}
               </p>
             </div>
-            <img src="/network-vs-hierarchy.png" alt="" className="w-full h-auto drop-shadow-lg" />
+            <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+              <img src="/network-vs-hierarchy.png" alt="" className="rounded-2xl object-cover w-full" />
+            </div>
           </div>
         </div>
       </section>
@@ -135,30 +150,13 @@ const Index = () => {
                 <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180 mr-2' : 'ml-2'}`} />
               </Button>
             </div>
-            <img src="/collab-agent.png" alt="" className="rounded-xl shadow-2xl ring-1 ring-white/10 w-full h-auto" />
+            <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+              <img src="/collab-agent.png" alt="" className="rounded-2xl object-cover w-full" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 5. Trust (client logos - container modernized, logos unchanged) */}
-      <div className="py-16 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-12">
-            {t('hero.trustedBySubtitle')}
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14 px-4 max-w-6xl mx-auto">
-            {clients.map((client, i) => (
-              <div key={i} className="w-24 md:w-32 h-16 flex items-center justify-center group">
-                <img
-                  src={`/logos/${client.logo}`}
-                  alt={client.name}
-                  className={`max-h-full max-w-full object-contain opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 filter ${client.className || ''}`}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
