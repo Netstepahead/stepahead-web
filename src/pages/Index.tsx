@@ -80,9 +80,26 @@ const Index = () => {
                 <h3 className="text-2xl lg:text-3xl font-bold text-[#1B365D] mb-4">
                   {t(pillar.titleKey)}
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-6 max-w-lg">
+                <p className="text-gray-600 leading-relaxed mb-4 max-w-lg">
                   {t(pillar.textKey)}
                 </p>
+                {index === 0 && (
+                  <ul className="flex flex-col gap-2 mb-6 text-gray-600">
+                    <li className="flex items-center gap-2">
+                      <span className="text-[#E87722]">✓</span>
+                      {t('index.pillar1.benefit1')}
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-[#E87722]">✓</span>
+                      {t('index.pillar1.benefit2')}
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-[#E87722]">✓</span>
+                      {t('index.pillar1.benefit3')}
+                    </li>
+                  </ul>
+                )}
+                {index !== 0 && <div className="mb-6" />}
                 <Button
                   onClick={() => navigate(pillar.path)}
                   className="bg-[#1B365D] hover:bg-[#2a4a7f] text-white"
@@ -94,7 +111,11 @@ const Index = () => {
             );
             const imageBlock = (
               <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-                <img src={pillar.image} alt="" className="rounded-2xl object-cover w-full aspect-video" />
+                <img
+                  src={pillar.image}
+                  alt=""
+                  className={`rounded-2xl w-full ${index === 0 ? 'h-auto object-contain' : 'object-cover aspect-video'}`}
+                />
               </div>
             );
             return (

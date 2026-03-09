@@ -50,6 +50,9 @@ const translations: Record<Language, Record<string, string>> = {
     // Homepage - The 3 Solutions
     'index.pillar1.title': 'Network Leadership Programs',
     'index.pillar1.text': 'Train managers on how to build relationships, connect the right people, and lead effectively across teams without relying on formal authority.',
+    'index.pillar1.benefit1': 'Identify hidden bottlenecks',
+    'index.pillar1.benefit2': 'Cultivate high-trust relationships',
+    'index.pillar1.benefit3': 'Accelerate cross-functional alignment',
     'index.pillar1.button': 'Explore Leadership Programs',
     'index.pillar2.title': 'Collaboration Intelligence',
     'index.pillar2.text': 'Advanced network mapping tools that show you exactly how your teams actually work together to identify bottlenecks and reveal hidden talent.',
@@ -276,7 +279,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.mainTitle': 'לבנות ארגון מחובר שמוכן לאתגרי המחר',
     'hero.mainTitleLine1': 'לבנות ארגון מחובר',
     'hero.mainTitleLine2': 'שמוכן לאתגרי המחר',
-    'hero.mainSubtitle': 'הדרך לארגון מנצח עוברת באנשים שלו ובאופן שבו הם מחוברים. השתמשו בכלים מבוססי הנתונים שלנו כדי לחזק מנהיגים אג\'יליים, לשבור סיילואים ולהאיץ חדשנות ארגונית.',
+    'hero.mainSubtitle': 'הדרך לארגון מנצח עוברת באנשים שלו ובאופן שבו הם מחוברים. השתמשו בכלים מבוססי הנתונים שלנו כדי לחזק מנהיגים אג\'יליים, לשבור סיילוס, ולהאיץ חדשנות ארגונית.',
     'hero.exploreSolutions': 'גלו את הפתרונות שלנו',
     'hero.cta': 'קבע שיחת ייעוץ',
     'hero.cta2': 'התהליך שלנו',
@@ -288,6 +291,9 @@ const translations: Record<Language, Record<string, string>> = {
     // Homepage - The 3 Solutions
     'index.pillar1.title': 'תוכניות מנהיגות רשתית',
     'index.pillar1.text': 'הכשרת מנהלים לבניית יחסים, חיבור האנשים הנכונים והובלה אפקטיבית בין צוותים ללא הסתמכות על סמכות פורמלית.',
+    'index.pillar1.benefit1': 'זיהוי צווארי בקבוק נסתרים',
+    'index.pillar1.benefit2': 'טיפוח יחסי אמון גבוהים',
+    'index.pillar1.benefit3': 'האצת יישור קו בין-תפקידי',
     'index.pillar1.button': 'גלו תוכניות מנהיגות',
     'index.pillar2.title': 'אינטליגנציה שיתופית',
     'index.pillar2.text': 'כלי מיפוי רשת מתקדמים שמראים בדיוק איך הצוותים שלכם עובדים יחד – לזיהוי צווארי בקבוק וטאלנטים נסתרים.',
