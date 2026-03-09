@@ -34,24 +34,21 @@ const Index = () => {
       textKey: 'index.pillar1.text' as const,
       buttonKey: 'index.pillar1.button' as const,
       path: '/academy',
-      accent: 'border-s-[#1B365D]',
-      hoverBg: 'hover:bg-[#1B365D]/5',
+      image: '/workshop.jpg',
     },
     {
       titleKey: 'index.pillar2.title' as const,
       textKey: 'index.pillar2.text' as const,
       buttonKey: 'index.pillar2.button' as const,
       path: '/platform',
-      accent: 'border-s-[#E87722]',
-      hoverBg: 'hover:bg-[#E87722]/5',
+      image: '/ona-dashboard.png',
     },
     {
       titleKey: 'index.pillar3.title' as const,
       textKey: 'index.pillar3.text' as const,
       buttonKey: 'index.pillar3.button' as const,
       path: '/solutions',
-      accent: 'border-s-[#1B365D]',
-      hoverBg: 'hover:bg-[#1B365D]/5',
+      image: '/assessment.jpg',
     },
   ];
 
@@ -82,23 +79,25 @@ const Index = () => {
                 </Button>
               </div>
             );
-            const imagePlaceholder = (
-              <div className="rounded-2xl overflow-hidden aspect-video min-h-[280px] bg-gradient-to-br from-[#1B365D]/10 via-white/60 to-[#E87722]/10 backdrop-blur-sm border border-gray-200/60 shadow-xl" />
+            const imageBlock = (
+              <div className="rounded-2xl overflow-hidden shadow-xl aspect-video">
+                <img src={pillar.image} alt="" className="w-full h-full object-cover" />
+              </div>
             );
             return (
-              <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center py-20 first:pt-24 last:pb-24">
-                {textFirst ? textBlock : imagePlaceholder}
-                {textFirst ? imagePlaceholder : textBlock}
+              <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center py-24 first:pt-24 last:pb-24">
+                {textFirst ? textBlock : imageBlock}
+                {textFirst ? imageBlock : textBlock}
               </div>
             );
           })}
         </div>
       </section>
 
-      {/* 3. Methodology - 2-column grid: text + network placeholder */}
+      {/* 3. Methodology - 2-column grid: text + network image */}
       <section className="py-24 bg-white relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col items-start text-start">
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1B365D] mb-6 leading-tight">
                 {t('index.philosophy.title')}
@@ -107,20 +106,12 @@ const Index = () => {
                 {t('index.philosophy.text')}
               </p>
             </div>
-            {/* Network abstract placeholder - mesh gradient */}
-            <div className="relative rounded-2xl overflow-hidden aspect-square max-h-[400px] bg-[linear-gradient(135deg,hsl(218_48%_18%/0.08)_0%,transparent_50%,hsl(27_79%_53%/0.06)_100%)] border border-gray-200/60">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,white/40_100%)]" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full border-2 border-[#1B365D]/20" />
-                <div className="absolute w-24 h-24 rounded-full border-2 border-[#E87722]/20 top-1/4 start-1/4" />
-                <div className="absolute w-20 h-20 rounded-full border-2 border-[#1B365D]/15 bottom-1/3 end-1/4" />
-              </div>
-            </div>
+            <img src="/network-vs-hierarchy.png" alt="" className="w-full h-auto drop-shadow-lg" />
           </div>
         </div>
       </section>
 
-      {/* 4. AI Collab Agent - 2-column: content + Chat UI mockup */}
+      {/* 4. AI Collab Agent - 2-column: content + product image */}
       <section className="py-24 bg-[#1B365D] text-white relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E87722] rounded-full blur-[180px] opacity-20" />
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#E87722] rounded-full blur-[100px] opacity-10" />
@@ -144,21 +135,7 @@ const Index = () => {
                 <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180 mr-2' : 'ml-2'}`} />
               </Button>
             </div>
-            {/* Chat UI mockup placeholder */}
-            <div className="rounded-2xl overflow-hidden bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl p-6 min-h-[320px] flex flex-col gap-4">
-              <div className="flex gap-2">
-                <div className="w-2 h-2 rounded-full bg-white/40" />
-                <div className="w-2 h-2 rounded-full bg-white/30" />
-                <div className="w-2 h-2 rounded-full bg-white/20" />
-              </div>
-              <div className="flex-1 space-y-4">
-                <div className="rounded-lg rounded-bl-none bg-white/20 py-3 px-4 max-w-[85%]" />
-                <div className="rounded-lg rounded-br-none bg-white/30 py-3 px-4 max-w-[70%] ms-auto" />
-                <div className="rounded-lg rounded-bl-none bg-white/20 py-3 px-4 max-w-[80%]" />
-                <div className="rounded-lg rounded-br-none bg-white/25 py-2 px-4 max-w-[60%] ms-auto" />
-              </div>
-              <div className="rounded-lg bg-white/15 border border-white/20 py-3 px-4" />
-            </div>
+            <img src="/collab-agent.png" alt="" className="rounded-xl shadow-2xl ring-1 ring-white/10 w-full h-auto" />
           </div>
         </div>
       </section>

@@ -48,7 +48,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.trustedBySubtitle': 'Trusted by Forward-Thinking Organizations',
 
     // Homepage - The 3 Solutions
-    'index.pillar1.title': 'Network Skills & Leadership',
+    'index.pillar1.title': 'Network Leadership Programs',
     'index.pillar1.text': 'Train managers on how to build relationships, connect the right people, and lead effectively across teams without relying on formal authority.',
     'index.pillar1.button': 'Explore Leadership Programs',
     'index.pillar2.title': 'Collaboration Analytics (ONA)',
@@ -59,8 +59,8 @@ const translations: Record<Language, Record<string, string>> = {
     'index.pillar3.button': 'Discover Talent Tools',
 
     // Homepage - Our Methodology
-    'index.philosophy.title': 'Network Leadership & Collaboration',
-    'index.philosophy.text': 'A winning organization relies on how well its people connect. We provide the practical tools to assess individual potential, map how your teams interact, and optimize the networks they operate in.',
+    'index.philosophy.title': 'The Org Chart is a Myth. The Network is Reality.',
+    'index.philosophy.text': 'Value is no longer created in silos—it flows through invisible networks. We provide the methodology and tools to transition your company from a rigid hierarchy into an agile, connected ecosystem.',
 
     // Homepage - The Future (AI Collab Agent)
     'index.future.title': 'Meet Your AI Collab Agent (Beta)',
@@ -286,7 +286,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.trustedBySubtitle': 'ארגונים מובילים שסומכים עלינו',
 
     // Homepage - The 3 Solutions
-    'index.pillar1.title': 'כישורי רשת ומנהיגות',
+    'index.pillar1.title': 'תוכניות מנהיגות רשתית',
     'index.pillar1.text': 'הכשרת מנהלים לבניית יחסים, חיבור האנשים הנכונים והובלה אפקטיבית בין צוותים ללא הסתמכות על סמכות פורמלית.',
     'index.pillar1.button': 'גלו תוכניות מנהיגות',
     'index.pillar2.title': 'ניתוח שיתוף פעולה (ONA)',
@@ -297,8 +297,8 @@ const translations: Record<Language, Record<string, string>> = {
     'index.pillar3.button': 'גלו כלי טאלנט',
 
     // Homepage - Our Methodology
-    'index.philosophy.title': 'מנהיגות רשתית ושיתוף פעולה',
-    'index.philosophy.text': 'ארגון מנצח נשען על איכות החיבורים בין האנשים. אנחנו מספקים את הכלים המעשיים להערכת פוטנציאל אישי, מיפוי האינטראקציה בין הצוותים ואופטימיזציה של הרשתות שהם פועלים בהן.',
+    'index.philosophy.title': 'התרשים הארגוני הוא מיתוס. הרשת היא המציאות.',
+    'index.philosophy.text': 'ערך כבר לא נוצר בממגורות — הוא זורם דרך רשתות בלתי נראות. אנחנו מספקים את המתודולוגיה והכלים למעבר החברה שלכם מהיררכיה נוקשה למערכת אקולוגית גמישה ומחוברת.',
 
     // Homepage - The Future (AI Collab Agent)
     'index.future.title': 'פגשו את סוכן ה-AI Collab שלכם (בטא)',
