@@ -3,7 +3,15 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import HeroSection from "@/components/HeroSection";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useNavigate } from "react-router-dom";
+
+const leadershipCarouselImages = [
+  '/carousel/485136809_1241810007947886_5355771345522948267_n.jpg',
+  '/carousel/70380459_123570912362931_6421992094918770688_n.jpg',
+  '/carousel/PXL_20220918_083347381.jpg',
+  '/carousel/WhatsApp Image 2026-03-10 at 19.04.16.jpeg',
+];
 
 const Index = () => {
   const { t, isRTL } = useLanguage();
@@ -109,12 +117,30 @@ const Index = () => {
                 </Button>
               </div>
             );
-            const imageBlock = (
+            const imageBlock = index === 0 ? (
+              <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+                <Carousel opts={{ loop: true }} className="w-full">
+                  <CarouselContent className="-ml-0">
+                    {leadershipCarouselImages.map((img, i) => (
+                      <CarouselItem key={i} className="pl-0">
+                        <img
+                          src={img.includes(' ') ? encodeURI(img) : img}
+                          alt=""
+                          className="rounded-2xl w-full h-auto aspect-video object-contain"
+                        />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2 border-white/60 bg-white/60 hover:bg-white/80" />
+                  <CarouselNext className="right-2 border-white/60 bg-white/60 hover:bg-white/80" />
+                </Carousel>
+              </div>
+            ) : (
               <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
                 <img
                   src={pillar.image}
                   alt=""
-                  className={`rounded-2xl w-full h-auto aspect-video ${index === 0 ? 'object-contain' : 'object-cover'}`}
+                  className="rounded-2xl w-full h-auto aspect-video object-cover"
                 />
               </div>
             );
