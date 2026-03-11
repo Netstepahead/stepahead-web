@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,6 +15,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { language, setLanguage, t, isRTL } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isHomePage = location.pathname === "/";
   const isLightBackground = isHomePage || isScrolled;
@@ -45,6 +46,15 @@ const Navbar = () => {
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
 
   const toggleLanguage = () => {
     setLanguage(language === 'en' ? 'he' : 'en');
@@ -118,7 +128,7 @@ const Navbar = () => {
           <button onClick={toggleLanguage} className={`p-2 rounded-full transition-colors ${globeColorClass}`}>
             <Globe className="w-5 h-5" />
           </button>
-          <Button className={buttonClass}>
+          <Button className={buttonClass} onClick={() => navigate('/contact')}>
             {t('nav.getStarted')}
           </Button>
         </div>
@@ -145,36 +155,77 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu - Slide-in panel */}
       {isOpen && (
-        <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-6 pt-20 pb-10 md:hidden animate-in slide-in-from-top-10">
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">{t('nav.solutionsDropdown')}</span>
-            {solutionsSubLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="text-xl font-serif font-bold text-[#1B365D]"
-                onClick={() => setIsOpen(false)}
-              >
-                {t(link.nameKey)}
-              </Link>
-            ))}
+        <>
+          <div
+            className="fixed inset-0 bg-black/40 z-40 md:hidden"
+            onClick={() => setIsOpen(false)}
+            aria-hidden="true"
+          />
+          <div
+            className={`fixed top-0 bottom-0 z-50 w-[min(320px,85vw)] max-h-[100dvh] overflow-y-auto bg-white shadow-2xl md:hidden animate-in duration-300 ${
+              isRTL ? 'left-0 slide-in-from-left' : 'right-0 slide-in-from-right'
+            }`}
+            dir={isRTL ? 'rtl' : 'ltr'}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu"
+          >
+            <div className="flex flex-col p-6 pt-16 gap-1">
+              <div className="mb-4">
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider px-3 mb-3">
+                  {t('nav.solutionsDropdown')}
+                </p>
+                <nav className="flex flex-col gap-1">
+                  {solutionsSubLinks.map((link) => (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className="block px-4 py-3 rounded-lg text-[#1B365D] font-medium hover:bg-[#1B365D]/5 active:bg-[#1B365D]/10 transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {t(link.nameKey)}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+              <div className="border-t border-gray-100 my-2" />
+              <nav className="flex flex-col gap-1">
+                {mainNavLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`block px-4 py-3 rounded-lg font-medium transition-colors ${
+                      location.pathname === link.path
+                        ? 'text-[#E87722] bg-[#E87722]/10'
+                        : 'text-[#1B365D] hover:bg-[#1B365D]/5 active:bg-[#1B365D]/10'
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {t(link.nameKey)}
+                  </Link>
+                ))}
+              </nav>
+              <div className="border-t border-gray-100 my-4" />
+              <div className="flex items-center gap-3 px-4">
+                <button
+                  onClick={toggleLanguage}
+                  className="p-2.5 rounded-full bg-gray-100 text-[#1B365D] hover:bg-gray-200 transition-colors"
+                  aria-label="Toggle language"
+                >
+                  <Globe className="w-5 h-5" />
+                </button>
+                <Button
+                  className="flex-1 bg-[#1B365D] hover:bg-[#2a4a7f] text-white"
+                  onClick={() => { setIsOpen(false); navigate('/contact'); }}
+                >
+                  {t('nav.getStarted')}
+                </Button>
+              </div>
+            </div>
           </div>
-          {mainNavLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className="text-2xl font-serif font-bold text-[#1B365D]"
-              onClick={() => setIsOpen(false)}
-            >
-              {t(link.nameKey)}
-            </Link>
-          ))}
-          <Button className="bg-[#1B365D] text-white w-48 mt-4" onClick={() => setIsOpen(false)}>
-            {t('nav.getStarted')}
-          </Button>
-        </div>
+        </>
       )}
     </nav>
   );
