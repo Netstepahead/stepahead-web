@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import HeroSection from "@/components/HeroSection";
 import { ArrowRight } from "lucide-react";
@@ -131,7 +131,8 @@ const Index = () => {
             const imageBlock = index === 0 ? (
               <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
                 <Carousel
-                  opts={{ loop: true }}
+                  key={isRTL ? 'leadership-rtl' : 'leadership-ltr'}
+                  opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
                   plugins={[leadershipAutoplay]}
                   setApi={(api) => { api?.plugins().autoplay?.play(); }}
                   className="w-full"
@@ -139,7 +140,7 @@ const Index = () => {
                   <CarouselContent className="-ml-0">
                     {leadershipCarouselImages.map((img, i) => (
                       <CarouselItem key={i} className="pl-0">
-                        <div className="aspect-video overflow-hidden rounded-2xl">
+                        <div className="aspect-video overflow-hidden rounded-2xl bg-[#FAF9F6]">
                           <img
                             src={img.includes(' ') ? encodeURI(img) : img}
                             alt=""
@@ -156,7 +157,8 @@ const Index = () => {
             ) : (
               <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
                 <Carousel
-                  opts={{ loop: true }}
+                  key={isRTL ? 'ona-rtl' : 'ona-ltr'}
+                  opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
                   plugins={[onaAutoplay]}
                   setApi={(api) => { api?.plugins().autoplay?.play(); }}
                   className="w-full"
@@ -164,7 +166,7 @@ const Index = () => {
                   <CarouselContent className="-ml-0">
                     {onaCarouselImages.map((img, i) => (
                       <CarouselItem key={i} className="pl-0">
-                        <div className="aspect-video overflow-hidden rounded-2xl">
+                        <div className="aspect-video overflow-hidden rounded-2xl bg-[#1B365D]">
                           <img
                             src={img}
                             alt=""
