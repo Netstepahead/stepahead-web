@@ -188,7 +188,7 @@ const Index = () => {
               </div>
             );
             return (
-              <div key={index} className={isCollaborationSection ? "relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-[#1B365D]" : ""}>
+              <div key={index} className={isCollaborationSection ? "relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-navy" : ""}>
                 {isCollaborationSection ? (
                   <div className="container mx-auto px-4 py-16 lg:py-24">
                     {rowContent}
@@ -222,7 +222,7 @@ const Index = () => {
       </section>
 
       {/* 4. AI Collab Agent - 2-column: content + product image */}
-      <section className="py-24 bg-[#1B365D] text-white relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
+      <section className="py-24 bg-navy text-white relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E87722] rounded-full blur-[180px] opacity-20" />
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#E87722] rounded-full blur-[100px] opacity-10" />
         <div className="container mx-auto px-4 relative z-10">

@@ -50,9 +50,9 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // StepAhead custom colors
+        // StepAhead custom colors (brand navy #1B365D)
         navy: {
-          DEFAULT: "hsl(var(--navy))",
+          DEFAULT: "#1B365D",
           light: "hsl(var(--navy-light))",
         },
         orange: {
