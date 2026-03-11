@@ -62,7 +62,7 @@ const About = () => {
       </section>
 
       {/* 3. What Drives Us */}
-      <section className="py-16 md:py-24 bg-slate-50">
+      <section className="py-24 bg-slate-50/50">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#1B365D] text-center mb-12 md:mb-16">
             {t('about.whatDrivesUs')}
@@ -71,11 +71,13 @@ const About = () => {
             {values.map((val, i) => (
               <div
                 key={i}
-                className="bg-white/80 backdrop-blur-md border border-white/60 rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-xl transition-shadow"
+                className="group bg-white p-10 rounded-3xl shadow-md border border-slate-100 hover:shadow-2xl hover:border-orange-100 hover:-translate-y-2 transition-all duration-300 ease-in-out cursor-default"
               >
-                <val.icon className="w-10 h-10 text-[#E87722] mb-4" />
-                <h3 className="text-xl font-bold text-[#1B365D] mb-3">{t(val.titleKey)}</h3>
-                <p className="text-slate-600 leading-relaxed">{t(val.descKey)}</p>
+                <div className="w-16 h-16 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-8 ring-1 ring-orange-100/50 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+                  <val.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">{t(val.titleKey)}</h3>
+                <p className="text-slate-600 leading-relaxed text-lg">{t(val.descKey)}</p>
               </div>
             ))}
           </div>
