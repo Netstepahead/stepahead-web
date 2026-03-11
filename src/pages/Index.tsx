@@ -123,11 +123,13 @@ const Index = () => {
                   <CarouselContent className="-ml-0">
                     {leadershipCarouselImages.map((img, i) => (
                       <CarouselItem key={i} className="pl-0">
-                        <img
-                          src={img.includes(' ') ? encodeURI(img) : img}
-                          alt=""
-                          className="rounded-2xl w-full h-auto aspect-video object-contain"
-                        />
+                        <div className="aspect-video overflow-hidden rounded-2xl">
+                          <img
+                            src={img.includes(' ') ? encodeURI(img) : img}
+                            alt=""
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
