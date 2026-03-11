@@ -66,7 +66,7 @@ const translations: Record<Language, Record<string, string>> = {
     'index.philosophy.text': 'Value is no longer created in silos—it flows through invisible networks. We provide the methodology and tools to transition your company from a rigid hierarchy into an agile, connected ecosystem.',
 
     // Homepage - The Future (AI Collab Agent)
-    'index.future.title': 'Meet Your AI Collab Agent (Beta)',
+    'index.future.title': 'Meet Your Collab Agent (Beta)',
     'index.future.text': '"The right person is already in your contacts. Tell us what you\'re working on — and we\'ll find the exact people who can help you right now. Not the obvious ones. The ones you forgot you knew." Our AI agent sits directly in your workflow to help you leverage your existing network effectively and connect you with the right people at the right time.',
     'index.future.badge': 'AI Labs',
     'index.future.cta': 'Join the Waitlist',
@@ -307,7 +307,7 @@ const translations: Record<Language, Record<string, string>> = {
     'index.philosophy.text': 'ערך כבר לא נוצר בממגורות — הוא זורם דרך רשתות בלתי נראות. אנחנו מספקים את המתודולוגיה והכלים למעבר החברה שלכם מהיררכיה נוקשה למערכת אקולוגית גמישה ומחוברת.',
 
     // Homepage - The Future (AI Collab Agent)
-    'index.future.title': 'פגשו את סוכן ה-AI Collab שלכם (בטא)',
+    'index.future.title': 'פגשו את סוכן ה-Collab שלכם (בטא)',
     'index.future.text': '"האדם הנכון כבר נמצא בפנקס האנשים שלכם. ספרו לנו על מה אתם עובדים — ונמצא את האנשים המדויקים שיכולים לעזור לכם עכשיו. לא המובנים מאליהם. אלה ששכחתם שהכרתם." סוכן ה-AI שלנו יושב ישירות בתהליך העבודה שלכם, עוזר לכם למנף את הרשת הקיימת ומחבר אתכם לאנשים הנכונים בזמן הנכון.',
     'index.future.badge': 'AI Labs',
     'index.future.cta': 'הצטרפו לרשימת ההמתנה',
