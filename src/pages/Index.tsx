@@ -155,7 +155,7 @@ const Index = () => {
                 </Carousel>
               </div>
             ) : (
-              <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/20">
                 <Carousel
                   key={isRTL ? 'ona-rtl' : 'ona-ltr'}
                   opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -166,18 +166,18 @@ const Index = () => {
                   <CarouselContent className="-ml-0">
                     {onaCarouselImages.map((img, i) => (
                       <CarouselItem key={i} className="pl-0">
-                        <div className="aspect-video overflow-hidden rounded-2xl bg-[#1B365D]">
+                        <div className="aspect-video overflow-hidden flex items-center justify-center bg-white">
                           <img
                             src={img}
                             alt=""
-                            className="w-full h-full object-cover"
+                            className="object-contain p-4 w-full h-full"
                           />
                         </div>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselPrevious className="left-2 border-white/60 bg-white/60 hover:bg-white/80" />
-                  <CarouselNext className="right-2 border-white/60 bg-white/60 hover:bg-white/80" />
+                  <CarouselPrevious className="left-2 border-gray-200 bg-white/90 hover:bg-white text-gray-700" />
+                  <CarouselNext className="right-2 border-gray-200 bg-white/90 hover:bg-white text-gray-700" />
                 </Carousel>
               </div>
             );
@@ -245,8 +245,8 @@ const Index = () => {
                 <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180 mr-2' : 'ml-2'}`} />
               </Button>
             </div>
-            <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-              <img src="/collab-personal.png" alt="" className="rounded-2xl object-cover w-full" />
+            <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+              <img src="/collab-personal.png" alt="" className="w-full h-auto object-contain" />
             </div>
           </div>
         </div>
