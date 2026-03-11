@@ -227,6 +227,9 @@ const Index = () => {
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#E87722] rounded-full blur-[100px] opacity-10" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-black/10">
+              <img src="/agent-chat.png" alt="" className="w-full h-auto object-contain" />
+            </div>
             <div className="flex flex-col items-start text-start">
               <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight">
                 {t('index.future.title')}
@@ -241,9 +244,6 @@ const Index = () => {
                 {t('index.future.cta')}
                 <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180 mr-2' : 'ml-2'}`} />
               </Button>
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-black/10">
-              <img src="/agent-chat.png" alt="" className="w-full h-auto object-contain" />
             </div>
           </div>
         </div>
