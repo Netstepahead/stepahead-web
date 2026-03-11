@@ -21,11 +21,11 @@ const Contact = () => {
         </p>
         <div className="space-y-6 text-left">
           <a
-            href="mailto:info@stepahead.com"
+            href="mailto:info@step-ahead.com"
             className="flex items-center gap-4 p-4 rounded-xl border border-gray-100 hover:bg-gray-50 transition-colors"
           >
             <Mail className="w-6 h-6 text-[#E87722]" />
-            <span className="text-[#1B365D] font-medium">info@stepahead.com</span>
+            <span className="text-[#1B365D] font-medium">info@step-ahead.com</span>
           </a>
           <div className="flex items-center gap-4 p-4 rounded-xl border border-gray-100">
             <MapPin className="w-6 h-6 text-[#E87722]" />

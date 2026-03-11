@@ -67,7 +67,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Homepage - The Future (AI Collab Agent)
     'index.future.title': 'Meet Your Collab Agent (Beta)',
-    'index.future.text': '"The right person is already in your contacts. Tell us what you\'re working on — and we\'ll find the exact people who can help you right now. Not the obvious ones. The ones you forgot you knew." Our AI agent sits directly in your workflow to help you leverage your existing network effectively and connect you with the right people at the right time.',
+    'index.future.text': 'The right person is already in your contacts. Tell us what you\'re working on — and we\'ll find the exact people who can help you right now. Not the obvious ones. The ones you forgot you knew. Our AI agent sits directly in your workflow to help you leverage your existing network effectively and connect you with the right people at the right time.',
     'index.future.badge': 'AI Labs',
     'index.future.cta': 'Join the Waitlist',
     'index.future.ctaAlt': 'Become a Design Partner',
@@ -267,7 +267,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.collaborationAnalytics': 'בינה שיתופית',
     'nav.talentSelection': 'איתור והערכת טאלנטים',
     'nav.methodology': 'מתודולוגיה',
-    'nav.aiLabs': 'סוכן Collab',
+    'nav.aiLabs': 'Collab Agent',
     'nav.academy': 'אקדמיה',
     'nav.process': 'התהליך שלנו',
     'nav.skills': 'כישורי רשת',
@@ -309,7 +309,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Homepage - The Future (AI Collab Agent)
     'index.future.title': 'הכירו את Collab Agent (בטא)',
-    'index.future.text': '"האדם הנכון כבר נמצא באנשי הקשר שלכם. ספרו לנו על מה אתם עובדים — ואנו נמצא את האנשים המדויקים שיכולים לעזור לכם עכשיו. לא המובנים מאליהם, אלא אלה ששכחתם שאתם מכירים." סוכן ה-AI שלנו משתלב ישירות בסביבת העבודה שלכם כדי לחבר אתכם לאנשים הנכונים בזמן הנכון.',
+    'index.future.text': 'האדם הנכון כבר נמצא באנשי הקשר שלכם. ספרו לנו על מה אתם עובדים — ואנו נמצא את האנשים המדויקים שיכולים לעזור לכם עכשיו. לא המובנים מאליהם, אלא אלה ששכחתם שאתם מכירים. סוכן ה-AI שלנו משתלב ישירות בסביבת העבודה שלכם כדי לחבר אתכם לאנשים הנכונים בזמן הנכון.',
     'index.future.badge': 'AI Labs',
     'index.future.cta': 'הצטרפו לרשימת ההמתנה',
     'index.future.ctaAlt': 'הפכו לשותף עיצוב (Design Partner)',
