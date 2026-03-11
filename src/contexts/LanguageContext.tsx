@@ -31,6 +31,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.skills': 'Network Skills',
     'nav.contact': 'Contact',
     'nav.getStarted': 'Get Started',
+    'nav.cta': "Let's Talk",
 
     // Hero (new value proposition)
     'hero.title': 'Network Leadership',
@@ -273,6 +274,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.skills': 'כישורי רשת',
     'nav.contact': 'צור קשר',
     'nav.getStarted': 'התחילו עכשיו',
+    'nav.cta': 'דברו איתנו',
 
     // Hero
     'hero.title': 'מנהיגות רשתית',

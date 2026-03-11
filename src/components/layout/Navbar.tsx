@@ -129,7 +129,7 @@ const Navbar = () => {
             <Globe className="w-5 h-5" />
           </button>
           <Button className={buttonClass} onClick={() => navigate('/contact')}>
-            {t('nav.getStarted')}
+            {t('nav.cta')}
           </Button>
         </div>
 
@@ -220,7 +220,7 @@ const Navbar = () => {
                   className="flex-1 bg-[#1B365D] hover:bg-[#2a4a7f] text-white"
                   onClick={() => { setIsOpen(false); navigate('/contact'); }}
                 >
-                  {t('nav.getStarted')}
+                  {t('nav.cta')}
                 </Button>
               </div>
             </div>
