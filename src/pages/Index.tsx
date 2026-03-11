@@ -203,19 +203,19 @@ const Index = () => {
       </section>
 
       {/* 4. Methodology - 2-column grid: text + network image */}
-      <section className="py-24 bg-white relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col items-start text-start">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1B365D] mb-6 leading-tight">
+      <section className="py-12 md:py-24 bg-white relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
+        <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-full overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="flex flex-col items-start text-start order-2 md:order-none">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#1B365D] mb-4 md:mb-6 leading-tight">
                 {t('index.philosophy.title')}
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
+              <p className="text-base md:text-xl text-gray-600 leading-relaxed max-w-lg">
                 {t('index.philosophy.text')}
               </p>
             </div>
-            <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-              <img src="/network-vs-hierarchy.png" alt="" className="rounded-2xl object-cover w-full" />
+            <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] max-w-full overflow-hidden order-1 md:order-none">
+              <img src="/network-vs-hierarchy.png" alt="" className="rounded-2xl object-cover w-full max-w-full" />
             </div>
           </div>
         </div>
@@ -224,11 +224,11 @@ const Index = () => {
       {/* 4. AI Collab Agent - 2-column: content + product image */}
       <section className="py-12 md:py-24 bg-navy text-white relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
         <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-full overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-            <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-black/10 max-w-full order-1 lg:order-none">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+            <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-black/10 max-w-full order-1 md:order-none">
               <img src="/agent-chat.png" alt="" className="w-full h-auto object-contain max-w-full" />
             </div>
-            <div className="flex flex-col items-start text-start order-2 lg:order-none">
+            <div className="flex flex-col items-start text-start order-2 md:order-none">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4 md:mb-6 leading-tight">
                 {t('index.future.title')}
               </h2>
