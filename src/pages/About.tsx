@@ -46,10 +46,10 @@ const About = () => {
       </section>
 
       {/* 2. Our Story */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-navy text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
               <p>{t('about.story1')}</p>
               <p>{t('about.story2')}</p>
               <p>{t('about.story3')}</p>
