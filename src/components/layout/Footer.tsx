@@ -7,9 +7,9 @@ const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-navy text-white pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-navy text-white pt-12 md:pt-16 pb-6 md:pb-8">
+      <div className="container mx-auto px-4 md:px-6 max-w-full overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
           
           {/* Column 1: Brand */}
           <div className="space-y-6">
@@ -78,7 +78,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-300">
+        <div className="pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-300">
           <p>© {currentYear} StepAhead. {t('footer.rights')}</p>
           <div className="flex gap-8">
             <Link to="/privacy" className="hover:text-white transition-colors">{t('footer.privacy')}</Link>
