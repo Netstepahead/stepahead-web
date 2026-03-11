@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import HeroSection from "@/components/HeroSection";
 import { ArrowRight } from "lucide-react";
@@ -14,13 +14,27 @@ const leadershipCarouselImages = [
   '/carousel/WhatsApp Image 2026-03-10 at 19.04.16.jpeg',
 ];
 
+const onaCarouselImages = [
+  '/ona-carousel/ona1.png',
+  '/ona-carousel/ona2.png',
+  '/ona-carousel/ona3.png',
+];
+
 const Index = () => {
   const { t, isRTL } = useLanguage();
   const navigate = useNavigate();
+  const [onaSlideIndex, setOnaSlideIndex] = useState(0);
 
   useEffect(() => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [isRTL]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setOnaSlideIndex((prev) => (prev + 1) % onaCarouselImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const clients = [
     { name: "Clalit", logo: "clalit.png" },
@@ -71,7 +85,7 @@ const Index = () => {
                 <img
                   src={`/logos/${client.logo}`}
                   alt={client.name}
-                  className={`max-h-full max-w-full object-contain opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 filter ${client.className || ''}`}
+                  className={`max-h-full max-w-full object-contain transition-all duration-300 ${client.className || ''}`}
                 />
               </div>
             ))}
@@ -84,12 +98,13 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           {pillars.map((pillar, index) => {
             const textFirst = index % 2 === 0; // Row 1, 3: text left. Row 2: image left.
+            const isCollaborationSection = index === 1;
             const textBlock = (
               <div className="flex flex-col items-start text-start">
-                <h3 className="text-2xl lg:text-3xl font-bold text-[#1B365D] mb-4">
+                <h3 className={`text-2xl lg:text-3xl font-bold mb-4 ${isCollaborationSection ? 'text-white' : 'text-[#1B365D]'}`}>
                   {t(pillar.titleKey)}
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-4 max-w-lg">
+                <p className={`leading-relaxed mb-4 max-w-lg ${isCollaborationSection ? 'text-slate-300' : 'text-gray-600'}`}>
                   {t(pillar.textKey)}
                 </p>
                 {index === 0 && (
@@ -111,7 +126,7 @@ const Index = () => {
                 {index !== 0 && <div className="mb-6" />}
                 <Button
                   onClick={() => navigate(pillar.path)}
-                  className="bg-[#1B365D] hover:bg-[#2a4a7f] text-white"
+                  className={isCollaborationSection ? "bg-[#E87722] hover:bg-[#f08530] text-white" : "bg-[#1B365D] hover:bg-[#2a4a7f] text-white"}
                 >
                   {t(pillar.buttonKey)}
                   <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180 mr-2' : 'ml-2'}`} />
@@ -145,17 +160,33 @@ const Index = () => {
               </div>
             ) : (
               <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-                <img
-                  src={pillar.image}
-                  alt=""
-                  className="rounded-2xl w-full h-auto aspect-video object-cover"
-                />
+                <div className="relative aspect-video overflow-hidden rounded-2xl">
+                  {onaCarouselImages.map((img, i) => (
+                    <img
+                      key={i}
+                      src={img}
+                      alt=""
+                      className={`absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-700 ease-in-out ${i === onaSlideIndex ? 'opacity-100' : 'opacity-0'}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            );
+            const rowContent = (
+              <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center ${isCollaborationSection ? '' : 'py-24 first:pt-24 last:pb-24'}`}>
+                {textFirst ? textBlock : imageBlock}
+                {textFirst ? imageBlock : textBlock}
               </div>
             );
             return (
-              <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center py-24 first:pt-24 last:pb-24">
-                {textFirst ? textBlock : imageBlock}
-                {textFirst ? imageBlock : textBlock}
+              <div key={index} className={isCollaborationSection ? "relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-[#1B365D]" : ""}>
+                {isCollaborationSection ? (
+                  <div className="container mx-auto px-4 py-16 lg:py-24">
+                    {rowContent}
+                  </div>
+                ) : (
+                  rowContent
+                )}
               </div>
             );
           })}
