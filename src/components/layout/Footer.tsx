@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Mail, MapPin, Globe } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
@@ -23,32 +23,23 @@ const Footer = () => {
             <p className="text-blue-200 text-sm leading-relaxed">
               {t('footer.tagline')}
             </p>
-            <div className="flex gap-4">
-              {/* LinkedIn Only */}
-              <a 
-                href="https://www.linkedin.com/company/stepaheadtech" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="bg-white/10 p-2 rounded-full hover:bg-[#E87722] transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-            </div>
           </div>
 
-          {/* Column 2: Platform */}
+          {/* Column 2: Solutions */}
           <div>
-            <h4 className="font-bold text-lg mb-6 text-[#E87722]">{t('footer.platform')}</h4>
+            <h4 className="font-bold text-lg mb-6 text-[#E87722]">{t('footer.solutionsHeading')}</h4>
             <ul className="space-y-4 text-blue-200 text-sm">
               <li>
-                <Link to="/platform" className="hover:text-white transition-colors">{t('footer.onaTechnology')}</Link>
+                <Link to="/academy" className="hover:text-white transition-colors">{t('footer.networkLeadership')}</Link>
               </li>
               <li>
-                <Link to="/solutions" className="hover:text-white transition-colors">{t('footer.solutions')}</Link>
+                <Link to="/platform" className="hover:text-white transition-colors">{t('footer.collaborationIntelligence')}</Link>
               </li>
               <li>
-                <Link to="/solutions" className="hover:text-white transition-colors">{t('footer.useCases')}</Link>
+                <Link to="/solutions" className="hover:text-white transition-colors">{t('footer.talentSelection')}</Link>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">{t('footer.collabAgent')}</a>
               </li>
             </ul>
           </div>
@@ -61,35 +52,26 @@ const Footer = () => {
                 <Link to="/about" className="hover:text-white transition-colors">{t('footer.aboutUs')}</Link>
               </li>
               <li>
-                <Link to="/academy" className="hover:text-white transition-colors">{t('footer.academy')}</Link>
-              </li>
-              <li>
                 <Link to="/contact" className="hover:text-white transition-colors">{t('footer.contact')}</Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Contact */}
+          {/* Column 4: Contact Us */}
           <div>
             <h4 className="font-bold text-lg mb-6 text-[#E87722]">{t('footer.contactUs')}</h4>
             <ul className="space-y-4 text-blue-200 text-sm">
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-[#E87722] shrink-0" />
+                <Mail className="w-5 h-5 text-[#E87722] shrink-0 mt-0.5" />
                 <a href="mailto:info@stepahead.com" className="hover:text-white transition-colors">
                   info@stepahead.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#E87722] shrink-0" />
-                <span>
-                  {t('footer.location')}
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Globe className="w-5 h-5 text-[#E87722] shrink-0" />
-                <span>
-                  {t('footer.globalOps')}
-                </span>
+                <Linkedin className="w-5 h-5 text-[#E87722] shrink-0 mt-0.5" />
+                <a href="#" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+                  {t('footer.followLinkedIn')}
+                </a>
               </li>
             </ul>
           </div>
