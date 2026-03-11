@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import HeroSection from "@/components/HeroSection";
 import { ArrowRight } from "lucide-react";
@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useNavigate } from "react-router-dom";
+
+const leadershipAutoplay = Autoplay({ delay: 4000 });
+const onaAutoplay = Autoplay({ delay: 4000 });
 
 const leadershipCarouselImages = [
   '/carousel/485136809_1241810007947886_5355771345522948267_n.jpg',
@@ -23,18 +26,10 @@ const onaCarouselImages = [
 const Index = () => {
   const { t, isRTL } = useLanguage();
   const navigate = useNavigate();
-  const [onaSlideIndex, setOnaSlideIndex] = useState(0);
 
   useEffect(() => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [isRTL]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setOnaSlideIndex((prev) => (prev + 1) % onaCarouselImages.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
 
   const clients = [
     { name: "Clalit", logo: "clalit.png" },
@@ -137,8 +132,8 @@ const Index = () => {
               <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
                 <Carousel
                   opts={{ loop: true }}
-                  plugins={[Autoplay({ delay: 4000 })]}
-                  setApi={(api) => api?.plugins().autoplay?.play()}
+                  plugins={[leadershipAutoplay]}
+                  setApi={(api) => { api?.plugins().autoplay?.play(); }}
                   className="w-full"
                 >
                   <CarouselContent className="-ml-0">
@@ -160,16 +155,28 @@ const Index = () => {
               </div>
             ) : (
               <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-                <div className="relative aspect-video overflow-hidden rounded-2xl">
-                  {onaCarouselImages.map((img, i) => (
-                    <img
-                      key={i}
-                      src={img}
-                      alt=""
-                      className={`absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-700 ease-in-out ${i === onaSlideIndex ? 'opacity-100' : 'opacity-0'}`}
-                    />
-                  ))}
-                </div>
+                <Carousel
+                  opts={{ loop: true }}
+                  plugins={[onaAutoplay]}
+                  setApi={(api) => { api?.plugins().autoplay?.play(); }}
+                  className="w-full"
+                >
+                  <CarouselContent className="-ml-0">
+                    {onaCarouselImages.map((img, i) => (
+                      <CarouselItem key={i} className="pl-0">
+                        <div className="aspect-video overflow-hidden rounded-2xl">
+                          <img
+                            src={img}
+                            alt=""
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2 border-white/60 bg-white/60 hover:bg-white/80" />
+                  <CarouselNext className="right-2 border-white/60 bg-white/60 hover:bg-white/80" />
+                </Carousel>
               </div>
             );
             const rowContent = (
