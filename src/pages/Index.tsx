@@ -223,8 +223,6 @@ const Index = () => {
 
       {/* 4. AI Collab Agent - 2-column: content + product image */}
       <section className="py-24 bg-navy text-white relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E87722] rounded-full blur-[180px] opacity-20" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#E87722] rounded-full blur-[100px] opacity-10" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-black/10">
