@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import { useNavigate } from "react-router-dom";
 
 const leadershipCarouselImages = [
@@ -119,7 +120,12 @@ const Index = () => {
             );
             const imageBlock = index === 0 ? (
               <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-                <Carousel opts={{ loop: true }} className="w-full">
+                <Carousel
+                  opts={{ loop: true }}
+                  plugins={[Autoplay({ delay: 4000 })]}
+                  setApi={(api) => api?.plugins().autoplay?.play()}
+                  className="w-full"
+                >
                   <CarouselContent className="-ml-0">
                     {leadershipCarouselImages.map((img, i) => (
                       <CarouselItem key={i} className="pl-0">
