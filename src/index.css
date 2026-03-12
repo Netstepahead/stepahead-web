@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Heebo:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -124,15 +124,17 @@
     scroll-behavior: smooth;
   }
 
-  /* Hebrew: Rubik for consistent, modern typography (titles, subtitles, body) */
+  /* Hebrew: Heebo for body (clean, readable) - matches Goma-Gavim style */
   [dir="rtl"],
   [lang="he"] {
-    font-family: 'Rubik', 'Heebo', system-ui, sans-serif;
+    font-family: 'Heebo', 'Rubik', system-ui, sans-serif;
   }
 
-  /* Hebrew: Use Rubik for headings too (font-serif override) for consistency */
+  /* Hebrew: Rubik for headings (bold, geometric, rounded) - matches title/subtitle style */
   [dir="rtl"] .font-serif,
-  [lang="he"] .font-serif {
+  [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6,
+  [lang="he"] .font-serif,
+  [lang="he"] h1, [lang="he"] h2, [lang="he"] h3, [lang="he"] h4, [lang="he"] h5, [lang="he"] h6 {
     font-family: 'Rubik', system-ui, sans-serif;
   }
 }
