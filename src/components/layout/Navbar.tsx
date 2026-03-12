@@ -18,7 +18,8 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const isHomePage = location.pathname === "/";
-  const isLightBackground = isHomePage ? isScrolled : true;
+  const isAtHero = isHomePage && !isScrolled;
+  const isLightBackground = !isAtHero;
 
   const logoSrc = isLightBackground
     ? "/logo-stepahead.svg"
@@ -77,7 +78,7 @@ const Navbar = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         isLightBackground
-          ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100 py-4"
+          ? "bg-white shadow-sm border-b border-slate-200 py-4"
           : "bg-transparent py-6"
       }`}
     >

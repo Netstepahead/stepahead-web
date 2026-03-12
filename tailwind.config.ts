@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Plus Jakarta Sans", "Heebo", "system-ui", "sans-serif"],
+        sans: ["Plus Jakarta Sans", "Rubik", "system-ui", "sans-serif"],
+        serif: ["Plus Jakarta Sans", "Rubik", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -124,9 +124,16 @@
     scroll-behavior: smooth;
   }
 
-  /* RTL Support for Hebrew */
-  [dir="rtl"] {
-    font-family: 'Plus Jakarta Sans', 'Heebo', sans-serif;
+  /* Hebrew: Rubik for consistent, modern typography (titles, subtitles, body) */
+  [dir="rtl"],
+  [lang="he"] {
+    font-family: 'Rubik', 'Heebo', system-ui, sans-serif;
+  }
+
+  /* Hebrew: Use Rubik for headings too (font-serif override) for consistency */
+  [dir="rtl"] .font-serif,
+  [lang="he"] .font-serif {
+    font-family: 'Rubik', system-ui, sans-serif;
   }
 }
 
