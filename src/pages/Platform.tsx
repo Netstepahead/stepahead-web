@@ -3,6 +3,22 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { CircleCheck } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+
+const collabCarouselImages = [
+  '/Collab_Carousel/agent-chat.png',
+  '/Collab_Carousel/Enhance_Network.png',
+  '/Collab_Carousel/Teams_connect.png',
+];
+
+const nbsCarouselImages = [
+  '/nbs_carousel/nbs.png',
+  '/nbs_carousel/profiling.jfif',
+];
+
+const collabAutoplay = Autoplay({ delay: 4000 });
+const nbsAutoplay = Autoplay({ delay: 4000 });
 
 const Platform = () => {
   const { t, isRTL } = useLanguage();
@@ -56,7 +72,7 @@ const Platform = () => {
               <ImagePlaceholder src="/ona-carousel/ona1.png" />
             </div>
             <div className="order-2 md:order-none flex flex-col items-start text-start">
-              <span className="text-orange-500 font-semibold mb-2">The Macro View</span>
+              <span className="text-orange-500 font-semibold mb-2">Organizational View</span>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
                 {t('platform.onaEngine')} — {t('platform.visualizeInvisible')}
               </h2>
@@ -92,7 +108,27 @@ const Platform = () => {
               ]} />
             </div>
             <div className="order-1 md:order-2">
-              <ImagePlaceholder src="/agent-chat.png" />
+              <div className="w-full aspect-video rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
+                <Carousel
+                  key={isRTL ? 'collab-rtl' : 'collab-ltr'}
+                  opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
+                  plugins={[collabAutoplay]}
+                  setApi={(api) => { api?.plugins().autoplay?.play(); }}
+                  className="w-full h-full"
+                >
+                  <CarouselContent className="-ml-0 h-full">
+                    {collabCarouselImages.map((img, i) => (
+                      <CarouselItem key={i} className="pl-0 h-full">
+                        <img
+                          src={img}
+                          alt=""
+                          className="w-full h-full object-cover aspect-video"
+                        />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
+              </div>
             </div>
           </div>
         </div>
@@ -103,10 +139,30 @@ const Platform = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
             <div className="order-1 md:order-none">
-              <ImagePlaceholder src="/ona-carousel/ona2.png" />
+              <div className="w-full aspect-video rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
+                <Carousel
+                  key={isRTL ? 'nbs-rtl' : 'nbs-ltr'}
+                  opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
+                  plugins={[nbsAutoplay]}
+                  setApi={(api) => { api?.plugins().autoplay?.play(); }}
+                  className="w-full h-full"
+                >
+                  <CarouselContent className="-ml-0 h-full">
+                    {nbsCarouselImages.map((img, i) => (
+                      <CarouselItem key={i} className="pl-0 h-full">
+                        <img
+                          src={img}
+                          alt=""
+                          className="w-full h-full object-cover aspect-video"
+                        />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
+              </div>
             </div>
             <div className="order-2 md:order-none flex flex-col items-start text-start">
-              <span className="text-orange-500 font-semibold mb-2">Personal Impact</span>
+              <span className="text-orange-500 font-semibold mb-2">Personal View</span>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
                 {t('platform.networkProfiling')} — {t('platform.deepInsight')}
               </h2>

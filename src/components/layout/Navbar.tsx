@@ -55,11 +55,11 @@ const Navbar = () => {
     { nameKey: 'nav.networkSkillsLeadership' as const, path: "/academy" },
     { nameKey: 'nav.collaborationAnalytics' as const, path: "/platform" },
     { nameKey: 'nav.talentSelection' as const, path: "/solutions" },
+    { nameKey: 'nav.aiLabs' as const, path: "#" },
   ];
 
   const mainNavLinks = [
     { nameKey: 'nav.methodology' as const, path: "/academy" },
-    { nameKey: 'nav.aiLabs' as const, path: "/platform" },
     { nameKey: 'nav.aboutUs' as const, path: "/about" },
     { nameKey: 'nav.contact' as const, path: "/contact" },
   ];
@@ -95,10 +95,16 @@ const Navbar = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" sideOffset={12} className="min-w-[260px] whitespace-nowrap rounded-md shadow-lg p-2 border border-gray-100 bg-white text-left rtl:text-right" dir={isRTL ? 'rtl' : 'ltr'}>
               {solutionsSubLinks.map((link) => (
-                <DropdownMenuItem key={link.path} asChild className="px-4 py-3 rounded-md text-[#1B365D] focus:bg-[#1B365D]/5 focus:text-[#1B365D] hover:bg-[#1B365D]/5 data-[highlighted]:bg-[#1B365D]/5">
-                  <Link to={link.path} className="cursor-pointer text-left rtl:text-right flex items-center justify-start">
-                    {t(link.nameKey)}
-                  </Link>
+                <DropdownMenuItem key={link.nameKey} asChild className="px-4 py-3 rounded-md text-[#1B365D] focus:bg-[#1B365D]/5 focus:text-[#1B365D] hover:bg-[#1B365D]/5 data-[highlighted]:bg-[#1B365D]/5">
+                  {link.path === '#' ? (
+                    <a href="#" className="cursor-pointer text-left rtl:text-right flex items-center justify-start">
+                      {t(link.nameKey)}
+                    </a>
+                  ) : (
+                    <Link to={link.path} className="cursor-pointer text-left rtl:text-right flex items-center justify-start">
+                      {t(link.nameKey)}
+                    </Link>
+                  )}
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
@@ -172,14 +178,25 @@ const Navbar = () => {
                 </p>
                 <nav className="flex flex-col gap-1">
                   {solutionsSubLinks.map((link) => (
-                    <Link
-                      key={link.path}
-                      to={link.path}
-                      className="block px-4 py-3 rounded-lg text-[#1B365D] font-medium hover:bg-[#1B365D]/5 active:bg-[#1B365D]/10 transition-colors"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {t(link.nameKey)}
-                    </Link>
+                    link.path === '#' ? (
+                      <a
+                        key={link.nameKey}
+                        href="#"
+                        className="block px-4 py-3 rounded-lg text-[#1B365D] font-medium hover:bg-[#1B365D]/5 active:bg-[#1B365D]/10 transition-colors"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {t(link.nameKey)}
+                      </a>
+                    ) : (
+                      <Link
+                        key={link.path}
+                        to={link.path}
+                        className="block px-4 py-3 rounded-lg text-[#1B365D] font-medium hover:bg-[#1B365D]/5 active:bg-[#1B365D]/10 transition-colors"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {t(link.nameKey)}
+                      </Link>
+                    )
                   ))}
                 </nav>
               </div>
