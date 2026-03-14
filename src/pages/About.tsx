@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { Users, Network, Lightbulb, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const About = () => {
   const { t, isRTL } = useLanguage();
@@ -14,9 +14,9 @@ const About = () => {
   }, [isRTL]);
 
   const pillars = [
-    { icon: Users, titleKey: 'about.drive1Title' as const, descKey: 'about.drive1Desc' as const },
-    { icon: Network, titleKey: 'about.drive2Title' as const, descKey: 'about.drive2Desc' as const },
-    { icon: Lightbulb, titleKey: 'about.drive3Title' as const, descKey: 'about.drive3Desc' as const },
+    { titleKey: 'about.drive1Title' as const, descKey: 'about.drive1Desc' as const },
+    { titleKey: 'about.drive2Title' as const, descKey: 'about.drive2Desc' as const },
+    { titleKey: 'about.drive3Title' as const, descKey: 'about.drive3Desc' as const },
   ];
 
   const leadership = [
@@ -29,15 +29,13 @@ const About = () => {
     <div className="w-full bg-white" dir={isRTL ? 'rtl' : 'ltr'}>
       
       {/* 1. Manifesto Hero */}
-      <section className="pt-16 pb-12 md:pt-20 md:pb-12 bg-slate-50">
+      <section className="pt-32 pb-16 lg:pt-40 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <span className="inline-block px-4 py-2 bg-[#E87722] text-white text-sm font-semibold uppercase tracking-wider rounded-full mb-6">
             {t('about.mission')}
           </span>
           <h1 className="max-w-4xl mx-auto text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#1B365D] mb-6 leading-tight text-balance">
             {t('about.orgChartDead')}
-            <br />
-            <span className="text-[#E87722]">{t('about.longLiveNetwork')}</span>
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
             {t('about.subtitle')}
@@ -67,13 +65,16 @@ const About = () => {
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#1B365D] text-center mb-12 md:mb-16">
             {t('about.whatDrivesUs')}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto flex flex-col gap-12">
             {pillars.map((pillar, i) => (
-              <div key={i} className="flex flex-col">
-                <pillar.icon className="w-10 h-10 text-slate-900 mb-6" />
-                <div className="w-12 h-1 bg-orange-500 mb-6 rounded-full" />
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">{t(pillar.titleKey)}</h3>
-                <p className="text-lg text-slate-600 leading-relaxed">{t(pillar.descKey)}</p>
+              <div key={i} className="flex flex-col md:flex-row gap-6 md:gap-12 items-start">
+                <span className="text-6xl md:text-7xl font-light text-orange-500 opacity-80 shrink-0">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <div>
+                  <h3 className="text-3xl font-bold text-slate-900 mb-3">{t(pillar.titleKey)}</h3>
+                  <p className="text-lg text-slate-600 leading-relaxed">{t(pillar.descKey)}</p>
+                </div>
               </div>
             ))}
           </div>
