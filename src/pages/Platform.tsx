@@ -1,228 +1,149 @@
 import { useEffect } from "react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Sparkles, BarChart3, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { CircleCheck } from "lucide-react";
 
 const Platform = () => {
   const { t, isRTL } = useLanguage();
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [isRTL]);
 
+  const ImagePlaceholder = ({ src }: { src: string }) => (
+    <div className="w-full aspect-video bg-slate-100 rounded-3xl shadow-xl border border-slate-200 flex items-center justify-center overflow-hidden">
+      <img src={src} alt="" className="w-full h-full object-cover opacity-80" />
+    </div>
+  );
+
+  const FeatureList = ({ items }: { items: string[] }) => (
+    <ul className="space-y-3 mt-6">
+      {items.map((item, i) => (
+        <li key={i} className="flex items-center gap-3 text-slate-700">
+          <CircleCheck className="w-5 h-5 text-[#E87722] shrink-0" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
-    <div className="w-full bg-white overflow-x-hidden">
+    <div className="w-full bg-white overflow-x-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       
       {/* 1. HERO SECTION */}
-      <section className="bg-[#1B365D] text-white pt-32 pb-24 relative overflow-hidden">
-        {/* Abstract Background Shapes */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E87722] rounded-full blur-[150px] opacity-15 animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-400 rounded-full blur-[100px] opacity-10" />
-
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-8 text-sm font-medium text-blue-100">
-            <Sparkles className="w-4 h-4 text-[#E87722]" />
+      <section className="bg-slate-50 pt-32 pb-16 lg:pt-40 lg:pb-24">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <span className="inline-block px-4 py-2 bg-[#E87722] text-white text-sm font-semibold uppercase tracking-wider rounded-full mb-6">
             {t('platform.os')}
-          </div>
-          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight">
+          </span>
+          <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 tracking-tight text-balance mb-6">
             {t('platform.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-light">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto text-balance">
             {t('platform.subtitle')}
           </p>
         </div>
       </section>
 
-      {/* 2. FEATURE 1: ONA ENGINE (White Background) */}
-      <section className="py-24 bg-white relative">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center gap-16">
-            
-            {/* Image Side - Left */}
-            <div className="w-full md:w-1/2 relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 to-transparent rounded-3xl opacity-50 blur-xl group-hover:opacity-75 transition duration-500"></div>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 transform transition-transform duration-500 hover:scale-[1.02]">
-                <div className="bg-gray-100 h-8 w-full flex items-center px-4 gap-2 border-b border-gray-200">
-                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                </div>
-                <img 
-                  src="product-ona.png" 
-                  alt="ONA Engine Interface" 
-                  className="w-full h-auto object-cover"
-                />
-              </div>
+      {/* 2. LAYER 1: ONA Engine (Image Left, Text Right) */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+            <div className="order-1 md:order-none">
+              <ImagePlaceholder src="/ona-carousel/ona1.png" />
             </div>
-
-            {/* Text Side - Right */}
-            <div className="w-full md:w-1/2 space-y-8">
-              <div className="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-[#1B365D]">
-                <BarChart3 className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-[#E87722] font-bold tracking-wider uppercase text-sm mb-2">
-                    {t('platform.onaEngine')}
-                </h3>
-                <h2 className="text-4xl font-serif font-bold text-[#1B365D] mb-4">
-                    {t('platform.visualizeInvisible')}
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                    {t('platform.onaDesc')}
-                </p>
-              </div>
-              
-              <ul className="space-y-4">
-                {[
-                  t('platform.onaFeature1'),
-                  t('platform.onaFeature2'),
-                  t('platform.onaFeature3')
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-[#1B365D] font-medium">
-                    <div className="p-1 rounded-full bg-green-100 text-green-600">
-                        <Check className="w-4 h-4" />
-                    </div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <div className="order-2 md:order-none flex flex-col items-start text-start">
+              <span className="text-orange-500 font-semibold mb-2">Passive Data</span>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+                {t('platform.onaEngine')} — {t('platform.visualizeInvisible')}
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                {t('platform.onaDesc')}
+              </p>
+              <FeatureList items={[
+                t('platform.onaFeature1'),
+                t('platform.onaFeature2'),
+                t('platform.onaFeature3'),
+              ]} />
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* 3. FEATURE 2: NETWORK PROFILING (Dark Blue Background - The "Break") */}
-      <section className="py-24 bg-[#1B365D] text-white relative overflow-hidden">
-        {/* Background Texture */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col md:flex-row-reverse items-center gap-16">
-            
-            {/* Image Side - Right */}
-            <div className="w-full md:w-1/2 relative">
-                {/* Decorative glowing blob behind */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[#E87722] rounded-full blur-[100px] opacity-20"></div>
-                
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 transform -rotate-1 hover:rotate-0 transition duration-500 bg-white">
-                    <img 
-                    src="nbs.png" 
-                    alt="Network Profiling Report" 
-                    className="w-full h-auto object-cover"
-                    />
-                </div>
+      {/* 3. LAYER 2: Network Profiling (Text Left, Image Right) */}
+      <section className="py-24 bg-slate-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+            <div className="order-2 md:order-1 flex flex-col items-start text-start">
+              <span className="text-orange-500 font-semibold mb-2">Active Data</span>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+                {t('platform.networkProfiling')} — {t('platform.deepInsight')}
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                {t('platform.profilingDesc')}
+              </p>
+              <FeatureList items={[
+                t('platform.profilingFeature1'),
+                t('platform.profilingFeature2'),
+                t('platform.profilingFeature3'),
+              ]} />
             </div>
-
-            {/* Text Side - Left */}
-            <div className="w-full md:w-1/2 space-y-8">
-              <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-[#E87722] backdrop-blur-sm">
-                <Users className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-[#E87722] font-bold tracking-wider uppercase text-sm mb-2">
-                    {t('platform.networkProfiling')}
-                </h3>
-                <h2 className="text-4xl font-serif font-bold text-white mb-4">
-                    {t('platform.deepInsight')}
-                </h2>
-                <p className="text-lg text-blue-100 leading-relaxed">
-                    {t('platform.profilingDesc')}
-                </p>
-              </div>
-
-              <ul className="space-y-4">
-                {[
-                  t('platform.profilingFeature1'),
-                  t('platform.profilingFeature2'),
-                  t('platform.profilingFeature3')
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-white font-medium">
-                    <div className="p-1 rounded-full bg-[#E87722] text-white">
-                        <Check className="w-4 h-4" />
-                    </div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <div className="order-1 md:order-2">
+              <ImagePlaceholder src="/ona-carousel/ona2.png" />
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* 4. FEATURE 3: COLLAB AGENT (Light Orange Background) */}
-      <section className="py-24 bg-orange-50/50 relative">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center gap-16">
-            
-            {/* Image Side - Left */}
-            <div className="w-full md:w-1/2">
-               <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-white transform hover:-translate-y-2 transition duration-500">
-                  <img 
-                    src="Collab.png" 
-                    alt="AI Collab Agent" 
-                    className="w-full h-auto object-cover"
-                  />
-               </div>
+      {/* 4. LAYER 3: Collab Agent (Image Left, Text Right) */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+            <div className="order-1 md:order-none">
+              <ImagePlaceholder src="/agent-chat.png" />
             </div>
-
-            {/* Text Side - Right */}
-            <div className="w-full md:w-1/2 space-y-8">
-              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-[#E87722] shadow-sm border border-orange-100">
-                <Sparkles className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-[#E87722] font-bold tracking-wider uppercase text-sm mb-2">
-                    {t('platform.collabAgent')}
-                </h3>
-                <h2 className="text-4xl font-serif font-bold text-[#1B365D] mb-4">
-                    {t('platform.actionableNudges')}
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                    {t('platform.agentDesc')}
-                </p>
-              </div>
-
-              <ul className="space-y-4">
-                {[
-                  t('platform.agentFeature1'),
-                  t('platform.agentFeature2'),
-                  t('platform.agentFeature3')
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-[#1B365D] font-medium">
-                    <div className="p-1 rounded-full bg-blue-100 text-[#1B365D]">
-                        <Check className="w-4 h-4" />
-                    </div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              
-              <Button className="bg-[#1B365D] text-white px-8 py-6 rounded-xl hover:bg-[#2a4a7f] shadow-lg hover:shadow-xl transition-all">
-                  {t('platform.seeHowItWorks')} <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+            <div className="order-2 md:order-none flex flex-col items-start text-start">
+              <span className="text-orange-500 font-semibold mb-2">Intervention</span>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+                {t('platform.collabAgent')} — {t('platform.actionableNudges')}
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                {t('platform.agentDesc')}
+              </p>
+              <FeatureList items={[
+                t('platform.agentFeature1'),
+                t('platform.agentFeature2'),
+                t('platform.agentFeature3'),
+              ]} />
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* 5. BOTTOM CTA */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h2 className="text-4xl font-serif font-bold text-[#1B365D] mb-6">
+      {/* 5. FINAL CTA SECTION */}
+      <section className="py-24 bg-slate-900 text-white">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-4xl font-bold mb-4">
             {t('platform.readyTransform')}
           </h2>
-          <p className="text-xl text-gray-500 mb-10">
-             {t('platform.joinCompanies')}
+          <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
+            {t('platform.joinCompanies')}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button className="bg-[#E87722] text-white px-10 py-7 text-lg rounded-full hover:bg-[#d66a1a] shadow-orange-200 shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
+            <Button
+              onClick={() => navigate('/contact')}
+              className="bg-[#E87722] hover:bg-[#d66a1a] text-white px-10 py-6 text-lg rounded-lg"
+            >
               {t('platform.bookDemo')}
             </Button>
-            <Button variant="outline" className="px-10 py-7 text-lg rounded-full border-2 border-[#1B365D] text-[#1B365D] hover:bg-blue-50">
+            <Button
+              variant="outline"
+              onClick={() => navigate('/contact')}
+              className="px-10 py-6 text-lg rounded-lg border-2 border-white text-white hover:bg-white/10"
+            >
               {t('platform.contactSales')}
             </Button>
           </div>
