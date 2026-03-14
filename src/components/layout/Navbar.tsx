@@ -12,14 +12,11 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const { language, setLanguage, t, isRTL } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
 
-  const isHomePage = location.pathname === "/";
-  const isAtHero = isHomePage && !isScrolled;
-  const isLightBackground = !isAtHero;
+  const isLightBackground = true;
 
   const logoSrc = isLightBackground
     ? "/logo-stepahead.svg"
@@ -36,14 +33,6 @@ const Navbar = () => {
     ? "bg-[#1B365D] hover:bg-[#2a4a7f] text-white"
     : "bg-white text-[#1B365D] hover:bg-gray-100";
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [location.pathname]);
 
   useEffect(() => {
     setIsOpen(false);
