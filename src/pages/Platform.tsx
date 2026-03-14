@@ -48,7 +48,7 @@ const Platform = () => {
         </div>
       </section>
 
-      {/* 2. LAYER 1: ONA Engine (Image Left, Text Right) */}
+      {/* 2. LAYER 1: ONA Engine - The Macro View (Image Left, Text Right) */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
@@ -56,7 +56,7 @@ const Platform = () => {
               <ImagePlaceholder src="/ona-carousel/ona1.png" />
             </div>
             <div className="order-2 md:order-none flex flex-col items-start text-start">
-              <span className="text-orange-500 font-semibold mb-2">Passive Data</span>
+              <span className="text-orange-500 font-semibold mb-2">The Macro View</span>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
                 {t('platform.onaEngine')} — {t('platform.visualizeInvisible')}
               </h2>
@@ -73,40 +73,12 @@ const Platform = () => {
         </div>
       </section>
 
-      {/* 3. LAYER 2: Network Profiling (Text Left, Image Right) */}
+      {/* 3. LAYER 2: Collab Agent - The Micro View (Text Left, Image Right) */}
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
             <div className="order-2 md:order-1 flex flex-col items-start text-start">
-              <span className="text-orange-500 font-semibold mb-2">Active Data</span>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                {t('platform.networkProfiling')} — {t('platform.deepInsight')}
-              </h2>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                {t('platform.profilingDesc')}
-              </p>
-              <FeatureList items={[
-                t('platform.profilingFeature1'),
-                t('platform.profilingFeature2'),
-                t('platform.profilingFeature3'),
-              ]} />
-            </div>
-            <div className="order-1 md:order-2">
-              <ImagePlaceholder src="/ona-carousel/ona2.png" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. LAYER 3: Collab Agent (Image Left, Text Right) */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-            <div className="order-1 md:order-none">
-              <ImagePlaceholder src="/agent-chat.png" />
-            </div>
-            <div className="order-2 md:order-none flex flex-col items-start text-start">
-              <span className="text-orange-500 font-semibold mb-2">Intervention</span>
+              <span className="text-orange-500 font-semibold mb-2">The Micro View</span>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
                 {t('platform.collabAgent')} — {t('platform.actionableNudges')}
               </h2>
@@ -117,6 +89,34 @@ const Platform = () => {
                 t('platform.agentFeature1'),
                 t('platform.agentFeature2'),
                 t('platform.agentFeature3'),
+              ]} />
+            </div>
+            <div className="order-1 md:order-2">
+              <ImagePlaceholder src="/agent-chat.png" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. LAYER 3: Network Profiling - Personal Impact (Image Left, Text Right) */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+            <div className="order-1 md:order-none">
+              <ImagePlaceholder src="/ona-carousel/ona2.png" />
+            </div>
+            <div className="order-2 md:order-none flex flex-col items-start text-start">
+              <span className="text-orange-500 font-semibold mb-2">Personal Impact</span>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+                {t('platform.networkProfiling')} — {t('platform.deepInsight')}
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                {t('platform.profilingDesc')}
+              </p>
+              <FeatureList items={[
+                t('platform.profilingFeature1'),
+                t('platform.profilingFeature2'),
+                t('platform.profilingFeature3'),
               ]} />
             </div>
           </div>
