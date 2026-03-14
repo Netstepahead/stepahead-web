@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { BarChart3, Users, Zap, ArrowRight } from "lucide-react";
+import { Users, Network, Lightbulb, ArrowRight } from "lucide-react";
 
 const About = () => {
   const { t, isRTL } = useLanguage();
@@ -13,10 +13,10 @@ const About = () => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [isRTL]);
 
-  const values = [
-    { icon: BarChart3, titleKey: 'about.dataIntuition' as const, descKey: 'about.dataIntuitionDesc' as const },
-    { icon: Users, titleKey: 'about.peopleFirst' as const, descKey: 'about.peopleFirstDesc' as const },
-    { icon: Zap, titleKey: 'about.actionableInsights' as const, descKey: 'about.actionableDesc' as const },
+  const pillars = [
+    { icon: Users, titleKey: 'about.drive1Title' as const, descKey: 'about.drive1Desc' as const },
+    { icon: Network, titleKey: 'about.drive2Title' as const, descKey: 'about.drive2Desc' as const },
+    { icon: Lightbulb, titleKey: 'about.drive3Title' as const, descKey: 'about.drive3Desc' as const },
   ];
 
   const leadership = [
@@ -29,7 +29,7 @@ const About = () => {
     <div className="w-full bg-white" dir={isRTL ? 'rtl' : 'ltr'}>
       
       {/* 1. Manifesto Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-slate-50">
+      <section className="pt-16 pb-12 md:pt-20 md:pb-12 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <span className="inline-block px-4 py-2 bg-[#E87722] text-white text-sm font-semibold uppercase tracking-wider rounded-full mb-6">
             {t('about.mission')}
@@ -62,22 +62,18 @@ const About = () => {
       </section>
 
       {/* 3. What Drives Us */}
-      <section className="py-24 bg-slate-50/50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#1B365D] text-center mb-12 md:mb-16">
             {t('about.whatDrivesUs')}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {values.map((val, i) => (
-              <div
-                key={i}
-                className="group bg-white p-10 rounded-3xl shadow-md border border-slate-100 hover:shadow-2xl hover:border-orange-100 hover:-translate-y-2 transition-all duration-300 ease-in-out cursor-default"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-8 ring-1 ring-orange-100/50 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
-                  <val.icon className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">{t(val.titleKey)}</h3>
-                <p className="text-slate-600 leading-relaxed text-lg">{t(val.descKey)}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            {pillars.map((pillar, i) => (
+              <div key={i} className="flex flex-col">
+                <pillar.icon className="w-10 h-10 text-slate-900 mb-6" />
+                <div className="w-12 h-1 bg-orange-500 mb-6 rounded-full" />
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">{t(pillar.titleKey)}</h3>
+                <p className="text-lg text-slate-600 leading-relaxed">{t(pillar.descKey)}</p>
               </div>
             ))}
           </div>
