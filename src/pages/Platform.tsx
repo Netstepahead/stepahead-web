@@ -7,14 +7,14 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import Autoplay from "embla-carousel-autoplay";
 
 const collabCarouselImages = [
-  '/Collab_Carousel/agent-chat.png',
-  '/Collab_Carousel/Enhance_Network.png',
-  '/Collab_Carousel/Teams_connect.png',
+  '/agent-chat.png',
+  '/collab-personal.png',
+  '/product-agent.png',
 ];
 
 const nbsCarouselImages = [
-  '/nbs_carousel/nbs.png',
-  '/nbs_carousel/profiling.jfif',
+  '/nbs.png',
+  '/product-profile.png',
 ];
 
 const collabAutoplay = Autoplay({ delay: 4000 });
