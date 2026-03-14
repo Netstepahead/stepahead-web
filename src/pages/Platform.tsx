@@ -108,7 +108,7 @@ const Platform = () => {
               ]} />
             </div>
             <div className="order-1 md:order-2">
-              <div className="w-full aspect-video rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
+              <div className="w-full aspect-video rounded-3xl shadow-2xl border border-slate-200 overflow-hidden bg-slate-50">
                 <Carousel
                   key={isRTL ? 'collab-rtl' : 'collab-ltr'}
                   opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -119,11 +119,13 @@ const Platform = () => {
                   <CarouselContent className="-ml-0 h-full">
                     {collabCarouselImages.map((img, i) => (
                       <CarouselItem key={i} className="pl-0 h-full">
-                        <img
-                          src={img}
-                          alt=""
-                          className="w-full h-full object-cover aspect-video"
-                        />
+                        <div className="aspect-video overflow-hidden flex items-center justify-center bg-slate-50">
+                          <img
+                            src={img}
+                            alt=""
+                            className="object-contain w-full h-full p-4"
+                          />
+                        </div>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
@@ -139,7 +141,7 @@ const Platform = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
             <div className="order-1 md:order-none">
-              <div className="w-full aspect-video rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
+              <div className="w-full aspect-video rounded-3xl shadow-2xl border border-slate-200 overflow-hidden bg-slate-50">
                 <Carousel
                   key={isRTL ? 'nbs-rtl' : 'nbs-ltr'}
                   opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -150,11 +152,13 @@ const Platform = () => {
                   <CarouselContent className="-ml-0 h-full">
                     {nbsCarouselImages.map((img, i) => (
                       <CarouselItem key={i} className="pl-0 h-full">
-                        <img
-                          src={img}
-                          alt=""
-                          className="w-full h-full object-cover aspect-video"
-                        />
+                        <div className="aspect-video overflow-hidden flex items-center justify-center bg-slate-50">
+                          <img
+                            src={img}
+                            alt=""
+                            className="object-contain w-full h-full p-4"
+                          />
+                        </div>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
