@@ -215,7 +215,7 @@ const Index = () => {
               </p>
             </div>
             <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] max-w-full overflow-hidden order-1 md:order-none">
-              <img src="/network-vs-hierarchy.png" alt="" className="rounded-2xl object-cover w-full max-w-full" />
+              <img src="/network-vs-hierarchy.png" alt="" className="rounded-2xl object-cover w-full max-w-full block" style={{ clipPath: 'inset(0 0 2px 0)' }} />
             </div>
           </div>
         </div>
