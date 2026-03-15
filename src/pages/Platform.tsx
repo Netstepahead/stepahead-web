@@ -30,8 +30,8 @@ const Platform = () => {
   }, [isRTL]);
 
   const ImagePlaceholder = ({ src }: { src: string }) => (
-    <div className="w-full aspect-video bg-slate-100 rounded-3xl shadow-xl border border-slate-200 flex items-center justify-center overflow-hidden">
-      <img src={src} alt="" className="w-full h-full object-cover opacity-80" />
+    <div className="w-full aspect-video rounded-3xl shadow-xl border border-slate-200 overflow-hidden bg-slate-50">
+      <img src={src} alt="" className="w-full h-full object-contain p-4 bg-slate-50" />
     </div>
   );
 
@@ -51,16 +51,23 @@ const Platform = () => {
       
       {/* 1. HERO SECTION */}
       <section className="bg-slate-50 pt-32 pb-16 lg:pt-40 lg:pb-24">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <span className="inline-block px-4 py-2 bg-[#E87722] text-white text-sm font-semibold uppercase tracking-wider rounded-full mb-6">
-            {t('platform.os')}
-          </span>
-          <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 tracking-tight text-balance mb-6">
-            {t('platform.title')}
-          </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto text-balance">
-            {t('platform.subtitle')}
-          </p>
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto pt-24 pb-16">
+            <div className="flex flex-col items-start text-left">
+              <span className="inline-block px-4 py-2 bg-[#E87722] text-white text-sm font-semibold uppercase tracking-wider rounded-full mb-6">
+                {t('platform.os')}
+              </span>
+              <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight text-balance mb-6 text-left">
+                {t('platform.title')}
+              </h1>
+              <p className="text-lg text-slate-600 max-w-xl text-left">
+                {t('platform.subtitle')}
+              </p>
+            </div>
+            <div className="w-full aspect-square md:aspect-video lg:aspect-square bg-slate-100 rounded-3xl shadow-2xl overflow-hidden">
+              <img src="/network-story.jpg" className="w-full h-full object-cover" alt="Network Visualization" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -72,10 +79,8 @@ const Platform = () => {
               <ImagePlaceholder src="/ona-carousel/ona1.png" />
             </div>
             <div className="order-2 md:order-none flex flex-col items-start text-start">
-              <span className="text-orange-500 font-semibold mb-2">Organizational View</span>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                {t('platform.onaEngine')} — {t('platform.visualizeInvisible')}
-              </h2>
+              <span className="text-orange-500 font-semibold mb-2 block">{t('platform.visualizeInvisible')}</span>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('platform.onaEngine')}</h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 {t('platform.onaDesc')}
               </p>
@@ -94,10 +99,8 @@ const Platform = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
             <div className="order-2 md:order-1 flex flex-col items-start text-start">
-              <span className="text-orange-500 font-semibold mb-2">The Micro View</span>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                {t('platform.collabAgent')} — {t('platform.actionableNudges')}
-              </h2>
+              <span className="text-orange-500 font-semibold mb-2 block">{t('platform.actionableNudges')}</span>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('platform.collabAgent')}</h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 {t('platform.agentDesc')}
               </p>
@@ -123,7 +126,7 @@ const Platform = () => {
                           <img
                             src={img}
                             alt=""
-                            className="object-contain w-full h-full p-4"
+                            className="object-contain w-full h-full p-4 bg-slate-50"
                           />
                         </div>
                       </CarouselItem>
@@ -156,7 +159,7 @@ const Platform = () => {
                           <img
                             src={img}
                             alt=""
-                            className="object-contain w-full h-full p-4"
+                            className="object-contain w-full h-full p-4 bg-slate-50"
                           />
                         </div>
                       </CarouselItem>
@@ -166,10 +169,8 @@ const Platform = () => {
               </div>
             </div>
             <div className="order-2 md:order-none flex flex-col items-start text-start">
-              <span className="text-orange-500 font-semibold mb-2">Personal View</span>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                {t('platform.networkProfiling')} — {t('platform.deepInsight')}
-              </h2>
+              <span className="text-orange-500 font-semibold mb-2 block">{t('platform.deepInsight')}</span>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('platform.networkProfiling')}</h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 {t('platform.profilingDesc')}
               </p>
