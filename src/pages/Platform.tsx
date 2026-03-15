@@ -64,8 +64,8 @@ const Platform = () => {
                 {t('platform.subtitle')}
               </p>
             </div>
-            <div className="w-full aspect-square md:aspect-video lg:aspect-square bg-slate-100 rounded-3xl shadow-2xl overflow-hidden">
-              <img src="/network-story.jpg" className="w-full h-full object-cover" alt="Network Visualization" />
+            <div className="w-full aspect-square md:aspect-video lg:aspect-square bg-slate-50 rounded-3xl shadow-2xl overflow-hidden">
+              <img src="/network-story.jpg" className="w-full h-full object-contain p-8 md:p-12" alt="Network Visualization" />
             </div>
           </div>
         </div>
@@ -111,7 +111,7 @@ const Platform = () => {
               ]} />
             </div>
             <div className="order-1 md:order-2">
-              <div className="w-full aspect-video rounded-3xl shadow-2xl border border-slate-200 overflow-hidden bg-slate-50">
+              <div className="w-full aspect-square md:aspect-[4/3] rounded-3xl shadow-2xl border border-slate-200 overflow-hidden bg-slate-50">
                 <Carousel
                   key={isRTL ? 'collab-rtl' : 'collab-ltr'}
                   opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -122,11 +122,11 @@ const Platform = () => {
                   <CarouselContent className="-ml-0 h-full">
                     {collabCarouselImages.map((img, i) => (
                       <CarouselItem key={i} className="pl-0 h-full">
-                        <div className="aspect-video overflow-hidden flex items-center justify-center bg-slate-50">
+                        <div className="aspect-square md:aspect-[4/3] overflow-hidden flex items-center justify-center bg-slate-50">
                           <img
                             src={img}
                             alt=""
-                            className="object-contain w-full h-full p-4 bg-slate-50"
+                            className="object-cover object-top w-full h-full"
                           />
                         </div>
                       </CarouselItem>
@@ -159,7 +159,7 @@ const Platform = () => {
                           <img
                             src={img}
                             alt=""
-                            className="object-contain w-full h-full p-4 bg-slate-50"
+                            className="object-cover object-center w-full h-full"
                           />
                         </div>
                       </CarouselItem>
