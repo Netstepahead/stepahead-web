@@ -64,8 +64,8 @@ const Platform = () => {
                 {t('platform.subtitle')}
               </p>
             </div>
-            <div className="w-full aspect-square md:aspect-video lg:aspect-square bg-slate-50 rounded-3xl shadow-2xl overflow-hidden">
-              <img src="/network-story.jpg" className="w-full h-full object-contain p-8 md:p-12" alt="Network Visualization" />
+            <div className="w-full aspect-square md:aspect-video lg:aspect-square bg-white rounded-3xl shadow-2xl overflow-hidden">
+              <img src="/network-story.jpg" className="w-full h-full object-contain p-4 md:p-6" alt="Network Visualization" />
             </div>
           </div>
         </div>
@@ -144,7 +144,7 @@ const Platform = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
             <div className="order-1 md:order-none">
-              <div className="w-full aspect-video rounded-3xl shadow-2xl border border-slate-200 overflow-hidden bg-slate-50">
+              <div className="w-full aspect-video rounded-3xl shadow-xl border border-slate-200 overflow-hidden bg-[#F8F6F0]">
                 <Carousel
                   key={isRTL ? 'nbs-rtl' : 'nbs-ltr'}
                   opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -155,11 +155,11 @@ const Platform = () => {
                   <CarouselContent className="-ml-0 h-full">
                     {nbsCarouselImages.map((img, i) => (
                       <CarouselItem key={i} className="pl-0 h-full">
-                        <div className="aspect-video overflow-hidden flex items-center justify-center bg-slate-50">
+                        <div className="aspect-video overflow-hidden flex items-center justify-center bg-[#F8F6F0]">
                           <img
                             src={img}
                             alt=""
-                            className="object-cover object-center w-full h-full"
+                            className="w-full h-full object-contain"
                           />
                         </div>
                       </CarouselItem>
