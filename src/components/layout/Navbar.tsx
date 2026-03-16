@@ -59,7 +59,7 @@ const Navbar = () => {
   ];
 
   const mainNavLinks = [
-    { nameKey: 'nav.methodology' as const, path: "/academy" },
+    { nameKey: 'nav.methodology' as const, path: "/methodology" },
     { nameKey: 'nav.aboutUs' as const, path: "/about" },
     { nameKey: 'nav.contact' as const, path: "/contact" },
   ];

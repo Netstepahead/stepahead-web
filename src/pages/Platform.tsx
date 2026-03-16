@@ -50,9 +50,9 @@ const Platform = () => {
     <div className="w-full bg-white overflow-x-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       
       {/* 1. HERO SECTION */}
-      <section className="bg-slate-50 pt-32 pb-16 lg:pt-40 lg:pb-24">
+      <section className="bg-slate-50 pt-16 lg:pt-20 pb-16 lg:pb-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto pt-24 pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto pt-16 lg:pt-20 pb-16">
             <div className="flex flex-col items-start text-left">
               <span className="inline-block px-4 py-2 bg-[#E87722] text-white text-sm font-semibold uppercase tracking-wider rounded-full mb-6">
                 {t('platform.os')}

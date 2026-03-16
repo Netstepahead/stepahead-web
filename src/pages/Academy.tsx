@@ -24,19 +24,21 @@ const Academy = () => {
   }, [isRTL]);
 
   const modules = [
-    { title: t('academy.trustBuilding'), desc: t('academy.trustDesc') },
-    { title: t('academy.influence'), desc: t('academy.influenceDesc') },
-    { title: t('academy.networkMindset'), desc: t('academy.mindsetDesc') },
-    { title: t('academy.strategicConnecting'), desc: t('academy.connectingDesc') },
+    { title: t('academy.module1Title'), desc: t('academy.module1Desc') },
+    { title: t('academy.module2Title'), desc: t('academy.module2Desc') },
+    { title: t('academy.module3Title'), desc: t('academy.module3Desc') },
+    { title: t('academy.module4Title'), desc: t('academy.module4Desc') },
+    { title: t('academy.module5Title'), desc: t('academy.module5Desc') },
+    { title: t('academy.module6Title'), desc: t('academy.module6Desc') },
   ];
 
   return (
     <div className="w-full bg-white overflow-x-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       
       {/* 1. HERO SECTION - Warm & Human */}
-      <section className="bg-[#F9F8F4] pt-32 pb-24 lg:pt-40 lg:pb-32">
+      <section className="bg-[#F9F8F4] pt-16 lg:pt-20 pb-24 lg:pb-32">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto pt-24 pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto pt-16 lg:pt-20 pb-16">
             <div className="flex flex-col items-start text-left">
               <span className="inline-block px-4 py-2 text-[#E87722] border border-[#E87722]/60 rounded-full text-sm font-semibold uppercase tracking-wider mb-6">
                 {t('academy.badge')}
@@ -98,7 +100,7 @@ const Academy = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="w-full aspect-[3/4] md:aspect-square rounded-3xl overflow-hidden shadow-2xl bg-slate-100">
               <Carousel
                 key={isRTL ? 'academy-rtl' : 'academy-ltr'}
                 opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -112,7 +114,7 @@ const Academy = () => {
                       <img
                         src={img}
                         alt=""
-                        className="w-full h-full object-cover object-top md:object-center"
+                        className="w-full h-full object-contain bg-slate-100"
                       />
                     </CarouselItem>
                   ))}
@@ -140,7 +142,7 @@ const Academy = () => {
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">{mod.title}</h3>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">{mod.title.replace(/^\d+\.\s*/, '')}</h3>
                   <p className="text-lg text-slate-600">{mod.desc}</p>
                 </div>
               </div>
