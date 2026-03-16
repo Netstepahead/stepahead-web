@@ -100,7 +100,7 @@ const Academy = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="w-full aspect-[3/4] md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-slate-100">
               <Carousel
                 key={isRTL ? 'academy-rtl' : 'academy-ltr'}
                 opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -114,7 +114,7 @@ const Academy = () => {
                       <img
                         src={img}
                         alt=""
-                        className="w-full h-full object-cover object-center"
+                        className="w-full h-full object-contain bg-slate-100"
                       />
                     </CarouselItem>
                   ))}

@@ -50,23 +50,23 @@ const Platform = () => {
     <div className="w-full bg-white overflow-x-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       
       {/* 1. HERO SECTION */}
-      <section className="bg-slate-50 pt-16 lg:pt-20 pb-16 lg:pb-24">
+      <section className="bg-slate-50 pt-16 lg:pt-20 pb-12 md:pb-16 lg:pb-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center max-w-7xl mx-auto pt-16 lg:pt-20 pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center max-w-7xl mx-auto pt-8 md:pt-16 lg:pt-20 pb-8 md:pb-16">
             <div className="col-span-12 lg:col-span-7 flex flex-col items-start text-left max-w-2xl">
-              <span className="inline-block px-4 py-2 bg-[#E87722] text-white text-sm font-semibold uppercase tracking-wider rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-[#E87722] text-white text-sm font-semibold uppercase tracking-wider rounded-full mb-4 md:mb-6">
                 {t('platform.os')}
               </span>
-              <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight text-balance mb-6 text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight text-balance mb-4 md:mb-6 text-left">
                 {t('platform.title')}
               </h1>
-              <p className="text-lg text-slate-600 max-w-xl text-left">
+              <p className="text-base md:text-lg text-slate-600 max-w-xl text-left">
                 {t('platform.subtitle')}
               </p>
             </div>
-            <div className="col-span-12 lg:col-span-5 p-4 md:p-8">
-              <div className="w-full aspect-square md:aspect-video lg:aspect-square bg-white rounded-3xl shadow-2xl overflow-hidden">
-                <img src="/network-story.jpg" className="w-full h-full object-cover" alt="Network Visualization" />
+            <div className="col-span-12 lg:col-span-5 p-2 md:p-8">
+              <div className="w-full aspect-video md:aspect-video lg:aspect-square bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden max-w-md mx-auto md:max-w-none">
+                <img src="/network-story.jpg" className="w-full h-full object-cover object-center" alt="Network Visualization" />
               </div>
             </div>
           </div>
