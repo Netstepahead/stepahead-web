@@ -52,8 +52,8 @@ const Platform = () => {
       {/* 1. HERO SECTION */}
       <section className="bg-slate-50 pt-16 lg:pt-20 pb-16 lg:pb-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto pt-16 lg:pt-20 pb-16">
-            <div className="flex flex-col items-start text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center max-w-7xl mx-auto pt-16 lg:pt-20 pb-16">
+            <div className="col-span-12 lg:col-span-7 flex flex-col items-start text-left max-w-2xl">
               <span className="inline-block px-4 py-2 bg-[#E87722] text-white text-sm font-semibold uppercase tracking-wider rounded-full mb-6">
                 {t('platform.os')}
               </span>
@@ -64,8 +64,10 @@ const Platform = () => {
                 {t('platform.subtitle')}
               </p>
             </div>
-            <div className="w-full aspect-square md:aspect-video lg:aspect-square bg-white rounded-3xl shadow-2xl overflow-hidden">
-              <img src="/network-story.jpg" className="w-full h-full object-contain p-4 md:p-6" alt="Network Visualization" />
+            <div className="col-span-12 lg:col-span-5 p-4 md:p-8">
+              <div className="w-full aspect-square md:aspect-video lg:aspect-square bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <img src="/network-story.jpg" className="w-full h-full object-cover" alt="Network Visualization" />
+              </div>
             </div>
           </div>
         </div>
