@@ -144,7 +144,7 @@ const Platform = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
             <div className="order-1 md:order-none">
-              <div className="w-full aspect-video rounded-3xl shadow-xl border border-slate-200 overflow-hidden bg-[#F8F6F0]">
+              <div className="w-full aspect-square lg:aspect-[4/5] rounded-3xl shadow-xl border border-slate-200 overflow-hidden bg-white">
                 <Carousel
                   key={isRTL ? 'nbs-rtl' : 'nbs-ltr'}
                   opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -155,11 +155,11 @@ const Platform = () => {
                   <CarouselContent className="-ml-0 h-full">
                     {nbsCarouselImages.map((img, i) => (
                       <CarouselItem key={i} className="pl-0 h-full">
-                        <div className="aspect-video overflow-hidden flex items-center justify-center bg-[#F8F6F0]">
+                        <div className="aspect-square lg:aspect-[4/5] overflow-hidden flex items-center justify-center bg-white">
                           <img
                             src={img}
                             alt=""
-                            className="w-full h-full object-contain"
+                            className="w-full h-full object-contain p-4 md:p-8"
                           />
                         </div>
                       </CarouselItem>
