@@ -176,7 +176,7 @@ const ProductsSection = () => {
 
                 <Button className="bg-[#1B365D] hover:bg-[#2a4d80] text-white px-8 h-12 rounded-lg text-base shadow-lg hover:shadow-xl transition-all">
                   {product.cta}
-                  <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180 mr-2' : 'ml-2'}`} />
+                  <ArrowRight className={`w-4 h-4 ms-2 ${isRTL ? 'rotate-180' : ''}`} />
                 </Button>
               </div>
 

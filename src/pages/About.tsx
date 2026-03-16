@@ -118,7 +118,7 @@ const About = () => {
             className="bg-[#1B365D] hover:bg-[#2a4a7f] text-white px-8 py-6 text-lg rounded-lg shadow-lg"
           >
             {t('about.contactUs')}
-            <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180 mr-2' : 'ml-2'}`} />
+            <ArrowRight className={`w-5 h-5 ms-2 ${isRTL ? 'rotate-180' : ''}`} />
           </Button>
         </div>
       </section>

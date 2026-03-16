@@ -39,14 +39,14 @@ const Academy = () => {
       <section className="bg-[#F9F8F4] pt-16 lg:pt-20 pb-24 lg:pb-32">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto pt-16 lg:pt-20 pb-16">
-            <div className="flex flex-col items-start text-left">
+            <div className="flex flex-col items-start text-start">
               <span className="inline-block px-4 py-2 text-[#E87722] border border-[#E87722]/60 rounded-full text-sm font-semibold uppercase tracking-wider mb-6">
                 {t('academy.badge')}
               </span>
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-6">
+              <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-6 text-start">
                 {t('academy.title')}
               </h1>
-              <p className="text-lg text-slate-600 max-w-xl mb-10">
+              <p className="text-lg text-slate-600 max-w-xl mb-10 text-start">
                 {t('academy.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">

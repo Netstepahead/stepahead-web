@@ -124,7 +124,7 @@ const Index = () => {
                   className={isCollaborationSection ? "bg-[#E87722] hover:bg-[#f08530] text-white" : "bg-[#1B365D] hover:bg-[#2a4a7f] text-white"}
                 >
                   {t(pillar.buttonKey)}
-                  <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180 mr-2' : 'ml-2'}`} />
+                  <ArrowRight className={`w-4 h-4 ms-2 ${isRTL ? 'rotate-180' : ''}`} />
                 </Button>
               </div>
             );
@@ -240,7 +240,7 @@ const Index = () => {
                 className="bg-[#E87722] hover:bg-[#f08530] text-white px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-[#E87722]/30 hover:shadow-xl transition-all"
               >
                 {t('index.future.cta')}
-                <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180 mr-2' : 'ml-2'}`} />
+                <ArrowRight className={`w-5 h-5 ms-2 ${isRTL ? 'rotate-180' : ''}`} />
               </Button>
             </div>
           </div>

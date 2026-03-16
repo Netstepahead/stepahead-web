@@ -19,7 +19,7 @@ const Contact = () => {
         <p className="text-xl text-gray-600 mb-12">
           {t('footer.tagline')}
         </p>
-        <div className="space-y-6 text-left">
+        <div className="space-y-6 text-start">
           <a
             href="mailto:info@step-ahead.com"
             className="flex items-center gap-4 p-4 rounded-xl border border-gray-100 hover:bg-gray-50 transition-colors"

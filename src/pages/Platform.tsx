@@ -53,14 +53,14 @@ const Platform = () => {
       <section className="bg-slate-50 pt-16 lg:pt-20 pb-12 md:pb-16 lg:pb-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center max-w-7xl mx-auto pt-8 md:pt-16 lg:pt-20 pb-8 md:pb-16">
-            <div className="col-span-12 lg:col-span-7 flex flex-col items-start text-left max-w-2xl">
+            <div className="col-span-12 lg:col-span-7 flex flex-col items-start text-start max-w-2xl">
               <span className="inline-block px-4 py-2 bg-[#E87722] text-white text-sm font-semibold uppercase tracking-wider rounded-full mb-4 md:mb-6">
                 {t('platform.os')}
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight text-balance mb-4 md:mb-6 text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight text-balance mb-4 md:mb-6 text-start">
                 {t('platform.title')}
               </h1>
-              <p className="text-base md:text-lg text-slate-600 max-w-xl text-left">
+              <p className="text-base md:text-lg text-slate-600 max-w-xl text-start">
                 {t('platform.subtitle')}
               </p>
             </div>

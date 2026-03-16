@@ -109,7 +109,7 @@ const Solutions = () => {
                 {t('solutions.dontSlowDown')}
             </h2>
             <Button className="bg-[#E87722] hover:bg-[#d66a1a] text-white px-8 py-6 text-lg rounded-lg shadow-lg">
-                {t('solutions.getStrategy')} <ArrowRight className="ml-2 w-5 h-5" />
+                {t('solutions.getStrategy')} <ArrowRight className="ms-2 w-5 h-5" />
             </Button>
         </div>
       </section>

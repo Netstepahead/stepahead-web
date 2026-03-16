@@ -57,7 +57,7 @@ const PhilosophySection = () => {
       <div className="container mx-auto max-w-6xl">
         
         {/* Header */}
-        <div className={`flex flex-col gap-6 mb-20 ${isRTL ? 'text-right items-start' : 'text-left items-start'}`}>
+        <div className={`flex flex-col gap-6 mb-20 text-start items-start`}>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#1B365D]">
             {t.title}
           </h2>
@@ -75,7 +75,7 @@ const PhilosophySection = () => {
                 group p-8 rounded-2xl bg-[#F4F1ED]/50 border border-[#F4F1ED] hover:border-[#E87722]/30 
                 hover:bg-[#F4F1ED] transition-all duration-300
                 flex flex-col gap-4
-                ${isRTL ? 'text-right items-end' : 'text-left items-start'}
+                text-start items-start
               `}
             >
               <div className="p-3 bg-white rounded-xl shadow-sm group-hover:shadow-md transition-all border border-gray-100">

@@ -290,20 +290,20 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.exploreSolutions': 'גלו את הפתרונות שלנו',
     'hero.cta': 'קבעו שיחת ייעוץ',
     'hero.cta2': 'התהליך שלנו',
-    'hero.activateNetwork': 'הפעילו את הרשת שלכם',
+    'hero.activateNetwork': 'מנפו את הרשת שלכם',
     'hero.meetAgent': 'הכירו את Collab Agent',
     'hero.trustedBy': 'סומכים עלינו',
     'hero.trustedBySubtitle': 'ארגונים מובילים שסומכים עלינו',
 
     // Homepage - The 3 Solutions
     'index.pillar1.title': 'תוכניות מנהיגות רשתית',
-    'index.pillar1.text': 'הכשרת מנהלים לבניית יחסים, חיבור האנשים הנכונים והובלה אפקטיבית בין צוותים - ללא הסתמכות על סמכות פורמלית.',
+    'index.pillar1.text': 'הכשרת מנהלים לבניית מערכות יחסים, חיבור האנשים הנכונים והובלה אפקטיבית בין צוותים - מתוך השפעה, וללא הסתמכות על סמכות פורמלית בלבד.',
     'index.pillar1.benefit1': 'זיהוי צווארי בקבוק נסתרים',
     'index.pillar1.benefit2': 'טיפוח יחסי אמון גבוהים',
     'index.pillar1.benefit3': 'האצת ממשקי עבודה חוצי-ארגון',
     'index.pillar1.button': 'גלו תוכניות מנהיגות',
-    'index.pillar2.title': 'בינה שיתופית',
-    'index.pillar2.text': 'כלי מיפוי רשת מתקדמים שמראים בדיוק איך הצוותים שלכם עובדים יחד – לזיהוי צווארי בקבוק וחשיפת טאלנטים נסתרים.',
+    'index.pillar2.title': 'פלטפורמת ONA',
+    'index.pillar2.text': 'כלי מיפוי רשת מתקדמים שמראים בדיוק איך הצוותים והמחלקות שלכם עובדים יחד בפועל – כדי לזהות צווארי בקבוק ולחשוף טאלנטים נסתרים.',
     'index.pillar2.button': 'גלו את פלטפורמת ONA',
     'index.pillar3.title': 'איתור והערכת טאלנטים',
     'index.pillar3.text': 'הערכות קוגניטיביות מבוססות-משחק לזיהוי מועמדים עם הכישורים והפוטנציאל להשתלב ברשת הארגונית שלכם.',
@@ -315,7 +315,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Homepage - The Future (AI Collab Agent)
     'index.future.title': 'הכירו את Collab Agent (בטא)',
-    'index.future.text': 'האדם הנכון כבר נמצא באנשי הקשר שלכם. ספרו לנו על מה אתם עובדים — ואנו נמצא את האנשים המדויקים שיכולים לעזור לכם עכשיו. לא המובנים מאליהם, אלא אלה ששכחתם שאתם מכירים. סוכן ה-AI שלנו משתלב ישירות בסביבת העבודה שלכם כדי לחבר אתכם לאנשים הנכונים בזמן הנכון.',
+    'index.future.text': 'האדם הנכון כבר נמצא בארגון שלכם. ספרו לנו מול איזה אתגר אתם עומדים — ואנו נמצא את האנשים המדויקים שיכולים לעזור לכם עכשיו. לא רק המובנים מאליהם, אלא אלה ששכחתם שאתם מכירים. סוכן ה-AI שלנו משתלב ישירות בסביבת העבודה היומיומית שלכם (Teams/Slack) כדי לחבר אתכם לאנשים הנכונים בזמן הנכון.',
     'index.future.badge': 'AI Labs',
     'index.future.cta': 'הצטרפו לרשימת ההמתנה',
     'index.future.ctaAlt': 'הפכו לשותף עיצוב (Design Partner)',
@@ -339,7 +339,7 @@ const translations: Record<Language, Record<string, string>> = {
     'process.step3.desc': 'תוכניות פיתוח ממוקדות לחיזוק יכולות מנהיגות רשתית.',
     'process.step4.title': 'יישום',
     'process.step4.subtitle': 'סוכן AI',
-    'process.step4.desc': 'אימון מונע AI ותובנות קישוריות בזמן אמת לשיפור מתמיד.',
+    'process.step4.desc': 'ליווי אישי מבוסס AI ותובנות קישוריות בזמן אמת לשיפור מתמיד.',
 
     // Skills
     'skills.title': 'החשיבה הרשתית',
@@ -354,10 +354,10 @@ const translations: Record<Language, Record<string, string>> = {
     'skills.pioneer.desc': 'מחפש כל הזמן קשרים ותחומים חדשים. בונה רשת בעלת גיוון גבוה.',
 
     // Index
-    'index.turnOrgChart': 'הפכו את העץ הארגוני לרשת חיה',
+    'index.turnOrgChart': 'הפכו את העץ הארגוני לרשת דינמית',
     'index.orgChartDesc': 'התקדמו מעבר להיררכיה הסטטית. אנו משתמשים בניתוח רשתות ארגוניות (ONA) כדי לחשוף איך העבודה באמת מתבצעת.',
     'index.innovation': 'מהירות וחדשנות',
-    'index.innovationDesc': 'חדשנות קורית בחיבורים. המערכת מזהה נתקים ומגשרת בין מחלקות מבודדות.',
+    'index.innovationDesc': 'חדשנות קורית בנקודות החיבור. המערכת מזהה "חורים ברשת" (Structural Holes) ומגשרת בין מחלקות מבודדות כדי להאיץ תהליכי עבודה ויצירתיות.',
     'index.retention': 'שימור טאלנטים',
     'index.retentionDesc': 'זהו עובדים מבודדים לפני שהם עוזבים. ניתוח רשתי מתקדם לחיזוי סיכוני עזיבה ושחיקה.',
     'index.leadership': 'מנהיגות מודרנית',
@@ -368,7 +368,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Platform
     'platform.os': 'הפלטפורמה שלנו',
-    'platform.title': 'חזו את הרשת. שחררו שיתוף פעולה אמיתי.',
+    'platform.title': 'להפוך את הרשת לגלויה. לממש את פוטנציאל הארגון.',
     'platform.subtitle': 'אנו משתמשים בניתוח רשתות ארגוניות (ONA) מתקדם כדי לחשוף את הקשרים הנסתרים של החברה שלכם, יחד עם סוכן AI שמעצים כל עובד לנצל אותם.',
     'platform.onaEngine': 'ניתוח רשתות ארגוניות (ONA)',
     'platform.visualizeInvisible': 'למפות את המציאות',
@@ -384,12 +384,12 @@ const translations: Record<Language, Record<string, string>> = {
     'platform.agentFeature3': 'אינטגרציה חלקה ליום העבודה',
     'platform.networkProfiling': 'פיתוח כישורי רשת',
     'platform.deepInsight': 'טיפוח החשיבה הרשתית',
-    'platform.profilingDesc': 'מעבר להכרות, הפלטפורמה עוזרת לעובדים להבין ולפתח את ה"פרסונה הרשתית" הייחודית שלהם. פרופילינג ואימון מתמשכים לבניית כישורי שיתוף פעולה חזקים יותר.',
+    'platform.profilingDesc': 'הפלטפורמה עוזרת לעובדים להבין ולפתח את ה"פרסונה הרשתית" הייחודית שלהם. דרך פרופילינג וליווי מתמשך, אנו בונים כישורי עבודה משותפת חזקים ואפקטיביים יותר.',
     'platform.profilingFeature1': 'גילוי חוזקות ונקודות עיוורון ברשת האישית',
     'platform.profilingFeature2': 'אימון ממוקד לפיתוח כישורי רשת',
     'platform.profilingFeature3': 'העצמת מנהלים לבניית צוותי אמון',
     'platform.seeHowItWorks': 'ראו איך זה עובד',
-    'platform.readyTransform': 'מוכנים להפוך את הארגון לרשתי?',
+    'platform.readyTransform': 'מוכנים להפוך לארגון רשתי?',
     'platform.joinCompanies': 'הצטרפו לארגונים החדשניים שכבר משתמשים ב-StepAhead.',
     'platform.bookDemo': 'קבעו הדגמה',
     'platform.contactSales': 'דברו עם צוות המכירות',
@@ -490,7 +490,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.tagline': 'ארכיטקטים של הארגון הרשתי. אנו הופכים היררכיות סטטיות לרשתות אנושיות אג\'יליות ומבוססות-נתונים.',
     'footer.solutionsHeading': 'פתרונות',
     'footer.networkLeadership': 'תוכניות מנהיגות רשתית',
-    'footer.collaborationIntelligence': 'בינה שיתופית',
+    'footer.collaborationIntelligence': 'פלטפורמת ONA',
     'footer.talentSelection': 'איתור והערכת טאלנטים',
     'footer.collabAgent': 'Collab Agent (בטא)',
     'footer.company': 'החברה',
