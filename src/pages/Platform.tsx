@@ -183,7 +183,7 @@ const Platform = () => {
       </section>
 
       {/* 5. FINAL CTA SECTION */}
-      <section className="py-24 bg-slate-900 text-white">
+      <section className="py-24 bg-navy text-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-4xl font-bold mb-4">
             {t('platform.readyTransform')}

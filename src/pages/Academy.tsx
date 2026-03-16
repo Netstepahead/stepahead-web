@@ -98,7 +98,7 @@ const Academy = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl">
+            <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
               <Carousel
                 key={isRTL ? 'academy-rtl' : 'academy-ltr'}
                 opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -112,7 +112,7 @@ const Academy = () => {
                       <img
                         src={img}
                         alt=""
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-top md:object-center"
                       />
                     </CarouselItem>
                   ))}
@@ -150,7 +150,7 @@ const Academy = () => {
       </section>
 
       {/* 4. BOTTOM CTA */}
-      <section className="py-24 bg-slate-900 text-white">
+      <section className="py-24 bg-navy text-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-4xl font-bold mb-4">
             {t('academy.upgradeDNA')}
