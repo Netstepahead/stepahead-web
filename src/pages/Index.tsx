@@ -226,7 +226,7 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-full overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-black/10 max-w-full order-1 md:order-none">
-              <img src="/agent-chat.png" alt="" className="w-full h-auto object-contain max-w-full" />
+              <img src="/Collab_Carousel/agent-chat.png" alt="" className="w-full h-auto object-contain max-w-full" />
             </div>
             <div className="flex flex-col items-start text-start order-2 md:order-none">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4 md:mb-6 leading-tight">
