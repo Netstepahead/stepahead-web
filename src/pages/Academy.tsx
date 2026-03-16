@@ -7,9 +7,9 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import Autoplay from "embla-carousel-autoplay";
 
 const academyCarouselImages = [
-  '/academy_carousel/1.jpg',
-  '/academy_carousel/2.jpg',
-  '/academy_carousel/3.jpg',
+  '/academy_carousel/workshop1.jpeg',
+  '/academy_carousel/workshop2.jpeg',
+  '/academy_carousel/workshop3.jpeg',
 ];
 
 const academyAutoplay = Autoplay({ delay: 4000 });
@@ -64,7 +64,7 @@ const Academy = () => {
               </div>
             </div>
             <div className="w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-              <img src="/workshop.jpg" className="w-full h-full object-cover" alt="Network Leadership Workshop" />
+              <img src="/workshop-hero.jfif" className="w-full h-full object-cover" alt="Network Leadership Workshop" />
             </div>
           </div>
         </div>
