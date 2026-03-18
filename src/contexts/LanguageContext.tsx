@@ -178,7 +178,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Assessment
     'assessment.badge': 'AI-SUPPORTED TALENT ASSESSMENT',
     'assessment.title': 'Game-Based Assessments for Recruitment & Evaluation',
-    'assessment.subtitle': 'Replace long, tiresome questionnaires with fast, engaging critical thinking games. Evaluate job candidates and employees by tracking authentic behavioral responses to reveal their true potential.',
+    'assessment.subtitle': 'Accelium\'s assessment tests are based on smart thinking games that require candidates to analyze data, plan, solve problems, and make diverse decisions. The system analyzes the problem-solving methods and decisions made by the candidate during the game, characterizing their thinking patterns and operational style. The assessment report presents a multidimensional skill profile that allows for accurate identification of each candidate\'s strengths and weaknesses.',
     'assessment.skillsTitle': 'Measuring 23 Core Cognitive & Behavioral Skills',
     'assessment.skillsDesc': 'Our dynamic game environments assess a broad spectrum of complex skills in real-time.',
     'assessment.experienceTitle': 'The Candidate Experience',
@@ -467,7 +467,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Assessment
     'assessment.badge': 'הערכת טאלנטים מבוססת AI',
     'assessment.title': 'הערכה מבוססת-משחק לגיוס ופיתוח עובדים',
-    'assessment.subtitle': 'החליפו שאלונים מתישים במשחקי חשיבה ביקורתית מהירים. העריכו מועמדים ועובדים על ידי מעקב אחר התנהגות אותנטית בזמן אמת, וגלו את הפוטנציאל האמיתי שלהם.',
+    'assessment.subtitle': 'מבחני ההערכה של Accelium מבוססים על משחקי חשיבה חכמים הדורשים מהנבחנים לנתח נתונים, לתכנן, לפתור בעיות ולקבל מגוון החלטות. המערכת מנתחת את דרכי הפתרון ואת ההחלטות שקיבל הנבחן במהלך המשחק ומאפיינת את צורת החשיבה וסגנון הפעולה שלו. דו"ח הבחינה מציג פרופיל מיומנויות רב-ממדי המאפשר לזהות במדויק את חוזקותיו וחולשותיו של כל נבחן.',
     'assessment.skillsTitle': 'מודדים 23 כישורים קוגניטיביים והתנהגותיים',
     'assessment.skillsDesc': 'סביבת המשחקים הדינמית שלנו מעריכה קשת רחבה של כישורים מורכבים במקביל.',
     'assessment.experienceTitle': 'חווית המועמד',

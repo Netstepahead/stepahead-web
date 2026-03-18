@@ -14,11 +14,14 @@ const pillColors = ['bg-[#1A2E44] text-white', 'bg-orange-500 text-white', 'bg-t
 const expAutoplay = Autoplay({ delay: 4500 });
 const reportAutoplay = Autoplay({ delay: 4500 });
 
+const SKILLS_EN = ['Flexible Thinking', 'Coping with Changes', 'Efficiency', 'Time Management', 'Planning', 'Systematic Thinking', 'Analysis and Deduction', 'Learning Aptitude', 'Logical Thinking', 'Resource Management', 'Developing a Plan', 'Dealing with Time Pressure', 'Systemic Vision', 'Taking Initiative', 'Complex Problem Solving', 'Persistence', 'Resourcefulness', 'Quick Thinking', 'Identify Opportunities', 'Accuracy', 'Calculation', 'Pattern Recognition', 'Task Management'];
+const SKILLS_HE = ['חשיבה גמישה', 'התמודדות עם שינויים', 'יעילות', 'ניהול זמן', 'תכנון', 'חשיבה שיטתית', 'ניתוח והסקה', 'יכולת למידה', 'חשיבה לוגית', 'ניהול משאבים', 'גיבוש תכנית פעולה', 'התמודדות עם לחץ זמן', 'ראייה מערכתית', 'נקיטת יוזמה', 'פתרון בעיות מורכבות', 'התמדה', 'תושייה', 'חשיבה מהירה', 'זיהוי הזדמנויות', 'דיוק', 'חישוב', 'זיהוי תבניות', 'ניהול משימות'];
+
 const Assessment = () => {
   const { t, isRTL, language } = useLanguage();
   const navigate = useNavigate();
 
-  const skillKeys = Array.from({ length: 23 }, (_, i) => `assessment.skill${i + 1}` as const);
+  const skills = language === 'he' ? SKILLS_HE : SKILLS_EN;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,17 +29,17 @@ const Assessment = () => {
   }, [isRTL]);
 
   const MarqueeRow = ({ direction }: { direction: 'left' | 'right' }) => {
-    const skills = [...skillKeys, ...skillKeys];
+    const items = [...skills, ...skills];
     const animClass = direction === 'left' ? 'animate-marquee' : 'animate-marquee-rtl';
     return (
       <div className="overflow-hidden py-4">
         <div className={`flex gap-4 ${animClass} [animation-duration:60s]`} style={{ width: 'max-content' }}>
-          {skills.map((key, i) => (
+          {items.map((skill, i) => (
             <span
-              key={`${key}-${i}`}
+              key={`${skill}-${i}`}
               className={`shrink-0 rounded-full px-6 py-3 shadow-sm font-medium border-0 ${pillColors[i % pillColors.length]}`}
             >
-              {t(key)}
+              {skill}
             </span>
           ))}
         </div>
@@ -100,7 +103,7 @@ const Assessment = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             <div className="order-1 md:order-none">
-              <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl bg-slate-50">
+              <div className="w-full aspect-[4/3] md:aspect-auto min-h-[280px] rounded-3xl overflow-hidden shadow-2xl bg-slate-100">
                 <Carousel
                   key={isRTL ? 'exp-rtl' : 'exp-ltr'}
                   opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -111,7 +114,7 @@ const Assessment = () => {
                   <CarouselContent className="-ml-0 h-full">
                     {expImages.map((img, i) => (
                       <CarouselItem key={i} className="pl-0 h-full">
-                        <img src={img} alt="" className="w-full h-full object-cover object-center" />
+                        <img src={img} alt="" className="w-full h-full object-contain bg-slate-100 rounded-3xl" />
                       </CarouselItem>
                     ))}
                   </CarouselContent>
