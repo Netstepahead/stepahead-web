@@ -9,7 +9,11 @@ import { Download } from "lucide-react";
 const expImages = ['/Experience_Carousel/exp-1.jpg', '/Experience_Carousel/exp-2.png'];
 const reportImages = ['/Reports_Carousel/Reports-1.png', '/Reports_Carousel/report-2.png'];
 
-const pillColors = ['bg-[#1A2E44] text-white', 'bg-orange-500 text-white', 'bg-slate-200 text-slate-900'];
+const pillStyles: { bg: string; text: string }[] = [
+  { bg: '#1A2E44', text: 'white' },
+  { bg: '#f97316', text: 'white' },
+  { bg: '#e2e8f0', text: '#0f172a' },
+];
 
 const expAutoplay = Autoplay({ delay: 4500 });
 const reportAutoplay = Autoplay({ delay: 4500 });
@@ -34,14 +38,18 @@ const Assessment = () => {
     return (
       <div className="overflow-hidden py-4">
         <div className={`flex gap-4 ${animClass} [animation-duration:60s]`} style={{ width: 'max-content' }}>
-          {items.map((skill, i) => (
-            <span
-              key={`${skill}-${i}`}
-              className={`shrink-0 rounded-full px-6 py-3 shadow-sm font-medium border-0 ${pillColors[i % pillColors.length]}`}
-            >
-              {skill}
-            </span>
-          ))}
+          {items.map((skill, i) => {
+            const style = pillStyles[i % pillStyles.length];
+            return (
+              <span
+                key={`${skill}-${i}`}
+                className="shrink-0 rounded-full px-6 py-3 shadow-sm font-medium border-0"
+                style={{ backgroundColor: style.bg, color: style.text }}
+              >
+                {skill}
+              </span>
+            );
+          })}
         </div>
       </div>
     );
