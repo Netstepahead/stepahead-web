@@ -2,29 +2,44 @@ import { useEffect } from "react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { CircleCheck } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+
+const expImages = ['/Experience_Carousel/exp-1.png', '/Experience_Carousel/exp-2.png'];
+const reportImages = ['/Reports_Carousel/Reports-1.png', '/Reports_Carousel/report-2.png'];
+
+const expAutoplay = Autoplay({ delay: 4500 });
+const reportAutoplay = Autoplay({ delay: 4500 });
 
 const Assessment = () => {
   const { t, isRTL } = useLanguage();
   const navigate = useNavigate();
+
+  const skillKeys = Array.from({ length: 23 }, (_, i) => `assessment.skill${i + 1}` as const);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [isRTL]);
 
-  const steps = [
-    { title: t('assessment.step1Title'), desc: t('assessment.step1Desc') },
-    { title: t('assessment.step2Title'), desc: t('assessment.step2Desc') },
-    { title: t('assessment.step3Title'), desc: t('assessment.step3Desc') },
-    { title: t('assessment.step4Title'), desc: t('assessment.step4Desc') },
-  ];
-
-  const skills = [
-    { title: t('assessment.skill1'), desc: t('assessment.skill1Desc') },
-    { title: t('assessment.skill2'), desc: t('assessment.skill2Desc') },
-    { title: t('assessment.skill3'), desc: t('assessment.skill3Desc') },
-  ];
+  const MarqueeRow = ({ direction }: { direction: 'left' | 'right' }) => {
+    const skills = [...skillKeys, ...skillKeys];
+    const animClass = direction === 'left' ? 'animate-marquee' : 'animate-marquee-rtl';
+    return (
+      <div className="overflow-hidden py-4">
+        <div className={`flex gap-4 ${animClass}`} style={{ width: 'max-content' }}>
+          {skills.map((key, i) => (
+            <span
+              key={`${key}-${i}`}
+              className="shrink-0 rounded-full border border-slate-200 bg-white px-6 py-3 shadow-sm text-slate-700 font-medium"
+            >
+              {t(key)}
+            </span>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="w-full bg-white overflow-x-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
@@ -46,85 +61,89 @@ const Assessment = () => {
             </div>
             <div className="col-span-12 lg:col-span-5">
               <div className="w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                <img src="/assessment.jpg" className="w-full h-full object-cover object-center" alt="Game-based assessment" />
+                <img src="/assessment-hero.png" className="w-full h-full object-cover object-center" alt="Game-based assessment" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. THE EXPERIENCE SECTION */}
-      <section className="bg-white py-24">
+      {/* 2. THE 23 SKILLS MARQUEE */}
+      <section className="bg-white py-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('assessment.skillsTitle')}</h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">{t('assessment.skillsDesc')}</p>
+          </div>
+          <MarqueeRow direction="left" />
+          <MarqueeRow direction="right" />
+        </div>
+      </section>
+
+      {/* 3. THE EXPERIENCE CAROUSEL */}
+      <section className="bg-[#F9F8F4] py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             <div className="order-1 md:order-none">
-              <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl bg-slate-50 p-6">
-                <img src="/assessment.jpg" className="w-full h-full object-contain" alt="Assessment UI" />
+              <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl bg-slate-50">
+                <Carousel
+                  key={isRTL ? 'exp-rtl' : 'exp-ltr'}
+                  opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
+                  plugins={[expAutoplay]}
+                  setApi={(api) => { api?.plugins().autoplay?.play(); }}
+                  className="w-full h-full"
+                >
+                  <CarouselContent className="-ml-0 h-full">
+                    {expImages.map((img, i) => (
+                      <CarouselItem key={i} className="pl-0 h-full">
+                        <img src={img} alt="" className="w-full h-full object-cover object-center" />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
               </div>
             </div>
             <div className="order-2 md:order-none flex flex-col items-start text-start">
-              <span className="text-orange-500 font-semibold mb-2 block">{t('assessment.whyGames')}</span>
-              <h2 className="text-3xl font-bold text-slate-900 mb-6 text-start">{t('assessment.whyGamesTitle')}</h2>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6 text-start">
-                {t('assessment.whyGamesDesc')}
+              <h2 className="text-3xl font-bold text-slate-900 mb-4 text-start">{t('assessment.experienceTitle')}</h2>
+              <h3 className="text-xl font-semibold text-[#E87722] mb-4 text-start">{t('assessment.experienceSubtitle')}</h3>
+              <p className="text-lg text-slate-600 leading-relaxed text-start">
+                {t('assessment.experienceDesc')}
               </p>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 text-slate-700">
-                  <CircleCheck className="w-5 h-5 text-[#E87722] shrink-0" />
-                  <span>{t('assessment.feature1')}</span>
-                </li>
-                <li className="flex items-center gap-3 text-slate-700">
-                  <CircleCheck className="w-5 h-5 text-[#E87722] shrink-0" />
-                  <span>{t('assessment.feature2')}</span>
-                </li>
-                <li className="flex items-center gap-3 text-slate-700">
-                  <CircleCheck className="w-5 h-5 text-[#E87722] shrink-0" />
-                  <span>{t('assessment.feature3')}</span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. THE 4-STEP PROCESS */}
-      <section className="bg-white py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('assessment.processTitle')}</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {steps.map((step, i) => (
-              <div
-                key={i}
-                className="bg-slate-50 p-8 rounded-3xl border border-slate-100"
-              >
-                <span className="text-3xl font-bold text-[#E87722] mb-4 block">{i + 1}</span>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 text-start">{step.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-start">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. SKILLS MEASURED */}
+      {/* 4. THE REPORTS CAROUSEL */}
       <section className="bg-[#1A2E44] text-white py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">{t('assessment.skillsTitle')}</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {skills.map((skill, i) => (
-              <div
-                key={i}
-                className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
-              >
-                <div className="w-12 h-1 bg-[#E87722] mb-6 rounded-full"></div>
-                <h3 className="text-xl font-bold mb-3 text-start">{skill.title}</h3>
-                <p className="text-slate-300 leading-relaxed text-start">{skill.desc}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+            <div className="order-2 md:order-1 flex flex-col items-start text-start">
+              <h2 className="text-3xl font-bold mb-4 text-start">{t('assessment.reportsTitle')}</h2>
+              <h3 className="text-xl font-semibold text-[#E87722] mb-4 text-start">{t('assessment.reportsSubtitle')}</h3>
+              <p className="text-lg text-slate-300 leading-relaxed text-start">
+                {t('assessment.reportsDesc')}
+              </p>
+            </div>
+            <div className="order-1 md:order-2">
+              <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl bg-slate-900/50">
+                <Carousel
+                  key={isRTL ? 'report-rtl' : 'report-ltr'}
+                  opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
+                  plugins={[reportAutoplay]}
+                  setApi={(api) => { api?.plugins().autoplay?.play(); }}
+                  className="w-full h-full"
+                >
+                  <CarouselContent className="-ml-0 h-full">
+                    {reportImages.map((img, i) => (
+                      <CarouselItem key={i} className="pl-0 h-full">
+                        <img src={img} alt="" className="w-full h-full object-contain p-4 bg-slate-900/50" />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
