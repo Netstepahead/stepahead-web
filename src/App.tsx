@@ -11,6 +11,7 @@ import Index from "./pages/Index";
 import Platform from "./pages/Platform";
 import Solutions from "./pages/Solutions";
 import Academy from "./pages/Academy";
+import Assessment from "./pages/Assessment";
 import Methodology from "./pages/Methodology";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -34,6 +35,7 @@ const App = () => (
                 <Route path="/platform" element={<Platform />} />
                 <Route path="/solutions" element={<Solutions />} />
                 <Route path="/academy" element={<Academy />} />
+                <Route path="/assessment" element={<Assessment />} />
                 <Route path="/methodology" element={<Methodology />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />

@@ -36,7 +36,7 @@ const Footer = () => {
                 <Link to="/platform" className="hover:text-white transition-colors">{t('footer.collaborationIntelligence')}</Link>
               </li>
               <li>
-                <Link to="/solutions" className="hover:text-white transition-colors">{t('footer.talentSelection')}</Link>
+                <Link to="/assessment" className="hover:text-white transition-colors">{t('footer.talentSelection')}</Link>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">{t('footer.collabAgent')}</a>
