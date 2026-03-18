@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-const expImages = ['/Experience_Carousel/exp-1.png', '/Experience_Carousel/exp-2.png'];
+const expImages = ['/Experience_Carousel/exp-1.jpg', '/Experience_Carousel/exp-2.png'];
 const reportImages = ['/Reports_Carousel/Reports-1.png', '/Reports_Carousel/report-2.png'];
 
 const expAutoplay = Autoplay({ delay: 4500 });
@@ -60,8 +60,8 @@ const Assessment = () => {
               </p>
             </div>
             <div className="col-span-12 lg:col-span-5">
-              <div className="w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                <img src="/assessment-hero.png" className="w-full h-full object-cover object-center" alt="Game-based assessment" />
+              <div className="w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white flex items-center justify-center bg-slate-100">
+                <img src="/assessment-hero.png" className="w-full h-auto max-h-[480px] object-contain object-center" alt="Game-based assessment" />
               </div>
             </div>
           </div>
