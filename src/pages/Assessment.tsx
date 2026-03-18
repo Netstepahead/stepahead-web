@@ -9,7 +9,7 @@ import { Download } from "lucide-react";
 const expImages = ['/Experience_Carousel/exp-1.jpg', '/Experience_Carousel/exp-2.png'];
 const reportImages = ['/Reports_Carousel/Reports-1.png', '/Reports_Carousel/report-2.png'];
 
-const pillColors = ['bg-[#1A2E44] text-white', 'bg-orange-500 text-white', 'bg-teal-700 text-white', 'bg-slate-100 text-slate-800'];
+const pillColors = ['bg-[#1A2E44] text-white', 'bg-orange-500 text-white', 'bg-slate-200 text-slate-900'];
 
 const expAutoplay = Autoplay({ delay: 4500 });
 const reportAutoplay = Autoplay({ delay: 4500 });
@@ -29,7 +29,7 @@ const Assessment = () => {
   }, [isRTL]);
 
   const MarqueeRow = ({ direction }: { direction: 'left' | 'right' }) => {
-    const items = [...skills, ...skills];
+    const items = [...skills, ...skills, ...skills];
     const animClass = direction === 'left' ? 'animate-marquee' : 'animate-marquee-rtl';
     return (
       <div className="overflow-hidden py-4">
@@ -153,7 +153,7 @@ const Assessment = () => {
               </a>
             </div>
             <div className="order-1 md:order-2">
-              <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl bg-slate-900/50">
+              <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl">
                 <Carousel
                   key={isRTL ? 'report-rtl' : 'report-ltr'}
                   opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -164,7 +164,7 @@ const Assessment = () => {
                   <CarouselContent className="-ml-0 h-full">
                     {reportImages.map((img, i) => (
                       <CarouselItem key={i} className="pl-0 h-full">
-                        <img src={img} alt="" className="w-full h-full object-contain p-4 bg-slate-900/50" />
+                        <img src={img} alt="" className="w-full h-full object-cover rounded-3xl" />
                       </CarouselItem>
                     ))}
                   </CarouselContent>
