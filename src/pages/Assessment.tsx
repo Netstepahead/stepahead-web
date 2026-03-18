@@ -9,6 +9,8 @@ import { Download } from "lucide-react";
 const expImages = ['/Experience_Carousel/exp-1.jpg', '/Experience_Carousel/exp-2.png'];
 const reportImages = ['/Reports_Carousel/Reports-1.png', '/Reports_Carousel/report-2.png'];
 
+const pillColors = ['bg-[#1A2E44] text-white', 'bg-orange-500 text-white', 'bg-teal-700 text-white', 'bg-slate-100 text-slate-800'];
+
 const expAutoplay = Autoplay({ delay: 4500 });
 const reportAutoplay = Autoplay({ delay: 4500 });
 
