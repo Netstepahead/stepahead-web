@@ -213,6 +213,9 @@ const translations: Record<Language, Record<string, string>> = {
     'assessment.skill21': 'Resilience',
     'assessment.skill22': 'Creative Problem Solving',
     'assessment.skill23': 'Information Filtering',
+    'assessment.poweredBy': 'Powered by Accelium',
+    'assessment.downloadResearch': 'Download Validation Research',
+    'assessment.downloadReport': 'Download Sample Report',
 
     // Academy
     'academy.badge': 'PRACTICAL LEADERSHIP WORKSHOPS',
@@ -499,6 +502,9 @@ const translations: Record<Language, Record<string, string>> = {
     'assessment.skill21': 'חוסן',
     'assessment.skill22': 'פתרון בעיות יצירתי',
     'assessment.skill23': 'סינון מידע',
+    'assessment.poweredBy': 'מופעל בטכנולוגיית Accelium',
+    'assessment.downloadResearch': 'להורדת מחקר התוקף',
+    'assessment.downloadReport': 'להורדת דוח לדוגמא',
 
     // Academy
     'academy.badge': 'סדנאות מנהיגות פרקטיות',
