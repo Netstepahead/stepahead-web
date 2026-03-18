@@ -9,11 +9,7 @@ import { Download } from "lucide-react";
 const expImages = ['/Experience_Carousel/exp-1.jpg', '/Experience_Carousel/exp-2.png'];
 const reportImages = ['/Reports_Carousel/Reports-1.png', '/Reports_Carousel/report-2.png'];
 
-const pillStyles: { bg: string; text: string }[] = [
-  { bg: '#1A2E44', text: 'white' },
-  { bg: '#f97316', text: 'white' },
-  { bg: '#e2e8f0', text: '#0f172a' },
-];
+const pillColors = ['bg-[#1A2E44] text-white', 'bg-orange-500 text-white', 'bg-slate-100 text-slate-900'];
 
 const expAutoplay = Autoplay({ delay: 4500 });
 const reportAutoplay = Autoplay({ delay: 4500 });
@@ -38,18 +34,14 @@ const Assessment = () => {
     return (
       <div className="overflow-hidden py-4">
         <div className={`flex gap-4 ${animClass} [animation-duration:60s]`} style={{ width: 'max-content' }}>
-          {items.map((skill, i) => {
-            const style = pillStyles[i % pillStyles.length];
-            return (
-              <span
-                key={`${skill}-${i}`}
-                className="shrink-0 rounded-full px-6 py-3 shadow-sm font-medium border-0"
-                style={{ backgroundColor: style.bg, color: style.text }}
-              >
-                {skill}
-              </span>
-            );
-          })}
+          {items.map((skill, i) => (
+            <span
+              key={`${skill}-${i}`}
+              className={`shrink-0 rounded-full px-6 py-3 shadow-sm font-medium border-0 ${pillColors[i % pillColors.length]}`}
+            >
+              {skill}
+            </span>
+          ))}
         </div>
       </div>
     );
@@ -111,7 +103,7 @@ const Assessment = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             <div className="order-1 md:order-none">
-              <div className="w-full aspect-[4/3] md:aspect-auto min-h-[280px] rounded-3xl overflow-hidden shadow-2xl bg-slate-100">
+              <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl">
                 <Carousel
                   key={isRTL ? 'exp-rtl' : 'exp-ltr'}
                   opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -122,7 +114,7 @@ const Assessment = () => {
                   <CarouselContent className="-ml-0 h-full">
                     {expImages.map((img, i) => (
                       <CarouselItem key={i} className="pl-0 h-full">
-                        <img src={img} alt="" className="w-full h-full object-contain bg-slate-100 rounded-3xl" />
+                        <img src={img} alt="" className="w-full h-full object-cover rounded-3xl" />
                       </CarouselItem>
                     ))}
                   </CarouselContent>

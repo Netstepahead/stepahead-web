@@ -178,7 +178,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Assessment
     'assessment.badge': 'AI-SUPPORTED TALENT ASSESSMENT',
     'assessment.title': 'Game-Based Assessments for Recruitment & Evaluation',
-    'assessment.subtitle': 'Accelium\'s assessment tests are based on smart thinking games that require candidates to analyze data, plan, solve problems, and make diverse decisions. The system analyzes the problem-solving methods and decisions made by the candidate during the game, characterizing their thinking patterns and operational style. The assessment report presents a multidimensional skill profile that allows for accurate identification of each candidate\'s strengths and weaknesses.',
+    'assessment.subtitle': "Accelium's assessment tests are based on smart thinking games that require candidates to analyze data, plan, solve problems, and make diverse decisions. The system analyzes the problem-solving methods and decisions made by the candidate during the game, characterizing their thinking patterns and operational style. The assessment report presents a multidimensional skill profile that allows for accurate identification of each candidate's strengths and weaknesses.",
     'assessment.skillsTitle': 'Measuring 23 Core Cognitive & Behavioral Skills',
     'assessment.skillsDesc': 'Our dynamic game environments assess a broad spectrum of complex skills in real-time.',
     'assessment.experienceTitle': 'The Candidate Experience',
