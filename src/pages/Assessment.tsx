@@ -9,43 +9,33 @@ import { Download } from "lucide-react";
 const expImages = ['/Experience_Carousel/exp-1.jpg', '/Experience_Carousel/exp-2.png'];
 const reportImages = ['/Reports_Carousel/Reports-1.png', '/Reports_Carousel/report-2.png'];
 
-const pillColors = ['bg-[#1A2E44] text-white', 'bg-orange-500 text-white', 'bg-slate-100 text-slate-900'];
-
 const expAutoplay = Autoplay({ delay: 4500 });
 const reportAutoplay = Autoplay({ delay: 4500 });
-
-const SKILLS_EN = ['Flexible Thinking', 'Coping with Changes', 'Efficiency', 'Time Management', 'Planning', 'Systematic Thinking', 'Analysis and Deduction', 'Learning Aptitude', 'Logical Thinking', 'Resource Management', 'Developing a Plan', 'Dealing with Time Pressure', 'Systemic Vision', 'Taking Initiative', 'Complex Problem Solving', 'Persistence', 'Resourcefulness', 'Quick Thinking', 'Identify Opportunities', 'Accuracy', 'Calculation', 'Pattern Recognition', 'Task Management'];
-const SKILLS_HE = ['חשיבה גמישה', 'התמודדות עם שינויים', 'יעילות', 'ניהול זמן', 'תכנון', 'חשיבה שיטתית', 'ניתוח והסקה', 'יכולת למידה', 'חשיבה לוגית', 'ניהול משאבים', 'גיבוש תכנית פעולה', 'התמודדות עם לחץ זמן', 'ראייה מערכתית', 'נקיטת יוזמה', 'פתרון בעיות מורכבות', 'התמדה', 'תושייה', 'חשיבה מהירה', 'זיהוי הזדמנויות', 'דיוק', 'חישוב', 'זיהוי תבניות', 'ניהול משימות'];
 
 const Assessment = () => {
   const { t, isRTL, language } = useLanguage();
   const navigate = useNavigate();
 
-  const skills = language === 'he' ? SKILLS_HE : SKILLS_EN;
+  const skillCategories = language === 'he' ? [
+    { title: 'ארגוני', skills: ['יעילות', 'ניהול זמן', 'תכנון', 'חשיבה שיטתית', 'דיוק'] },
+    { title: 'משימתי', skills: ['ניהול משימות', 'מהירות חשיבה', 'תושייה', 'התמדה'] },
+    { title: 'אנליטי', skills: ['חישוב', 'זיהוי תבניות', 'ניתוח והסקת מסקנות'] },
+    { title: 'פתרון בעיות', skills: ['פתרון בעיות מורכבות', 'חשיבה לוגית', 'התמודדות עם לחץ זמן'] },
+    { title: 'אסטרטגי', skills: ['ראייה מערכתית', 'בניית תוכנית', 'זיהוי הזדמנויות', 'ניהול משאבים'] },
+    { title: 'עצמאות', skills: ['התמודדות עם שינויים', 'גמישות מחשבתית', 'נקיטת יוזמה', 'יכולת למידה'] },
+  ] : [
+    { title: 'Organizational', skills: ['Efficiency', 'Time Management', 'Planning', 'Systematic Thinking', 'Accuracy'] },
+    { title: 'Operational', skills: ['Task Management', 'Quick Thinking', 'Resourcefulness', 'Persistence'] },
+    { title: 'Analytical', skills: ['Calculation', 'Pattern Recognition', 'Analysis and Deduction'] },
+    { title: 'Problem Solving', skills: ['Complex Problem Solving', 'Logical Thinking', 'Dealing with Time Pressure'] },
+    { title: 'Strategic', skills: ['Systemic Vision', 'Developing a Plan', 'Identify Opportunities', 'Resource Management'] },
+    { title: 'Adaptability', skills: ['Coping with Changes', 'Flexible Thinking', 'Taking Initiative', 'Learning Aptitude'] },
+  ];
 
   useEffect(() => {
     window.scrollTo(0, 0);
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [isRTL]);
-
-  const MarqueeRow = ({ direction }: { direction: 'left' | 'right' }) => {
-    const items = [...skills, ...skills];
-    const animClass = direction === 'left' ? 'animate-marquee' : 'animate-marquee-rtl';
-    return (
-      <div className="overflow-hidden py-4">
-        <div className={`flex gap-4 ${animClass} [animation-duration:60s]`} style={{ width: 'max-content' }}>
-          {items.map((skill, i) => (
-            <span
-              key={`${skill}-${i}`}
-              className={`shrink-0 rounded-full px-6 py-3 shadow-sm font-medium border-0 ${pillColors[i % pillColors.length]}`}
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
-    );
-  };
 
   return (
     <div className="w-full bg-white overflow-x-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
@@ -77,7 +67,7 @@ const Assessment = () => {
         </div>
       </section>
 
-      {/* 2. THE 23 SKILLS MARQUEE */}
+      {/* 2. THE 23 SKILLS GRID */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
@@ -93,9 +83,27 @@ const Assessment = () => {
               {t('assessment.downloadResearch')}
             </a>
           </div>
-          <div dir="ltr">
-            <MarqueeRow direction="left" />
-            <MarqueeRow direction="right" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 mt-12 w-full max-w-7xl mx-auto">
+            {skillCategories.map((category) => (
+              <div
+                key={category.title}
+                className="flex flex-col bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden"
+              >
+                <div className="bg-[#1A2E44] text-white text-center py-4 px-2 font-bold text-lg border-b-4 border-orange-500">
+                  {category.title}
+                </div>
+                <div className="flex flex-col gap-3 p-4 bg-slate-50 h-full">
+                  {category.skills.map((skill) => (
+                    <div
+                      key={skill}
+                      className="bg-white border border-slate-200 text-slate-700 text-center py-3 px-2 rounded-xl text-sm font-medium shadow-sm hover:shadow-md transition-shadow"
+                    >
+                      {skill}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
