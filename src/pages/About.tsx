@@ -86,7 +86,7 @@ const About = () => {
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12 md:mb-16">
             {t('about.meetLeadership')}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
             {leadership.map((member, i) => (
               <div key={i} className="flex flex-col items-center text-center">
                 <img
