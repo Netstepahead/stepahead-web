@@ -1,13 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { Menu, X, Globe, ChevronDown } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar = () => {
@@ -51,16 +45,11 @@ const Navbar = () => {
     setLanguage(language === 'en' ? 'he' : 'en');
   };
 
-  const solutionsSubLinks = [
-    { nameKey: 'nav.networkSkillsLeadership' as const, path: "/academy" },
-    { nameKey: 'nav.collaborationAnalytics' as const, path: "/platform" },
-    { nameKey: 'nav.talentSelection' as const, path: "/assessment" },
-    { nameKey: 'nav.aiLabs' as const, path: "#" },
-  ];
-
-  const mainNavLinks = [
-    { nameKey: 'nav.methodology' as const, path: "/methodology" },
-    { nameKey: 'nav.aboutUs' as const, path: "/about" },
+  const navLinks = [
+    { nameKey: 'nav.networkLeadership' as const, path: "/academy" },
+    { nameKey: 'nav.onaPlatform' as const, path: "/platform" },
+    { nameKey: 'nav.talentAssessment' as const, path: "/assessment" },
+    { nameKey: 'nav.about' as const, path: "/about" },
     { nameKey: 'nav.contact' as const, path: "/contact" },
   ];
 
@@ -86,32 +75,9 @@ const Navbar = () => {
               className={`${logoSizeClass} w-auto transition-all duration-300 object-contain`}
             />
           </Link>
-          <DropdownMenu>
-            <DropdownMenuTrigger
-              className={`text-sm font-medium transition-colors hover:text-[#E87722] flex items-center gap-1 outline-none shrink-0 ${textColorClass}`}
-            >
-              {t('nav.solutionsDropdown')}
-              <ChevronDown className="w-4 h-4" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" sideOffset={12} className="min-w-[260px] whitespace-nowrap rounded-md shadow-lg p-2 border border-gray-100 bg-white text-left rtl:text-right" dir={isRTL ? 'rtl' : 'ltr'}>
-              {solutionsSubLinks.map((link) => (
-                <DropdownMenuItem key={link.nameKey} asChild className="px-4 py-3 rounded-md text-[#1B365D] focus:bg-[#1B365D]/5 focus:text-[#1B365D] hover:bg-[#1B365D]/5 data-[highlighted]:bg-[#1B365D]/5">
-                  {link.path === '#' ? (
-                    <a href="#" className="cursor-pointer text-left rtl:text-right flex items-center justify-start">
-                      {t(link.nameKey)}
-                    </a>
-                  ) : (
-                    <Link to={link.path} className="cursor-pointer text-left rtl:text-right flex items-center justify-start">
-                      {t(link.nameKey)}
-                    </Link>
-                  )}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-          {mainNavLinks.map((link) => (
+          {navLinks.map((link) => (
             <Link
-              key={link.path}
+              key={link.nameKey}
               to={link.path}
               className={`text-sm font-medium transition-colors hover:text-[#E87722] shrink-0 ${
                 location.pathname === link.path ? "text-[#E87722] font-bold" : textColorClass
@@ -172,39 +138,10 @@ const Navbar = () => {
             aria-label="Menu"
           >
             <div className="flex flex-col p-6 pt-16 gap-1">
-              <div className="mb-4">
-                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider px-3 mb-3">
-                  {t('nav.solutionsDropdown')}
-                </p>
-                <nav className="flex flex-col gap-1">
-                  {solutionsSubLinks.map((link) => (
-                    link.path === '#' ? (
-                      <a
-                        key={link.nameKey}
-                        href="#"
-                        className="block px-4 py-3 rounded-lg text-[#1B365D] font-medium hover:bg-[#1B365D]/5 active:bg-[#1B365D]/10 transition-colors"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {t(link.nameKey)}
-                      </a>
-                    ) : (
-                      <Link
-                        key={link.path}
-                        to={link.path}
-                        className="block px-4 py-3 rounded-lg text-[#1B365D] font-medium hover:bg-[#1B365D]/5 active:bg-[#1B365D]/10 transition-colors"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {t(link.nameKey)}
-                      </Link>
-                    )
-                  ))}
-                </nav>
-              </div>
-              <div className="border-t border-gray-100 my-2" />
               <nav className="flex flex-col gap-1">
-                {mainNavLinks.map((link) => (
+                {navLinks.map((link) => (
                   <Link
-                    key={link.path}
+                    key={link.nameKey}
                     to={link.path}
                     className={`block px-4 py-3 rounded-lg font-medium transition-colors ${
                       location.pathname === link.path
