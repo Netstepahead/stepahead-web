@@ -49,21 +49,12 @@ const Academy = () => {
               <p className="text-lg text-slate-600 max-w-xl mb-10 text-start">
                 {t('academy.subtitle')}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  onClick={() => navigate('/contact')}
-                  className="bg-[#E87722] hover:bg-[#d66a1a] text-white px-10 py-6 text-lg rounded-lg"
-                >
-                  {t('academy.downloadSyllabus')}
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => navigate('/contact')}
-                  className="px-10 py-6 text-lg rounded-lg border-2 border-slate-300 text-slate-700 hover:bg-slate-100"
-                >
-                  {t('academy.bookWorkshop')}
-                </Button>
-              </div>
+              <Button
+                onClick={() => navigate('/contact')}
+                className="bg-[#E87722] hover:bg-[#d66a1a] text-white px-10 py-6 text-lg rounded-lg"
+              >
+                {t('academy.bookWorkshop')}
+              </Button>
             </div>
             <div className="w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
               <img src="/workshop-hero.jfif" className="w-full h-full object-cover" alt="Network Leadership Workshop" />
