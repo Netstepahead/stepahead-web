@@ -29,7 +29,7 @@ const Assessment = () => {
   }, [isRTL]);
 
   const MarqueeRow = ({ direction }: { direction: 'left' | 'right' }) => {
-    const items = [...skills, ...skills, ...skills];
+    const items = [...skills, ...skills];
     const animClass = direction === 'left' ? 'animate-marquee' : 'animate-marquee-rtl';
     return (
       <div className="overflow-hidden py-4">
@@ -93,8 +93,10 @@ const Assessment = () => {
               {t('assessment.downloadResearch')}
             </a>
           </div>
-          <MarqueeRow direction="left" />
-          <MarqueeRow direction="right" />
+          <div dir="ltr">
+            <MarqueeRow direction="left" />
+            <MarqueeRow direction="right" />
+          </div>
         </div>
       </section>
 
