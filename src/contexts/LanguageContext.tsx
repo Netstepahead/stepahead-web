@@ -42,7 +42,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.mainTitle': 'Build a Connected, Future-Ready Organization',
     'hero.mainTitleLine1': 'Build a Connected,',
     'hero.mainTitleLine2': 'Future-Ready Organization',
-    'hero.mainSubtitle': 'A winning organization is built on its people and how they connect. Use our data-driven tools to empower agile leaders, break down silos, and accelerate organizational innovation.',
+    'hero.mainSubtitle': 'A winning organization is built on its people and how they connect. Use our data-driven tools to empower effective leaders, break down silos, and accelerate organizational innovation.',
     'hero.exploreSolutions': 'Explore Our Solutions',
     'hero.cta': 'Book a Consultation',
     'hero.cta2': 'Our Process',
@@ -67,7 +67,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Homepage - Our Methodology
     'index.philosophy.title': 'The Org Chart is a Myth. The Network is Reality.',
-    'index.philosophy.text': 'Value is no longer created in silos—it flows through invisible networks. We provide the methodology and tools to transition your company from a rigid hierarchy into an agile, connected ecosystem.',
+    'index.philosophy.text': 'Value is no longer created in silos—it flows through invisible networks. We provide the methodology and tools to transition your company from a rigid hierarchy into an adaptable, connected ecosystem.',
 
     // Homepage - The Future (AI Collab Agent)
     'index.future.title': 'Meet Your Collab Agent (Beta)',
@@ -99,7 +99,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Skills
     'skills.title': 'The Network Mindset',
-    'skills.subtitle': 'Essential Skills for the Agile Era',
+    'skills.subtitle': 'Essential Skills for Modern Leadership',
     'skills.hub.title': 'Network Hub',
     'skills.hub.desc': 'A person at the center of conversations, sought for advice and guidance. Builds high-trust relationships.',
     'skills.bridge.title': 'Strategic Bridge',
@@ -111,7 +111,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Index
     'index.turnOrgChart': 'Turn Your Org Chart Into a Living Network',
-    'index.orgChartDesc': 'Move beyond static hierarchies. We use Organizational Network Analysis (ONA) to reveal how work really gets done.',
+    'index.orgChartDesc': 'Move beyond traditional org charts. We use Organizational Network Analysis (ONA) to reveal how work really gets done.',
     'index.innovation': 'Innovation & Silo Busting',
     'index.innovationDesc': 'Innovation happens at the intersection. We visualize structural holes and bridge disconnected silos to speed up ideation.',
     'index.retention': 'Retention & Burnout',
@@ -254,8 +254,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // About
     'about.mission': 'OUR MISSION',
-    'about.title': 'Architects of the Networked Organization',
-    'about.subtitle': 'We exist to transform static hierarchies into living, breathing, adaptive networks of shared value.',
+    'about.title': 'Experts in Organizational Network Analysis (ONA).',
+    'about.subtitle': 'We exist to help organizations transform traditional org charts into highly collaborative, data-driven teams.',
     'about.orgChartDead': 'Connect People, Create Value.',
     'about.longLiveNetwork': '',
     'about.story1': 'StepAhead was founded with the vision of developing innovative technology based on network analysis to enable collaboration and connect people.',
@@ -267,7 +267,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.drive2Title': 'Innovative Technology',
     'about.drive2Desc': 'Gut feeling is important, but data is undeniable. We use advanced Network Analysis (ONA) to map the invisible and turn complex social dynamics into clear insights.',
     'about.drive3Title': 'The Network Mindset',
-    'about.drive3Desc': 'We are passionate about guiding leaders away from rigid, command-and-control hierarchies and towards agile, influence-based network leadership.',
+    'about.drive3Desc': 'We are passionate about guiding leaders away from rigid, command-and-control hierarchies and towards adaptable, influence-based network leadership.',
     'about.meetLeadership': 'Meet the Leadership',
     'about.sharonRole': 'Founder & COO',
     'about.sharonBio': "An expert in organizational dynamics and conflict resolution. As the owner of 'Gome-Gevim', Israel's leading mediation center, Sharon ensures our technology serves the people, translating network data into actionable strategies that build trust.",
@@ -275,7 +275,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.yuvalBio': 'A world-renowned authority on Network Theory. Chair of Leadership and Networks at WHU School of Management, Germany. Yuval provides the scientific backbone to our ONA algorithms and methodology.',
     'about.nadavRole': 'CEO',
     'about.nadavBio': "A pioneer in game-based assessment and skill development. With a background as a strategic thinking lecturer and EdTech expert, Nadav leads the vision of the 'Skills-Based Organization', focusing on uncovering hidden talent through technology.",
-    'about.joinRevolution': 'Join the Revolution',
+    'about.joinRevolution': 'Ready to take the next step?',
     'about.revolutionDesc': "Whether you are an organization looking to evolve or a partner looking to collaborate, we'd love to connect.",
     'about.contactUs': 'Contact Us',
 
@@ -301,7 +301,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cta.button': 'Schedule a Demo',
 
     // Footer
-    'footer.tagline': 'Architects of the Networked Organization. We transform static hierarchies into adaptive, data-driven human networks.',
+    'footer.tagline': 'Experts in Organizational Network Analysis (ONA). We help organizations transform traditional org charts into highly collaborative, data-driven teams.',
     'footer.solutionsHeading': 'Solutions',
     'footer.networkLeadership': 'Network Leadership Programs',
     'footer.collaborationIntelligence': 'Collaboration Intelligence',
@@ -354,7 +354,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.mainTitle': 'לבנות ארגון מחובר שמוכן לאתגרי המחר',
     'hero.mainTitleLine1': 'לבנות ארגון מחובר',
     'hero.mainTitleLine2': 'שמוכן לאתגרי המחר',
-    'hero.mainSubtitle': 'הדרך לארגון מנצח עוברת באנשים שלו ובאופן שבו הם מחוברים. השתמשו בכלים מבוססי הנתונים שלנו כדי לחזק מנהיגים אג\'יליים, לפרק סיילואים, ולהאיץ חדשנות ארגונית.',
+    'hero.mainSubtitle': 'הדרך לארגון מנצח עוברת באנשים שלו ובאופן שבו הם מחוברים. השתמשו בכלים מבוססי הנתונים שלנו כדי לחזק מנהלים אפקטיביים, לפרק סיילואים, ולהאיץ חדשנות ארגונית.',
     'hero.exploreSolutions': 'גלו את הפתרונות שלנו',
     'hero.cta': 'קבעו שיחת ייעוץ',
     'hero.cta2': 'התהליך שלנו',
@@ -379,7 +379,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Homepage - Our Methodology
     'index.philosophy.title': 'העץ הארגוני הוא מיתוס. הרשת היא המציאות.',
-    'index.philosophy.text': 'ערך כבר לא נוצר בממגורות — הוא זורם דרך רשתות בלתי נראות. אנו מספקים את המתודולוגיה והכלים להעביר את החברה שלכם מהיררכיה נוקשה למערכת אקולוגית אג\'ילית ומחוברת.',
+    'index.philosophy.text': 'ערך כבר לא נוצר בממגורות — הוא זורם דרך רשתות בלתי נראות. אנו מספקים את המתודולוגיה והכלים להעביר את החברה שלכם מהיררכיה נוקשה למערכת עבודה גמישה ומחוברת.',
 
     // Homepage - The Future (AI Collab Agent)
     'index.future.title': 'הכירו את Collab Agent (בטא)',
@@ -411,7 +411,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Skills
     'skills.title': 'החשיבה הרשתית',
-    'skills.subtitle': 'כישורים חיוניים לעידן האג\'ילי',
+    'skills.subtitle': 'כישורים חיוניים למנהיגות מודרנית',
     'skills.hub.title': 'צומת מרכזי (Hub)',
     'skills.hub.desc': 'אדם במרכז השיחות, אליו פונים לייעוץ והדרכה. בונה יחסי אמון גבוהים.',
     'skills.bridge.title': 'מגשר אסטרטגי',
@@ -423,7 +423,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Index
     'index.turnOrgChart': 'הפכו את העץ הארגוני לרשת דינמית',
-    'index.orgChartDesc': 'התקדמו מעבר להיררכיה הסטטית. אנו משתמשים בניתוח רשתות ארגוניות (ONA) כדי לחשוף איך העבודה באמת מתבצעת.',
+    'index.orgChartDesc': 'התקדמו מעבר לתרשים ארגוני מסורתי. אנו משתמשים בניתוח רשתות ארגוניות (ONA) כדי לחשוף איך העבודה באמת מתבצעת.',
     'index.innovation': 'מהירות וחדשנות',
     'index.innovationDesc': 'חדשנות קורית בנקודות החיבור. המערכת מזהה "חורים ברשת" (Structural Holes) ומגשרת בין מחלקות מבודדות כדי להאיץ תהליכי עבודה ויצירתיות.',
     'index.retention': 'שימור טאלנטים',
@@ -566,8 +566,8 @@ const translations: Record<Language, Record<string, string>> = {
 
     // About
     'about.mission': 'המשימה שלנו',
-    'about.title': 'ארכיטקטים של הארגון הרשתי',
-    'about.subtitle': 'אנו כאן כדי להפוך מבנים ארגוניים נוקשים לרשתות חיות, אג\'יליות ומבוססות ערך משותף.',
+    'about.title': 'מומחים בניתוח ופיתוח רשתות ארגוניות.',
+    'about.subtitle': 'אנו כאן כדי לקדם מעבר מתרשים ארגוני מסורתי לרשת עבודה אפקטיבית ושיתופית.',
     'about.orgChartDead': 'לחבר בין אנשים, לייצר ערך.',
     'about.longLiveNetwork': '',
     'about.story1': 'StepAhead הוקמה מתוך חזון לפתח טכנולוגיה חדשנית המבוססת על ניתוח רשתות כדי להעצים שיתופי פעולה ולחבר בין אנשים.',
@@ -579,7 +579,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.drive2Title': 'טכנולוגיה חדשנית',
     'about.drive2Desc': 'תחושת בטן היא חשובה, אבל אי אפשר להתווכח עם דאטה. אנו משתמשים בטכנולוגיית ONA מתקדמת כדי למפות את הבלתי-נראה ולהפוך דינמיקות חברתיות לתובנות ברורות.',
     'about.drive3Title': 'החשיבה הרשתית',
-    'about.drive3Desc': 'אנחנו נלהבים לעזור למנהלים לעשות את המעבר מהיררכיה נוקשה של "פקודה ושליטה" למנהיגות רשתית המבוססת על השפעה ואג\'יליות.',
+    'about.drive3Desc': 'אנחנו נלהבים לעזור למנהלים לעשות את המעבר מהיררכיה נוקשה של "פקודה ושליטה" למנהיגות רשתית המבוססת על השפעה וגמישות.',
     'about.meetLeadership': 'הצוות המוביל',
     'about.sharonRole': 'מייסדת ומנכ"לית תפעול (COO)',
     'about.sharonBio': "מומחית לדינמיקה ארגונית ופתרון קונפליקטים. כבעלים של 'גומא-גבים', המרכז המוביל בישראל לגישור ואימון, שרון דואגת שהטכנולוגיה שלנו תשרת את האנשים, ומתרגמת נתוני רשת לאסטרטגיות בניית אמון בשטח.",
@@ -587,7 +587,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.yuvalBio': 'סמכות עולמית בחקר רשתות חברתיות וארגוניות. ראש תחום מנהיגות ורשתות בבית הספר לניהול WHU, גרמניה. יובל מספק את התשתית המדעית והמתודולוגית לאלגוריתמים של StepAhead.',
     'about.nadavRole': 'מנכ"ל',
     'about.nadavBio': "חלוץ בתחום הלמידה מבוססת-משחק (GBL) והערכת כישורים. עם רקע כמרצה לחשיבה אסטרטגית ומומחה EdTech, נדב מוביל את חזון 'הארגון מבוסס-הכישורים', תוך התמקדות בחשיפת טאלנטים נסתרים דרך טכנולוגיה.",
-    'about.joinRevolution': 'הצטרפו למהפכה',
+    'about.joinRevolution': 'מוכנים לעשות את הצעד הבא?',
     'about.revolutionDesc': 'בין אם אתם ארגון שמחפש להתפתח או שותפים לדרך, נשמח להכיר.',
     'about.contactUs': 'צרו קשר',
 
@@ -613,7 +613,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cta.button': 'קבעו הדגמה',
 
     // Footer
-    'footer.tagline': 'ארכיטקטים של הארגון הרשתי. אנו הופכים היררכיות סטטיות לרשתות אנושיות אג\'יליות ומבוססות-נתונים.',
+    'footer.tagline': 'מומחים בניתוח ופיתוח רשתות ארגוניות. מעבר מתרשים ארגוני מסורתי לרשת עבודה אפקטיבית ושיתופית.',
     'footer.solutionsHeading': 'פתרונות',
     'footer.networkLeadership': 'תוכניות מנהיגות רשתית',
     'footer.collaborationIntelligence': 'פלטפורמת ONA',

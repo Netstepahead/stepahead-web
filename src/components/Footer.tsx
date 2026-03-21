@@ -19,7 +19,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-blue-200 text-sm leading-relaxed">
-              Architects of the Networked Organization. We transform static hierarchies into adaptive, data-driven human networks.
+              Experts in Organizational Network Analysis (ONA). We help organizations transform traditional org charts into highly collaborative, data-driven teams.
             </p>
             <div className="flex gap-4">
               {/* LinkedIn Only - Updated Link */}
