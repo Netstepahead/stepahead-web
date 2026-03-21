@@ -43,16 +43,13 @@ const Contact = () => {
     "inline-flex items-center gap-2 text-sm font-medium text-[#1B365D] hover:text-[#E87722] transition-colors group";
 
   return (
-    <div className="w-full bg-white min-h-screen pt-32 pb-16 px-4" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div className="w-full bg-white min-h-screen pt-24 md:pt-28 pb-12 px-4" dir={isRTL ? 'rtl' : 'ltr'}>
       <section className="max-w-2xl mx-auto flex flex-col items-center text-center w-full">
-        <h1 className="text-3xl md:text-4xl font-serif font-bold text-[#1B365D] mb-2">
+        <h1 className="text-3xl md:text-4xl font-serif font-bold text-[#1B365D] mb-1">
           {t('nav.contact')}
         </h1>
-        <p className="text-base md:text-lg text-gray-600 leading-snug max-w-xl">
-          {t('footer.tagline')}
-        </p>
 
-        <div className="flex flex-wrap justify-center gap-8 my-8 w-full">
+        <div className="flex flex-wrap justify-center gap-8 my-4 w-full">
           <a
             href="mailto:info@step-ahead.com"
             className={linkClass}
