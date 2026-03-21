@@ -23,11 +23,11 @@ function publicAsset(file: string): string {
 
 /**
  * Profiling graphics — place files in `public/` (project root), NOT in `src/`:
- *   - English: public/Profiling.png
+ *   - English: public/Profiling.jfif
  *   - Hebrew:  public/Profiling_heb.png
  * See public/PROFILING_IMAGES_README.md
  */
-const PROFILING_EN_VARIANTS = ["Profiling.png", "profiling.jfif"];
+const PROFILING_EN_VARIANTS = ["Profiling.jfif", "Profiling.png"];
 const PROFILING_HE_VARIANTS = ["Profiling_heb.png", "profiling_heb.png"];
 
 function ProfilingImage({ language }: { language: "en" | "he" }) {

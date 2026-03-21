@@ -12,22 +12,26 @@ The Network Leadership page (`/network-leadership`) loads **two** images from th
 
 | Language | File name | Full path (example) |
 |----------|-----------|------------------------|
-| English  | `Profiling.png` | `public/Profiling.png` |
+| English  | `Profiling.jfif` | `public/Profiling.jfif` |
 | Hebrew   | `Profiling_heb.png` | `public/Profiling_heb.png` |
 
-- Use **PNG** (or change the code if you only have JPG).
-- **Capital `P`** in `Profiling.png` and **`Profiling_heb.png`** as shown.
-- Do **not** put these under `src/` — Vite only serves arbitrary URLs from **`public/`** using paths like `/Profiling.png`.
+- English uses **JFIF** (same as JPEG); Hebrew stays **PNG**.
+- **Capital `P`** in `Profiling.jfif` and **`Profiling_heb.png`** as shown.
+- Do **not** put these under `src/` — Vite only serves arbitrary URLs from **`public/`** using paths like `/Profiling.jfif`.
 
 ## Quick test after copying
 
 1. Run the dev server (`npm run dev`).
 2. In the browser, open:  
-   `http://localhost:8080/Profiling.png`  
+   `http://localhost:8080/Profiling.jfif`  
    and  
    `http://localhost:8080/Profiling_heb.png`  
    (use your dev port if it’s not 8080).
 3. If you see the image, the path is correct. If you get 404, check spelling and capitalization.
+
+## Fallback (English only)
+
+If `Profiling.jfif` is missing, the app tries `Profiling.png` next.
 
 ## If you deploy to a subpath (e.g. GitHub Pages)
 
