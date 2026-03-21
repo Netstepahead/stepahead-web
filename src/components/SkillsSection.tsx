@@ -1,7 +1,12 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Users, Compass, Leaf, Rocket } from 'lucide-react';
 
-const SkillsSection = () => {
+type SkillsSectionProps = {
+  /** Tighter layout when placed inside Academy / another page */
+  embedded?: boolean;
+};
+
+const SkillsSection = ({ embedded = false }: SkillsSectionProps) => {
   const { t } = useLanguage();
 
   const skills = [
@@ -32,24 +37,51 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 md:py-32 bg-background network-bg">
-      <div className="container mx-auto px-4">
+    <section
+      id={embedded ? undefined : 'skills'}
+      className={
+        embedded
+          ? 'py-16 md:py-20 bg-slate-50 border-y border-slate-100'
+          : 'py-24 md:py-32 bg-background network-bg'
+      }
+    >
+      <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+        <div className={`text-center max-w-3xl mx-auto ${embedded ? 'mb-10' : 'mb-16'}`}>
+          <h2
+            className={`font-bold mb-4 ${
+              embedded
+                ? 'text-2xl md:text-3xl text-slate-900'
+                : 'text-3xl md:text-4xl lg:text-5xl text-foreground'
+            }`}
+          >
             {t('skills.title')}:
           </h2>
-          <p className="text-xl md:text-2xl text-primary font-semibold">
+          <p
+            className={
+              embedded
+                ? 'text-lg md:text-xl text-[#E87722] font-semibold'
+                : 'text-xl md:text-2xl text-primary font-semibold'
+            }
+          >
             {t('skills.subtitle')}
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div
+          className={`grid md:grid-cols-2 max-w-5xl mx-auto ${
+            embedded ? 'gap-4 lg:gap-5' : 'gap-6 lg:gap-8'
+          }`}
+        >
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="group relative bg-card rounded-2xl p-8 shadow-card border border-border/50 transition-all duration-500 hover:shadow-glow hover:-translate-y-1"
+              className={
+                embedded
+                  ? 'group relative bg-white rounded-2xl p-6 shadow-md border border-slate-100 transition-shadow hover:shadow-lg'
+                  : 'group relative bg-card rounded-2xl p-8 shadow-card border border-border/50 transition-all duration-500 hover:shadow-glow hover:-translate-y-1'
+              }
             >
               {/* Gradient Border Effect */}
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${skill.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
@@ -62,10 +94,18 @@ const SkillsSection = () => {
 
                 {/* Content */}
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-card-foreground mb-3">
+                  <h3
+                    className={`text-xl font-bold mb-3 ${
+                      embedded ? 'text-slate-900' : 'text-card-foreground'
+                    }`}
+                  >
                     {skill.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p
+                    className={`leading-relaxed ${
+                      embedded ? 'text-slate-600 text-sm' : 'text-muted-foreground'
+                    }`}
+                  >
                     {skill.description}
                   </p>
                 </div>

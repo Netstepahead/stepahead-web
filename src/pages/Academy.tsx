@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { CircleCheck } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import SkillsSection from "@/components/SkillsSection";
 
 const academyCarouselImages = [
   '/academy_carousel/workshop1.jpeg',
@@ -113,33 +114,31 @@ const Academy = () => {
         </div>
       </section>
 
-      {/* 3. CORE MODULES - Syllabus / Curriculum Timeline */}
+      {/* 3. Network Skills (capabilities) */}
+      <SkillsSection embedded />
+
+      {/* 4. CORE MODULES — compact grid */}
       <section className="bg-slate-50 py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('academy.coreModules')}</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">{t('academy.developingPillars')}</p>
           </div>
-          <div className="max-w-4xl mx-auto flex flex-col gap-12 mt-16">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-8">
             {modules.map((mod, i) => (
               <div
                 key={i}
-                className="flex flex-col md:flex-row gap-6 md:gap-10 items-start p-8 rounded-3xl hover:bg-white transition-colors border border-transparent hover:border-slate-100 hover:shadow-lg"
+                className="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col h-full hover:shadow-lg transition-shadow"
               >
-                <span className="text-6xl font-light text-orange-500 opacity-80 shrink-0 font-serif">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">{mod.title.replace(/^\d+\.\s*/, '')}</h3>
-                  <p className="text-lg text-slate-600">{mod.desc}</p>
-                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-3">{mod.title.replace(/^\d+\.\s*/, '')}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed flex-grow">{mod.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. BOTTOM CTA */}
+      {/* 5. BOTTOM CTA */}
       <section className="py-24 bg-navy text-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-4xl font-bold mb-4">

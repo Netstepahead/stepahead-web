@@ -74,7 +74,7 @@ const Platform = () => {
       </section>
 
       {/* 2. LAYER 1: ONA Engine - The Macro View (Image Left, Text Right) */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white border-t border-slate-100">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
             <div className="order-1 md:order-none">
