@@ -21,17 +21,14 @@ function publicAsset(file: string): string {
   return `${base}${path}`;
 }
 
-const PROFILING_EN_VARIANTS = [
-  "Profiling.png",
-  "profiling.jfif",
-  "Profiling.jpg",
-  "profiling.png",
-];
-const PROFILING_HE_VARIANTS = [
-  "Profiling_heb.png",
-  "profiling_heb.png",
-  "Hebrew_personas.png",
-];
+/**
+ * Profiling graphics — place files in `public/` (project root), NOT in `src/`:
+ *   - English: public/Profiling.png
+ *   - Hebrew:  public/Profiling_heb.png
+ * See public/PROFILING_IMAGES_README.md
+ */
+const PROFILING_EN_VARIANTS = ["Profiling.png", "profiling.jfif"];
+const PROFILING_HE_VARIANTS = ["Profiling_heb.png", "profiling_heb.png"];
 
 function ProfilingImage({ language }: { language: "en" | "he" }) {
   const [variantIdx, setVariantIdx] = useState(0);
