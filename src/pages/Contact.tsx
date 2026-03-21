@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Mail, MapPin, Linkedin } from "lucide-react";
 
 const Contact = () => {
-  const { t, isRTL } = useLanguage();
+  const { t, isRTL, language } = useLanguage();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -12,6 +14,30 @@ const Contact = () => {
 
   const inputClass =
     "w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 mb-4";
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    formData.append("access_key", "d00a94ef-02aa-4820-9183-333b2a386fa6");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+      if (response.ok && data.success) {
+        setIsSuccess(true);
+        form.reset();
+      }
+    } catch {
+      // Network error — keep form state; user can retry
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="w-full bg-white min-h-screen pt-28 pb-20" dir={isRTL ? 'rtl' : 'ltr'}>
@@ -50,12 +76,14 @@ const Contact = () => {
           </div>
 
           <div className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-              }}
-              className="text-start"
-            >
+            {isSuccess && (
+              <div className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-xl mb-6 text-center">
+                {language === 'he'
+                  ? 'תודה! ההודעה שלך נשלחה בהצלחה. נחזור אליך בקרוב.'
+                  : 'Thank you! Your message has been sent successfully. We will get back to you soon.'}
+              </div>
+            )}
+            <form onSubmit={handleSubmit} className="text-start">
               <h3 className="text-2xl font-bold text-slate-900 mb-6">{t('contact.form.title')}</h3>
               <label htmlFor="contact-name" className="sr-only">
                 {t('contact.form.name')}
@@ -67,6 +95,7 @@ const Contact = () => {
                 placeholder={t('contact.form.name')}
                 className={inputClass}
                 autoComplete="name"
+                required
               />
               <label htmlFor="contact-email" className="sr-only">
                 {t('contact.form.email')}
@@ -78,6 +107,7 @@ const Contact = () => {
                 placeholder={t('contact.form.email')}
                 className={inputClass}
                 autoComplete="email"
+                required
               />
               <label htmlFor="contact-company" className="sr-only">
                 {t('contact.form.company')}
@@ -89,6 +119,7 @@ const Contact = () => {
                 placeholder={t('contact.form.company')}
                 className={inputClass}
                 autoComplete="organization"
+                required
               />
               <label htmlFor="contact-message" className="sr-only">
                 {t('contact.form.message')}
@@ -99,12 +130,14 @@ const Contact = () => {
                 rows={4}
                 placeholder={t('contact.form.message')}
                 className={`${inputClass} resize-y min-h-[120px]`}
+                required
               />
               <button
                 type="submit"
-                className="w-full bg-[#1A2E44] text-white rounded-xl py-3 font-semibold hover:bg-orange-500 transition-colors"
+                disabled={isSubmitting}
+                className="w-full bg-[#1A2E44] text-white rounded-xl py-3 font-semibold hover:bg-orange-500 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {t('contact.form.submit')}
+                {isSubmitting ? '...' : t('contact.form.submit')}
               </button>
             </form>
           </div>
