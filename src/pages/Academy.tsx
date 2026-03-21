@@ -130,22 +130,22 @@ const Academy = () => {
       <section className="py-24 bg-white border-y border-slate-100">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-            <div className="order-1 md:order-none">
-              <div className="w-full">
+            <div className="order-1 md:order-none w-full">
+              <div className="w-full max-w-xl mx-auto flex justify-center mt-8 md:mt-0">
                 <Carousel
                   key={isRTL ? 'nbs-rtl' : 'nbs-ltr'}
                   opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
                   plugins={[nbsAutoplay]}
                   setApi={(api) => { api?.plugins().autoplay?.play(); }}
-                  className="w-full"
+                  className="w-full max-w-xl"
                 >
                   <CarouselContent className="-ml-0">
                     {nbsCarouselImages.map((img, i) => (
-                      <CarouselItem key={i} className="pl-0">
+                      <CarouselItem key={i} className="pl-0 basis-full">
                         <img
                           src={img}
                           alt=""
-                          className="w-full h-auto object-contain rounded-3xl shadow-xl border border-slate-200"
+                          className="w-full h-auto max-w-full object-contain rounded-xl shadow-md"
                         />
                       </CarouselItem>
                     ))}
