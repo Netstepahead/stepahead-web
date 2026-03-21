@@ -65,8 +65,8 @@ const Platform = () => {
               </p>
             </div>
             <div className="col-span-12 lg:col-span-5 p-2 md:p-8">
-              <div className="w-full aspect-video md:aspect-video lg:aspect-square bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden max-w-md mx-auto md:max-w-none p-8 md:p-12">
-                <img src="/network-story.jpg" className="w-full h-full object-contain object-center" alt="Network Visualization" />
+              <div className="bg-white p-4 md:p-6 rounded-[2rem] shadow-xl border border-slate-100 flex items-center justify-center">
+                <img src="/network-story.jpg" className="w-full h-auto max-h-[500px] object-cover rounded-2xl" alt="Network Visualization" />
               </div>
             </div>
           </div>

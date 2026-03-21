@@ -70,10 +70,10 @@ const translations: Record<Language, Record<string, string>> = {
     'index.philosophy.text': 'Value is no longer created in silos—it flows through invisible networks. We provide the methodology and tools to transition your company from a rigid hierarchy into an adaptable, connected ecosystem.',
 
     // Homepage - The Future (AI Collab Agent)
-    'index.future.title': 'Meet Your Collab Agent (Beta)',
-    'index.future.text': 'The right person is already in your contacts. Tell us what you\'re working on — and we\'ll find the exact people who can help you right now. Not the obvious ones. The ones you forgot you knew. Our AI agent sits directly in your workflow to help you leverage your existing network effectively and connect you with the right people at the right time.',
+    'index.future.title': 'Meet Your Collab Agent — Design Partner Program',
+    'index.future.text': 'We are currently inviting select organizations to join our early-adopter Design Partner program. The right person is already in your contacts — tell us what you\'re working on, and we\'ll help you connect with the people who can help. Our AI agent sits directly in your workflow to leverage your network effectively.',
     'index.future.badge': 'AI Labs',
-    'index.future.cta': 'Join the Waitlist',
+    'index.future.cta': 'Become a Design Partner',
     'index.future.ctaAlt': 'Become a Design Partner',
 
     // Myth Section
@@ -382,11 +382,11 @@ const translations: Record<Language, Record<string, string>> = {
     'index.philosophy.text': 'ערך כבר לא נוצר בממגורות — הוא זורם דרך רשתות בלתי נראות. אנו מספקים את המתודולוגיה והכלים להעביר את החברה שלכם מהיררכיה נוקשה למערכת עבודה גמישה ומחוברת.',
 
     // Homepage - The Future (AI Collab Agent)
-    'index.future.title': 'הכירו את Collab Agent (בטא)',
-    'index.future.text': 'האדם הנכון כבר נמצא בארגון שלכם. ספרו לנו מול איזה אתגר אתם עומדים — ואנו נמצא את האנשים המדויקים שיכולים לעזור לכם עכשיו. לא רק המובנים מאליהם, אלא אלה ששכחתם שאתם מכירים. סוכן ה-AI שלנו משתלב ישירות בסביבת העבודה היומיומית שלכם (Teams/Slack) כדי לחבר אתכם לאנשים הנכונים בזמן הנכון.',
+    'index.future.title': 'הכירו את Collab Agent — תוכנית שותפי פיתוח',
+    'index.future.text': 'אנו מזמינים ארגונים נבחרים להצטרף לתוכנית שותפי הפיתוח המוקדמת שלנו. האדם הנכון כבר נמצא בארגון שלכם — ספרו לנו על האתגר, ונעזור לכם להתחבר לאנשים שיכולים לעזור. סוכן ה-AI שלנו משתלב ישירות בסביבת העבודה שלכם (Teams/Slack) כדי לנצל את הרשת בצורה אפקטיבית.',
     'index.future.badge': 'AI Labs',
-    'index.future.cta': 'הצטרפו לרשימת ההמתנה',
-    'index.future.ctaAlt': 'הפכו לשותף עיצוב (Design Partner)',
+    'index.future.cta': 'הצטרפו כשותפי פיתוח',
+    'index.future.ctaAlt': 'הצטרפו כשותפי פיתוח',
 
     // Myth Section
     'myth.title': 'העץ הארגוני הוא מיתוס',
