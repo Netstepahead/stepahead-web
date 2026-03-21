@@ -25,7 +25,7 @@ const Methodology = () => {
                 {t('index.philosophy.text')}
               </p>
               <Button
-                onClick={() => navigate('/academy')}
+                onClick={() => navigate('/network-leadership')}
                 className="bg-[#1B365D] hover:bg-[#2a4a7f] text-white px-8 py-6 text-lg rounded-lg"
               >
                 {t('index.pillar1.button')}

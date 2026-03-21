@@ -30,7 +30,7 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-6 text-[#E87722]">{t('footer.solutionsHeading')}</h4>
             <ul className="space-y-4 text-blue-200 text-sm">
               <li>
-                <Link to="/academy" className="hover:text-white transition-colors">{t('footer.networkLeadership')}</Link>
+                <Link to="/network-leadership" className="hover:text-white transition-colors">{t('footer.networkLeadership')}</Link>
               </li>
               <li>
                 <Link to="/platform" className="hover:text-white transition-colors">{t('footer.collaborationIntelligence')}</Link>

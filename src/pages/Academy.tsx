@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,48 @@ const academyCarouselImages = [
 ];
 
 const academyAutoplay = Autoplay({ delay: 4000 });
+
+/** Resolves `public/` files and respects Vite `base` (subpath deploys). */
+function publicAsset(file: string): string {
+  const base = import.meta.env.BASE_URL;
+  const path = file.replace(/^\/+/, "");
+  return `${base}${path}`;
+}
+
+const PROFILING_EN_VARIANTS = [
+  "Profiling.png",
+  "profiling.jfif",
+  "Profiling.jpg",
+  "profiling.png",
+];
+const PROFILING_HE_VARIANTS = [
+  "Profiling_heb.png",
+  "profiling_heb.png",
+  "Hebrew_personas.png",
+];
+
+function ProfilingImage({ language }: { language: "en" | "he" }) {
+  const [variantIdx, setVariantIdx] = useState(0);
+  const list = language === "he" ? PROFILING_HE_VARIANTS : PROFILING_EN_VARIANTS;
+
+  useEffect(() => {
+    setVariantIdx(0);
+  }, [language]);
+
+  const safeIdx = Math.min(variantIdx, list.length - 1);
+  const src = publicAsset(list[safeIdx]);
+
+  return (
+    <img
+      src={src}
+      alt="Network Leadership Personas"
+      className="w-full h-auto max-h-[600px] object-contain rounded-2xl shadow-2xl border border-slate-100"
+      onError={() =>
+        setVariantIdx((idx) => (idx < list.length - 1 ? idx + 1 : idx))
+      }
+    />
+  );
+}
 
 const Academy = () => {
   const { t, isRTL, language } = useLanguage();
@@ -126,11 +168,7 @@ const Academy = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
             <div className="order-1 md:order-none w-full">
               <div className="w-full max-w-4xl mx-auto px-4 mt-12 mb-16 flex justify-center">
-                <img
-                  src={language === 'he' ? '/Profiling_heb.png' : '/profiling.jfif'}
-                  alt="Network Leadership Personas"
-                  className="w-full h-auto max-h-[600px] object-contain rounded-2xl shadow-2xl border border-slate-100"
-                />
+                <ProfilingImage language={language} />
               </div>
             </div>
             <div className="order-2 md:order-none flex flex-col items-start text-start">

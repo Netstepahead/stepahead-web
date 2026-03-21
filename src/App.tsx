@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
@@ -37,7 +37,8 @@ const App = () => (
                 <Route path="/" element={<Index />} />
                 <Route path="/platform" element={<Platform />} />
                 <Route path="/solutions" element={<Solutions />} />
-                <Route path="/academy" element={<Academy />} />
+                <Route path="/network-leadership" element={<Academy />} />
+                <Route path="/academy" element={<Navigate to="/network-leadership" replace />} />
                 <Route path="/assessment" element={<Assessment />} />
                 <Route path="/methodology" element={<Methodology />} />
                 <Route path="/about" element={<About />} />

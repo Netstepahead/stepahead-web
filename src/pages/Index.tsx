@@ -51,7 +51,7 @@ const Index = () => {
       titleKey: 'index.pillar1.title' as const,
       textKey: 'index.pillar1.text' as const,
       buttonKey: 'index.pillar1.button' as const,
-      path: '/academy',
+      path: '/network-leadership',
       image: '/leadership-roles.png',
     },
     {

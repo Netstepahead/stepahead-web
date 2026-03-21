@@ -46,7 +46,7 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { nameKey: 'nav.networkLeadership' as const, path: "/academy" },
+    { nameKey: 'nav.networkLeadership' as const, path: "/network-leadership" },
     { nameKey: 'nav.onaPlatform' as const, path: "/platform" },
     { nameKey: 'nav.talentAssessment' as const, path: "/assessment" },
     { nameKey: 'nav.about' as const, path: "/about" },
