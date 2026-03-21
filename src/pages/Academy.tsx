@@ -102,7 +102,7 @@ const Academy = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-full aspect-[3/4] md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-slate-100">
+            <div className="w-full h-56 sm:h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl bg-slate-100">
               <Carousel
                 key={isRTL ? 'academy-rtl' : 'academy-ltr'}
                 opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -112,11 +112,11 @@ const Academy = () => {
               >
                 <CarouselContent className="-ml-0 h-full">
                   {academyCarouselImages.map((img, i) => (
-                    <CarouselItem key={i} className="pl-0 h-full">
+                    <CarouselItem key={i} className="pl-0 h-full min-h-0">
                       <img
                         src={img}
                         alt=""
-                        className="w-full h-full object-contain bg-slate-100"
+                        className="h-full w-full object-cover object-center"
                       />
                     </CarouselItem>
                   ))}
@@ -131,8 +131,8 @@ const Academy = () => {
       <section className="py-24 bg-white border-y border-slate-100">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-            <div className="order-1 md:order-none w-full">
-              <div className="w-full max-w-4xl mx-auto px-4 mt-12 mb-16 flex justify-center">
+            <div className="order-2 md:order-none w-full">
+              <div className="w-full max-w-4xl mx-auto px-4 mt-6 md:mt-12 mb-8 md:mb-16 flex justify-center">
                 <img
                   src={language === 'he' ? publicAsset('Profiling_heb.png') : publicAsset('profiling.jfif')}
                   alt="Network Leadership Personas"
@@ -140,7 +140,7 @@ const Academy = () => {
                 />
               </div>
             </div>
-            <div className="order-2 md:order-none flex flex-col items-start text-start">
+            <div className="order-1 md:order-none flex flex-col items-start text-start">
               <span className="text-orange-500 font-semibold mb-2 block">{t('platform.deepInsight')}</span>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('platform.networkProfiling')}</h2>
               <p className="text-lg text-slate-600 leading-relaxed">
