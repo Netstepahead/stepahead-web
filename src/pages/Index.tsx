@@ -95,7 +95,7 @@ const Index = () => {
             const textFirst = index % 2 === 0; // Row 1, 3: text left. Row 2: image left.
             const isCollaborationSection = index === 1;
             const textBlock = (
-              <div className="flex flex-col items-start text-start order-2 md:order-none">
+              <div className="flex flex-col items-start text-start order-1 md:order-none">
                 <h3 className={`text-xl md:text-2xl lg:text-3xl font-bold mb-4 ${isCollaborationSection ? 'text-white' : 'text-[#1B365D]'}`}>
                   {t(pillar.titleKey)}
                 </h3>
@@ -129,7 +129,7 @@ const Index = () => {
               </div>
             );
             const imageBlock = index === 0 ? (
-              <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] max-w-full overflow-hidden order-1 md:order-none">
+              <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] max-w-full overflow-hidden order-2 md:order-none">
                 <Carousel
                   key={isRTL ? 'leadership-rtl' : 'leadership-ltr'}
                   opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -155,7 +155,7 @@ const Index = () => {
                 </Carousel>
               </div>
             ) : (
-              <div className="bg-white rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/20 max-w-full order-1 md:order-none">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/20 max-w-full order-2 md:order-none">
                 <Carousel
                   key={isRTL ? 'ona-rtl' : 'ona-ltr'}
                   opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
@@ -206,7 +206,7 @@ const Index = () => {
       <section className="py-12 md:py-24 bg-white relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
         <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-full overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="flex flex-col items-start text-start order-2 md:order-none">
+            <div className="flex flex-col items-start text-start order-1 md:order-none">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#1B365D] mb-4 md:mb-6 leading-tight">
                 {t('index.philosophy.title')}
               </h2>
@@ -214,7 +214,7 @@ const Index = () => {
                 {t('index.philosophy.text')}
               </p>
             </div>
-            <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] max-w-full overflow-hidden order-1 md:order-none">
+            <div className="relative p-2 bg-white/40 backdrop-blur-md border border-white/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] max-w-full overflow-hidden order-2 md:order-none">
               <img src="/network-vs-hierarchy.png" alt="" className="rounded-2xl object-cover w-full max-w-full block" style={{ clipPath: 'inset(0 0 2px 0)' }} />
             </div>
           </div>
@@ -225,10 +225,10 @@ const Index = () => {
       <section className="py-12 md:py-24 bg-navy text-white relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
         <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-full overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-            <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-black/10 max-w-full order-1 md:order-none">
+            <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-black/10 max-w-full order-2 md:order-none">
               <img src="/Collab_Carousel/agent-chat.png" alt="" className="w-full h-auto object-contain max-w-full" />
             </div>
-            <div className="flex flex-col items-start text-start order-2 md:order-none">
+            <div className="flex flex-col items-start text-start order-1 md:order-none">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4 md:mb-6 leading-tight">
                 {t('index.future.title')}
               </h2>

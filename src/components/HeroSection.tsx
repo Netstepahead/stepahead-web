@@ -25,7 +25,7 @@ const HeroSection = () => {
           {/* Text column: dir + items-start + text-start so H1, p, button share one flush edge. ps-* adds breathing room from screen edge. */}
           <div
             dir={isRTL ? 'rtl' : 'ltr'}
-            className="flex flex-col items-start text-start z-20 mt-6 lg:mt-8 w-full order-1 ps-6 lg:ps-12 xl:ps-20"
+            className="flex flex-col items-start text-start z-20 mt-6 lg:mt-8 w-full order-1 lg:order-none ps-6 lg:ps-12 xl:ps-20"
           >
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-serif font-bold text-[#1B365D] leading-[1.1] tracking-tight mb-6 w-full text-start">
               {t('hero.mainTitleLine1')}
@@ -51,8 +51,8 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* RTL: map on left (order-2 in rtl grid), LTR: map on right (order-2) */}
-          <div className={`relative h-[450px] lg:h-[600px] w-full ${isRTL ? 'lg:order-2' : 'order-2'}`}>
+          {/* Mobile: always below text (order-2). Desktop: natural grid order (lg:order-none). */}
+          <div className="relative h-[450px] lg:h-[600px] w-full order-2 lg:order-none">
             <NetworkGraph />
             <PhotoCollage />
             
