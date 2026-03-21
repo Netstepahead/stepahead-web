@@ -19,9 +19,9 @@ const About = () => {
     { titleKey: 'about.drive3Title' as const, descKey: 'about.drive3Desc' as const },
   ];
 
-  const leadership = [
-    { name: "Nadav Agozi", roleKey: 'about.nadavRole' as const, bioKey: 'about.nadavBio' as const, image: "/nadav.png" },
-    { name: "Sharon Rendlich", roleKey: 'about.sharonRole' as const, bioKey: 'about.sharonBio' as const, image: "/sharon.png" },
+  const team = [
+    { id: 'nadav' as const, image: '/nadav.png' },
+    { id: 'sharon' as const, image: '/sharon.png' },
   ];
 
   return (
@@ -86,17 +86,22 @@ const About = () => {
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-center mb-12 md:mb-16">
             {t('about.meetLeadership')}
           </h2>
-          <div className="flex flex-col md:flex-row gap-8 md:gap-12 justify-center md:justify-evenly items-stretch max-w-6xl mx-auto">
-            {leadership.map((member, i) => (
-              <div key={i} className="flex flex-col items-center text-center md:flex-1">
+          <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
+            {team.map((member) => (
+              <div
+                key={member.id}
+                className="w-full max-w-sm rounded-3xl overflow-hidden bg-[#1A2E44] text-white shadow-xl flex flex-col"
+              >
                 <img
                   src={member.image}
-                  alt={member.name}
-                  className="w-full aspect-[4/5] object-cover rounded-2xl shadow-lg mb-6"
+                  alt={t(`team.${member.id}.name`)}
+                  className="w-full aspect-[4/5] object-cover"
                 />
-                <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-                <p className="text-[#E87722] font-medium mb-4">{t(member.roleKey)}</p>
-                <p className="text-slate-300 text-sm leading-relaxed">{t(member.bioKey)}</p>
+                <div className="p-6 flex flex-col flex-1 text-center">
+                  <h3 className="text-xl font-bold text-white mb-2">{t(`team.${member.id}.name`)}</h3>
+                  <p className="text-[#E87722] font-medium mb-4">{t(`team.${member.id}.title`)}</p>
+                  <p className="text-slate-300 text-sm leading-relaxed">{t(`team.${member.id}.bio`)}</p>
+                </div>
               </div>
             ))}
           </div>

@@ -279,6 +279,22 @@ const translations: Record<Language, Record<string, string>> = {
     'about.revolutionDesc': "Whether you are an organization looking to evolve or a partner looking to collaborate, we'd love to connect.",
     'about.contactUs': 'Contact Us',
 
+    // Team
+    'team.nadav.name': 'Nadav Agozi',
+    'team.nadav.title': 'CEO',
+    'team.nadav.bio': 'A pioneer in game-based assessment and skill development. With a background as a strategic thinking lecturer and EdTech expert, Nadav leads the vision of the "Skills-Based Organization", focusing on uncovering hidden talent through technology.',
+    'team.sharon.name': 'Sharon Rendlich',
+    'team.sharon.title': 'Founder & COO',
+    'team.sharon.bio': 'An expert in organizational dynamics and conflict resolution. As the owner of "Gome-Gevim", Israel\'s leading mediation center, Sharon ensures our technology serves the people, translating network data into actionable strategies that build trust.',
+
+    // Contact Form
+    'contact.form.title': 'Send us a message',
+    'contact.form.name': 'Full Name',
+    'contact.form.email': 'Work Email',
+    'contact.form.company': 'Company Name',
+    'contact.form.message': 'How can we help you?',
+    'contact.form.submit': 'Send Message',
+
     // CTA
     'cta.title': 'Ready to Unlock Your Network Potential?',
     'cta.description': 'Discover the hidden patterns of collaboration and leadership within your organization.',
@@ -570,6 +586,22 @@ const translations: Record<Language, Record<string, string>> = {
     'about.joinRevolution': 'הצטרפו למהפכה',
     'about.revolutionDesc': 'בין אם אתם ארגון שמחפש להתפתח או שותפים לדרך, נשמח להכיר.',
     'about.contactUs': 'צרו קשר',
+
+    // Team
+    'team.nadav.name': 'נדב אגוזי',
+    'team.nadav.title': 'מנכ"ל',
+    'team.nadav.bio': 'חלוץ בתחום האבחון ופיתוח מיומנויות מבוססי-משחק. עם רקע כמרצה לחשיבה אסטרטגית ומומחה אד-טק, נדב מוביל את החזון של "הארגון מבוסס-הכישורים", ומתמקד בחשיפת כישרונות חבויים באמצעות טכנולוגיה.',
+    'team.sharon.name': 'שרון רנדליך',
+    'team.sharon.title': 'מייסדת וסמנכ"לית תפעול',
+    'team.sharon.bio': 'מומחית לדינמיקה ארגונית ויישוב סכסוכים. כבעלים של "גומא-גבים", מרכז הגישור המוביל בישראל, שרון מבטיחה שהטכנולוגיה שלנו משרתת את האנשים, ומתרגמת נתוני רשת לאסטרטגיות פעולה הבונות אמון.',
+
+    // Contact Form
+    'contact.form.title': 'שלחו לנו הודעה',
+    'contact.form.name': 'שם מלא',
+    'contact.form.email': 'אימייל עבודה',
+    'contact.form.company': 'שם חברה',
+    'contact.form.message': 'איך נוכל לעזור?',
+    'contact.form.submit': 'שליחת הודעה',
 
     // CTA
     'cta.title': 'מוכנים לממש את הפוטנציאל הרשתי שלכם?',
