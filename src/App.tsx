@@ -16,6 +16,9 @@ import Methodology from "./pages/Methodology";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import CookieBanner from "./components/CookieBanner";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +46,7 @@ const App = () => (
               </Routes>
             </main>
             <Footer />
+            <CookieBanner />
           </div>
         </BrowserRouter>
       </TooltipProvider>

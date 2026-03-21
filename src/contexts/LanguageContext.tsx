@@ -317,6 +317,10 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.rights': 'All rights reserved.',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Use',
+    'footer.legal': 'Legal',
+    'footer.cookieBanner':
+      'We use cookies to improve your experience and analyze website traffic. By continuing to use this site, you agree to our use of cookies and our ',
+    'footer.cookieAccept': 'Accept',
   },
   he: {
     // Navigation
@@ -625,6 +629,10 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.rights': 'כל הזכויות שמורות.',
     'footer.privacy': 'מדיניות פרטיות',
     'footer.terms': 'תנאי שימוש',
+    'footer.legal': 'משפטי',
+    'footer.cookieBanner':
+      'אנו משתמשים בעוגיות כדי לשפר את החוויה ולנתח תנועה באתר. המשך השימוש באתר מהווה הסכמה לשימוש בעוגיות ול',
+    'footer.cookieAccept': 'אישור',
   },
 };
 

@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="bg-navy text-white pt-12 md:pt-16 pb-6 md:pb-8">
       <div className="container mx-auto px-4 md:px-6 max-w-full overflow-hidden">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 mb-8 md:mb-12">
           
           {/* Column 1: Brand */}
           <div className="space-y-6">
@@ -38,9 +38,6 @@ const Footer = () => {
               <li>
                 <Link to="/assessment" className="hover:text-white transition-colors">{t('footer.talentSelection')}</Link>
               </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">{t('footer.collabAgent')}</a>
-              </li>
             </ul>
           </div>
 
@@ -53,6 +50,19 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/contact" className="hover:text-white transition-colors">{t('footer.contact')}</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column: Legal */}
+          <div>
+            <h4 className="font-bold text-lg mb-6 text-[#E87722]">{t('footer.legal')}</h4>
+            <ul className="space-y-4 text-blue-200 text-sm">
+              <li>
+                <Link to="/privacy" className="hover:text-white transition-colors">{t('footer.privacy')}</Link>
+              </li>
+              <li>
+                <Link to="/terms" className="hover:text-white transition-colors">{t('footer.terms')}</Link>
               </li>
             </ul>
           </div>
@@ -79,7 +89,9 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-300">
-          <p>© {currentYear} StepAhead. {t('footer.rights')}</p>
+          <p>
+            © {new Date().getFullYear()} StepAhead. {t('footer.rights')}
+          </p>
           <div className="flex gap-8">
             <Link to="/privacy" className="hover:text-white transition-colors">{t('footer.privacy')}</Link>
             <Link to="/terms" className="hover:text-white transition-colors">{t('footer.terms')}</Link>
