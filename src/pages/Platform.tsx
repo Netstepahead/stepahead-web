@@ -193,19 +193,12 @@ const Platform = () => {
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
             {t('platform.joinCompanies')}
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex justify-center">
             <Button
               onClick={() => navigate('/contact')}
               className="bg-[#E87722] hover:bg-[#d66a1a] text-white px-10 py-6 text-lg rounded-lg"
             >
               {t('platform.bookDemo')}
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => navigate('/contact')}
-              className="px-10 py-6 text-lg rounded-lg border-2 border-white text-white hover:bg-white/10"
-            >
-              {t('platform.contactSales')}
             </Button>
           </div>
         </div>
