@@ -127,7 +127,7 @@ const Academy = () => {
             <div className="order-1 md:order-none w-full">
               <div className="w-full max-w-4xl mx-auto px-4 mt-12 mb-16 flex justify-center">
                 <img
-                  src={language === 'he' ? '/Hebrew_personas.png' : '/nbs_carousel/nbs.png'}
+                  src={language === 'he' ? '/Profiling_heb.png' : '/Profiling.png'}
                   alt="Network Leadership Personas"
                   className="w-full h-auto max-h-[600px] object-contain rounded-2xl shadow-2xl border border-slate-100"
                 />
