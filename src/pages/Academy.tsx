@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { CircleCheck } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import SkillsSection from "@/components/SkillsSection";
 
 const academyCarouselImages = [
   '/academy_carousel/workshop1.jpeg',
@@ -15,8 +14,14 @@ const academyCarouselImages = [
 
 const academyAutoplay = Autoplay({ delay: 4000 });
 
+const nbsCarouselImages = [
+  '/nbs_carousel/nbs.png',
+  '/nbs_carousel/profiling.jfif',
+];
+const nbsAutoplay = Autoplay({ delay: 4000 });
+
 const Academy = () => {
-  const { t, isRTL } = useLanguage();
+  const { t, isRTL, language } = useLanguage();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,10 +30,17 @@ const Academy = () => {
   }, [isRTL]);
 
   const workshopIds = [1, 2, 3, 4, 5, 6] as const;
-  const modules = workshopIds.map((n) => ({
-    title: t(`academy.w${n}.title`),
-    desc: t(`academy.w${n}.desc`),
-  }));
+
+  const FeatureList = ({ items }: { items: string[] }) => (
+    <ul className="space-y-3 mt-6">
+      {items.map((item, i) => (
+        <li key={i} className="flex items-center gap-3 text-slate-700">
+          <CircleCheck className="w-5 h-5 text-[#E87722] shrink-0" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
 
   return (
     <div className="w-full bg-white overflow-x-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
@@ -114,10 +126,50 @@ const Academy = () => {
         </div>
       </section>
 
-      {/* 3. Network Skills (capabilities) */}
-      <SkillsSection embedded />
+      {/* 3. Network Skills — profiling & capabilities (from Platform) */}
+      <section className="py-24 bg-white border-y border-slate-100">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+            <div className="order-1 md:order-none">
+              <div className="w-full">
+                <Carousel
+                  key={isRTL ? 'nbs-rtl' : 'nbs-ltr'}
+                  opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
+                  plugins={[nbsAutoplay]}
+                  setApi={(api) => { api?.plugins().autoplay?.play(); }}
+                  className="w-full"
+                >
+                  <CarouselContent className="-ml-0">
+                    {nbsCarouselImages.map((img, i) => (
+                      <CarouselItem key={i} className="pl-0">
+                        <img
+                          src={img}
+                          alt=""
+                          className="w-full h-auto object-contain rounded-3xl shadow-xl border border-slate-200"
+                        />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
+              </div>
+            </div>
+            <div className="order-2 md:order-none flex flex-col items-start text-start">
+              <span className="text-orange-500 font-semibold mb-2 block">{t('platform.deepInsight')}</span>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('platform.networkProfiling')}</h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                {t('platform.profilingDesc')}
+              </p>
+              <FeatureList items={[
+                t('platform.profilingFeature1'),
+                t('platform.profilingFeature2'),
+                t('platform.profilingFeature3'),
+              ]} />
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* 4. CORE MODULES — compact grid */}
+      {/* 4. Core workshops — compact grid */}
       <section className="bg-slate-50 py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center">
@@ -125,13 +177,20 @@ const Academy = () => {
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">{t('academy.developingPillars')}</p>
           </div>
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-8">
-            {modules.map((mod, i) => (
+            {workshopIds.map((n, i) => (
               <div
-                key={i}
+                key={n}
                 className="bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col h-full hover:shadow-lg transition-shadow"
               >
-                <h3 className="text-lg font-bold text-slate-900 mb-3">{mod.title.replace(/^\d+\.\s*/, '')}</h3>
-                <p className="text-sm text-slate-600 leading-relaxed flex-grow">{mod.desc}</p>
+                <div className="mb-4">
+                  <span className="text-orange-500 font-bold text-sm tracking-wider uppercase mb-1 block">
+                    {language === 'he' ? `סדנה ${i + 1}` : `Workshop ${i + 1}`}
+                  </span>
+                  <h3 className="text-xl font-bold text-[#1A2E44]">
+                    {t(`academy.w${n}.title`).replace(/^\d+\.\s*/, '')}
+                  </h3>
+                </div>
+                <p className="text-sm text-slate-600 leading-relaxed flex-grow">{t(`academy.w${n}.desc`)}</p>
               </div>
             ))}
           </div>

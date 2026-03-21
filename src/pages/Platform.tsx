@@ -12,13 +12,7 @@ const collabCarouselImages = [
   '/Collab_Carousel/Teams_connect.png',
 ];
 
-const nbsCarouselImages = [
-  '/nbs_carousel/nbs.png',
-  '/nbs_carousel/profiling.jfif',
-];
-
 const collabAutoplay = Autoplay({ delay: 4000 });
-const nbsAutoplay = Autoplay({ delay: 4000 });
 
 const Platform = () => {
   const { t, isRTL } = useLanguage();
@@ -141,50 +135,7 @@ const Platform = () => {
         </div>
       </section>
 
-      {/* 4. LAYER 3: Network Profiling - Personal Impact (Image Left, Text Right) */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-            <div className="order-1 md:order-none">
-              <div className="w-full">
-                <Carousel
-                  key={isRTL ? 'nbs-rtl' : 'nbs-ltr'}
-                  opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
-                  plugins={[nbsAutoplay]}
-                  setApi={(api) => { api?.plugins().autoplay?.play(); }}
-                  className="w-full"
-                >
-                  <CarouselContent className="-ml-0">
-                    {nbsCarouselImages.map((img, i) => (
-                      <CarouselItem key={i} className="pl-0">
-                        <img
-                          src={img}
-                          alt=""
-                          className="w-full h-auto object-contain rounded-3xl shadow-xl border border-slate-200"
-                        />
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                </Carousel>
-              </div>
-            </div>
-            <div className="order-2 md:order-none flex flex-col items-start text-start">
-              <span className="text-orange-500 font-semibold mb-2 block">{t('platform.deepInsight')}</span>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('platform.networkProfiling')}</h2>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                {t('platform.profilingDesc')}
-              </p>
-              <FeatureList items={[
-                t('platform.profilingFeature1'),
-                t('platform.profilingFeature2'),
-                t('platform.profilingFeature3'),
-              ]} />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. FINAL CTA SECTION */}
+      {/* 4. FINAL CTA SECTION */}
       <section className="py-24 bg-navy text-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-4xl font-bold mb-4">
