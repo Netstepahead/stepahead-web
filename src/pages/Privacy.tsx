@@ -23,7 +23,7 @@ const Privacy = () => {
         <h2 className="text-xl md:text-2xl font-semibold text-slate-900 mt-10 mb-4">2. How We Use Your Information</h2>
         <p className="leading-relaxed mb-6">
           We use this information to respond to your inquiries, provide information about our Network Leadership
-          programs and ONA platform, and improve our website experience. We do not sell your personal data to third
+          programs and network development services, and improve our website experience. We do not sell your personal data to third
           parties.
         </p>
 

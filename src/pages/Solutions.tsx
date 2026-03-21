@@ -91,7 +91,7 @@ const Solutions = () => {
                   ))}
                 </ul>
                 <Button 
-                  onClick={() => navigate('/platform')}
+                  onClick={() => navigate('/network-development')}
                   variant="outline" 
                   className="w-full border-[#1B365D] text-[#1B365D] hover:bg-[#1B365D] hover:text-white transition-colors"
                 >

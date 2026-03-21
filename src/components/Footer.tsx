@@ -35,12 +35,15 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2: Platform */}
+          {/* Column 2: Solutions */}
           <div>
-            <h4 className="font-bold text-lg mb-6 text-[#E87722]">Platform</h4>
+            <h4 className="font-bold text-lg mb-6 text-[#E87722]">Solutions</h4>
             <ul className="space-y-4 text-blue-200 text-sm">
               <li>
-                <Link to="/platform" className="hover:text-white transition-colors">Network Development</Link>
+                <Link to="/network-development" className="hover:text-white transition-colors">Network Development</Link>
+              </li>
+              <li>
+                <Link to="/talent-assessment" className="hover:text-white transition-colors">Talent Selection &amp; Assessment</Link>
               </li>
               <li>
                 <Link to="/solutions" className="hover:text-white transition-colors">Solutions</Link>

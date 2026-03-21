@@ -27,7 +27,7 @@ const CTASection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary/30 text-secondary-foreground px-4 py-2 rounded-full mb-8">
             <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">StepAhead Platform</span>
+            <span className="text-sm font-medium">{t('cta.badge')}</span>
           </div>
 
           {/* Content */}

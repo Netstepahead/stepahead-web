@@ -58,7 +58,7 @@ const Index = () => {
       titleKey: 'index.pillar2.title' as const,
       textKey: 'index.pillar2.text' as const,
       buttonKey: 'index.pillar2.button' as const,
-      path: '/platform',
+      path: '/network-development',
       image: '/ona-dashboard.png',
     },
   ];

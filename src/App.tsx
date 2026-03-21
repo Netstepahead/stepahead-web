@@ -35,11 +35,13 @@ const App = () => (
             <main className="flex-grow">
               <Routes>
                 <Route path="/" element={<Index />} />
-                <Route path="/platform" element={<Platform />} />
+                <Route path="/network-development" element={<Platform />} />
+                <Route path="/platform" element={<Navigate to="/network-development" replace />} />
                 <Route path="/solutions" element={<Solutions />} />
                 <Route path="/network-leadership" element={<Academy />} />
                 <Route path="/academy" element={<Navigate to="/network-leadership" replace />} />
-                <Route path="/assessment" element={<Assessment />} />
+                <Route path="/talent-assessment" element={<Assessment />} />
+                <Route path="/assessment" element={<Navigate to="/talent-assessment" replace />} />
                 <Route path="/methodology" element={<Methodology />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />

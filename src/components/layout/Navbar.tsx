@@ -47,8 +47,8 @@ const Navbar = () => {
 
   const navLinks = [
     { nameKey: 'nav.networkLeadership' as const, path: "/network-leadership" },
-    { nameKey: 'nav.onaPlatform' as const, path: "/platform" },
-    { nameKey: 'nav.talentAssessment' as const, path: "/assessment" },
+    { nameKey: 'nav.onaPlatform' as const, path: "/network-development" },
+    { nameKey: 'nav.talentAssessment' as const, path: "/talent-assessment" },
     { nameKey: 'nav.about' as const, path: "/about" },
     { nameKey: 'nav.contact' as const, path: "/contact" },
   ];

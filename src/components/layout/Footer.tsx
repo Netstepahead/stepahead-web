@@ -33,10 +33,10 @@ const Footer = () => {
                 <Link to="/network-leadership" className="hover:text-white transition-colors">{t('footer.networkLeadership')}</Link>
               </li>
               <li>
-                <Link to="/platform" className="hover:text-white transition-colors">{t('footer.collaborationIntelligence')}</Link>
+                <Link to="/network-development" className="hover:text-white transition-colors">{t('footer.collaborationIntelligence')}</Link>
               </li>
               <li>
-                <Link to="/assessment" className="hover:text-white transition-colors">{t('footer.talentSelection')}</Link>
+                <Link to="/talent-assessment" className="hover:text-white transition-colors">{t('footer.talentSelection')}</Link>
               </li>
             </ul>
           </div>

@@ -8,7 +8,7 @@ const ProductsSection = () => {
   
   const content = {
     en: {
-      title: "Our Platform Suite",
+      title: "Our Solutions Suite",
       subtitle: "Everything you need to orchestrate a networked organization",
       products: [
         {
