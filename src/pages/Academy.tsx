@@ -23,14 +23,11 @@ const Academy = () => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [isRTL]);
 
-  const modules = [
-    { title: t('academy.module1Title'), desc: t('academy.module1Desc') },
-    { title: t('academy.module2Title'), desc: t('academy.module2Desc') },
-    { title: t('academy.module3Title'), desc: t('academy.module3Desc') },
-    { title: t('academy.module4Title'), desc: t('academy.module4Desc') },
-    { title: t('academy.module5Title'), desc: t('academy.module5Desc') },
-    { title: t('academy.module6Title'), desc: t('academy.module6Desc') },
-  ];
+  const workshopIds = [1, 2, 3, 4, 5, 6] as const;
+  const modules = workshopIds.map((n) => ({
+    title: t(`academy.w${n}.title`),
+    desc: t(`academy.w${n}.desc`),
+  }));
 
   return (
     <div className="w-full bg-white overflow-x-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
@@ -68,26 +65,26 @@ const Academy = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             <div className="flex flex-col items-start text-start">
-              <span className="text-orange-500 font-semibold mb-2 block">{t('academy.methodology')}</span>
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">{t('academy.theoryMeetsPractice')}</h2>
+              <span className="text-orange-500 font-semibold mb-2 block">{t('academy.methodology.tag')}</span>
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">{t('academy.methodology.title')}</h2>
               <p className="text-lg text-slate-600 leading-relaxed mb-4">
-                {t('academy.methodologyDesc1')}
+                {t('academy.methodology.desc1')}
               </p>
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                {t('academy.methodologyDesc2')}
+                {t('academy.methodology.desc2')}
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-slate-700">
                   <CircleCheck className="w-5 h-5 text-[#E87722] shrink-0" />
-                  <span>{t('academy.methodologyFeature1')}</span>
+                  <span>{t('academy.methodology.bullet1')}</span>
                 </li>
                 <li className="flex items-center gap-3 text-slate-700">
                   <CircleCheck className="w-5 h-5 text-[#E87722] shrink-0" />
-                  <span>{t('academy.methodologyFeature2')}</span>
+                  <span>{t('academy.methodology.bullet2')}</span>
                 </li>
                 <li className="flex items-center gap-3 text-slate-700">
                   <CircleCheck className="w-5 h-5 text-[#E87722] shrink-0" />
-                  <span>{t('academy.methodologyFeature3')}</span>
+                  <span>{t('academy.methodology.bullet3')}</span>
                 </li>
               </ul>
             </div>
