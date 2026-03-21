@@ -27,8 +27,10 @@ const HeroSection = () => {
             dir={isRTL ? 'rtl' : 'ltr'}
             className="flex flex-col items-start text-start z-20 mt-6 lg:mt-8 w-full order-1 lg:order-none ps-6 lg:ps-12 xl:ps-20"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-serif font-bold text-[#1B365D] leading-[1.1] tracking-tight mb-6 w-full text-start">
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-serif font-bold text-[#1B365D] leading-[1.1] tracking-tight mb-6 w-full text-start break-words">
               {t('hero.mainTitleLine1')}
+              {/* Mobile: no &lt;br&gt;, so words between lines would glue together (esp. Hebrew) */}
+              <span className="lg:hidden"> </span>
               <br className="hidden lg:inline" />
               {t('hero.mainTitleLine2')}
             </h1>
