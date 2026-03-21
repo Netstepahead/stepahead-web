@@ -40,7 +40,7 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-6 text-[#E87722]">Platform</h4>
             <ul className="space-y-4 text-blue-200 text-sm">
               <li>
-                <Link to="/platform" className="hover:text-white transition-colors">ONA Technology</Link>
+                <Link to="/platform" className="hover:text-white transition-colors">Collaboration Intelligence</Link>
               </li>
               <li>
                 <Link to="/solutions" className="hover:text-white transition-colors">Solutions</Link>
@@ -59,7 +59,7 @@ const Footer = () => {
                 <Link to="/about" className="hover:text-white transition-colors">About Us</Link>
               </li>
               <li>
-                <Link to="/academy" className="hover:text-white transition-colors">Academy</Link>
+                <Link to="/academy" className="hover:text-white transition-colors">Network Leadership</Link>
               </li>
               <li>
                 <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
