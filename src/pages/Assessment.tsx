@@ -113,23 +113,23 @@ const Assessment = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             <div className="order-1 md:order-none">
-              <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl">
-                <Carousel
-                  key={isRTL ? 'exp-rtl' : 'exp-ltr'}
-                  opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
-                  plugins={[expAutoplay]}
-                  setApi={(api) => { api?.plugins().autoplay?.play(); }}
-                  className="w-full h-full"
-                >
-                  <CarouselContent className="-ml-0 h-full">
-                    {expImages.map((img, i) => (
-                      <CarouselItem key={i} className="pl-0 h-full">
-                        <img src={img} alt="" className="w-full h-full object-cover rounded-3xl" />
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                </Carousel>
-              </div>
+              <Carousel
+                key={isRTL ? 'exp-rtl' : 'exp-ltr'}
+                opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
+                plugins={[expAutoplay]}
+                setApi={(api) => { api?.plugins().autoplay?.play(); }}
+                className="w-full"
+              >
+                <CarouselContent className="-ml-0">
+                  {expImages.map((img, i) => (
+                    <CarouselItem key={i} className="pl-0 basis-full shrink-0">
+                      <div className="relative w-full aspect-video md:aspect-auto md:h-[400px] rounded-2xl overflow-hidden shadow-lg">
+                        <img src={img} alt="" className="w-full h-full object-cover object-center absolute inset-0" />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
             </div>
             <div className="order-2 md:order-none flex flex-col items-start text-start">
               <h2 className="text-3xl font-bold text-slate-900 mb-4 text-start">{t('assessment.experienceTitle')}</h2>
@@ -163,23 +163,23 @@ const Assessment = () => {
               </a>
             </div>
             <div className="order-1 md:order-2">
-              <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl">
-                <Carousel
-                  key={isRTL ? 'report-rtl' : 'report-ltr'}
-                  opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
-                  plugins={[reportAutoplay]}
-                  setApi={(api) => { api?.plugins().autoplay?.play(); }}
-                  className="w-full h-full"
-                >
-                  <CarouselContent className="-ml-0 h-full">
-                    {reportImages.map((img, i) => (
-                      <CarouselItem key={i} className="pl-0 h-full">
-                        <img src={img} alt="" className="w-full h-full object-cover rounded-3xl" />
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                </Carousel>
-              </div>
+              <Carousel
+                key={isRTL ? 'report-rtl' : 'report-ltr'}
+                opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
+                plugins={[reportAutoplay]}
+                setApi={(api) => { api?.plugins().autoplay?.play(); }}
+                className="w-full"
+              >
+                <CarouselContent className="-ml-0">
+                  {reportImages.map((img, i) => (
+                    <CarouselItem key={i} className="pl-0 basis-full shrink-0">
+                      <div className="relative w-full aspect-video md:aspect-auto md:h-[400px] rounded-2xl overflow-hidden shadow-lg">
+                        <img src={img} alt="" className="w-full h-full object-cover object-center absolute inset-0" />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
             </div>
           </div>
         </div>

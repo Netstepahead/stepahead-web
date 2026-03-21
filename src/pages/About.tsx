@@ -20,8 +20,8 @@ const About = () => {
   ];
 
   const team = [
-    { id: 'nadav' as const, image: '/nadav.png' },
-    { id: 'sharon' as const, image: '/sharon.png' },
+    { id: 'nadav' as const, image: '/nadav.png', linkedin: 'https://www.linkedin.com/in/nadav-agozi/' },
+    { id: 'sharon' as const, image: '/sharon.png', linkedin: 'https://www.linkedin.com/in/sharon-rendlich-1752068/' },
   ];
 
   return (
@@ -95,12 +95,23 @@ const About = () => {
                 <img
                   src={member.image}
                   alt={t(`team.${member.id}.name`)}
-                  className="w-full aspect-[4/5] object-cover"
+                  className="w-full h-80 object-cover object-top"
                 />
                 <div className="p-6 flex flex-col flex-1 text-center">
                   <h3 className="text-xl font-bold text-white mb-2">{t(`team.${member.id}.name`)}</h3>
-                  <p className="text-[#E87722] font-medium mb-4">{t(`team.${member.id}.title`)}</p>
-                  <p className="text-slate-300 text-sm leading-relaxed">{t(`team.${member.id}.bio`)}</p>
+                  <p className="text-[#E87722] font-medium">{t(`team.${member.id}.title`)}</p>
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mt-2 self-center text-orange-400 hover:text-orange-300 transition-colors text-sm font-medium"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
+                    </svg>
+                    LinkedIn
+                  </a>
+                  <p className="text-slate-300 text-sm leading-relaxed mt-4">{t(`team.${member.id}.bio`)}</p>
                 </div>
               </div>
             ))}
