@@ -14,12 +14,6 @@ const academyCarouselImages = [
 
 const academyAutoplay = Autoplay({ delay: 4000 });
 
-const nbsCarouselImages = [
-  '/nbs_carousel/nbs.png',
-  '/nbs_carousel/profiling.jfif',
-];
-const nbsAutoplay = Autoplay({ delay: 4000 });
-
 const Academy = () => {
   const { t, isRTL, language } = useLanguage();
   const navigate = useNavigate();
@@ -131,26 +125,12 @@ const Academy = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
             <div className="order-1 md:order-none w-full">
-              <div className="w-full max-w-xl mx-auto flex justify-center mt-8 md:mt-0">
-                <Carousel
-                  key={isRTL ? 'nbs-rtl' : 'nbs-ltr'}
-                  opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
-                  plugins={[nbsAutoplay]}
-                  setApi={(api) => { api?.plugins().autoplay?.play(); }}
-                  className="w-full max-w-xl"
-                >
-                  <CarouselContent className="-ml-0">
-                    {nbsCarouselImages.map((img, i) => (
-                      <CarouselItem key={i} className="pl-0 basis-full">
-                        <img
-                          src={img}
-                          alt=""
-                          className="w-full h-auto max-w-full object-contain rounded-xl shadow-md"
-                        />
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                </Carousel>
+              <div className="w-full max-w-4xl mx-auto px-4 mt-12 mb-16 flex justify-center">
+                <img
+                  src={language === 'he' ? '/Hebrew_personas.png' : '/nbs_carousel/nbs.png'}
+                  alt="Network Leadership Personas"
+                  className="w-full h-auto max-h-[600px] object-contain rounded-2xl shadow-2xl border border-slate-100"
+                />
               </div>
             </div>
             <div className="order-2 md:order-none flex flex-col items-start text-start">
