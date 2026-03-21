@@ -102,21 +102,21 @@ const Academy = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-full h-56 sm:h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl bg-slate-100">
+            <div className="w-full">
               <Carousel
                 key={isRTL ? 'academy-rtl' : 'academy-ltr'}
                 opts={{ loop: true, direction: isRTL ? 'rtl' : 'ltr' }}
                 plugins={[academyAutoplay]}
                 setApi={(api) => { api?.plugins().autoplay?.play(); }}
-                className="w-full h-full"
+                className="w-full"
               >
-                <CarouselContent className="-ml-0 h-full">
+                <CarouselContent className="-ml-0">
                   {academyCarouselImages.map((img, i) => (
-                    <CarouselItem key={i} className="pl-0 h-full min-h-0">
+                    <CarouselItem key={i} className="pl-0 basis-full">
                       <img
                         src={img}
                         alt=""
-                        className="h-full w-full object-cover object-center"
+                        className="w-full aspect-[4/3] md:aspect-video object-cover object-center rounded-2xl shadow-sm"
                       />
                     </CarouselItem>
                   ))}
