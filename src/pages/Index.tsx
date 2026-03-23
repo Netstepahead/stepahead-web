@@ -40,7 +40,7 @@ const Index = () => {
     { name: "The Joint", logo: "the-joint.png", className: "invert" },
     { name: "Bank Hapoalim", logo: "poalim.png" },
     { name: "IDF", logo: "idf.jfif" },
-    { name: "Applied Materials", logo: "applied-materials.png" },
+    { name: "Ministry of Justice", logo: "Ministry_of_Justice.png" },
     { name: "Dexcel Pharma", logo: "dexcel.png" },
     { name: "Lahav Executive Education", logo: "lahav.png" },
     { name: "Lycored", logo: "lycored.png" },
