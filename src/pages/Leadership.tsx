@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Puzzle, Waypoints } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -129,6 +130,31 @@ const Leadership = () => {
       </section>
 
       <ClientLogosStrip title={t("leadership.logosTitle")} />
+
+      {/* Methodology / learning technologies */}
+      <section className="bg-white py-14 md:py-16 lg:py-20">
+        <div className="container mx-auto max-w-6xl px-4 md:px-6">
+          <h2 className="mb-10 text-center text-2xl font-bold text-[#1B365D] md:mb-12 md:text-3xl">
+            {t("leadership.tech.sectionTitle")}
+          </h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+            <div className="rounded-2xl border border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-[#f8fafc] p-6 shadow-sm ring-1 ring-slate-100/80 md:p-8">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#E87722]/10 text-[#E87722]">
+                <Waypoints className="h-6 w-6" strokeWidth={1.5} aria-hidden />
+              </div>
+              <h3 className="mb-3 text-lg font-bold text-[#1B365D] md:text-xl">{t("leadership.tech.ona.title")}</h3>
+              <p className="text-sm leading-relaxed text-slate-600 md:text-base">{t("leadership.tech.ona.text")}</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-[#f8fafc] p-6 shadow-sm ring-1 ring-slate-100/80 md:p-8">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#1B365D]/10 text-[#1B365D]">
+                <Puzzle className="h-6 w-6" strokeWidth={1.5} aria-hidden />
+              </div>
+              <h3 className="mb-3 text-lg font-bold text-[#1B365D] md:text-xl">{t("leadership.tech.game.title")}</h3>
+              <p className="text-sm leading-relaxed text-slate-600 md:text-base">{t("leadership.tech.game.text")}</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Catalog */}
       <section id="workshops-catalog" className="scroll-mt-24 bg-slate-50/80 py-16 md:py-20">
