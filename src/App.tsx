@@ -13,7 +13,7 @@ import ScrollToTop from "./components/ScrollToTop"; // <--- ייבוא הרכי�
 import Index from "./pages/Index";
 import Platform from "./pages/Platform";
 import Solutions from "./pages/Solutions";
-import Academy from "./pages/Academy";
+import Leadership from "./pages/Leadership";
 import Assessment from "./pages/Assessment";
 import Methodology from "./pages/Methodology";
 import About from "./pages/About";
@@ -45,7 +45,7 @@ function AppRoutes() {
             <Route path="/network-development" element={<Platform />} />
             <Route path="/platform" element={<Navigate to="/network-development" replace />} />
             <Route path="/solutions" element={<Solutions />} />
-            <Route path="/network-leadership" element={<Academy />} />
+            <Route path="/network-leadership" element={<Leadership />} />
             <Route path="/academy" element={<Navigate to="/network-leadership" replace />} />
             <Route path="/talent-assessment" element={<Assessment />} />
             <Route path="/assessment" element={<Navigate to="/talent-assessment" replace />} />

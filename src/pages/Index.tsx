@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useNavigate } from "react-router-dom";
+import { ClientLogosStrip } from "@/components/ClientLogosStrip";
 
 const leadershipAutoplay = Autoplay({ delay: 4000 });
 const onaAutoplay = Autoplay({ delay: 4000 });
@@ -31,21 +32,6 @@ const Index = () => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [isRTL]);
 
-  const clients = [
-    { name: "Clalit", logo: "clalit.png" },
-    { name: "Tambour", logo: "tambour.png" },
-    { name: "Ormat", logo: "ormat.png" },
-    { name: "Elbit Systems", logo: "elbit.png" },
-    { name: "Kornit Digital", logo: "kornit.png" },
-    { name: "The Joint", logo: "the-joint.png", className: "invert" },
-    { name: "Bank Hapoalim", logo: "poalim.png" },
-    { name: "IDF", logo: "idf.jfif" },
-    { name: "Ministry of Justice", logo: "Ministry_of_Justice.png" },
-    { name: "Dexcel Pharma", logo: "dexcel.png" },
-    { name: "Lahav Executive Education", logo: "lahav.png" },
-    { name: "Lycored", logo: "lycored.png" },
-  ];
-
   const pillars = [
     {
       titleKey: 'index.pillar1.title' as const,
@@ -69,24 +55,10 @@ const Index = () => {
       <HeroSection />
 
       {/* 2. Trust (client logos - immediate social proof below Hero) */}
-      <div className="py-12 md:py-16 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-12">
-            {t('hero.trustedBySubtitle')}
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14 px-4 max-w-6xl mx-auto">
-            {clients.map((client, i) => (
-              <div key={i} className="w-24 md:w-32 h-16 flex items-center justify-center group">
-                <img
-                  src={`/logos/${client.logo}`}
-                  alt={client.name}
-                  className={`max-h-full max-w-full object-contain transition-all duration-300 ${client.className || ''}`}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <ClientLogosStrip
+        title={t('hero.trustedBySubtitle')}
+        titleClassName="!mb-12 text-gray-400 uppercase tracking-widest md:text-sm"
+      />
 
       {/* 3. The 2 Solutions - Z-Pattern layout (alternating text/image rows) */}
       <section id="solutions" className="bg-[#FAF9F6] relative overflow-hidden scroll-mt-24" dir={isRTL ? 'rtl' : 'ltr'}>
