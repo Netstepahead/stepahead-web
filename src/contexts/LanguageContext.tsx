@@ -252,6 +252,57 @@ const translations: Record<Language, Record<string, string>> = {
     'academy.upgradeDesc': 'Equip your leaders with the skills they need to navigate a networked world.',
     'academy.bookWorkshop': 'Book a Workshop',
 
+    // Leadership (Network Leadership / workshops catalog page)
+    'leadership.hero.title': 'Leadership Development & Power Skills Workshops',
+    'leadership.hero.subtitle':
+      "We develop a 'network mindset' and cognitive agility for managers and core teams—through experiential, data-informed learning and game-based facilitation.",
+    'leadership.hero.cta': 'View the workshop catalog',
+    'leadership.hero.imageAlt': 'Leadership development workshop',
+    'leadership.logosTitle': 'Our workshops drive leading organizations forward',
+    'leadership.catalog.title': 'Power Skills: Workshops Catalog',
+    'leadership.catalog.subtitle':
+      'Network leadership and Power Skills—tailored for executive and core talent teams.',
+    'leadership.cardFormat': '📍 פרונטלי | 💻 Online',
+    'leadership.readMore': 'Read more',
+    'leadership.badge.networkMindset': 'Network Mindset',
+    'leadership.badge.powerSkills': 'Power Skills',
+    'leadership.workshop.1.title': 'Network Leadership in an Era of Change',
+    'leadership.workshop.1.shortDesc':
+      'Includes a personal diagnostic via the Network Types Questionnaire. Build network-based leadership as your organization navigates structural and strategic change.',
+    'leadership.workshop.1.syllabus':
+      'Goals: Surface real influence patterns and ties; translate strategic priorities into day-to-day leadership behavior.\n\nCore content:\n• Map the manager’s position in the organizational network and identify blind spots\n• Network Types Questionnaire with structured personal feedback (diagnostic)\n• Scenario practice: restructuring, team integration, and execution pressure\n• Synthesis and adoption: a practical action map for your team\n\nFormat: In-person or Online (Zoom/Teams); duration tailored to your needs.',
+    'leadership.workshop.2.title': 'Solving Complex Problems with “Weak Ties”',
+    'leadership.workshop.2.shortDesc':
+      'Tools to identify and leverage weak ties to solve complex challenges and access knowledge beyond your immediate circle.',
+    'leadership.workshop.2.syllabus':
+      'Goals: Broaden access to expertise, shorten time-to-solution, and reduce cognitive lock-in.\n\nCore content:\n• The weak-ties concept and how it applies in enterprise settings\n• Mapping knowledge sources and bridges across units\n• Case-based practice: edge cases and uncertainty\n• Practical protocols for cross-functional dialogue\n\nFormat: In-person or Online; highly interactive by design.',
+    'leadership.workshop.3.title': 'Strategic Bridges & Breaking Down Silos',
+    'leadership.workshop.3.shortDesc':
+      'Build bridges between departments, dismantle silos, and align strategy from leadership to the front line.',
+    'leadership.workshop.3.syllabus':
+      'Goals: Improve information flow and trust across interfaces; reduce duplication and friction.\n\nCore content:\n• Diagnose broken interfaces (structural holes) and key stakeholders\n• Design bridges, forums, and operating rhythms\n• Negotiation practice and interest mapping\n• Metrics and continuous improvement loops\n\nFormat: Modular workshop; can include simulations and games.',
+    'leadership.workshop.4.title': 'Creative Thinking & Game-Based Innovation',
+    'leadership.workshop.4.shortDesc':
+      'Experiential workshops for product, marketing, and management teams—using structured play to unlock innovation.',
+    'leadership.workshop.4.syllabus':
+      'Goals: Strengthen cognitive flexibility, mission-driven creativity, and rapid experimentation.\n\nCore content:\n• Game-based frames for ideation and knowledge sharing\n• Small-team sprints with structured feedback\n• Mapping innovation blockers in your organization\n• Outcomes library: pilots and next steps\n\nFormat: In-person or Online.',
+    'leadership.workshop.5.title': 'Cognitive Agility for Managers',
+    'leadership.workshop.5.shortDesc':
+      'Adaptability, fast learning, and tight feedback loops for leaders operating in continuous change.',
+    'leadership.workshop.5.syllabus':
+      'Goals: Build cognitive agility, manage change load, and decide under incomplete information.\n\nCore content:\n• Models for navigating competing demands\n• Scenario-based practice (short games and simulations)\n• Communication tools for change contexts\n• Personal follow-up plan for managers\n\nFormat: In-person or Online.',
+    'leadership.workshop.6.title': 'Decision-Making Under Uncertainty',
+    'leadership.workshop.6.shortDesc':
+      'Frameworks for judgment, risk, and high-quality decisions when data is partial or conflicting.',
+    'leadership.workshop.6.syllabus':
+      'Goals: Improve decision quality, reduce bias, and increase transparency with stakeholders.\n\nCore content:\n• Mapping uncertainty types and missing information\n• Role-based games to stress-test alternatives\n• Team decision protocols\n• Reusable decision playbook for your organization\n\nFormat: In-person or Online.',
+    'leadership.flexible.title': 'Flexible learning at peak engagement',
+    'leadership.flexible.body':
+      'All of our development programs are available in person or as live online workshops (Zoom/Teams). We use interactive platforms designed to deliver a premium participant experience and uncompromising engagement.',
+    'leadership.flexible.imageCaption': 'Zoom / online workshop (screenshot placeholder)',
+    'leadership.cta.title': "Let's design the right training for your team",
+    'leadership.cta.button': 'Schedule a consultation',
+
     // About
     'about.mission': 'OUR MISSION',
     'about.title': 'Experts in Organizational Network Analysis (ONA).',
@@ -564,6 +615,56 @@ const translations: Record<Language, Record<string, string>> = {
     'academy.upgradeDNA': 'שדרגו את ה-DNA הניהולי שלכם',
     'academy.upgradeDesc': 'ציידו את המנהלים שלכם בכישורים הנדרשים כדי לנווט בהצלחה בעולם רשתי.',
     'academy.bookWorkshop': 'הזמינו סדנה',
+
+    // Leadership (דף מנהיגות / קטלוג סדנאות)
+    'leadership.hero.title': 'סדנאות פיתוח מנהיגות ו-Power Skills',
+    'leadership.hero.subtitle':
+      "מפתחים 'תפיסת רשת' ואג'יליות מחשבתית למנהלים וצוותי מפתח, באמצעות למידה חווייתית מבוססת-נתונים ומשחק.",
+    'leadership.hero.cta': 'לצפייה בקטלוג הסדנאות',
+    'leadership.hero.imageAlt': 'סדנאות מנהיגות',
+    'leadership.logosTitle': 'הסדנאות שלנו מניעות קדימה את הארגונים המובילים במשק',
+    'leadership.catalog.title': 'קטלוג הסדנאות — Power Skills',
+    'leadership.catalog.subtitle': 'מנהיגות רשתית ו-Power Skills — מותאמים לצוותי הנהלה ומפתחים',
+    'leadership.cardFormat': '📍 פרונטלי | 💻 Online',
+    'leadership.readMore': 'קרא עוד',
+    'leadership.badge.networkMindset': 'Network Mindset',
+    'leadership.badge.powerSkills': 'Power Skills',
+    'leadership.workshop.1.title': 'מנהיגות רשתית בעידן של שינוי',
+    'leadership.workshop.1.shortDesc':
+      'כולל אבחון אישי באמצעות שאלון הטיפוסים הרשתיים. פיתוח מנהיגות מבוססת רשתות בתזמון שינויים ארגוניים.',
+    'leadership.workshop.1.syllabus':
+      'מטרות: חשיפת דפוסי השפעה וקשרים בפועל, תרגום מודלים אסטרטגיים לפעולה יומיומית.\n\nתוכן עיקרי:\n• מיפוי מיקום המנהל ברשת הארגונית וזיהוי נקודות עיוורון\n• שאלון טיפוסים רשתיים ומשוב אישי (אבחון)\n• תרגול תרחישים: שינוי מבנה, מיזוג צוותים, ולחץ ביצועים\n• סיכום והטמעה: מפת פעולה אישית לצוות\n\nפורמט: פרונטלי או אונליין (Zoom/Teams), משך מותאם לפי צורך.',
+    'leadership.workshop.2.title': 'פתרון בעיות מורכבות בעזרת "קשרים חלשים"',
+    'leadership.workshop.2.shortDesc':
+      'כלים לזיהוי וניצול חיבורים חלשים לפתרון אתגרים מורכבים ולשיתוף ידע מחוץ למעגל הכרות היומיומי.',
+    'leadership.workshop.2.syllabus':
+      'מטרות: הרחבת גישה לידע ומומחיות, קיצור זמן לפתרון, והפחתת קיבעון קוגניטיבי.\n\nתוכן עיקרי:\n• מושג הקשר החלש (Weak Ties) ויישומו בארגון\n• מיפוי מקורות מידע וגשרים בין יחידות\n• תרגול מבוסס-מקרים: מצבי קצה ואי-ודאות\n• כלים מעשיים לשיחות חוצות-ארגון\n\nפורמט: פרונטלי או אונליין, כולל דגשים אינטראקטיביים.',
+    'leadership.workshop.3.title': 'בניית גשרים אסטרטגיים ופירוק סילוסים',
+    'leadership.workshop.3.shortDesc':
+      'בניית גשרים בין מחלקות, פירוק סילוסים ויישור קו אסטרטגי בין הנהלה לשטח.',
+    'leadership.workshop.3.syllabus':
+      'מטרות: יצירת זרימת מידע ואמון בין ממשקים, והפחתת כפילויות וחיכוך.\n\nתוכן עיקרי:\n• אבחון ממשקים שבורים (Structural Holes) ומיפוי מנהלים\n• תכנון גשרים ופורומים מקצועיים\n• תרגול משא ומתן ומיפוי אינטרסים\n• מדדי מעקב ומחזור שיפור\n\nפורמט: סדנה מודולרית, ניתן לשלב משחקים וסימולציות.',
+    'leadership.workshop.4.title': 'חשיבה יצירתית וחדשנות מבוססת משחק',
+    'leadership.workshop.4.shortDesc':
+      'סדנאות חווייתיות לחדשנות מונעת על ידי משחק ודמויות — לצוותי מוצר, שיווק וניהול.',
+    'leadership.workshop.4.syllabus':
+      'מטרות: חיזוק גמישות מחשבתית, יצירתיות מבוססת-משימה, והתנסות מהירה בבחינת רעיונות.\n\nתוכן עיקרי:\n• מסגרות משחק לחילוץ רעיונות ולשיתוף ידע\n• עבודה בצוותים קטנים עם משוב מובנה\n• מיפוי מכשולים לחדשנות בארגון שלכם\n• סיכום לספריית רעיונות ופיילוטים\n\nפורמט: פרונטלי או אונליין.',
+    'leadership.workshop.5.title': "אג'יליות וגמישות מחשבתית למנהלים",
+    'leadership.workshop.5.shortDesc':
+      'מיומנויות הסתגלות, למידה מהירה ומסגורי לולאה בזמן אמת — למנהלים בזמן שינוי.',
+    'leadership.workshop.5.syllabus':
+      'מטרות: חיזוק גמישות קוגניטיבית, ניהול עומסי שינוי, וקבלת החלטות תחת תנאי לא-ודאות.\n\nתוכן עיקרי:\n• מודלים להתמודדות עם דרישות סותרות\n• תרגול מבוסס-תרחישים (משחקים וסימולציות קצרות)\n• כלים לתקשורת מדויקת בזמן שינוי\n• תוכנית המשך אישית למנהלים\n\nפורמט: פרונטלי או אונליין.',
+    'leadership.workshop.6.title': 'קבלת החלטות בתנאי אי ודאות',
+    'leadership.workshop.6.shortDesc':
+      'מסגרות מודלים, הערכת סיכונים וקבלת החלטות איכותיות כשהנתונים חלקיים או מתנגשים.',
+    'leadership.workshop.6.syllabus':
+      'מטרות: שיפור איכות ההחלטות, הפחתת הטיה, ושקיפות מול בעלי עניין.\n\nתוכן עיקרי:\n• מיפוי אי-ודאות וסוגי מידע חסר\n• תרגול מבוסס-דמויות לבחינת אלטרנטיבות\n• פרוטוקולי החלטה בצוות\n• סיכום: מדריך החלטה לשימוש חוזר\n\nפורמט: פרונטלי או אונליין.',
+    'leadership.flexible.title': 'למידה גמישה במעורבות שיא',
+    'leadership.flexible.body':
+      'כל תוכניות הפיתוח שלנו זמינות בפורמט פרונטלי או כסדנאות אונליין (Zoom/Teams). אנו משתמשים בפלטפורמות אינטראקטיביות שמבטיחות חוויית משתמש ורמת מעורבות (Engagement) חסרת פשרות.',
+    'leadership.flexible.imageCaption': 'צילום מסך — סדנת Zoom (מציין מיקום לתמונה)',
+    'leadership.cta.title': 'בואו נבנה את ההכשרה המדויקת לצוות שלכם',
+    'leadership.cta.button': 'לשיחת ייעוץ אישית',
 
     // About
     'about.mission': 'המשימה שלנו',
