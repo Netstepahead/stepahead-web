@@ -25,8 +25,8 @@ const HOME_LEADERSHIP_CAROUSEL_IMAGES = [
   "/carousel/PXL_20220918_083347381.jpg",
 ] as const;
 
-/** Flexible learning section — place `public/online_workshop.jpg` (or update path if you use .png). */
-const ONLINE_WORKSHOP_IMAGE = "/online_workshop.jpg";
+/** Flexible learning section — `public/online_workshop.png`. */
+const ONLINE_WORKSHOP_IMAGE = "/online_workshop.png";
 
 type BadgeKind = "network" | "powerSkills";
 
