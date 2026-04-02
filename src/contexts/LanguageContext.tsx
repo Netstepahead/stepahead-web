@@ -300,9 +300,11 @@ const translations: Record<Language, Record<string, string>> = {
     'leadership.tech.ona.title': 'Network Intelligence (ONA)',
     'leadership.tech.ona.text':
       'We use network-mapping technology to surface hidden talent, pinpoint bottlenecks, and reveal the real collaboration dynamics of your team.',
+    'leadership.tech.ona.imageAlt': 'Network map visualization',
     'leadership.tech.game.title': 'Game-Based Learning',
     'leadership.tech.game.text':
       'Cognitive simulations and thinking games that mirror complexity and uncertainty—so participants build skills in a challenging, high-engagement environment.',
+    'leadership.tech.game.imageAlt': 'Game-based learning',
     'leadership.flexible.title': "When face-to-face isn't an option: High-engagement Online Workshops",
     'leadership.flexible.body':
       'All of our development programs are available in person or as live online workshops (Zoom/Teams). We use interactive platforms designed to deliver a premium participant experience and uncompromising engagement.',
@@ -670,9 +672,11 @@ const translations: Record<Language, Record<string, string>> = {
     'leadership.tech.ona.title': 'אינטליגנציה רשתית (ONA)',
     'leadership.tech.ona.text':
       'שימוש בטכנולוגיית מיפוי רשתי לזיהוי טאלנטים סמויים, איתור צווארי בקבוק, והבנת הדינמיקה האמיתית של הצוות.',
+    'leadership.tech.ona.imageAlt': 'איור מיפוי רשת',
     'leadership.tech.game.title': 'למידה מבוססת-משחק',
     'leadership.tech.game.text':
       'סימולציות קוגניטיביות ומשחקי חשיבה המדמים מצבי מורכבות ואי-ודאות, ומאפשרים פיתוח מיומנויות בסביבה מאתגרת ומרתקת.',
+    'leadership.tech.game.imageAlt': 'למידה מבוססת משחק',
     'leadership.flexible.title': 'כשאי אפשר להיפגש פרונטלית: סדנאות Online במעורבות שיא',
     'leadership.flexible.body':
       'כל תוכניות הפיתוח שלנו זמינות בפורמט פרונטלי או כסדנאות אונליין (Zoom/Teams). אנו משתמשים בפלטפורמות אינטראקטיביות שמבטיחות חוויית משתמש ורמת מעורבות (Engagement) חסרת פשרות.',

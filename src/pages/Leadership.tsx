@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Puzzle, Waypoints } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -28,6 +27,10 @@ const HOME_LEADERSHIP_CAROUSEL_IMAGES = [
 
 /** Flexible learning section — `public/online_workshop.png`. */
 const ONLINE_WORKSHOP_IMAGE = "/online_workshop.png";
+
+/** Technology section — `public/Network Map.png`, `public/Games.png`. */
+const TECH_NETWORK_MAP_IMAGE = "/Network%20Map.png";
+const TECH_GAMES_IMAGE = "/Games.png";
 
 type BadgeKind = "network" | "powerSkills";
 
@@ -138,19 +141,31 @@ const Leadership = () => {
             {t("leadership.tech.sectionTitle")}
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-            <div className="rounded-2xl border border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-[#f8fafc] p-6 shadow-sm ring-1 ring-slate-100/80 md:p-8">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#E87722]/10 text-[#E87722]">
-                <Waypoints className="h-6 w-6" strokeWidth={1.5} aria-hidden />
+            <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-[#f8fafc] shadow-sm ring-1 ring-slate-100/80">
+              <div className="relative aspect-[16/10] w-full bg-slate-100/80">
+                <img
+                  src={TECH_NETWORK_MAP_IMAGE}
+                  alt={t("leadership.tech.ona.imageAlt")}
+                  className="h-full w-full object-contain object-center p-4"
+                />
               </div>
-              <h3 className="mb-3 text-lg font-bold text-[#1B365D] md:text-xl">{t("leadership.tech.ona.title")}</h3>
-              <p className="text-sm leading-relaxed text-slate-600 md:text-base">{t("leadership.tech.ona.text")}</p>
+              <div className="p-6 md:p-8 md:pt-2">
+                <h3 className="mb-3 text-lg font-bold text-[#1B365D] md:text-xl">{t("leadership.tech.ona.title")}</h3>
+                <p className="text-sm leading-relaxed text-slate-600 md:text-base">{t("leadership.tech.ona.text")}</p>
+              </div>
             </div>
-            <div className="rounded-2xl border border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-[#f8fafc] p-6 shadow-sm ring-1 ring-slate-100/80 md:p-8">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#1B365D]/10 text-[#1B365D]">
-                <Puzzle className="h-6 w-6" strokeWidth={1.5} aria-hidden />
+            <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-[#f8fafc] shadow-sm ring-1 ring-slate-100/80">
+              <div className="relative aspect-[16/10] w-full bg-slate-100/80">
+                <img
+                  src={TECH_GAMES_IMAGE}
+                  alt={t("leadership.tech.game.imageAlt")}
+                  className="h-full w-full object-contain object-center p-4"
+                />
               </div>
-              <h3 className="mb-3 text-lg font-bold text-[#1B365D] md:text-xl">{t("leadership.tech.game.title")}</h3>
-              <p className="text-sm leading-relaxed text-slate-600 md:text-base">{t("leadership.tech.game.text")}</p>
+              <div className="p-6 md:p-8 md:pt-2">
+                <h3 className="mb-3 text-lg font-bold text-[#1B365D] md:text-xl">{t("leadership.tech.game.title")}</h3>
+                <p className="text-sm leading-relaxed text-slate-600 md:text-base">{t("leadership.tech.game.text")}</p>
+              </div>
             </div>
           </div>
         </div>
