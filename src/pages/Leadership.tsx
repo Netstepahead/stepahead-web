@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Brain, Lightbulb, Dices, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -12,13 +11,22 @@ import { ClientLogosStrip } from "@/components/ClientLogosStrip";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
 
-const CAROUSEL_IMAGES = [
+/** Academy carousel — cards 1–3 (Network Mindset workshops). */
+const ACADEMY_CAROUSEL_IMAGES = [
   "/academy_carousel/workshop1.jpeg",
   "/academy_carousel/workshop2.jpeg",
   "/academy_carousel/workshop3.jpeg",
 ] as const;
 
-const PLACEHOLDER_ICONS = [Brain, Lightbulb, Dices] as const;
+/** First 3 images from Homepage leadership carousel (Index — pillar 1). Cards 4–6 (Power Skills). */
+const HOME_LEADERSHIP_CAROUSEL_IMAGES = [
+  "/carousel/485136809_1241810007947886_5355771345522948267_n.jpg",
+  "/carousel/70380459_123570912362931_6421992094918770688_n.jpg",
+  "/carousel/PXL_20220918_083347381.jpg",
+] as const;
+
+/** Flexible learning section — place `public/online_workshop.jpg` (or update path if you use .png). */
+const ONLINE_WORKSHOP_IMAGE = "/online_workshop.jpg";
 
 type BadgeKind = "network" | "powerSkills";
 
@@ -27,8 +35,7 @@ type WorkshopView = {
   title: string;
   shortDesc: string;
   syllabus: string;
-  image?: string;
-  placeholderIndex?: number;
+  image: string;
   badge: BadgeKind;
 };
 
@@ -48,22 +55,10 @@ function Badge({ kind, label }: { kind: BadgeKind; label: string }) {
   );
 }
 
-function ImageOrPlaceholder({ workshop }: { workshop: WorkshopView }) {
-  if (workshop.image) {
-    return (
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-t-2xl">
-        <img
-          src={workshop.image}
-          alt=""
-          className="h-full w-full object-cover object-center"
-        />
-      </div>
-    );
-  }
-  const Icon = PLACEHOLDER_ICONS[workshop.placeholderIndex ?? 0];
+function WorkshopCardImage({ src }: { src: string }) {
   return (
-    <div className="relative flex aspect-[4/3] w-full items-center justify-center rounded-t-2xl bg-gradient-to-br from-slate-100 via-[#f0f4f8] to-[#e2e8f0]">
-      <Icon className="h-14 w-14 text-slate-400/90" strokeWidth={1.25} aria-hidden />
+    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-t-2xl">
+      <img src={src} alt="" className="h-full w-full object-cover object-center" />
     </div>
   );
 }
@@ -76,11 +71,13 @@ const Leadership = () => {
   const workshops = useMemo((): WorkshopView[] => {
     return [1, 2, 3, 4, 5, 6].map((id) => {
       const isNetwork = id <= 3;
+      const image = isNetwork
+        ? ACADEMY_CAROUSEL_IMAGES[id - 1]
+        : HOME_LEADERSHIP_CAROUSEL_IMAGES[id - 4];
       return {
         id,
         badge: isNetwork ? "network" : "powerSkills",
-        image: isNetwork ? CAROUSEL_IMAGES[id - 1] : undefined,
-        placeholderIndex: !isNetwork ? id - 4 : undefined,
+        image,
         title: t(`leadership.workshop.${id}.title`),
         shortDesc: t(`leadership.workshop.${id}.shortDesc`),
         syllabus: t(`leadership.workshop.${id}.syllabus`),
@@ -147,7 +144,7 @@ const Leadership = () => {
                 key={w.id}
                 className="flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-md transition-shadow hover:shadow-xl"
               >
-                <ImageOrPlaceholder workshop={w} />
+                <WorkshopCardImage src={w.image} />
                 <div className="flex flex-1 flex-col p-5 text-start">
                   <div className="mb-3">
                     <Badge
@@ -185,9 +182,14 @@ const Leadership = () => {
               <h2 className="text-2xl font-bold text-[#1B365D] md:text-3xl">{t("leadership.flexible.title")}</h2>
               <p className="text-base leading-relaxed text-slate-600 md:text-lg">{t("leadership.flexible.body")}</p>
             </div>
-            <div className="relative flex min-h-[220px] w-full flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-slate-100 p-8 shadow-sm lg:min-h-[280px]">
-              <Video className="h-12 w-12 shrink-0 text-slate-400/90 md:h-14 md:w-14" strokeWidth={1.25} aria-hidden />
-              <p className="max-w-xs text-center text-sm leading-snug text-slate-500">{t("leadership.flexible.imageCaption")}</p>
+            <div className="relative w-full overflow-hidden rounded-2xl border border-slate-200/90 bg-slate-100 shadow-md">
+              <div className="aspect-[4/3] w-full lg:aspect-video">
+                <img
+                  src={ONLINE_WORKSHOP_IMAGE}
+                  alt={t("leadership.flexible.imageCaption")}
+                  className="h-full w-full object-cover object-center"
+                />
+              </div>
             </div>
           </div>
         </div>
