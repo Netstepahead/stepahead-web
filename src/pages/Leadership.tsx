@@ -64,11 +64,14 @@ function WorkshopCardImage({ src, alt }: { src: string; alt: string }) {
   const [failed, setFailed] = useState(false);
   const imgSrc = failed ? "/placeholder.svg" : src;
   return (
-    <div className="relative aspect-video w-full overflow-hidden rounded-t-2xl bg-slate-100">
+    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-t-2xl bg-slate-100">
+      {/* Same 4:3 + cover + center at all breakpoints so crops match mobile and desktop */}
       <img
         src={imgSrc}
         alt={alt}
         className="h-full w-full object-cover object-center"
+        loading="lazy"
+        decoding="async"
         onError={() => setFailed(true)}
       />
     </div>
@@ -121,8 +124,8 @@ const Leadership = () => {
       <section className="bg-[#F9F8F4] pt-16 pb-8 md:pt-20 md:pb-12 lg:pt-24">
         <div className="container mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid grid-cols-1 items-center gap-10 pb-8 lg:grid-cols-2 lg:gap-12 lg:pb-12">
-            <div className="flex flex-col items-start text-start">
-              <h1 className="mb-4 text-4xl font-bold leading-tight text-slate-900 md:text-5xl lg:text-6xl">
+            <div className="flex min-w-0 w-full max-w-full flex-col items-start text-start">
+              <h1 className="mb-4 w-full max-w-full break-words text-3xl font-bold leading-[1.15] tracking-tight text-slate-900 sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl">
                 {t("leadership.hero.title")}
               </h1>
               <p className="mb-8 max-w-xl text-base leading-relaxed text-slate-600 md:text-lg">
@@ -154,7 +157,7 @@ const Leadership = () => {
       {/* Technology — visual feature cards */}
       <section className="bg-white py-12 md:py-14">
         <div className="container mx-auto max-w-6xl px-4 md:px-6">
-          <h2 className="mb-8 text-center text-xl font-semibold tracking-tight text-[#1B365D] md:mb-10 md:text-2xl">
+          <h2 className="mx-auto mb-8 max-w-3xl break-words px-1 text-center text-xl font-semibold tracking-tight text-[#1B365D] md:mb-10 md:text-2xl">
             {t("leadership.tech.sectionTitle")}
           </h2>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
@@ -216,8 +219,10 @@ const Leadership = () => {
       <section id="workshops-catalog" className="scroll-mt-24 bg-slate-50/80 py-16 md:py-20">
         <div className="container mx-auto max-w-7xl px-4 md:px-6">
           <div className="mb-10 text-center">
-            <h2 className="text-3xl font-bold text-[#1B365D] md:text-4xl">{t("leadership.catalog.title")}</h2>
-            <p className="mx-auto mt-3 max-w-2xl text-slate-600">{t("leadership.catalog.subtitle")}</p>
+            <h2 className="mx-auto w-full max-w-4xl break-words px-1 text-2xl font-bold leading-snug text-[#1B365D] sm:text-3xl md:text-4xl">
+              {t("leadership.catalog.title")}
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl break-words px-1 text-slate-600">{t("leadership.catalog.subtitle")}</p>
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
