@@ -160,7 +160,7 @@ const Leadership = () => {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
             {/* ONA */}
             <article className="flex flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-[0_12px_40px_-12px_rgba(27,54,93,0.15)] ring-1 ring-slate-100/80">
-              <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-slate-100">
+              <div className="relative h-48 w-full shrink-0 overflow-hidden bg-slate-100 md:h-56">
                 <img
                   src={TECH_NETWORK_MAP_IMAGE}
                   alt={t("leadership.tech.ona.imageAlt")}
@@ -173,14 +173,19 @@ const Leadership = () => {
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E87722]/12 text-[#E87722] shadow-sm">
                   <Waypoints className="h-6 w-6" strokeWidth={1.75} aria-hidden />
                 </div>
-                <p className="min-w-0 flex-1 pt-0.5 text-start text-base font-semibold leading-snug text-[#1B365D] md:text-lg">
-                  {t("leadership.tech.ona.label")}
-                </p>
+                <div className="min-w-0 flex-1 space-y-2 text-start">
+                  <h3 className="text-base font-semibold leading-snug text-[#1B365D] md:text-lg">
+                    {t("leadership.tech.ona.label")}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-slate-600 md:text-base">
+                    {t("leadership.tech.ona.description")}
+                  </p>
+                </div>
               </div>
             </article>
             {/* Game-based learning */}
             <article className="flex flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-[0_12px_40px_-12px_rgba(27,54,93,0.15)] ring-1 ring-slate-100/80">
-              <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-slate-100">
+              <div className="relative h-48 w-full shrink-0 overflow-hidden bg-slate-100 md:h-56">
                 <img
                   src={TECH_GAMES_IMAGE}
                   alt={t("leadership.tech.game.imageAlt")}
@@ -193,9 +198,14 @@ const Leadership = () => {
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#1B365D]/10 text-[#1B365D] shadow-sm">
                   <Puzzle className="h-6 w-6" strokeWidth={1.75} aria-hidden />
                 </div>
-                <p className="min-w-0 flex-1 pt-0.5 text-start text-base font-semibold leading-snug text-[#1B365D] md:text-lg">
-                  {t("leadership.tech.game.label")}
-                </p>
+                <div className="min-w-0 flex-1 space-y-2 text-start">
+                  <h3 className="text-base font-semibold leading-snug text-[#1B365D] md:text-lg">
+                    {t("leadership.tech.game.label")}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-slate-600 md:text-base">
+                    {t("leadership.tech.game.description")}
+                  </p>
+                </div>
               </div>
             </article>
           </div>

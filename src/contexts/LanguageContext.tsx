@@ -298,8 +298,12 @@ const translations: Record<Language, Record<string, string>> = {
       'Managers face a constant stream of decisions, often amidst noise or lacking critical information. This workshop breaks down the psychological mechanisms of decision-making and exposes common cognitive biases. Participants will learn models for filtering noise, utilizing the "wisdom of crowds," and making fast, data-driven decisions under pressure.',
     'leadership.tech.sectionTitle': 'The Technology Behind Our Workshops',
     'leadership.tech.ona.label': 'Network Intelligence (ONA)',
+    'leadership.tech.ona.description':
+      'Using network mapping technology to identify hidden talents, locate bottlenecks, and understand the true dynamics of the team.',
     'leadership.tech.ona.imageAlt': 'Organizational network map visualization',
     'leadership.tech.game.label': 'Game-Based Learning',
+    'leadership.tech.game.description':
+      'Cognitive simulations and thinking games that simulate complex and uncertain situations, enabling skills development in a challenging and engaging environment.',
     'leadership.tech.game.imageAlt': 'Game-based learning and thinking games',
     'leadership.flexible.title': "When face-to-face isn't an option: Interactive Online Workshops",
     'leadership.flexible.body':
@@ -666,8 +670,12 @@ const translations: Record<Language, Record<string, string>> = {
       'מנהלים ניצבים מדי יום בפני זרם בלתי פוסק של החלטות, לרוב מתוך עודף רעשי רקע או חוסר במידע קריטי. הסדנה מפרקת את המנגנונים הפסיכולוגיים של תהליך קבלת ההחלטות וחושפת הטיות קוגניטיביות נפוצות שפוגעות בשיקול הדעת. המשתתפים ילמדו מודלים לסינון רעשים, שימוש נכון ב"חכמת ההמונים", וקבלת החלטות מהירות ומבוססות-נתונים תחת לחץ.',
     'leadership.tech.sectionTitle': 'הטכנולוגיה שמאחורי הסדנאות שלנו',
     'leadership.tech.ona.label': 'אינטליגנציה רשתית (ONA)',
+    'leadership.tech.ona.description':
+      'שימוש בטכנולוגיית מיפוי רשתי לזיהוי טאלנטים סמויים, איתור צווארי בקבוק, והבנת הדינמיקה האמיתית של הצוות.',
     'leadership.tech.ona.imageAlt': 'מפת רשת ארגונית',
     'leadership.tech.game.label': 'למידה מבוססת-משחק',
+    'leadership.tech.game.description':
+      'סימולציות קוגניטיביות ומשחקי חשיבה המדמים מצבי מורכבות ואי-ודאות, ומאפשרים פיתוח מיומנויות בסביבה מאתגרת ומרתקת.',
     'leadership.tech.game.imageAlt': 'למידה מבוססת משחק ומשחקי חשיבה',
     'leadership.flexible.title': 'כשאי אפשר להיפגש פרונטלית: סדנאות Online אינטראקטיביות',
     'leadership.flexible.body':
