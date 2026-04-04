@@ -253,7 +253,8 @@ const translations: Record<Language, Record<string, string>> = {
     'academy.bookWorkshop': 'Book a Workshop',
 
     // Leadership (Network Leadership / workshops catalog page)
-    'leadership.hero.title': 'Network Leadership | Power Skills',
+    'leadership.hero.titleLine1': 'Network Leadership |',
+    'leadership.hero.titleLine2': 'Power Skills',
     'leadership.hero.subtitle':
       "Developing managers and key teams through experiential learning, game simulations, and building a cross-organizational 'network mindset'.",
     'leadership.hero.cta': 'View the workshop catalog',
@@ -626,7 +627,8 @@ const translations: Record<Language, Record<string, string>> = {
     'academy.bookWorkshop': 'הזמינו סדנה',
 
     // Leadership (דף מנהיגות / קטלוג סדנאות)
-    'leadership.hero.title': 'פיתוח מנהיגות רשתית | Power Skills',
+    'leadership.hero.titleLine1': 'פיתוח מנהיגות רשתית |',
+    'leadership.hero.titleLine2': 'Power Skills',
     'leadership.hero.subtitle':
       "פיתוח מנהלים וצוותי מפתח באמצעות למידה חווייתית, סימולציות משחק ובניית 'תפיסת רשת' חוצת-ארגון.",
     'leadership.hero.cta': 'לצפייה בקטלוג הסדנאות',
@@ -648,9 +650,9 @@ const translations: Record<Language, Record<string, string>> = {
       'כלים לזיהוי וניצול חיבורים חלשים לפתרון אתגרים מורכבים ולשיתוף ידע מחוץ למעגל הכרות היומיומי.',
     'leadership.workshop.2.syllabus':
       'מטרות: הרחבת גישה לידע ומומחיות, קיצור זמן לפתרון, והפחתת קיבעון קוגניטיבי.\n\nתוכן עיקרי:\n• מושג הקשר החלש (Weak Ties) ויישומו בארגון\n• מיפוי מקורות מידע וגשרים בין יחידות\n• תרגול מבוסס-מקרים: מצבי קצה ואי-ודאות\n• כלים מעשיים לשיחות חוצות-ארגון\n\nפורמט: פרונטלי או אונליין, כולל דגשים אינטראקטיביים.',
-    'leadership.workshop.3.title': 'בניית גשרים אסטרטגיים ופירוק סילוסים',
+    'leadership.workshop.3.title': 'בניית גשרים אסטרטגיים ופירוק סיילואים',
     'leadership.workshop.3.shortDesc':
-      'בניית גשרים בין מחלקות, פירוק סילוסים ויישור קו אסטרטגי בין הנהלה לשטח.',
+      'בניית גשרים בין מחלקות, פירוק סיילואים ויישור קו אסטרטגי בין הנהלה לשטח.',
     'leadership.workshop.3.syllabus':
       'מטרות: יצירת זרימת מידע ואמון בין ממשקים, והפחתת כפילויות וחיכוך.\n\nתוכן עיקרי:\n• אבחון ממשקים שבורים (Structural Holes) ומיפוי מנהלים\n• תכנון גשרים ופורומים מקצועיים\n• תרגול משא ומתן ומיפוי אינטרסים\n• מדדי מעקב ומחזור שיפור\n\nפורמט: סדנה מודולרית, ניתן לשלב משחקים וסימולציות.',
     'leadership.workshop.4.title': 'חשיבה יצירתית וחדשנות מבוססת משחק',

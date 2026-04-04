@@ -75,9 +75,12 @@ const Leadership = () => {
   const workshops = useMemo((): WorkshopView[] => {
     return [1, 2, 3, 4, 5, 6].map((id) => {
       const isNetwork = id <= 3;
-      const image = isNetwork
-        ? ACADEMY_CAROUSEL_IMAGES[id - 1]
-        : HOME_LEADERSHIP_CAROUSEL_IMAGES[id - 4];
+      // Swap card images: Network Leadership (1) ↔ Decision-Making (6)
+      let image: string;
+      if (id === 1) image = HOME_LEADERSHIP_CAROUSEL_IMAGES[2];
+      else if (id === 6) image = ACADEMY_CAROUSEL_IMAGES[0];
+      else if (isNetwork) image = ACADEMY_CAROUSEL_IMAGES[id - 1];
+      else image = HOME_LEADERSHIP_CAROUSEL_IMAGES[id - 4];
       return {
         id,
         badge: isNetwork ? "network" : "powerSkills",
@@ -105,8 +108,11 @@ const Leadership = () => {
         <div className="container mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid grid-cols-1 items-center gap-10 pb-8 lg:grid-cols-2 lg:gap-12 lg:pb-12">
             <div className="flex flex-col items-start text-start">
-              <h1 className="mb-4 text-4xl font-bold leading-tight text-slate-900 md:text-5xl lg:text-6xl">
-                {t("leadership.hero.title")}
+              <h1 className="mb-4 flex flex-col gap-0 text-4xl font-bold leading-tight text-slate-900 md:text-5xl lg:text-6xl">
+                <span className="min-w-0 sm:whitespace-nowrap">{t("leadership.hero.titleLine1")}</span>
+                <span className="sm:whitespace-nowrap" dir="ltr" lang="en">
+                  {t("leadership.hero.titleLine2")}
+                </span>
               </h1>
               <p className="mb-8 max-w-xl text-lg leading-relaxed text-slate-600">
                 {t("leadership.hero.subtitle")}
