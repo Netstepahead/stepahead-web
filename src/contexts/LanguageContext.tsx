@@ -297,14 +297,18 @@ const translations: Record<Language, Record<string, string>> = {
     'leadership.workshop.6.syllabus':
       'Goals: Improve decision quality, reduce bias, and increase transparency with stakeholders.\n\nCore content:\n• Mapping uncertainty types and missing information\n• Role-based games to stress-test alternatives\n• Team decision protocols\n• Reusable decision playbook for your organization\n\nFormat: In-person or Online.',
     'leadership.tech.sectionTitle': 'The Technology Behind Our Workshops',
-    'leadership.tech.ona.title': 'Network Intelligence (ONA)',
-    'leadership.tech.ona.text':
-      'We use network-mapping technology to surface hidden talent, pinpoint bottlenecks, and reveal the real collaboration dynamics of your team.',
-    'leadership.tech.ona.imageAlt': 'Network map visualization',
-    'leadership.tech.game.title': 'Game-Based Learning',
-    'leadership.tech.game.text':
-      'Cognitive simulations and thinking games that mirror complexity and uncertainty—so participants build skills in a challenging, high-engagement environment.',
-    'leadership.tech.game.imageAlt': 'Game-based learning',
+    'leadership.tech.ona.heading': 'Network Leadership',
+    'leadership.tech.ona.bullet1': 'From hierarchical management to network leadership',
+    'leadership.tech.ona.bullet2': 'Building organizational resilience and cognitive agility',
+    'leadership.tech.ona.bullet3': 'Engaging employees and strengthening connectivity',
+    'leadership.tech.ona.bullet4': 'Identifying opinion leaders and hidden talent',
+    'leadership.tech.ona.imageAlt': 'Full organizational network map with interconnected nodes',
+    'leadership.tech.game.heading': 'Accelium Games — Skills & Tools for Managers',
+    'leadership.tech.game.bullet1': 'Decision-making under uncertainty',
+    'leadership.tech.game.bullet2': 'Creative thinking and problem solving',
+    'leadership.tech.game.bullet3': 'Task management and effective prioritization',
+    'leadership.tech.game.bullet4': 'Communication, teamwork, and bridging gaps',
+    'leadership.tech.game.imageAlt': 'Team collaborating around a thinking game',
     'leadership.flexible.title': "When face-to-face isn't an option: High-engagement Online Workshops",
     'leadership.flexible.body':
       'All of our development programs are available in person or as live online workshops (Zoom/Teams). We use interactive platforms designed to deliver a premium participant experience and uncompromising engagement.',
@@ -669,14 +673,18 @@ const translations: Record<Language, Record<string, string>> = {
     'leadership.workshop.6.syllabus':
       'מטרות: שיפור איכות ההחלטות, הפחתת הטיה, ושקיפות מול בעלי עניין.\n\nתוכן עיקרי:\n• מיפוי אי-ודאות וסוגי מידע חסר\n• תרגול מבוסס-דמויות לבחינת אלטרנטיבות\n• פרוטוקולי החלטה בצוות\n• סיכום: מדריך החלטה לשימוש חוזר\n\nפורמט: פרונטלי או אונליין.',
     'leadership.tech.sectionTitle': 'הטכנולוגיה שמאחורי הסדנאות שלנו',
-    'leadership.tech.ona.title': 'אינטליגנציה רשתית (ONA)',
-    'leadership.tech.ona.text':
-      'שימוש בטכנולוגיית מיפוי רשתי לזיהוי טאלנטים סמויים, איתור צווארי בקבוק, והבנת הדינמיקה האמיתית של הצוות.',
-    'leadership.tech.ona.imageAlt': 'איור מיפוי רשת',
-    'leadership.tech.game.title': 'למידה מבוססת-משחק',
-    'leadership.tech.game.text':
-      'סימולציות קוגניטיביות ומשחקי חשיבה המדמים מצבי מורכבות ואי-ודאות, ומאפשרים פיתוח מיומנויות בסביבה מאתגרת ומרתקת.',
-    'leadership.tech.game.imageAlt': 'למידה מבוססת משחק',
+    'leadership.tech.ona.heading': 'Network Leadership - מנהיגות רשתית',
+    'leadership.tech.ona.bullet1': 'מעבר מניהול היררכי לניהול רשתי',
+    'leadership.tech.ona.bullet2': 'בניית חוסן ארגוני וגמישות מחשבתית',
+    'leadership.tech.ona.bullet3': 'רתימת עובדים והגברת מחוברות',
+    'leadership.tech.ona.bullet4': 'זיהוי מובילי דעה וטאלנטים סמויים',
+    'leadership.tech.ona.imageAlt': 'מפת רשת ארגונית מלאה עם צמתים וקשרים צבעוניים',
+    'leadership.tech.game.heading': 'Accelium Games - מיומנויות וכלים למנהלים',
+    'leadership.tech.game.bullet1': 'קבלת החלטות בתנאי אי וודאות',
+    'leadership.tech.game.bullet2': 'פיתוח חשיבה יצירתית ופתרון בעיות',
+    'leadership.tech.game.bullet3': 'ניהול משימות ותיעדוף אפקטיבי',
+    'leadership.tech.game.bullet4': 'תקשורת, עבודת צוות וגישור על פערים',
+    'leadership.tech.game.imageAlt': 'צוות משתתף במשחק חשיבה סביב שולחן',
     'leadership.flexible.title': 'כשאי אפשר להיפגש פרונטלית: סדנאות Online במעורבות שיא',
     'leadership.flexible.body':
       'כל תוכניות הפיתוח שלנו זמינות בפורמט פרונטלי או כסדנאות אונליין (Zoom/Teams). אנו משתמשים בפלטפורמות אינטראקטיביות שמבטיחות חוויית משתמש ורמת מעורבות (Engagement) חסרת פשרות.',
