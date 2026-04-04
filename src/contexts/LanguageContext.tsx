@@ -253,9 +253,7 @@ const translations: Record<Language, Record<string, string>> = {
     'academy.bookWorkshop': 'Book a Workshop',
 
     // Leadership (Network Leadership / workshops catalog page)
-    'leadership.hero.browserTitle': 'Network Leadership | Power Skills',
-    'leadership.hero.titleLine1': 'Network Leadership |',
-    'leadership.hero.titleLine2': 'Power Skills',
+    'leadership.hero.title': 'Skills Development & Network Leadership',
     'leadership.hero.subtitle':
       "Developing managers and key teams through experiential learning, game simulations, and building a cross-organizational 'network mindset'. We prepare today's talent for tomorrow's management challenges, providing practical tools to lead in a changing reality.",
     'leadership.hero.cta': 'View the workshop catalog',
@@ -272,32 +270,32 @@ const translations: Record<Language, Record<string, string>> = {
     'leadership.workshop.1.shortDesc':
       'Moving from hierarchical to network leadership; building organizational resilience and cognitive agility. (Includes a personal profile assessment.)',
     'leadership.workshop.1.syllabus':
-      'Core topics: From hierarchical management to network leadership; building organizational resilience; engaging employees and strengthening connectivity; identifying opinion leaders and hidden talent.',
+      'In a world where the organizational chart no longer tells the whole story, managers must lead through networks. This workshop provides practical tools to transition from rigid hierarchical management to flexible network leadership. We will learn how to map the informal network, break down silos, identify hidden talents, and build organizational resilience.',
     'leadership.workshop.2.title': 'Influence & Managerial Courage',
     'leadership.workshop.2.shortDesc':
       'How do you influence inside and outside the organization? Practical tools for building influence and using networks as a managerial lever.',
     'leadership.workshop.2.syllabus':
-      'Core topics: What is influence; the influence circle; organizational networks as a tool for influence; the relationship between influence and courage; managerial courage in 360° leadership.',
+      'The greatest challenge for matrix managers is driving processes without direct authority. This workshop explores the intersection of influence and managerial courage. Participants will acquire 360-degree management tools, learn to leverage the organizational network to expand their circle of influence, and develop the courage to lead complex initiatives.',
     'leadership.workshop.3.title': 'Psychological Safety & Trust',
     'leadership.workshop.3.shortDesc':
       'Creating a supportive, productive environment that enables positive relationships and effective team leadership.',
     'leadership.workshop.3.syllabus':
-      'Core topics: Concepts of trust and psychological safety; how to foster psychological safety and its impact on trust; tools for building a productive team or department.',
+      'High-performing teams rely on a foundation of trust, but during times of stress, psychological safety quickly erodes. This workshop gives managers daily practices to create a safe work environment that encourages calculated risk-taking and innovation, demonstrating how authentic connection directly drives productivity.',
     'leadership.workshop.4.title': 'Adaptability & Cognitive Flexibility',
     'leadership.workshop.4.shortDesc':
       'Developing cognitive flexibility to respond and adapt quickly in a world of uncertainty.',
     'leadership.workshop.4.syllabus':
-      'Core topics: What is cognitive flexibility; advantages in a changing world; barriers; cognitive vs. behavioral flexibility; managing flexibility at the team level.',
+      "In a volatile business reality, the ability to adapt quickly is a critical competitive advantage. This workshop goes beyond behavioral change, focusing on developing cognitive flexibility. Managers will learn to identify and remove cognitive barriers to change, make decisions under uncertainty, and manage their team's adaptability.",
     'leadership.workshop.5.title': 'Creative Thinking',
     'leadership.workshop.5.shortDesc':
       'Challenging assumptions, expanding the solution space, and shifting routine thinking patterns.',
     'leadership.workshop.5.syllabus':
-      'Core topics: How to challenge our underlying assumptions; changing routine thinking patterns; expanding the solution space; when our thinking gets stuck.',
+      'When standard procedures stop working, managers must know how to innovate. Using game-based learning, this workshop challenges our basic assumptions and automatic thinking patterns. Participants will practice techniques to break mental locks, expand the solution space for complex challenges, and adopt creative thinking habits.',
     'leadership.workshop.6.title': 'Decision Making',
     'leadership.workshop.6.shortDesc':
       'Navigating complex decision processes and understanding common cognitive biases.',
     'leadership.workshop.6.syllabus':
-      'Core topics: Decision-making processes; common cognitive biases; coping with information overload vs. scarcity; wisdom of crowds and filtering noise.',
+      'Managers face a constant stream of decisions, often amidst noise or lacking critical information. This workshop breaks down the psychological mechanisms of decision-making and exposes common cognitive biases. Participants will learn models for filtering noise, utilizing the "wisdom of crowds," and making fast, data-driven decisions under pressure.',
     'leadership.tech.sectionTitle': 'The Technology Behind Our Workshops',
     'leadership.tech.ona.label': 'Network Intelligence (ONA)',
     'leadership.tech.game.label': 'Game-Based Learning',
@@ -622,9 +620,7 @@ const translations: Record<Language, Record<string, string>> = {
     'academy.bookWorkshop': 'הזמינו סדנה',
 
     // Leadership (דף מנהיגות / קטלוג סדנאות)
-    'leadership.hero.browserTitle': 'פיתוח מנהיגות רשתית | Power Skills',
-    'leadership.hero.titleLine1': 'פיתוח מנהיגות רשתית |',
-    'leadership.hero.titleLine2': 'Power Skills',
+    'leadership.hero.title': 'פיתוח מיומנויות ומנהיגות רשתית',
     'leadership.hero.subtitle':
       "פיתוח מנהלים וצוותי מפתח באמצעות למידה חווייתית, סימולציות משחק ובניית 'תפיסת רשת' חוצת-ארגון. אנו מכינים את הטאלנטים של היום לאתגרי הניהול של עולם המחר, ומעניקים להם כלים פרקטיים להובלה והשפעה במציאות משתנה.",
     'leadership.hero.cta': 'לצפייה בקטלוג הסדנאות',
@@ -640,32 +636,32 @@ const translations: Record<Language, Record<string, string>> = {
     'leadership.workshop.1.shortDesc':
       'המעבר מניהול היררכי לניהול רשתי, בניית חוסן ארגוני וגמישות מחשבתית. (כולל אבחון פרופיל אישי).',
     'leadership.workshop.1.syllabus':
-      'נושאים מרכזיים: מעבר מניהול היררכי לניהול רשתי, בניית חוסן ארגוני, רתימת עובדים והגברת מחוברות, זיהוי מובילי דעה וטאלנטים סמויים.',
+      'בעולם שבו התרשים הארגוני כבר לא מספר את כל הסיפור, מנהלים נדרשים להוביל דרך רשתות. סדנה זו מקנה כלים פרקטיים למעבר מניהול היררכי נוקשה לניהול רשתי גמיש. נלמד כיצד למפות את הרשת הבלתי-פורמלית בארגון, לשבור סילוסים בין מחלקות, לזהות טאלנטים סמויים ומובילי דעה, ולבנות חוסן ארגוני שמאפשר לצוות להגיב מהר לשינויים.',
     'leadership.workshop.2.title': 'השפעה ואומץ ניהולי',
     'leadership.workshop.2.shortDesc':
       'איך משפיעים בארגון ומחוצה לו? כלים פרקטיים ליצירת השפעה ורשתות ככלי ניהולי.',
     'leadership.workshop.2.syllabus':
-      'נושאים מרכזיים: מהי השפעה, מעגל ההשפעה, רשתות ארגוניות ככלי להשפעה, הקשר בין השפעה ואומץ, אומץ ניהולי בניהול 360.',
+      'האתגר הגדול ביותר של מנהלי מטריצה ומובילי פרויקטים הוא הנעת תהליכים ללא סמכות ישירה. הסדנה חוקרת את נקודת ההשקה שבין השפעה לאומץ ניהולי. המשתתפים ירכשו כלי ניהול 360 מעלות, ילמדו כיצד למנף את הרשת הארגונית כדי להרחיב את מעגל ההשפעה שלהם, ויפתחו את האומץ הנדרש להובלת יוזמות מורכבות בסביבה פוליטית.',
     'leadership.workshop.3.title': 'בטחון פסיכולוגי ואמון',
     'leadership.workshop.3.shortDesc':
       'יצירת סביבה מקדמת ופרודוקטיבית, המאפשרת יצירת יחסים מיטיבים והובלת צוות.',
     'leadership.workshop.3.syllabus':
-      'נושאים מרכזיים: המשגות לאמון וביטחון פסיכולוגי, איך מייצרים ביטחון והשפעתו על יצירת אמון, כלים לבניית צוות/מחלקה פרודוקטיבית.',
+      'צוותים בעלי ביצועים גבוהים נשענים על תשתית של אמון, אך בתקופות לחץ ומשבר, הביטחון הפסיכולוגי נשחק במהירות. הסדנה מעניקה למנהלים פרקטיקות יומיומיות ליצירת סביבת עבודה בטוחה המעודדת לקיחת סיכונים מחושבים, העלאת רעיונות חדשים והודאה בטעויות. נבין כיצד חיבור אותנטי וניהול פגיע מניעים ישירות פרודוקטיביות וחדשנות.',
     'leadership.workshop.4.title': 'הסתגלות לשינוי וגמישות מחשבתית',
     'leadership.workshop.4.shortDesc':
       'פיתוח גמישות מחשבתית להתמודדות והסתגלות מהירה בעולם של אי-ודאות.',
     'leadership.workshop.4.syllabus':
-      'נושאים מרכזיים: מהי גמישות מחשבתית, יתרונות בעולם משתנה, חסמים, גמישות מחשבתית מול התנהגותית, ניהול גמישות צוותית.',
+      'במציאות עסקית תנודתית, היכולת להסתגל במהירות היא יתרון תחרותי קריטי. הסדנה צוללת אל מעבר לשינוי ההתנהגותי, ומתמקדת בפיתוח "שריר" הגמישות המחשבתית. מנהלים ילמדו כיצד לזהות ולהסיר חסמים קוגניטיביים לשינוי, לקבל החלטות גם כשהתנאים משתנים מול עיניהם, ולנהל את הגמישות של הצוות כולו תחת אי-ודאות.',
     'leadership.workshop.5.title': 'חשיבה יצירתית',
     'leadership.workshop.5.shortDesc':
       'ערעור על הנחות יסוד, הרחבת מרחב הפתרונות ושינוי דפוסי חשיבה שגרתיים.',
     'leadership.workshop.5.syllabus':
-      'נושאים מרכזיים: הדרך לערעור על הנחות היסוד שלנו, שינוי דפוסי חשיבה שגרתיים, הרחבת מרחב הפתרונות, מתי החשיבה שלנו ננעלת.',
+      'כשדרכי הפעולה השגרתיות מפסיקות לעבוד, מנהלים חייבים לדעת כיצד לחדש. באמצעות למידה מבוססת-משחק, סדנה זו מערערת על הנחות היסוד והאוטומטים המחשבתיים שלנו. המשתתפים יתרגלו טכניקות לפריצת "נעילות מחשבתיות", ירחיבו את מרחב הפתרונות לאתגרים מורכבים, ויסגלו דפוסי חשיבה יצירתיים שניתן ליישם מיד בעבודה השוטפת.',
     'leadership.workshop.6.title': 'קבלת החלטות',
     'leadership.workshop.6.shortDesc':
       'התמודדות עם תהליכי קבלת החלטות מורכבים והיכרות עם הטיות קוגניטיביות.',
     'leadership.workshop.6.syllabus':
-      'נושאים מרכזיים: תהליכי קבלת החלטות, הטיות קוגניטיביות נפוצות, התמודדות עם עודף מידע מול חוסר מידע, חוכמת ההמונים וסינון רעשים.',
+      'מנהלים ניצבים מדי יום בפני זרם בלתי פוסק של החלטות, לרוב מתוך עודף רעשי רקע או חוסר במידע קריטי. הסדנה מפרקת את המנגנונים הפסיכולוגיים של תהליך קבלת ההחלטות וחושפת הטיות קוגניטיביות נפוצות שפוגעות בשיקול הדעת. המשתתפים ילמדו מודלים לסינון רעשים, שימוש נכון ב"חכמת ההמונים", וקבלת החלטות מהירות ומבוססות-נתונים תחת לחץ.',
     'leadership.tech.sectionTitle': 'הטכנולוגיה שמאחורי הסדנאות שלנו',
     'leadership.tech.ona.label': 'אינטליגנציה רשתית (ONA)',
     'leadership.tech.game.label': 'למידה מבוססת-משחק',

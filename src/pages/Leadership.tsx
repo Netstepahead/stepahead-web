@@ -56,10 +56,17 @@ function Badge({ kind, label }: { kind: BadgeKind; label: string }) {
   );
 }
 
-function WorkshopCardImage({ src }: { src: string }) {
+function WorkshopCardImage({ src, alt }: { src: string; alt: string }) {
+  const [failed, setFailed] = useState(false);
+  const imgSrc = failed ? "/placeholder.svg" : src;
   return (
-    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-t-2xl">
-      <img src={src} alt="" className="h-full w-full object-cover object-center" />
+    <div className="relative aspect-video w-full overflow-hidden rounded-t-2xl bg-slate-100">
+      <img
+        src={imgSrc}
+        alt={alt}
+        className="h-full w-full object-cover object-center"
+        onError={() => setFailed(true)}
+      />
     </div>
   );
 }
@@ -72,12 +79,9 @@ const Leadership = () => {
   const workshops = useMemo((): WorkshopView[] => {
     return [1, 2, 3, 4, 5, 6].map((id) => {
       const isNetwork = id <= 3;
-      // Swap card images: Network Leadership (1) ↔ Decision-Making (6)
-      let image: string;
-      if (id === 1) image = HOME_LEADERSHIP_CAROUSEL_IMAGES[2];
-      else if (id === 6) image = ACADEMY_CAROUSEL_IMAGES[0];
-      else if (isNetwork) image = ACADEMY_CAROUSEL_IMAGES[id - 1];
-      else image = HOME_LEADERSHIP_CAROUSEL_IMAGES[id - 4];
+      const image = isNetwork
+        ? ACADEMY_CAROUSEL_IMAGES[id - 1]
+        : HOME_LEADERSHIP_CAROUSEL_IMAGES[id - 4];
       return {
         id,
         badge: isNetwork ? "network" : "powerSkills",
@@ -97,7 +101,7 @@ const Leadership = () => {
   }, [isRTL]);
 
   useEffect(() => {
-    document.title = `${t("leadership.hero.browserTitle")} | StepAhead`;
+    document.title = `${t("leadership.hero.title")} | StepAhead`;
     return () => {
       document.title = defaultDocumentTitle;
     };
@@ -114,11 +118,8 @@ const Leadership = () => {
         <div className="container mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid grid-cols-1 items-center gap-10 pb-8 lg:grid-cols-2 lg:gap-12 lg:pb-12">
             <div className="flex flex-col items-start text-start">
-              <h1 className="mb-4 flex flex-col gap-0 text-4xl font-bold leading-tight text-slate-900 md:text-5xl lg:text-6xl">
-                <span className="min-w-0 sm:whitespace-nowrap">{t("leadership.hero.titleLine1")}</span>
-                <span className="sm:whitespace-nowrap" dir="ltr" lang="en">
-                  {t("leadership.hero.titleLine2")}
-                </span>
+              <h1 className="mb-4 text-4xl font-bold leading-tight text-slate-900 md:text-5xl lg:text-6xl">
+                {t("leadership.hero.title")}
               </h1>
               <p className="mb-8 max-w-xl text-base leading-relaxed text-slate-600 md:text-lg">
                 {t("leadership.hero.subtitle")}
@@ -187,7 +188,7 @@ const Leadership = () => {
                 key={w.id}
                 className="flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-md transition-shadow hover:shadow-xl"
               >
-                <WorkshopCardImage src={w.image} />
+                <WorkshopCardImage src={w.image} alt={w.title} />
                 <div className="flex flex-1 flex-col p-5 text-start">
                   <div className="mb-3">
                     <Badge
@@ -267,7 +268,7 @@ const Leadership = () => {
                   {openWorkshop.title}
                 </DialogTitle>
               </DialogHeader>
-              <div className="mt-2 space-y-4 whitespace-pre-line text-start text-sm leading-relaxed text-slate-700">
+              <div className="mt-3 text-start text-base leading-relaxed text-slate-700 md:leading-[1.65]">
                 {openWorkshop.syllabus}
               </div>
             </>
