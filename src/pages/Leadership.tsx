@@ -28,9 +28,9 @@ const HOME_LEADERSHIP_CAROUSEL_IMAGES = [
 /** Flexible learning section — `public/online_workshop.png`. */
 const ONLINE_WORKSHOP_IMAGE = "/online_workshop.png";
 
-/** Technology section — `public/Network Map.png`, `public/Accelium Hero Movie.mp4`. */
+/** Technology section — `public/Network Map.png`, `public/Games.png`. */
 const TECH_NETWORK_MAP_IMAGE = "/Network%20Map.png";
-const TECH_GAMES_VIDEO = "/Accelium%20Hero%20Movie.mp4";
+const TECH_GAMES_IMAGE = "/Games.png";
 
 type BadgeKind = "network" | "powerSkills";
 
@@ -92,10 +92,19 @@ const Leadership = () => {
     });
   }, [t, language]);
 
+  const defaultDocumentTitle = "StepAhead | Network Development & Leadership";
+
   useEffect(() => {
     window.scrollTo(0, 0);
     document.documentElement.dir = isRTL ? "rtl" : "ltr";
   }, [isRTL]);
+
+  useEffect(() => {
+    document.title = `${t("leadership.hero.title")} | StepAhead`;
+    return () => {
+      document.title = defaultDocumentTitle;
+    };
+  }, [t, language]);
 
   const scrollToCatalog = () => {
     document.getElementById("workshops-catalog")?.scrollIntoView({ behavior: "smooth" });
@@ -108,11 +117,8 @@ const Leadership = () => {
         <div className="container mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid grid-cols-1 items-center gap-10 pb-8 lg:grid-cols-2 lg:gap-12 lg:pb-12">
             <div className="flex flex-col items-start text-start">
-              <h1 className="mb-4 flex flex-col gap-0 text-4xl font-bold leading-tight text-slate-900 md:text-5xl lg:text-6xl">
-                <span className="min-w-0 sm:whitespace-nowrap">{t("leadership.hero.titleLine1")}</span>
-                <span className="sm:whitespace-nowrap" dir="ltr" lang="en">
-                  {t("leadership.hero.titleLine2")}
-                </span>
+              <h1 className="mb-4 text-4xl font-bold leading-tight text-slate-900 md:text-5xl lg:text-6xl">
+                {t("leadership.hero.title")}
               </h1>
               <p className="mb-8 max-w-xl text-lg leading-relaxed text-slate-600">
                 {t("leadership.hero.subtitle")}
@@ -148,7 +154,7 @@ const Leadership = () => {
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
             <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-[#f8fafc] shadow-sm ring-1 ring-slate-100/80">
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100/80">
+              <div className="relative h-40 w-full overflow-hidden bg-slate-100/80 sm:h-44 md:h-48">
                 <img
                   src={TECH_NETWORK_MAP_IMAGE}
                   alt={t("leadership.tech.ona.imageAlt")}
@@ -161,17 +167,12 @@ const Leadership = () => {
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-[#f8fafc] shadow-sm ring-1 ring-slate-100/80">
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100/80">
-                <video
+              <div className="relative h-40 w-full overflow-hidden bg-slate-100/80 sm:h-44 md:h-48">
+                <img
+                  src={TECH_GAMES_IMAGE}
+                  alt={t("leadership.tech.game.imageAlt")}
                   className="h-full w-full object-cover object-center"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  aria-label={t("leadership.tech.game.imageAlt")}
-                >
-                  <source src={TECH_GAMES_VIDEO} type="video/mp4" />
-                </video>
+                />
               </div>
               <div className="p-6 md:p-8 md:pt-2">
                 <h3 className="mb-3 text-lg font-bold text-[#1B365D] md:text-xl">{t("leadership.tech.game.title")}</h3>

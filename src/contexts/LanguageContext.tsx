@@ -253,8 +253,7 @@ const translations: Record<Language, Record<string, string>> = {
     'academy.bookWorkshop': 'Book a Workshop',
 
     // Leadership (Network Leadership / workshops catalog page)
-    'leadership.hero.titleLine1': 'Network Leadership |',
-    'leadership.hero.titleLine2': 'Power Skills',
+    'leadership.hero.title': 'Skills & Network Leadership Development',
     'leadership.hero.subtitle':
       "Developing managers and key teams through experiential learning, game simulations, and building a cross-organizational 'network mindset'.",
     'leadership.hero.cta': 'View the workshop catalog',
@@ -627,8 +626,7 @@ const translations: Record<Language, Record<string, string>> = {
     'academy.bookWorkshop': 'הזמינו סדנה',
 
     // Leadership (דף מנהיגות / קטלוג סדנאות)
-    'leadership.hero.titleLine1': 'פיתוח מנהיגות רשתית |',
-    'leadership.hero.titleLine2': 'Power Skills',
+    'leadership.hero.title': 'פיתוח מיומנויות ומנהיגות רשתית',
     'leadership.hero.subtitle':
       "פיתוח מנהלים וצוותי מפתח באמצעות למידה חווייתית, סימולציות משחק ובניית 'תפיסת רשת' חוצת-ארגון.",
     'leadership.hero.cta': 'לצפייה בקטלוג הסדנאות',
