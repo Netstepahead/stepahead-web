@@ -161,7 +161,7 @@ const Leadership = () => {
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-[#f8fafc] shadow-sm ring-1 ring-slate-100/80">
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900/5">
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100/80">
                 <video
                   className="h-full w-full object-cover object-center"
                   autoPlay
