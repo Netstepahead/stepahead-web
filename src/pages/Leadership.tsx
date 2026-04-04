@@ -28,9 +28,9 @@ const HOME_LEADERSHIP_CAROUSEL_IMAGES = [
 /** Flexible learning section — `public/online_workshop.png`. */
 const ONLINE_WORKSHOP_IMAGE = "/online_workshop.png";
 
-/** Technology section — `public/Network Map.png`, `public/Games.png`. */
+/** Technology section — `public/Network Map.png`, `public/Accelium Hero Movie.mp4`. */
 const TECH_NETWORK_MAP_IMAGE = "/Network%20Map.png";
-const TECH_GAMES_IMAGE = "/Games.png";
+const TECH_GAMES_VIDEO = "/Accelium%20Hero%20Movie.mp4";
 
 type BadgeKind = "network" | "powerSkills";
 
@@ -148,11 +148,11 @@ const Leadership = () => {
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
             <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-[#f8fafc] shadow-sm ring-1 ring-slate-100/80">
-              <div className="relative aspect-[16/10] w-full bg-slate-100/80">
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100/80">
                 <img
                   src={TECH_NETWORK_MAP_IMAGE}
                   alt={t("leadership.tech.ona.imageAlt")}
-                  className="h-full w-full object-contain object-center p-4"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
               <div className="p-6 md:p-8 md:pt-2">
@@ -161,12 +161,17 @@ const Leadership = () => {
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-[#f8fafc] shadow-sm ring-1 ring-slate-100/80">
-              <div className="relative aspect-[16/10] w-full bg-slate-100/80">
-                <img
-                  src={TECH_GAMES_IMAGE}
-                  alt={t("leadership.tech.game.imageAlt")}
-                  className="h-full w-full object-contain object-center p-4"
-                />
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900/5">
+                <video
+                  className="h-full w-full object-cover object-center"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  aria-label={t("leadership.tech.game.imageAlt")}
+                >
+                  <source src={TECH_GAMES_VIDEO} type="video/mp4" />
+                </video>
               </div>
               <div className="p-6 md:p-8 md:pt-2">
                 <h3 className="mb-3 text-lg font-bold text-[#1B365D] md:text-xl">{t("leadership.tech.game.title")}</h3>
