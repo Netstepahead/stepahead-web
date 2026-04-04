@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Puzzle, Waypoints } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -27,10 +28,6 @@ const HOME_LEADERSHIP_CAROUSEL_IMAGES = [
 
 /** Flexible learning section — `public/online_workshop.png`. */
 const ONLINE_WORKSHOP_IMAGE = "/online_workshop.png";
-
-/** Technology section — `public/Network Map.png`, `public/Games.png` (full-bleed, object-contain). */
-const TECH_NETWORK_MAP_IMAGE = "/Network%20Map.png";
-const TECH_GAMES_IMAGE = "/Games.png";
 
 type BadgeKind = "network" | "powerSkills";
 
@@ -100,7 +97,7 @@ const Leadership = () => {
   }, [isRTL]);
 
   useEffect(() => {
-    document.title = `${t("leadership.hero.title")} | StepAhead`;
+    document.title = `${t("leadership.hero.browserTitle")} | StepAhead`;
     return () => {
       document.title = defaultDocumentTitle;
     };
@@ -117,10 +114,13 @@ const Leadership = () => {
         <div className="container mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid grid-cols-1 items-center gap-10 pb-8 lg:grid-cols-2 lg:gap-12 lg:pb-12">
             <div className="flex flex-col items-start text-start">
-              <h1 className="mb-4 text-4xl font-bold leading-tight text-slate-900 md:text-5xl lg:text-6xl">
-                {t("leadership.hero.title")}
+              <h1 className="mb-4 flex flex-col gap-0 text-4xl font-bold leading-tight text-slate-900 md:text-5xl lg:text-6xl">
+                <span className="min-w-0 sm:whitespace-nowrap">{t("leadership.hero.titleLine1")}</span>
+                <span className="sm:whitespace-nowrap" dir="ltr" lang="en">
+                  {t("leadership.hero.titleLine2")}
+                </span>
               </h1>
-              <p className="mb-8 max-w-xl text-lg leading-relaxed text-slate-600">
+              <p className="mb-8 max-w-xl text-base leading-relaxed text-slate-600 md:text-lg">
                 {t("leadership.hero.subtitle")}
               </p>
               <Button
@@ -146,73 +146,28 @@ const Leadership = () => {
 
       <ClientLogosStrip title={t("leadership.logosTitle")} />
 
-      {/* Methodology / learning technologies — Network Leadership & Accelium Games */}
-      <section className="bg-[#eceff2] py-16 md:py-20 lg:py-24">
-        <div className="container mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
-          <h2 className="mb-12 text-center text-2xl font-bold tracking-tight text-[#1B365D] md:mb-14 md:text-3xl">
+      {/* Technology — compact icon strip */}
+      <section className="bg-white py-10">
+        <div className="container mx-auto max-w-5xl px-4 md:px-6">
+          <h2 className="mb-6 text-center text-lg font-semibold tracking-tight text-[#1B365D] md:mb-8 md:text-xl">
             {t("leadership.tech.sectionTitle")}
           </h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:gap-12">
-            {/* Network Leadership — dark block */}
-            <div className="flex flex-col overflow-hidden rounded-2xl border border-black/10 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.18)] ring-1 ring-white/10">
-              <div className="bg-[#2a3038] px-8 pb-8 pt-10 text-start md:px-10 md:pb-10 md:pt-12">
-                <h3 className="mb-6 text-xl font-semibold leading-snug tracking-tight text-white md:text-[1.35rem]">
-                  {t("leadership.tech.ona.heading")}
-                </h3>
-                <ul className="space-y-4 text-[15px] leading-relaxed text-white/90 md:text-base">
-                  {([1, 2, 3, 4] as const).map((i) => (
-                    <li key={i} className="flex gap-3">
-                      <span
-                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#E87722]"
-                        aria-hidden
-                      />
-                      <span>{t(`leadership.tech.ona.bullet${i}`)}</span>
-                    </li>
-                  ))}
-                </ul>
+          <div className="mx-auto flex max-w-3xl flex-col gap-4 sm:flex-row sm:items-stretch sm:justify-center sm:gap-6">
+            <div className="flex items-center gap-4 rounded-xl border border-slate-200/90 bg-slate-50/90 px-5 py-4 shadow-sm">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#E87722]/12 text-[#E87722]">
+                <Waypoints className="h-5 w-5" strokeWidth={1.75} aria-hidden />
               </div>
-              <div className="flex flex-1 flex-col bg-[#23282f] px-6 pb-8 pt-2 md:px-8 md:pb-10">
-                <div className="flex min-h-[12rem] flex-1 items-center justify-center overflow-hidden rounded-xl bg-black/20 p-3 ring-1 ring-white/10 md:min-h-[14rem] md:p-4">
-                  <img
-                    src={TECH_NETWORK_MAP_IMAGE}
-                    alt={t("leadership.tech.ona.imageAlt")}
-                    className="max-h-[min(26rem,50vh)] w-full object-contain object-center"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
+              <p className="text-start text-sm font-medium leading-snug text-slate-800 md:text-[15px]">
+                {t("leadership.tech.ona.label")}
+              </p>
             </div>
-
-            {/* Accelium Games — lighter gray block */}
-            <div className="flex flex-col overflow-hidden rounded-2xl border border-black/10 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.14)] ring-1 ring-white/10">
-              <div className="bg-[#3d4652] px-8 pb-8 pt-10 text-start md:px-10 md:pb-10 md:pt-12">
-                <h3 className="mb-6 text-xl font-semibold leading-snug tracking-tight text-white md:text-[1.35rem]">
-                  {t("leadership.tech.game.heading")}
-                </h3>
-                <ul className="space-y-4 text-[15px] leading-relaxed text-white/90 md:text-base">
-                  {([1, 2, 3, 4] as const).map((i) => (
-                    <li key={i} className="flex gap-3">
-                      <span
-                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#E87722]"
-                        aria-hidden
-                      />
-                      <span>{t(`leadership.tech.game.bullet${i}`)}</span>
-                    </li>
-                  ))}
-                </ul>
+            <div className="flex items-center gap-4 rounded-xl border border-slate-200/90 bg-slate-50/90 px-5 py-4 shadow-sm">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#1B365D]/10 text-[#1B365D]">
+                <Puzzle className="h-5 w-5" strokeWidth={1.75} aria-hidden />
               </div>
-              <div className="flex flex-1 flex-col bg-[#353d48] px-6 pb-8 pt-2 md:px-8 md:pb-10">
-                <div className="flex min-h-[12rem] flex-1 items-center justify-center overflow-hidden rounded-xl bg-black/15 p-3 ring-1 ring-white/10 md:min-h-[14rem] md:p-4">
-                  <img
-                    src={TECH_GAMES_IMAGE}
-                    alt={t("leadership.tech.game.imageAlt")}
-                    className="max-h-[min(26rem,50vh)] w-full object-contain object-center"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
+              <p className="text-start text-sm font-medium leading-snug text-slate-800 md:text-[15px]">
+                {t("leadership.tech.game.label")}
+              </p>
             </div>
           </div>
         </div>
@@ -266,7 +221,7 @@ const Leadership = () => {
       <section className="border-y border-slate-200/80 bg-white py-12 md:py-16 lg:py-20">
         <div className="container mx-auto max-w-6xl px-4 md:px-6">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
-            <div className={cn("space-y-4", isRTL ? "text-right lg:text-right" : "text-left")}>
+            <div className="space-y-4 text-start">
               <h2 className="text-2xl font-bold text-[#1B365D] md:text-3xl">{t("leadership.flexible.title")}</h2>
               <p className="text-base leading-relaxed text-slate-600 md:text-lg">{t("leadership.flexible.body")}</p>
             </div>
