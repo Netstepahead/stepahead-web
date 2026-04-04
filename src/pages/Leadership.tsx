@@ -10,9 +10,10 @@ import {
 } from "@/components/ui/dialog";
 import { ClientLogosStrip } from "@/components/ClientLogosStrip";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
-/** Explicit mapping so each workshop always uses the same asset on every viewport (mobile & desktop). */
+/** Desktop / default catalog images (mobile-only swap for workshops 1 & 6 below). */
 const WORKSHOP_IMAGE_BY_ID: Record<number, string> = {
   1: "/academy_carousel/workshop1.jpeg",
   2: "/academy_carousel/workshop2.jpeg",
@@ -21,6 +22,15 @@ const WORKSHOP_IMAGE_BY_ID: Record<number, string> = {
   5: "/carousel/70380459_123570912362931_6421992094918770688_n.jpg",
   6: "/carousel/PXL_20220918_083347381.jpg",
 };
+
+function resolveWorkshopImage(workshopId: number, isMobile: boolean): string {
+  const base = WORKSHOP_IMAGE_BY_ID[workshopId];
+  if (!isMobile) return base;
+  // Mobile only: swap Network Leadership (1) ↔ Decision Making (6)
+  if (workshopId === 1) return WORKSHOP_IMAGE_BY_ID[6];
+  if (workshopId === 6) return WORKSHOP_IMAGE_BY_ID[1];
+  return base;
+}
 
 /** Flexible learning section — `public/online_workshop.png`. */
 const ONLINE_WORKSHOP_IMAGE = "/online_workshop.png";
@@ -78,12 +88,13 @@ function WorkshopCardImage({ workshopId, src, alt }: { workshopId: number; src: 
 const Leadership = () => {
   const navigate = useNavigate();
   const { t, isRTL, language } = useLanguage();
+  const isMobile = useIsMobile();
   const [openWorkshop, setOpenWorkshop] = useState<WorkshopView | null>(null);
 
   const workshops = useMemo((): WorkshopView[] => {
     return [1, 2, 3, 4, 5, 6].map((id) => {
       const isNetwork = id <= 3;
-      const image = WORKSHOP_IMAGE_BY_ID[id];
+      const image = resolveWorkshopImage(id, isMobile);
       return {
         id,
         badge: isNetwork ? "network" : "powerSkills",
@@ -93,7 +104,7 @@ const Leadership = () => {
         syllabus: t(`leadership.workshop.${id}.syllabus`),
       };
     });
-  }, [t, language]);
+  }, [t, language, isMobile]);
 
   const defaultDocumentTitle = "StepAhead | Network Development & Leadership";
 
