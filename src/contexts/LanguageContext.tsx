@@ -298,7 +298,9 @@ const translations: Record<Language, Record<string, string>> = {
       'Managers face a constant stream of decisions, often amidst noise or lacking critical information. This workshop breaks down the psychological mechanisms of decision-making and exposes common cognitive biases. Participants will learn models for filtering noise, utilizing the "wisdom of crowds," and making fast, data-driven decisions under pressure.',
     'leadership.tech.sectionTitle': 'The Technology Behind Our Workshops',
     'leadership.tech.ona.label': 'Network Intelligence (ONA)',
+    'leadership.tech.ona.imageAlt': 'Organizational network map visualization',
     'leadership.tech.game.label': 'Game-Based Learning',
+    'leadership.tech.game.imageAlt': 'Game-based learning and thinking games',
     'leadership.flexible.title': "When face-to-face isn't an option: Interactive Online Workshops",
     'leadership.flexible.body':
       'All our development programs are fully adapted for online delivery. Using our unique game platforms and simulations, we guarantee an immersive learning experience that keeps participants engaged and active, even when working from home.',
@@ -664,7 +666,9 @@ const translations: Record<Language, Record<string, string>> = {
       'מנהלים ניצבים מדי יום בפני זרם בלתי פוסק של החלטות, לרוב מתוך עודף רעשי רקע או חוסר במידע קריטי. הסדנה מפרקת את המנגנונים הפסיכולוגיים של תהליך קבלת ההחלטות וחושפת הטיות קוגניטיביות נפוצות שפוגעות בשיקול הדעת. המשתתפים ילמדו מודלים לסינון רעשים, שימוש נכון ב"חכמת ההמונים", וקבלת החלטות מהירות ומבוססות-נתונים תחת לחץ.',
     'leadership.tech.sectionTitle': 'הטכנולוגיה שמאחורי הסדנאות שלנו',
     'leadership.tech.ona.label': 'אינטליגנציה רשתית (ONA)',
+    'leadership.tech.ona.imageAlt': 'מפת רשת ארגונית',
     'leadership.tech.game.label': 'למידה מבוססת-משחק',
+    'leadership.tech.game.imageAlt': 'למידה מבוססת משחק ומשחקי חשיבה',
     'leadership.flexible.title': 'כשאי אפשר להיפגש פרונטלית: סדנאות Online אינטראקטיביות',
     'leadership.flexible.body':
       'כל תוכניות הפיתוח שלנו הותאמו במלואן להעברה מקוונת. בעזרת פלטפורמות המשחק והסימולציות הייחודיות שלנו, אנו מבטיחים חוויית למידה סוחפת שמשאירה את המשתתפים מחוברים ופעילים לאורך כל הסדנה, גם כשהם עובדים מהבית.',

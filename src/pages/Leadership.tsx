@@ -29,6 +29,10 @@ const HOME_LEADERSHIP_CAROUSEL_IMAGES = [
 /** Flexible learning section — `public/online_workshop.png`. */
 const ONLINE_WORKSHOP_IMAGE = "/online_workshop.png";
 
+/** Technology section — `public/Network Map.png`, `public/Games.png`. */
+const TECH_NETWORK_MAP_IMAGE = "/Network%20Map.png";
+const TECH_GAMES_IMAGE = "/Games.png";
+
 type BadgeKind = "network" | "powerSkills";
 
 type WorkshopView = {
@@ -147,29 +151,53 @@ const Leadership = () => {
 
       <ClientLogosStrip title={t("leadership.logosTitle")} />
 
-      {/* Technology — compact icon strip */}
-      <section className="bg-white py-10">
-        <div className="container mx-auto max-w-5xl px-4 md:px-6">
-          <h2 className="mb-6 text-center text-lg font-semibold tracking-tight text-[#1B365D] md:mb-8 md:text-xl">
+      {/* Technology — visual feature cards */}
+      <section className="bg-white py-12 md:py-14">
+        <div className="container mx-auto max-w-6xl px-4 md:px-6">
+          <h2 className="mb-8 text-center text-xl font-semibold tracking-tight text-[#1B365D] md:mb-10 md:text-2xl">
             {t("leadership.tech.sectionTitle")}
           </h2>
-          <div className="mx-auto flex max-w-3xl flex-col gap-4 sm:flex-row sm:items-stretch sm:justify-center sm:gap-6">
-            <div className="flex items-center gap-4 rounded-xl border border-slate-200/90 bg-slate-50/90 px-5 py-4 shadow-sm">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#E87722]/12 text-[#E87722]">
-                <Waypoints className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+            {/* ONA */}
+            <article className="flex flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-[0_12px_40px_-12px_rgba(27,54,93,0.15)] ring-1 ring-slate-100/80">
+              <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-slate-100">
+                <img
+                  src={TECH_NETWORK_MAP_IMAGE}
+                  alt={t("leadership.tech.ona.imageAlt")}
+                  className="h-full w-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <p className="text-start text-sm font-medium leading-snug text-slate-800 md:text-[15px]">
-                {t("leadership.tech.ona.label")}
-              </p>
-            </div>
-            <div className="flex items-center gap-4 rounded-xl border border-slate-200/90 bg-slate-50/90 px-5 py-4 shadow-sm">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#1B365D]/10 text-[#1B365D]">
-                <Puzzle className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+              <div className="flex items-start gap-4 p-6 md:p-7">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E87722]/12 text-[#E87722] shadow-sm">
+                  <Waypoints className="h-6 w-6" strokeWidth={1.75} aria-hidden />
+                </div>
+                <p className="min-w-0 flex-1 pt-0.5 text-start text-base font-semibold leading-snug text-[#1B365D] md:text-lg">
+                  {t("leadership.tech.ona.label")}
+                </p>
               </div>
-              <p className="text-start text-sm font-medium leading-snug text-slate-800 md:text-[15px]">
-                {t("leadership.tech.game.label")}
-              </p>
-            </div>
+            </article>
+            {/* Game-based learning */}
+            <article className="flex flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-[0_12px_40px_-12px_rgba(27,54,93,0.15)] ring-1 ring-slate-100/80">
+              <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-slate-100">
+                <img
+                  src={TECH_GAMES_IMAGE}
+                  alt={t("leadership.tech.game.imageAlt")}
+                  className="h-full w-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="flex items-start gap-4 p-6 md:p-7">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#1B365D]/10 text-[#1B365D] shadow-sm">
+                  <Puzzle className="h-6 w-6" strokeWidth={1.75} aria-hidden />
+                </div>
+                <p className="min-w-0 flex-1 pt-0.5 text-start text-base font-semibold leading-snug text-[#1B365D] md:text-lg">
+                  {t("leadership.tech.game.label")}
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
