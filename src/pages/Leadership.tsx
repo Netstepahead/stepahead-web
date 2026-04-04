@@ -12,19 +12,15 @@ import { ClientLogosStrip } from "@/components/ClientLogosStrip";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
 
-/** Academy carousel — cards 1–3 (Network Mindset workshops). */
-const ACADEMY_CAROUSEL_IMAGES = [
-  "/academy_carousel/workshop1.jpeg",
-  "/academy_carousel/workshop2.jpeg",
-  "/academy_carousel/workshop3.jpeg",
-] as const;
-
-/** First 3 images from Homepage leadership carousel (Index — pillar 1). Cards 4–6 (Power Skills). */
-const HOME_LEADERSHIP_CAROUSEL_IMAGES = [
-  "/carousel/485136809_1241810007947886_5355771345522948267_n.jpg",
-  "/carousel/70380459_123570912362931_6421992094918770688_n.jpg",
-  "/carousel/PXL_20220918_083347381.jpg",
-] as const;
+/** Explicit mapping so each workshop always uses the same asset on every viewport (mobile & desktop). */
+const WORKSHOP_IMAGE_BY_ID: Record<number, string> = {
+  1: "/academy_carousel/workshop1.jpeg",
+  2: "/academy_carousel/workshop2.jpeg",
+  3: "/academy_carousel/workshop3.jpeg",
+  4: "/carousel/485136809_1241810007947886_5355771345522948267_n.jpg",
+  5: "/carousel/70380459_123570912362931_6421992094918770688_n.jpg",
+  6: "/carousel/PXL_20220918_083347381.jpg",
+};
 
 /** Flexible learning section — `public/online_workshop.png`. */
 const ONLINE_WORKSHOP_IMAGE = "/online_workshop.png";
@@ -60,18 +56,19 @@ function Badge({ kind, label }: { kind: BadgeKind; label: string }) {
   );
 }
 
-function WorkshopCardImage({ src, alt }: { src: string; alt: string }) {
+function WorkshopCardImage({ workshopId, src, alt }: { workshopId: number; src: string; alt: string }) {
   const [failed, setFailed] = useState(false);
   const imgSrc = failed ? "/placeholder.svg" : src;
   return (
-    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-t-2xl bg-slate-100">
-      {/* Same 4:3 + cover + center at all breakpoints so crops match mobile and desktop */}
+    <div className="relative aspect-[4/3] w-full min-h-0 overflow-hidden rounded-t-2xl bg-slate-100">
       <img
+        key={`${workshopId}-${imgSrc}`}
         src={imgSrc}
         alt={alt}
         className="h-full w-full object-cover object-center"
         loading="lazy"
         decoding="async"
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
         onError={() => setFailed(true)}
       />
     </div>
@@ -86,9 +83,7 @@ const Leadership = () => {
   const workshops = useMemo((): WorkshopView[] => {
     return [1, 2, 3, 4, 5, 6].map((id) => {
       const isNetwork = id <= 3;
-      const image = isNetwork
-        ? ACADEMY_CAROUSEL_IMAGES[id - 1]
-        : HOME_LEADERSHIP_CAROUSEL_IMAGES[id - 4];
+      const image = WORKSHOP_IMAGE_BY_ID[id];
       return {
         id,
         badge: isNetwork ? "network" : "powerSkills",
@@ -119,13 +114,13 @@ const Leadership = () => {
   };
 
   return (
-    <div className="w-full overflow-x-hidden bg-white" dir={isRTL ? "rtl" : "ltr"}>
-      {/* Hero */}
-      <section className="bg-[#F9F8F4] pt-16 pb-8 md:pt-20 md:pb-12 lg:pt-24">
+    <div className="w-full bg-white [overflow-wrap:anywhere]" dir={isRTL ? "rtl" : "ltr"}>
+      {/* Hero — extra top padding clears fixed navbar on phones (was pt-16 / too tight) */}
+      <section className="bg-[#F9F8F4] pb-8 pt-[calc(5.5rem+env(safe-area-inset-top))] md:pb-12 md:pt-20 lg:pt-24">
         <div className="container mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid grid-cols-1 items-center gap-10 pb-8 lg:grid-cols-2 lg:gap-12 lg:pb-12">
-            <div className="flex min-w-0 w-full max-w-full flex-col items-start text-start">
-              <h1 className="mb-4 w-full max-w-full break-words text-3xl font-bold leading-[1.15] tracking-tight text-slate-900 sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl">
+            <div className="flex min-w-0 w-full max-w-full flex-col items-stretch text-start">
+              <h1 className="mb-4 w-full max-w-full hyphens-auto break-words text-[1.65rem] font-bold leading-snug tracking-tight text-slate-900 sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl">
                 {t("leadership.hero.title")}
               </h1>
               <p className="mb-8 max-w-xl text-base leading-relaxed text-slate-600 md:text-lg">
@@ -231,7 +226,7 @@ const Leadership = () => {
                 key={w.id}
                 className="flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-md transition-shadow hover:shadow-xl"
               >
-                <WorkshopCardImage src={w.image} alt={w.title} />
+                <WorkshopCardImage workshopId={w.id} src={w.image} alt={w.title} />
                 <div className="flex flex-1 flex-col p-5 text-start">
                   <div className="mb-3">
                     <Badge

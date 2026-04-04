@@ -39,7 +39,7 @@ function AppRoutes() {
       <ScrollToTop /> {/* <--- כאן הקסם קורה: זה מאפס את הגלילה בכל מעבר דף */}
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow">
+        <main className="min-w-0 flex-grow">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/network-development" element={<Platform />} />
