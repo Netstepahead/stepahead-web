@@ -254,16 +254,18 @@ const Leadership = () => {
         <DialogContent
           className={cn(
             "max-h-[90vh] max-w-2xl overflow-y-auto border-slate-200/80 bg-white shadow-2xl sm:rounded-2xl",
-            isRTL ? "text-right" : "text-left",
+            "text-start",
           )}
           dir={isRTL ? "rtl" : "ltr"}
         >
           {openWorkshop && (
             <>
               <DialogHeader>
-                <DialogTitle className="text-xl font-bold text-[#1B365D] md:text-2xl">{openWorkshop.title}</DialogTitle>
+                <DialogTitle className="text-start text-xl font-bold text-[#1B365D] md:text-2xl">
+                  {openWorkshop.title}
+                </DialogTitle>
               </DialogHeader>
-              <div className="mt-2 space-y-4 whitespace-pre-line text-sm leading-relaxed text-slate-700">
+              <div className="mt-2 space-y-4 whitespace-pre-line text-start text-sm leading-relaxed text-slate-700">
                 {openWorkshop.syllabus}
               </div>
             </>
