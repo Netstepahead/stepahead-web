@@ -10,27 +10,17 @@ import {
 } from "@/components/ui/dialog";
 import { ClientLogosStrip } from "@/components/ClientLogosStrip";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
-/** Desktop / default catalog images (mobile-only swap for workshops 1 & 6 below). */
+/** Workshop card images. Network Leadership (1) and Decision Making (6) use each other's asset filenames. */
 const WORKSHOP_IMAGE_BY_ID: Record<number, string> = {
-  1: "/academy_carousel/workshop1.jpeg",
+  1: "/carousel/PXL_20220918_083347381.jpg",
   2: "/academy_carousel/workshop2.jpeg",
   3: "/academy_carousel/workshop3.jpeg",
   4: "/carousel/485136809_1241810007947886_5355771345522948267_n.jpg",
   5: "/carousel/70380459_123570912362931_6421992094918770688_n.jpg",
-  6: "/carousel/PXL_20220918_083347381.jpg",
+  6: "/academy_carousel/workshop1.jpeg",
 };
-
-function resolveWorkshopImage(workshopId: number, isMobile: boolean): string {
-  const base = WORKSHOP_IMAGE_BY_ID[workshopId];
-  if (!isMobile) return base;
-  // Mobile only: swap Network Leadership (1) ↔ Decision Making (6)
-  if (workshopId === 1) return WORKSHOP_IMAGE_BY_ID[6];
-  if (workshopId === 6) return WORKSHOP_IMAGE_BY_ID[1];
-  return base;
-}
 
 /** Flexible learning section — `public/online_workshop.png`. */
 const ONLINE_WORKSHOP_IMAGE = "/online_workshop.png";
@@ -88,13 +78,12 @@ function WorkshopCardImage({ workshopId, src, alt }: { workshopId: number; src: 
 const Leadership = () => {
   const navigate = useNavigate();
   const { t, isRTL, language } = useLanguage();
-  const isMobile = useIsMobile();
   const [openWorkshop, setOpenWorkshop] = useState<WorkshopView | null>(null);
 
   const workshops = useMemo((): WorkshopView[] => {
     return [1, 2, 3, 4, 5, 6].map((id) => {
       const isNetwork = id <= 3;
-      const image = resolveWorkshopImage(id, isMobile);
+      const image = WORKSHOP_IMAGE_BY_ID[id];
       return {
         id,
         badge: isNetwork ? "network" : "powerSkills",
@@ -104,7 +93,7 @@ const Leadership = () => {
         syllabus: t(`leadership.workshop.${id}.syllabus`),
       };
     });
-  }, [t, language, isMobile]);
+  }, [t, language]);
 
   const defaultDocumentTitle = "StepAhead | Network Development & Leadership";
 
